@@ -1,0 +1,1387 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>x402 endpoints offering YouTube Data data — resale-authorization audit (116 suspected) — Provenance</title>
+<meta name="description" content="YouTube Data API resold via x402? 116 suspected unauthorized YouTube Data reseller endpoints found in public x402 registries (43 high-confidence, 94 active in 30d). Evidence, prices, on-chain payment counts. Verification recommended.">
+<link rel="canonical" href="https://apeirontrade.github.io/provenance-site/brands/youtube.html">
+<meta property="og:title" content="x402 endpoints offering YouTube Data data — resale-authorization audit (116 suspected) — Provenance">
+<meta property="og:description" content="YouTube Data API resold via x402? 116 suspected unauthorized YouTube Data reseller endpoints found in public x402 registries (43 high-confidence, 94 active in 30d). Evidence, prices, on-chain payment counts. Verification recommended.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://apeirontrade.github.io/provenance-site/brands/youtube.html">
+<meta name="robots" content="index,follow">
+<style>
+  :root{color-scheme:light dark;
+    --bg:#0d1117;--panel:#161b22;--border:#30363d;--fg:#e6edf3;--dim:#8b949e;--accent:#58a6ff;--accent2:#d2a8ff;}
+  @media (prefers-color-scheme: light){:root{--bg:#f6f8fa;--panel:#ffffff;--border:#d0d7de;--fg:#1f2328;--dim:#57606a;--accent:#0969da;--accent2:#8250df;}}
+  *{box-sizing:border-box;margin:0}
+  body{background:var(--bg);color:var(--fg);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;padding:2.2rem 1rem 4rem}
+  .wrap{max-width:1080px;margin:0 auto}
+  header.site{margin-bottom:1.6rem}
+  .crumb{font-size:.82rem;color:var(--dim);margin-bottom:1rem}
+  .crumb a{color:var(--dim)}
+  h1{font-size:1.65rem;letter-spacing:-.01em;line-height:1.25}
+  h2{font-size:1.15rem;margin:2.2rem 0 .8rem}
+  h3{font-size:1rem;margin:1.6rem 0 .6rem}
+  .sub{color:var(--dim);margin:.5rem 0 1.4rem;max-width:62rem}
+  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.8rem;margin:1.4rem 0 1.8rem}
+  .tile{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:.85rem 1rem}
+  .tile b{display:block;font-size:1.4rem;font-weight:600}
+  .tile span{color:var(--dim);font-size:.8rem}
+  .tblwrap{overflow-x:auto;border:1px solid var(--border);border-radius:8px;background:var(--panel);margin:.6rem 0 1rem}
+  table{border-collapse:collapse;width:100%;font-size:.9rem}
+  th{color:var(--dim);font-weight:600;font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;text-align:left;padding:.65rem .8rem;border-bottom:1px solid var(--border);white-space:nowrap}
+  td{padding:.6rem .8rem;border-bottom:1px solid var(--border);vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82rem}
+  .dim{color:var(--dim)}
+  .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .center{text-align:center}
+  .ep-name{font-weight:600;overflow-wrap:anywhere}
+  .ep-meta{color:var(--dim);font-size:.76rem;margin-top:.15rem;overflow-wrap:anywhere}
+  .grade{display:inline-block;border:1px solid;border-radius:6px;padding:.05rem .55rem;font-weight:700;font-size:.98rem;white-space:nowrap}
+  .infl-pos{color:#f85149;font-weight:700;font-variant-numeric:tabular-nums}
+  .infl-neg{color:#3fb950;font-weight:600;font-variant-numeric:tabular-nums}
+  .infl-zero{color:var(--dim)}
+  .ind{font-size:.82rem;color:var(--dim);max-width:300px}
+  .pill{display:inline-block;border:1px solid var(--border);border-radius:99px;padding:.02rem .55rem;font-size:.74rem;color:var(--dim);white-space:nowrap}
+  .pill.ok{color:#3fb950;border-color:#3fb95055}
+  .pill.hi{color:#f0883e;border-color:#f0883e55}
+  .pill.med{color:#d29922;border-color:#d2992255}
+  .note,.callout{color:var(--dim);font-size:.84rem;margin:1.1rem 0;line-height:1.6;max-width:62rem}
+  .callout{background:var(--panel);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:6px;padding:.8rem 1rem;color:var(--fg)}
+  .callout.warn{border-left-color:#d29922}
+  ul.ev{margin:.2rem 0 .2rem 1rem;padding:0;font-size:.82rem;color:var(--dim)}
+  ul.ev li{margin:.15rem 0}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85em;background:var(--panel);border:1px solid var(--border);border-radius:4px;padding:.05em .3em}
+  .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.8rem;margin:1rem 0}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:1rem}
+  .card h3{margin:0 0 .4rem;font-size:.95rem}
+  .card p{font-size:.83rem;color:var(--dim)}
+  .brandlist{columns:3;column-gap:1.5rem;font-size:.9rem}
+  @media(max-width:800px){.brandlist{columns:2}}
+  @media(max-width:520px){.brandlist{columns:1}}
+  .brandlist li{margin:.25rem 0;break-inside:avoid}
+  footer.site{border-top:1px solid var(--border);margin-top:3rem;padding-top:1.1rem;color:var(--dim);font-size:.82rem;line-height:1.7}
+  footer.site nav{margin-bottom:.4rem}
+  footer.site nav a{margin-right:1.1rem}
+  dl.kv{display:grid;grid-template-columns:max-content 1fr;gap:.35rem 1.2rem;font-size:.9rem;margin:.8rem 0}
+  dl.kv dt{color:var(--dim)}
+  dl.kv dd{overflow-wrap:anywhere}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://apeirontrade.github.io/provenance-site/#org","name":"Provenance","url":"https://apeirontrade.github.io/provenance-site/","description":"Independent trust ratings for x402 machine-payable API endpoints, derived from public on-chain payment data and public discovery registries.","sameAs":["https://www.npmjs.com/package/provenance-mcp","https://www.npmjs.com/package/provenance-guard","https://github.com/apeirontrade/provenance-mcp","https://github.com/apeirontrade/provenance-guard"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Report","headline":"x402 endpoints offering YouTube Data data — resale-authorization audit","author":{"@id":"https://apeirontrade.github.io/provenance-site/#org"},"datePublished":"2026-07-05","about":{"@type":"Brand","name":"YouTube Data"},"mainEntityOfPage":"https://apeirontrade.github.io/provenance-site/brands/youtube.html"}</script>
+</head><body><div class="wrap">
+<div class="crumb"><a href="../index.html">Provenance x402 Trust Index</a> &middot; <a href="../methodology.html">Methodology</a> &middot; <a href="../data/index.html">Open data</a></div>
+
+<h1>x402 endpoints offering YouTube Data data <span class="dim">— resale-authorization audit</span></h1>
+<p class="sub">116 machine-payable (x402) endpoints in the public discovery registries exhibit reseller signatures referencing <b>YouTube Data</b> while hosted off YouTube Data's own domains. Resale-authorization status: <b>unknown — suspected unauthorized resale, verification recommended</b>. Any of these endpoints may hold a legitimate redistribution license.</p>
+
+<div class="callout">Context: The YouTube Data API is quota-limited and its Terms of Service restrict resale of API data.</div>
+
+<div class="tiles">
+  <div class="tile"><b>116</b><span>suspected reseller endpoints</span></div>
+  <div class="tile"><b>43</b><span>high-confidence signatures (≥70/100)</span></div>
+  <div class="tile"><b>94</b><span>with paid activity in the last 30d</span></div>
+  <div class="tile"><b>2</b><span>live-402 confirmed by probe</span></div>
+</div>
+
+<p class="note">Scan of 23,376 unique x402 endpoints on 2026-07-05, sources: Coinbase Bazaar + GoPlausible registry. Payment counts come from the registries' own published 30-day quality signals. Evidence bullets are automated signature matches — see the <a href="../methodology.html">methodology</a> for signal definitions, false-positive modes, and the <a href="https://github.com/apeirontrade/provenance-site/issues">dispute path</a>. If you are on YouTube Data's API or trust team and want the full evidence set or a re-verification, open an issue — it's free.</p>
+
+<div class="tblwrap"><table>
+<thead><tr><th>Endpoint</th><th>Price/call</th><th>Calls 30d</th><th>Signature</th><th>Evidence (automated signature matches)</th></tr></thead>
+<tbody><tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/linkedin-ad-library/ad-details</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — linkedin-ad-library-ad-details. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per…</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 88/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, LinkedIn, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>brand term &quot;linkedin&quot; appears in the endpoint URL itself</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>input schema is a bare passthrough (url) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/linkedin/profile</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — linkedin-profile. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per request.</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 88/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, LinkedIn, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>brand term &quot;linkedin&quot; appears in the endpoint URL itself</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>input schema is a bare passthrough (url) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/linkedin/company</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — linkedin-company. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per request.</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 88/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, LinkedIn, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>brand term &quot;linkedin&quot; appears in the endpoint URL itself</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>input schema is a bare passthrough (url) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/tiktok/search/keyword</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — tiktok-search-keyword. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per request.</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">2<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill hi">high · 78/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>brand term &quot;tiktok&quot; appears in the endpoint URL itself</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/tiktok/live</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — tiktok-live. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per request.</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 78/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>brand term &quot;tiktok&quot; appears in the endpoint URL itself</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/instagram/highlights</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — instagram-highlights. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per request.</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 78/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>brand term &quot;instagram&quot; appears in the endpoint URL itself</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/threads/search-users</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — threads-search-users. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per request.</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 78/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>input schema is a bare passthrough (query) — consistent with forwarding to an upstream API</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/instagram/reels</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — instagram-reels. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per request.</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 78/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>brand term &quot;instagram&quot; appears in the endpoint URL itself</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/tiktok-shop/product-reviews</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — tiktok-shop-product-reviews. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per re…</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 78/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>brand term &quot;tiktok&quot; appears in the endpoint URL itself</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/reddit/post/comments</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — reddit-post-comments. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per request.</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 78/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Reddit, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>brand term &quot;reddit&quot; appears in the endpoint URL itself</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/tiktok/demographics</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — tiktok-demographics. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per request.</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 78/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>brand term &quot;tiktok&quot; appears in the endpoint URL itself</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/google-ad-library/search-advertisers</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — google-ad-library-search-advertisers. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 US…</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 78/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>input schema is a bare passthrough (query) — consistent with forwarding to an upstream API</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/youtube/channel/playlists</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — youtube-channel-playlists. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per requ…</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 78/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/twitter/profile</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — twitter-profile. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per request.</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 78/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in url) but is hosted on social.gedx402.com, not the brand's domain</li><li>brand term &quot;twitter&quot; appears in the endpoint URL itself</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/twitter/user-tweets-all</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — twitter-user-tweets-all. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per reques…</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 78/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in url) but is hosted on social.gedx402.com, not the brand's domain</li><li>brand term &quot;twitter&quot; appears in the endpoint URL itself</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/youtube/video/comments</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — youtube-video-comments. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per request…</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 78/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/youtube/video</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — youtube-video. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per request.</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 78/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/youtube/channel</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — youtube-channel. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per request.</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 78/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/twitter/tweet</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — twitter-tweet. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per request.</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 78/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in url) but is hosted on social.gedx402.com, not the brand's domain</li><li>brand term &quot;twitter&quot; appears in the endpoint URL itself</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/youtube/channel/lives</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — youtube-channel-lives. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per request.</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 78/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/twitter/retweets</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — twitter-retweets. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per request.</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 78/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in url) but is hosted on social.gedx402.com, not the brand's domain</li><li>brand term &quot;twitter&quot; appears in the endpoint URL itself</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/twitter/quotes</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — twitter-quotes. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per request.</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 78/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in url) but is hosted on social.gedx402.com, not the brand's domain</li><li>brand term &quot;twitter&quot; appears in the endpoint URL itself</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/tiktok/trending</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — tiktok-trending. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per request.</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 78/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>brand term &quot;tiktok&quot; appears in the endpoint URL itself</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/tiktok/search/hashtag</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — tiktok-search-hashtag. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per request.</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 78/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>brand term &quot;tiktok&quot; appears in the endpoint URL itself</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/youtube/channel/community-posts</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — youtube-channel-community-posts. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC pe…</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 78/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/tiktok/followers</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — tiktok-followers. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per request.</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 78/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>brand term &quot;tiktok&quot; appears in the endpoint URL itself</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/tiktok/search/top</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — tiktok-search-top. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per request.</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 78/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>brand term &quot;tiktok&quot; appears in the endpoint URL itself</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/tiktok/music/videos</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — tiktok-music-videos. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per request.</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 78/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>brand term &quot;tiktok&quot; appears in the endpoint URL itself</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/tiktok/profile</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — tiktok-profile. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per request.</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 78/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>brand term &quot;tiktok&quot; appears in the endpoint URL itself</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/tiktok/search/users</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — tiktok-search-users. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per request.</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 78/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>brand term &quot;tiktok&quot; appears in the endpoint URL itself</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/reddit/subreddit/details</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — reddit-subreddit-details. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per reque…</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 78/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Reddit, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>brand term &quot;reddit&quot; appears in the endpoint URL itself</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/linkedin-ad-library/search</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — linkedin-ad-library-search. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per req…</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 78/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, LinkedIn, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>brand term &quot;linkedin&quot; appears in the endpoint URL itself</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/instagram/posts</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — instagram-posts. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per request.</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 78/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>brand term &quot;instagram&quot; appears in the endpoint URL itself</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/facebook-marketplace/location-search</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — facebook-marketplace-location-search. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 US…</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 78/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>input schema is a bare passthrough (query) — consistent with forwarding to an upstream API</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/tiktok-shop/search</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — tiktok-shop-search. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per request.</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 78/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>brand term &quot;tiktok&quot; appears in the endpoint URL itself</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/instagram/reels-by-song</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — instagram-reels-by-song. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per reques…</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 78/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>brand term &quot;instagram&quot; appears in the endpoint URL itself</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/instagram/profile</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — instagram-profile. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per request.</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 78/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>brand term &quot;instagram&quot; appears in the endpoint URL itself</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/facebook-ad-library/search-companies</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — facebook-ad-library-search-companies. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 US…</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 78/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>input schema is a bare passthrough (query) — consistent with forwarding to an upstream API</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/reddit/subreddit</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — reddit-subreddit. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per request.</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 78/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Reddit, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>brand term &quot;reddit&quot; appears in the endpoint URL itself</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/reddit/post/transcript</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — reddit-post-transcript. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.122 USDC per request…</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.12</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 78/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Reddit, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>brand term &quot;reddit&quot; appears in the endpoint URL itself</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.1220/call ≈ 24.4× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://tinkrr-api.tinkrr.workers.dev/video/analyze</div>
+    <div class="ep-meta">Tinkrr API — YouTube video → complete content campaign kit: virality score, viral clips, social media copy for 6 platforms</div>
+    <div class="ep-meta mono">pays to 0xc3d6…4f0C on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.15</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 75/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, LinkedIn, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in schema) but is hosted on tinkrr-api.tinkrr.workers.dev, not the brand's domain</li><li>input schema is a bare passthrough (url) — consistent with forwarding to an upstream API</li><li>$0.1500/call ≈ 30.0× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (workers.dev) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://apify-api-git-br-better-actor-pay-merit-systems.vercel.app/api/actors/streamers/youtube-channel-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;Fast YouTube Channel Scraper&quot; Apify actor (streamers/youtube-channel-scraper). This alternative YouTube Data API has no limits or quotas. Use it to scrape one or multipl…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 70/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data, Apify (via &quot;youtube&quot; in url) but is hosted on apify-api-git-br-better-actor-pay-merit-systems.vercel.app, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://apify-api-git-br-apify-typed-input-schemas-merit-systems.vercel.app/api/actors/pintostudio/youtube-transcript-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;Youtube Transcript Scraper&quot; Apify actor (pintostudio/youtube-transcript-scraper). Looking for a reliable way to extract transcripts from YouTube videos? 🎥✨ Look no furt…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.10</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 70/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data, Apify (via &quot;youtube&quot; in url) but is hosted on apify-api-git-br-apify-typed-input-schemas-merit-systems.vercel.app, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li><li>$0.1000/call ≈ 50.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/facebook-ad-library/company-ads</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — facebook-ad-library-company-ads. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC pe…</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 68/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/twitch/user/videos</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — twitch-user-videos. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per request.</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 68/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/twitch/user/schedule</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — twitch-user-schedule. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per request.</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 68/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/pinterest/user/boards</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — pinterest-user-boards. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per request.</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 68/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/twitch/profile</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — twitch-profile. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per request.</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 68/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/google-ad-library/company-ads</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — google-ad-library-company-ads. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per …</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 68/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/facebook/profile/posts</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — facebook-profile-posts. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per request…</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 68/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/pinterest/search</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — pinterest-search. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per request.</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 68/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/sociavault/google/search</div>
+    <div class="ep-meta">GEDX402 Social — SociaVault API proxy — google-search. Query/body matches https://docs.sociavault.com/api-reference/openapi.json. GET/POST per route; x402 per call. $0.014 USDC per request.</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 68/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Google Search (SERP), X / Twitter, Instagram, TikTok, YouTube Data (via &quot;google search&quot; in description) but is hosted on social.gedx402.com, not the brand's domain</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>$0.0140/call ≈ 2.8× Google Search (SERP)'s public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://glim.sh/api/v1/youtube/get</div>
+    <div class="ep-meta">glim.sh — Fetch YouTube subtitles/transcript (VTT) by 11-char video_id; returns a presigned download URL to the .vtt file</div>
+    <div class="ep-meta mono">pays to 9MkM5R…1vde on solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">63<div class="ep-meta">6 payers</div></td>
+  <td class="center"><span class="pill med">medium · 63/100</span><div style="margin-top:.3rem"><span class="pill">probe: HTTP 404</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Reddit, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on glim.sh, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 2.0× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://scout.hugen.tokyo/scout/report/full</div>
+    <div class="ep-meta"> — Comprehensive intelligence report — search all 18 sources in parallel including X/Twitter, Product Hunt, Reddit, YouTube. AI agent API for full market research and competitive anal…</div>
+    <div class="ep-meta mono">pays to 0x2932…4f60 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.25</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 63/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Reddit, YouTube Data (via &quot;twitter&quot; in description) but is hosted on scout.hugen.tokyo, not the brand's domain</li><li>input schema is a bare passthrough (q) — consistent with forwarding to an upstream API</li><li>$0.2500/call ≈ 50.0× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://the-stall.intuitek.ai/cap/youtube-intel</div>
+    <div class="ep-meta"> — YouTube video intelligence: title, author, channel stats (subscriber count, channel ID), description, view/like/comment counts, duration, upload date, thumbnail, tags, categories, …</div>
+    <div class="ep-meta mono">pays to 0x03d7…584c on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0390</td>
+  <td class="num">84<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 60/100</span><div style="margin-top:.3rem"><span class="pill ok">live 402 confirmed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on the-stall.intuitek.ai, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li><li>'powered by' upstream-provider phrasing: &quot;Powered by&quot;</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/apidojo/youtube-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;🏯 Youtube Scraper (Pay Per Result)&quot; Apify actor (apidojo/youtube-scraper). Experience unparalleled efficiency and depth with its ultra-fast capabilities in searching, U…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data, Apify (via &quot;youtube&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/streamers/youtube-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;YouTube Scraper&quot; Apify actor (streamers/youtube-scraper). YouTube crawler and video scraper. Alternative YouTube API with no limits or quotas. Extract and download chann…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data, Apify (via &quot;youtube&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/streamers/youtube-comments-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;YouTube Comments Scraper&quot; Apify actor (streamers/youtube-comments-scraper). This alternative YouTube Data API has no limits or quotas. Extract YouTube comments data from…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data, Apify (via &quot;youtube&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/pintostudio/youtube-transcript-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;Youtube Transcript Scraper&quot; Apify actor (pintostudio/youtube-transcript-scraper). Looking for a reliable way to extract transcripts from YouTube videos? 🎥✨ Look no furt…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data, Apify (via &quot;youtube&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://tinkrr-api.tinkrr.workers.dev/video/transcript</div>
+    <div class="ep-meta">Tinkrr API — YouTube video transcript, key points, chapters, and summary</div>
+    <div class="ep-meta mono">pays to 0xc3d6…4f0C on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0300</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 57/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in description) but is hosted on tinkrr-api.tinkrr.workers.dev, not the brand's domain</li><li>input schema is a bare passthrough (url) — consistent with forwarding to an upstream API</li><li>hosted on generic infrastructure (workers.dev) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.getanyapi.com/v1/run/youtube.search</div>
+    <div class="ep-meta"> — AnyAPI youtube.search (YouTube Search)</div>
+    <div class="ep-meta mono">pays to 0x754B…ef13 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0020</td>
+  <td class="num">12<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 55/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on api.getanyapi.com, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li><li>input schema is a bare passthrough (query) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.hookfindr.com/api/x402/transcribe</div>
+    <div class="ep-meta"> — Transcribe video to text with word timestamps — TikTok, YouTube, Instagram, X, Twitch. Uses native platform captions when available (~2s) and falls back to Whisper-large-v3-turbo o…</div>
+    <div class="ep-meta mono">pays to 0xaE0f…21ba on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0500</td>
+  <td class="num">5<div class="ep-meta">3 payers</div></td>
+  <td class="center"><span class="pill med">medium · 55/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Instagram, TikTok, YouTube Data (via &quot;instagram&quot; in description) but is hosted on api.hookfindr.com, not the brand's domain</li><li>input schema is a bare passthrough (url) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.getanyapi.com/v1/run/youtube.video</div>
+    <div class="ep-meta"> — AnyAPI youtube.video (YouTube Video)</div>
+    <div class="ep-meta mono">pays to 0x754B…ef13 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0020</td>
+  <td class="num">2<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 55/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on api.getanyapi.com, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li><li>input schema is a bare passthrough (url) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.kadec0.xyz/v1/youtube</div>
+    <div class="ep-meta">YouTube Metadata &amp; Transcript — YouTube video metadata + best-effort transcript (keyless). params: video_id|url</div>
+    <div class="ep-meta mono">pays to 0x4df6…cDeA on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0300</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 55/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on api.kadec0.xyz, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li><li>input schema is a bare passthrough (url) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.getanyapi.com/v1/run/youtube.video_transcript</div>
+    <div class="ep-meta"> — AnyAPI youtube.video_transcript (YouTube Video Transcript)</div>
+    <div class="ep-meta mono">pays to 0x754B…ef13 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0020</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 55/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on api.getanyapi.com, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li><li>input schema is a bare passthrough (url) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/social/outcome/profile</div>
+    <div class="ep-meta">GEDX402 Social — Social profile ingest via SociaVault on social.gedx402.com — POST { platform, handle? | user_id? | url? | channelId? | subreddit? } or GET ?platform=&amp;handle=. Platforms: tiktok, in…</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">19<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Reddit, LinkedIn, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in description) but is hosted on social.gedx402.com, not the brand's domain</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/social/outcome/posts</div>
+    <div class="ep-meta">GEDX402 Social — Recent posts/videos ingest via SociaVault — POST { platform, handle?, cursor? }. Returns platform-native posts feed with pagination cursor when available. x402 settlement USDC per …</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">16<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>$0.0140/call ≈ 2.8× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://social.gedx402.com/v1/social/outcome/transcript</div>
+    <div class="ep-meta">GEDX402 Social — Video/post transcript via SociaVault — POST { platform, url, ai_fallback? }. tiktok, instagram, youtube, facebook supported. ai_fallback uses 10 upstream credits. x402 settlement $…</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0200</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Instagram, TikTok, YouTube Data (via &quot;twitter&quot; in tags) but is hosted on social.gedx402.com, not the brand's domain</li><li>$0.0200/call ≈ 4.0× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.interzoid.com/getxuserprofile</div>
+    <div class="ep-meta"> — Retrieve a comprehensive profile snapshot for an X (Twitter) handle including display name, bio description, follower and following counts, total post count, website URL, location,…</div>
+    <div class="ep-meta mono">pays to 0xdCEc…7566 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0500</td>
+  <td class="num">4<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, YouTube Data (via &quot;twitter&quot; in description) but is hosted on api.interzoid.com, not the brand's domain</li><li>$0.0500/call ≈ 10.0× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-deployer.x402-deployer.workers.dev/audio-loudnorm</div>
+    <div class="ep-meta"> — Audio loudness normalizer (EBU R128 LUFS). Podcast / Spotify / YouTube target presets (-23 / -16 / -14). Two-pass dynamic mode. Returns hosted MP3.</div>
+    <div class="ep-meta mono">pays to 0x6c07…5621 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0200</td>
+  <td class="num">7<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill ">low · 47/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in description) but is hosted on x402-deployer.x402-deployer.workers.dev, not the brand's domain</li><li>hosted on generic infrastructure (workers.dev) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://pitchiq-mcp-production.up.railway.app/x402/search-creators</div>
+    <div class="ep-meta"> — Search PitchIQ's global Twitch/YouTube creator index by name, category, language, audience size, and whether they accept review keys — for an agent seeking creators to cover a game…</div>
+    <div class="ep-meta mono">pays to 0x9185…87b0 on base · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">3<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill ">low · 47/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in description) but is hosted on pitchiq-mcp-production.up.railway.app, not the brand's domain</li><li>hosted on generic infrastructure (railway.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://tinkrr-api.tinkrr.workers.dev/video/script</div>
+    <div class="ep-meta">Tinkrr API — Generate a complete YouTube video script from a topic with hook, timed sections, and visual directions</div>
+    <div class="ep-meta mono">pays to 0xc3d6…4f0C on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0500</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 47/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in description) but is hosted on tinkrr-api.tinkrr.workers.dev, not the brand's domain</li><li>hosted on generic infrastructure (workers.dev) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-paid-endpoint.selfradiance.workers.dev/artifact/vq00.json</div>
+    <div class="ep-meta">Zion Skank License — One machine-readable Zion Skank creative license artifact sold for $1 USDC on Base mainnet.</div>
+    <div class="ep-meta mono">pays to 0x1554…eed7 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$1.00</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 47/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in schema) but is hosted on x402-paid-endpoint.selfradiance.workers.dev, not the brand's domain</li><li>hosted on generic infrastructure (workers.dev) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://tinkrr-api.tinkrr.workers.dev/video/compete</div>
+    <div class="ep-meta">Tinkrr API — Compare 2-3 YouTube videos: virality scores, strengths, what to steal, content gap opportunity</div>
+    <div class="ep-meta mono">pays to 0xc3d6…4f0C on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.35</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 47/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in description) but is hosted on tinkrr-api.tinkrr.workers.dev, not the brand's domain</li><li>hosted on generic infrastructure (workers.dev) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://tinkrr-api.tinkrr.workers.dev/video/trend</div>
+    <div class="ep-meta">Tinkrr API — What is trending on YouTube in a niche right now: topics, formats, hooks, content opportunity</div>
+    <div class="ep-meta mono">pays to 0xc3d6…4f0C on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.20</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 47/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in description) but is hosted on tinkrr-api.tinkrr.workers.dev, not the brand's domain</li><li>hosted on generic infrastructure (workers.dev) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.influship.com/v1/raw/youtube/:var1</div>
+    <div class="ep-meta"> — Live YouTube scraping</div>
+    <div class="ep-meta mono">pays to 0x6d02…df89 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0600</td>
+  <td class="num">58<div class="ep-meta">8 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill ok">live 402 confirmed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on api.influship.com, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.gmfarcaster.com/v1/query</div>
+    <div class="ep-meta"> — Ask a natural-language question and get a cited answer from the GM Farcaster library — hundreds of episodes of Farcaster news, interviews, and analysis. Returns a grounded answer p…</div>
+    <div class="ep-meta mono">pays to 0x2fC5…c166 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0050</td>
+  <td class="num">21<div class="ep-meta">4 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in schema) but is hosted on api.gmfarcaster.com, not the brand's domain</li><li>input schema is a bare passthrough (query) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stablesocial.dev/api/sc/youtube/channel</div>
+    <div class="ep-meta"> — Scrape Creators · YouTube — Channel Details</div>
+    <div class="ep-meta mono">pays to 0xCfA2…4dbE on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0600</td>
+  <td class="num">13<div class="ep-meta">6 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on stablesocial.dev, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.getanyapi.com/v1/run/youtube.channel_videos</div>
+    <div class="ep-meta"> — AnyAPI youtube.channel_videos (YouTube Channel Videos)</div>
+    <div class="ep-meta mono">pays to 0x754B…ef13 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0020</td>
+  <td class="num">8<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on api.getanyapi.com, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stablesocial.dev/api/sc/youtube/channel-videos</div>
+    <div class="ep-meta"> — Scrape Creators · YouTube — Channel Videos</div>
+    <div class="ep-meta mono">pays to 0xCfA2…4dbE on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0600</td>
+  <td class="num">7<div class="ep-meta">3 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on stablesocial.dev, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stablesocial.dev/api/sc/youtube/shorts/trending</div>
+    <div class="ep-meta"> — Scrape Creators · YouTube — Trending Shorts</div>
+    <div class="ep-meta mono">pays to 0xCfA2…4dbE on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0600</td>
+  <td class="num">5<div class="ep-meta">3 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on stablesocial.dev, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://hirescrape.com/api/tools/youtube</div>
+    <div class="ep-meta"> — YouTube videos, channels, and comments — 10 modes.</div>
+    <div class="ep-meta mono">pays to 0xb519…826A on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0022</td>
+  <td class="num">3<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on hirescrape.com, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.strale.io/x402/social-profile-check</div>
+    <div class="ep-meta"> — Check username availability across 7 platforms: GitHub, YouTube, TikTok, Reddit, Pinterest, npm, PyPI.</div>
+    <div class="ep-meta mono">pays to 0x66D7…83bC on base · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">3<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Reddit, TikTok, YouTube Data (via &quot;reddit&quot; in description) but is hosted on api.strale.io, not the brand's domain</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.getanyapi.com/v1/run/youtube.playlist</div>
+    <div class="ep-meta"> — AnyAPI youtube.playlist (YouTube Playlist)</div>
+    <div class="ep-meta mono">pays to 0x754B…ef13 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0020</td>
+  <td class="num">3<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on api.getanyapi.com, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.getanyapi.com/v1/run/youtube.channel</div>
+    <div class="ep-meta"> — AnyAPI youtube.channel (YouTube Channel)</div>
+    <div class="ep-meta mono">pays to 0x754B…ef13 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0020</td>
+  <td class="num">2<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on api.getanyapi.com, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stablesocial.dev/api/sc/youtube/channel/community-posts</div>
+    <div class="ep-meta"> — Scrape Creators · YouTube — Channel Community Posts</div>
+    <div class="ep-meta mono">pays to 0xCfA2…4dbE on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0600</td>
+  <td class="num">2<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on stablesocial.dev, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stablesocial.dev/api/sc/youtube/channel/shorts</div>
+    <div class="ep-meta"> — Scrape Creators · YouTube — Channel Shorts</div>
+    <div class="ep-meta mono">pays to 0xCfA2…4dbE on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0600</td>
+  <td class="num">2<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on stablesocial.dev, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stablesocial.dev/api/sc/youtube/channel/playlists</div>
+    <div class="ep-meta"> — Scrape Creators · YouTube — Channel Playlists</div>
+    <div class="ep-meta mono">pays to 0xCfA2…4dbE on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0600</td>
+  <td class="num">2<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on stablesocial.dev, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stablesocial.dev/api/sc/youtube/channel/lives</div>
+    <div class="ep-meta"> — Scrape Creators · YouTube — Channel Lives</div>
+    <div class="ep-meta mono">pays to 0xCfA2…4dbE on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0600</td>
+  <td class="num">2<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on stablesocial.dev, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://researcher.now/v1/x402/analyze</div>
+    <div class="ep-meta"> — Analyze one URL — an article, a YouTube/X video, or a podcast episode — and receive a cited summary + extracted claims. POST a JSON body { url }. Variable price per request (media …</div>
+    <div class="ep-meta mono">pays to 0x45A4…7D96 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$1.00</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in description) but is hosted on researcher.now, not the brand's domain</li><li>input schema is a bare passthrough (url) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.getanyapi.com/v1/run/youtube.channel_playlists</div>
+    <div class="ep-meta"> — AnyAPI youtube.channel_playlists (YouTube Channel Playlists)</div>
+    <div class="ep-meta mono">pays to 0x754B…ef13 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0020</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on api.getanyapi.com, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://orbisapi.com/proxy/youtube-title-optimizer-api-c8efc8/:endpoint</div>
+    <div class="ep-meta">YouTube Title Optimizer API — Score, grade, and optimize YouTube titles for CTR and discoverability</div>
+    <div class="ep-meta mono">pays to 0x2bb7…ac6d on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0070</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on orbisapi.com, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://orbisapi.com/proxy/youtube-metadata-api-43b4d7/:endpoint</div>
+    <div class="ep-meta">YouTube Metadata API — Extract YouTube video metadata, channel analytics, and transcripts</div>
+    <div class="ep-meta mono">pays to 0x2bb7…ac6d on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on orbisapi.com, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://orbisapi.com/proxy/youtube-intelligence-api-8907c0/:endpoint</div>
+    <div class="ep-meta">YouTube Intelligence API — Agent-ready YouTube video and channel intelligence</div>
+    <div class="ep-meta mono">pays to 0x2bb7…ac6d on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0040</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on orbisapi.com, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.influship.com/v1/raw/youtube/transcript/7H13rTXdPR4</div>
+    <div class="ep-meta"> — Live YouTube scraping</div>
+    <div class="ep-meta mono">pays to 0x6d02…df89 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on api.influship.com, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.influship.com/v1/raw/youtube/transcript/hM1wer1pd24</div>
+    <div class="ep-meta"> — Live YouTube scraping</div>
+    <div class="ep-meta mono">pays to 0x6d02…df89 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on api.influship.com, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.influship.com/v1/raw/youtube/transcript/0PHUk7Ov7C0</div>
+    <div class="ep-meta"> — Live YouTube scraping</div>
+    <div class="ep-meta mono">pays to 0x6d02…df89 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on api.influship.com, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.influship.com/v1/raw/youtube/transcript/RfSwSX7X9UA</div>
+    <div class="ep-meta"> — Live YouTube scraping</div>
+    <div class="ep-meta mono">pays to 0x6d02…df89 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on api.influship.com, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.influship.com/v1/raw/youtube/channel/TheKingsHand1</div>
+    <div class="ep-meta"> — Live YouTube scraping</div>
+    <div class="ep-meta mono">pays to 0x6d02…df89 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on api.influship.com, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.influship.com/v1/raw/youtube/transcript/jNQXAC9IVRw</div>
+    <div class="ep-meta"> — Live YouTube scraping</div>
+    <div class="ep-meta mono">pays to 0x6d02…df89 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on api.influship.com, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.influship.com/v1/raw/youtube/channel-transcripts/MrBeast</div>
+    <div class="ep-meta"> — Live YouTube scraping</div>
+    <div class="ep-meta mono">pays to 0x6d02…df89 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0300</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on api.influship.com, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.influship.com/v1/raw/youtube/transcript/7otgeJXailY</div>
+    <div class="ep-meta"> — Live YouTube scraping</div>
+    <div class="ep-meta mono">pays to 0x6d02…df89 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on api.influship.com, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.influship.com/v1/raw/youtube/transcript/kwEtOyaFhCA</div>
+    <div class="ep-meta"> — Live YouTube scraping</div>
+    <div class="ep-meta mono">pays to 0x6d02…df89 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on api.influship.com, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.influship.com/v1/raw/youtube/transcript/opB7_JXL0LA</div>
+    <div class="ep-meta"> — Live YouTube scraping</div>
+    <div class="ep-meta mono">pays to 0x6d02…df89 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on api.influship.com, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.influship.com/v1/raw/youtube/transcript/zc8Nh4TMB1s</div>
+    <div class="ep-meta"> — Live YouTube scraping</div>
+    <div class="ep-meta mono">pays to 0x6d02…df89 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on api.influship.com, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.influship.com/v1/raw/youtube/transcript/qel8Fyt78fk</div>
+    <div class="ep-meta"> — Live YouTube scraping</div>
+    <div class="ep-meta mono">pays to 0x6d02…df89 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on api.influship.com, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.influship.com/v1/raw/youtube/transcript/jLFG_FZKbks</div>
+    <div class="ep-meta"> — Live YouTube scraping</div>
+    <div class="ep-meta mono">pays to 0x6d02…df89 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on api.influship.com, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.influship.com/v1/raw/youtube/transcript/PnpHwhTWw0c</div>
+    <div class="ep-meta"> — Live YouTube scraping</div>
+    <div class="ep-meta mono">pays to 0x6d02…df89 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on api.influship.com, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.influship.com/v1/raw/youtube/transcript/NdU6UdUKaYc</div>
+    <div class="ep-meta"> — Live YouTube scraping</div>
+    <div class="ep-meta mono">pays to 0x6d02…df89 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on api.influship.com, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.influship.com/v1/raw/youtube/transcript/H-8NrKFQKhU</div>
+    <div class="ep-meta"> — Live YouTube scraping</div>
+    <div class="ep-meta mono">pays to 0x6d02…df89 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on api.influship.com, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.influship.com/v1/raw/youtube/transcript/BTJGr78-zyw</div>
+    <div class="ep-meta"> — Live YouTube scraping</div>
+    <div class="ep-meta mono">pays to 0x6d02…df89 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on api.influship.com, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.influship.com/v1/raw/youtube/transcript/yXe7RVoRK7U</div>
+    <div class="ep-meta"> — Live YouTube scraping</div>
+    <div class="ep-meta mono">pays to 0x6d02…df89 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on api.influship.com, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.influship.com/v1/raw/youtube/channel/MrBeast</div>
+    <div class="ep-meta"> — Live YouTube scraping</div>
+    <div class="ep-meta mono">pays to 0x6d02…df89 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on api.influship.com, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.influship.com/v1/raw/youtube/transcript/dQw4w9WgXcQ</div>
+    <div class="ep-meta"> — Live YouTube scraping</div>
+    <div class="ep-meta mono">pays to 0x6d02…df89 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on api.influship.com, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.influship.com/v1/raw/youtube/channel-transcripts/HubSpotMarketing</div>
+    <div class="ep-meta"> — Live YouTube scraping</div>
+    <div class="ep-meta mono">pays to 0x6d02…df89 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0300</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on api.influship.com, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.influship.com/v1/raw/youtube/transcript/V-z0k5xu1hM</div>
+    <div class="ep-meta"> — Live YouTube scraping</div>
+    <div class="ep-meta mono">pays to 0x6d02…df89 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data (via &quot;youtube&quot; in url) but is hosted on api.influship.com, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li></ul></td>
+</tr></tbody>
+</table></div>
+
+<p class="note"><b>Framing note:</b> every row above is a statistical signature match, published so that YouTube Data's own team — the only party who can actually verify authorization — can review it. Nothing on this page asserts that any listed operator is acting unlawfully or in breach of any agreement.</p>
+<footer class="site">
+  <nav>
+    <a href="https://provenance.q3epzs69b902a.us-west-2.cs.amazonlightsail.com">Live Provenance API</a>
+    <a href="https://www.npmjs.com/package/provenance-mcp">provenance-mcp (npm)</a>
+    <a href="https://www.npmjs.com/package/provenance-guard">provenance-guard (npm)</a>
+    <a href="https://github.com/apeirontrade/provenance-site">GitHub</a>
+    <a href="../methodology.html">Methodology</a>
+    <a href="../data/index.html">Open data (CC-BY-4.0)</a>
+    <a href="https://github.com/apeirontrade/provenance-site/issues">Disputes &amp; corrections</a>
+  </nav>
+  <div>All figures are statistical estimates derived from public on-chain payment data and public x402 discovery registries. Nothing here asserts fraud or contract breach by any named party — see the <a href="../methodology.html">methodology and disclaimer</a>. Data is CC-BY-4.0; cite Provenance.</div>
+  <div>Provenance · independent trust ratings for machine-payable (x402) API endpoints · generated 2026-07-06</div>
+</footer>
+</div></body></html>

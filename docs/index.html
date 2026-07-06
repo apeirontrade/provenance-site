@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The x402 Trust Index by Provenance — wash-trading grades &amp; API reseller audits</title>
+<meta name="description" content="On-chain trust ratings for x402 endpoints: wash-trading grades for the top 24 Coinbase Bazaar merchants (week of 2026-06-29) and 1,097 suspected unauthorized API-reseller endpoints across 38 brands. Open data, CC-BY-4.0.">
+<link rel="canonical" href="https://apeirontrade.github.io/provenance-site/">
+<meta property="og:title" content="The x402 Trust Index by Provenance — wash-trading grades &amp; API reseller audits">
+<meta property="og:description" content="On-chain trust ratings for x402 endpoints: wash-trading grades for the top 24 Coinbase Bazaar merchants (week of 2026-06-29) and 1,097 suspected unauthorized API-reseller endpoints across 38 brands. Open data, CC-BY-4.0.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://apeirontrade.github.io/provenance-site/">
+<meta name="robots" content="index,follow">
+<style>
+  :root{color-scheme:light dark;
+    --bg:#0d1117;--panel:#161b22;--border:#30363d;--fg:#e6edf3;--dim:#8b949e;--accent:#58a6ff;--accent2:#d2a8ff;}
+  @media (prefers-color-scheme: light){:root{--bg:#f6f8fa;--panel:#ffffff;--border:#d0d7de;--fg:#1f2328;--dim:#57606a;--accent:#0969da;--accent2:#8250df;}}
+  *{box-sizing:border-box;margin:0}
+  body{background:var(--bg);color:var(--fg);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;padding:2.2rem 1rem 4rem}
+  .wrap{max-width:1080px;margin:0 auto}
+  header.site{margin-bottom:1.6rem}
+  .crumb{font-size:.82rem;color:var(--dim);margin-bottom:1rem}
+  .crumb a{color:var(--dim)}
+  h1{font-size:1.65rem;letter-spacing:-.01em;line-height:1.25}
+  h2{font-size:1.15rem;margin:2.2rem 0 .8rem}
+  h3{font-size:1rem;margin:1.6rem 0 .6rem}
+  .sub{color:var(--dim);margin:.5rem 0 1.4rem;max-width:62rem}
+  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.8rem;margin:1.4rem 0 1.8rem}
+  .tile{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:.85rem 1rem}
+  .tile b{display:block;font-size:1.4rem;font-weight:600}
+  .tile span{color:var(--dim);font-size:.8rem}
+  .tblwrap{overflow-x:auto;border:1px solid var(--border);border-radius:8px;background:var(--panel);margin:.6rem 0 1rem}
+  table{border-collapse:collapse;width:100%;font-size:.9rem}
+  th{color:var(--dim);font-weight:600;font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;text-align:left;padding:.65rem .8rem;border-bottom:1px solid var(--border);white-space:nowrap}
+  td{padding:.6rem .8rem;border-bottom:1px solid var(--border);vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82rem}
+  .dim{color:var(--dim)}
+  .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .center{text-align:center}
+  .ep-name{font-weight:600;overflow-wrap:anywhere}
+  .ep-meta{color:var(--dim);font-size:.76rem;margin-top:.15rem;overflow-wrap:anywhere}
+  .grade{display:inline-block;border:1px solid;border-radius:6px;padding:.05rem .55rem;font-weight:700;font-size:.98rem;white-space:nowrap}
+  .infl-pos{color:#f85149;font-weight:700;font-variant-numeric:tabular-nums}
+  .infl-neg{color:#3fb950;font-weight:600;font-variant-numeric:tabular-nums}
+  .infl-zero{color:var(--dim)}
+  .ind{font-size:.82rem;color:var(--dim);max-width:300px}
+  .pill{display:inline-block;border:1px solid var(--border);border-radius:99px;padding:.02rem .55rem;font-size:.74rem;color:var(--dim);white-space:nowrap}
+  .pill.ok{color:#3fb950;border-color:#3fb95055}
+  .pill.hi{color:#f0883e;border-color:#f0883e55}
+  .pill.med{color:#d29922;border-color:#d2992255}
+  .note,.callout{color:var(--dim);font-size:.84rem;margin:1.1rem 0;line-height:1.6;max-width:62rem}
+  .callout{background:var(--panel);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:6px;padding:.8rem 1rem;color:var(--fg)}
+  .callout.warn{border-left-color:#d29922}
+  ul.ev{margin:.2rem 0 .2rem 1rem;padding:0;font-size:.82rem;color:var(--dim)}
+  ul.ev li{margin:.15rem 0}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85em;background:var(--panel);border:1px solid var(--border);border-radius:4px;padding:.05em .3em}
+  .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.8rem;margin:1rem 0}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:1rem}
+  .card h3{margin:0 0 .4rem;font-size:.95rem}
+  .card p{font-size:.83rem;color:var(--dim)}
+  .brandlist{columns:3;column-gap:1.5rem;font-size:.9rem}
+  @media(max-width:800px){.brandlist{columns:2}}
+  @media(max-width:520px){.brandlist{columns:1}}
+  .brandlist li{margin:.25rem 0;break-inside:avoid}
+  footer.site{border-top:1px solid var(--border);margin-top:3rem;padding-top:1.1rem;color:var(--dim);font-size:.82rem;line-height:1.7}
+  footer.site nav{margin-bottom:.4rem}
+  footer.site nav a{margin-right:1.1rem}
+  dl.kv{display:grid;grid-template-columns:max-content 1fr;gap:.35rem 1.2rem;font-size:.9rem;margin:.8rem 0}
+  dl.kv dt{color:var(--dim)}
+  dl.kv dd{overflow-wrap:anywhere}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://apeirontrade.github.io/provenance-site/#org","name":"Provenance","url":"https://apeirontrade.github.io/provenance-site/","description":"Independent trust ratings for x402 machine-payable API endpoints, derived from public on-chain payment data and public discovery registries.","sameAs":["https://www.npmjs.com/package/provenance-mcp","https://www.npmjs.com/package/provenance-guard","https://github.com/apeirontrade/provenance-mcp","https://github.com/apeirontrade/provenance-guard"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"Bazaar Wash Report — week of 2026-06-29","description":"Organic-revenue-quality grades for the top 24 Coinbase x402 Bazaar merchants on Base, computed from public on-chain USDC transfers. Includes wash-risk scores, wash-rank inflation, and per-endpoint indicators.","url":"https://apeirontrade.github.io/provenance-site/","license":"https://creativecommons.org/licenses/by/4.0/","creator":{"@id":"https://apeirontrade.github.io/provenance-site/#org"},"temporalCoverage":"2026-06-29/2026-07-05","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://apeirontrade.github.io/provenance-site/data/wash-report-2026-06-29.json"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"Wrapper Watch — x402 resale-authorization scan","description":"Per-brand aggregates of 1,097 x402 endpoints (of 23,376 scanned) exhibiting statistical reseller signatures against 44 first-party API brands. Suspected unauthorized resale — verification recommended.","url":"https://apeirontrade.github.io/provenance-site/","license":"https://creativecommons.org/licenses/by/4.0/","creator":{"@id":"https://apeirontrade.github.io/provenance-site/#org"},"distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://apeirontrade.github.io/provenance-site/data/wrapper-watch-summary.json"}]}</script>
+</head><body><div class="wrap">
+<div class="crumb"><a href="./index.html">Provenance x402 Trust Index</a> &middot; <a href="./methodology.html">Methodology</a> &middot; <a href="./data/index.html">Open data</a></div>
+
+<header class="site">
+<h1>The x402 Trust Index <span class="dim">by Provenance</span></h1>
+<p class="sub">Independent, on-chain-verified trust ratings for machine-payable (x402) API endpoints — which paid-API traffic is organic, and which endpoints resell someone else's data. Built from public data; published as open data so agents, answer engines, and API-trust teams can check before they pay.</p>
+</header>
+
+<div class="tiles">
+  <div class="tile"><b>23,338</b><span>Bazaar listings scanned</span></div>
+  <div class="tile"><b>24</b><span>top merchants scored on-chain</span></div>
+  <div class="tile"><b>4/24</b><span>graded C or worse (+2 not verifiable)</span></div>
+  <div class="tile"><b>24%</b><span>of top-tier claimed volume estimated non-organic</span></div>
+  <div class="tile"><b>1,097</b><span>endpoints with reseller signatures (38 brands)</span></div>
+</div>
+
+<h2 id="wash-report">This week's Bazaar Wash Report — week of 2026-06-29</h2>
+<p class="note">The top 24 Coinbase x402 Bazaar merchants on Base, graded on <b>organic revenue quality</b> and ranked by <b>wash-rank inflation</b>: how many leaderboard positions raw claimed volume buys beyond what organic-adjusted volume supports. Bazaar ranks by volume and recency with no fraud filtering; this table quantifies the gap. Click an endpoint for its full scorecard.</p>
+<div class="tblwrap"><table>
+<thead><tr><th>Bazaar rank</th><th>Endpoint</th><th>Bazaar 30d calls</th><th>Organic-adjusted</th><th>Wash grade</th><th>Wash-rank inflation</th><th>Top indicator</th></tr></thead>
+<tbody><tr>
+  <td class="mono dim">#6</td>
+  <td><div class="ep-name"><a href="endpoints/x402.tavily.com.html">x402.tavily.com</a></div><div class="ep-meta mono">0xb1c5…d179 · x402.tavily.com</div></td>
+  <td class="num">6,782<div class="ep-meta">rank #6</div></td>
+  <td class="num">3,730<div class="ep-meta">rank #10</div></td>
+  <td class="center"><span class="grade" style="color:#8b949e;border-color:#8b949e55">n/v</span><div class="ep-meta">not verifiable</div></td>
+  <td class="center"><span class="infl-pos">+4</span></td>
+  <td class="ind">insufficient on-chain visibility (batch settlement possible)</td>
+</tr>
+<tr>
+  <td class="mono dim">#2</td>
+  <td><div class="ep-name"><a href="endpoints/agents.chain.link.html">agents.chain.link</a></div><div class="ep-meta mono">0x158e…3d00 · agents.chain.link</div></td>
+  <td class="num">22,087<div class="ep-meta">rank #2</div></td>
+  <td class="num">8,835<div class="ep-meta">rank #4</div></td>
+  <td class="center"><span class="grade" style="color:#8b949e;border-color:#8b949e55">n/v</span><div class="ep-meta">not verifiable</div></td>
+  <td class="center"><span class="infl-pos">+2</span></td>
+  <td class="ind">insufficient on-chain visibility (batch settlement possible)</td>
+</tr>
+<tr>
+  <td class="mono dim">#20</td>
+  <td><div class="ep-name"><a href="endpoints/www.stratalize.com.html">Stratalize</a></div><div class="ep-meta mono">0x5d51…d60d · www.stratalize.com</div></td>
+  <td class="num">1,042<div class="ep-meta">rank #20</div></td>
+  <td class="num">1,000<div class="ep-meta">rank #21</div></td>
+  <td class="center"><span class="grade" style="color:#3fb950;border-color:#3fb95055">A</span><div class="ep-meta">4/100 low</div></td>
+  <td class="center"><span class="infl-pos">+1</span></td>
+  <td class="ind">top cluster holds 44% of revenue (HHI 0.26)</td>
+</tr>
+<tr>
+  <td class="mono dim">#22</td>
+  <td><div class="ep-name"><a href="endpoints/api.dripmetrics.ai.html">api.dripmetrics.ai</a></div><div class="ep-meta mono">0xc9b7…3e6A · api.dripmetrics.ai</div></td>
+  <td class="num">992<div class="ep-meta">rank #22</div></td>
+  <td class="num">605<div class="ep-meta">rank #23</div></td>
+  <td class="center"><span class="grade" style="color:#d29922;border-color:#d2992255">C</span><div class="ep-meta">39/100 medium</div></td>
+  <td class="center"><span class="infl-pos">+1</span></td>
+  <td class="ind">top cluster holds 88% of revenue (HHI 0.79)</td>
+</tr>
+<tr>
+  <td class="mono dim">#1</td>
+  <td><div class="ep-name"><a href="endpoints/x402.twit.sh.html">x402.twit.sh</a></div><div class="ep-meta mono">0x9dBA…0df8 · x402.twit.sh</div></td>
+  <td class="num">41,146<div class="ep-meta">rank #1</div></td>
+  <td class="num">29,625<div class="ep-meta">rank #1</div></td>
+  <td class="center"><span class="grade" style="color:#d29922;border-color:#d2992255">C</span><div class="ep-meta">28/100 medium</div></td>
+  <td class="center"><span class="infl-zero">0</span></td>
+  <td class="ind">top cluster holds 93% of revenue (HHI 0.87)</td>
+</tr>
+<tr>
+  <td class="mono dim">#3</td>
+  <td><div class="ep-name"><a href="endpoints/win.oneshotagent.com.html">win.oneshotagent.com</a></div><div class="ep-meta mono">0x9fb3…1d9A · win.oneshotagent.com</div></td>
+  <td class="num">19,249<div class="ep-meta">rank #3</div></td>
+  <td class="num">11,934<div class="ep-meta">rank #3</div></td>
+  <td class="center"><span class="grade" style="color:#d29922;border-color:#d2992255">C</span><div class="ep-meta">38/100 medium</div></td>
+  <td class="center"><span class="infl-zero">0</span></td>
+  <td class="ind">3 distinct payers — self-testing, not organic demand</td>
+</tr>
+<tr>
+  <td class="mono dim">#5</td>
+  <td><div class="ep-name"><a href="endpoints/skills.onesource.io.html">api.onesource.io</a></div><div class="ep-meta mono">0x52E2…f3ea · skills.onesource.io</div></td>
+  <td class="num">8,643<div class="ep-meta">rank #5</div></td>
+  <td class="num">8,643<div class="ep-meta">rank #5</div></td>
+  <td class="center"><span class="grade" style="color:#3fb950;border-color:#3fb95055">A</span><div class="ep-meta">0/100 low</div></td>
+  <td class="center"><span class="infl-zero">0</span></td>
+  <td class="ind">none observed</td>
+</tr>
+<tr>
+  <td class="mono dim">#7</td>
+  <td><div class="ep-name"><a href="endpoints/blockrun.ai-058a59.html">BlockRun.AI</a></div><div class="ep-meta mono">0x058a…8F17 · blockrun.ai</div></td>
+  <td class="num">6,041<div class="ep-meta">rank #7</div></td>
+  <td class="num">5,618<div class="ep-meta">rank #7</div></td>
+  <td class="center"><span class="grade" style="color:#3fb950;border-color:#3fb95055">A</span><div class="ep-meta">7/100 low</div></td>
+  <td class="center"><span class="infl-zero">0</span></td>
+  <td class="ind">top cluster holds 63% of revenue (HHI 0.44)</td>
+</tr>
+<tr>
+  <td class="mono dim">#11</td>
+  <td><div class="ep-name"><a href="endpoints/blockrun.ai-6e0077.html">BlockRun.AI</a></div><div class="ep-meta mono">0x6E00…b04c · blockrun.ai</div></td>
+  <td class="num">3,941<div class="ep-meta">rank #11</div></td>
+  <td class="num">3,705<div class="ep-meta">rank #11</div></td>
+  <td class="center"><span class="grade" style="color:#3fb950;border-color:#3fb95055">A</span><div class="ep-meta">6/100 low</div></td>
+  <td class="center"><span class="infl-zero">0</span></td>
+  <td class="ind">top cluster holds 61% of revenue (HHI 0.38)</td>
+</tr>
+<tr>
+  <td class="mono dim">#12</td>
+  <td><div class="ep-name"><a href="endpoints/api.exa.ai.html">Exa</a></div><div class="ep-meta mono">0x6d6E…9192 · api.exa.ai</div></td>
+  <td class="num">3,790<div class="ep-meta">rank #12</div></td>
+  <td class="num">3,638<div class="ep-meta">rank #12</div></td>
+  <td class="center"><span class="grade" style="color:#3fb950;border-color:#3fb95055">A</span><div class="ep-meta">4/100 low</div></td>
+  <td class="center"><span class="infl-zero">0</span></td>
+  <td class="ind">top cluster holds 52% of revenue (HHI 0.30)</td>
+</tr>
+<tr>
+  <td class="mono dim">#13</td>
+  <td><div class="ep-name"><a href="endpoints/2s.io.html">2s</a></div><div class="ep-meta mono">0x2b6D…32C5 · 2s.io</div></td>
+  <td class="num">2,989<div class="ep-meta">rank #13</div></td>
+  <td class="num">2,690<div class="ep-meta">rank #13</div></td>
+  <td class="center"><span class="grade" style="color:#8bc34a;border-color:#8bc34a55">B</span><div class="ep-meta">10/100 low</div></td>
+  <td class="center"><span class="infl-zero">0</span></td>
+  <td class="ind">timing CV 4.11, 62% identical-interval gaps</td>
+</tr>
+<tr>
+  <td class="mono dim">#14</td>
+  <td><div class="ep-name"><a href="endpoints/api.nansen.ai.html">Nansen</a></div><div class="ep-meta mono">0x9305…F13f · api.nansen.ai</div></td>
+  <td class="num">2,635<div class="ep-meta">rank #14</div></td>
+  <td class="num">2,266<div class="ep-meta">rank #14</div></td>
+  <td class="center"><span class="grade" style="color:#8bc34a;border-color:#8bc34a55">B</span><div class="ep-meta">14/100 low</div></td>
+  <td class="center"><span class="infl-zero">0</span></td>
+  <td class="ind">top cluster holds 86% of revenue (HHI 0.74)</td>
+</tr>
+<tr>
+  <td class="mono dim">#15</td>
+  <td><div class="ep-name"><a href="endpoints/api.myceliasignal.com.html">api.myceliasignal.com</a></div><div class="ep-meta mono">0xD593…700d · api.myceliasignal.com</div></td>
+  <td class="num">2,025<div class="ep-meta">rank #15</div></td>
+  <td class="num">1,843<div class="ep-meta">rank #15</div></td>
+  <td class="center"><span class="grade" style="color:#3fb950;border-color:#3fb95055">A</span><div class="ep-meta">9/100 low</div></td>
+  <td class="center"><span class="infl-zero">0</span></td>
+  <td class="ind">top cluster holds 68% of revenue (HHI 0.50)</td>
+</tr>
+<tr>
+  <td class="mono dim">#16</td>
+  <td><div class="ep-name"><a href="endpoints/x402.ottoai.services-5bb4b0.html">Otto AI</a></div><div class="ep-meta mono">0x5bB4…9F68 · x402.ottoai.services</div></td>
+  <td class="num">1,833<div class="ep-meta">rank #16</div></td>
+  <td class="num">1,778<div class="ep-meta">rank #16</div></td>
+  <td class="center"><span class="grade" style="color:#3fb950;border-color:#3fb95055">A</span><div class="ep-meta">3/100 low</div></td>
+  <td class="center"><span class="infl-zero">0</span></td>
+  <td class="ind">top cluster holds 33% of revenue (HHI 0.25)</td>
+</tr>
+<tr>
+  <td class="mono dim">#17</td>
+  <td><div class="ep-name"><a href="endpoints/mail.cusethejuice.com.html">CuseTheJuice Agent Email</a></div><div class="ep-meta mono">0xF990…DcA5 · mail.cusethejuice.com</div></td>
+  <td class="num">1,603<div class="ep-meta">rank #17</div></td>
+  <td class="num">1,603<div class="ep-meta">rank #17</div></td>
+  <td class="center"><span class="grade" style="color:#3fb950;border-color:#3fb95055">A</span><div class="ep-meta">0/100 low</div></td>
+  <td class="center"><span class="infl-zero">0</span></td>
+  <td class="ind">none observed</td>
+</tr>
+<tr>
+  <td class="mono dim">#18</td>
+  <td><div class="ep-name"><a href="endpoints/tick.hugen.tokyo.html">weather.hugen.tokyo</a></div><div class="ep-meta mono">0x2932…4f60 · tick.hugen.tokyo</div></td>
+  <td class="num">1,576<div class="ep-meta">rank #18</div></td>
+  <td class="num">1,529<div class="ep-meta">rank #18</div></td>
+  <td class="center"><span class="grade" style="color:#3fb950;border-color:#3fb95055">A</span><div class="ep-meta">3/100 low</div></td>
+  <td class="center"><span class="infl-zero">0</span></td>
+  <td class="ind">top cluster holds 46% of revenue (HHI 0.22)</td>
+</tr>
+<tr>
+  <td class="mono dim">#19</td>
+  <td><div class="ep-name"><a href="endpoints/x402stock.xyz.html">x402stock.xyz</a></div><div class="ep-meta mono">0x3070…fA85 · x402stock.xyz</div></td>
+  <td class="num">1,329<div class="ep-meta">rank #19</div></td>
+  <td class="num">1,116<div class="ep-meta">rank #19</div></td>
+  <td class="center"><span class="grade" style="color:#8bc34a;border-color:#8bc34a55">B</span><div class="ep-meta">16/100 low</div></td>
+  <td class="center"><span class="infl-zero">0</span></td>
+  <td class="ind">top cluster holds 92% of revenue (HHI 0.84)</td>
+</tr>
+<tr>
+  <td class="mono dim">#24</td>
+  <td><div class="ep-name"><a href="endpoints/api.stocktrends.com.html">Stock Trends Market Intelligence</a></div><div class="ep-meta mono">0xAEeb…00ab · api.stocktrends.com</div></td>
+  <td class="num">913<div class="ep-meta">rank #24</div></td>
+  <td class="num">530<div class="ep-meta">rank #24</div></td>
+  <td class="center"><span class="grade" style="color:#d29922;border-color:#d2992255">C</span><div class="ep-meta">42/100 medium</div></td>
+  <td class="center"><span class="infl-zero">0</span></td>
+  <td class="ind">top cluster holds 97% of revenue (HHI 0.95)</td>
+</tr>
+<tr>
+  <td class="mono dim">#9</td>
+  <td><div class="ep-name"><a href="endpoints/agent402.tools.html">Agent402.tools</a></div><div class="ep-meta mono">0xaBF4…a9D0 · agent402.tools</div></td>
+  <td class="num">4,507<div class="ep-meta">rank #9</div></td>
+  <td class="num">4,101<div class="ep-meta">rank #8</div></td>
+  <td class="center"><span class="grade" style="color:#3fb950;border-color:#3fb95055">A</span><div class="ep-meta">9/100 low</div></td>
+  <td class="center"><span class="infl-neg">-1</span></td>
+  <td class="ind">top cluster holds 60% of revenue (HHI 0.49)</td>
+</tr>
+<tr>
+  <td class="mono dim">#10</td>
+  <td><div class="ep-name"><a href="endpoints/pulse.theaslangroupllc.com.html">ArbiPulse</a></div><div class="ep-meta mono">0x50ab…12fc · pulse.theaslangroupllc.com</div></td>
+  <td class="num">4,249<div class="ep-meta">rank #10</div></td>
+  <td class="num">3,909<div class="ep-meta">rank #9</div></td>
+  <td class="center"><span class="grade" style="color:#3fb950;border-color:#3fb95055">A</span><div class="ep-meta">8/100 low</div></td>
+  <td class="center"><span class="infl-neg">-1</span></td>
+  <td class="ind">top cluster holds 66% of revenue (HHI 0.48)</td>
+</tr>
+<tr>
+  <td class="mono dim">#21</td>
+  <td><div class="ep-name"><a href="endpoints/stabletravel.dev.html">stabletravel.dev</a></div><div class="ep-meta mono">0xDd25…2ec0 · stabletravel.dev</div></td>
+  <td class="num">1,032<div class="ep-meta">rank #21</div></td>
+  <td class="num">1,032<div class="ep-meta">rank #20</div></td>
+  <td class="center"><span class="grade" style="color:#3fb950;border-color:#3fb95055">A</span><div class="ep-meta">0/100 low</div></td>
+  <td class="center"><span class="infl-neg">-1</span></td>
+  <td class="ind">none observed</td>
+</tr>
+<tr>
+  <td class="mono dim">#23</td>
+  <td><div class="ep-name"><a href="endpoints/netintel.dev.html">netintel-production-440c.up.railway.app</a></div><div class="ep-meta mono">0xdaDc…b9Df · netintel.dev</div></td>
+  <td class="num">920<div class="ep-meta">rank #23</div></td>
+  <td class="num">920<div class="ep-meta">rank #22</div></td>
+  <td class="center"><span class="grade" style="color:#3fb950;border-color:#3fb95055">A</span><div class="ep-meta">0/100 low</div></td>
+  <td class="center"><span class="infl-neg">-1</span></td>
+  <td class="ind">none observed</td>
+</tr>
+<tr>
+  <td class="mono dim">#4</td>
+  <td><div class="ep-name"><a href="endpoints/stableenrich.dev.html">stableenrich.dev</a></div><div class="ep-meta mono">0x325b…d430 · stableenrich.dev</div></td>
+  <td class="num">16,343<div class="ep-meta">rank #4</div></td>
+  <td class="num">16,343<div class="ep-meta">rank #2</div></td>
+  <td class="center"><span class="grade" style="color:#3fb950;border-color:#3fb95055">A</span><div class="ep-meta">0/100 low</div></td>
+  <td class="center"><span class="infl-neg">-2</span></td>
+  <td class="ind">none observed</td>
+</tr>
+<tr>
+  <td class="mono dim">#8</td>
+  <td><div class="ep-name"><a href="endpoints/x402.ottoai.services-0e84dd.html">Otto AI</a></div><div class="ep-meta mono">0x0E84…b808 · x402.ottoai.services</div></td>
+  <td class="num">6,039<div class="ep-meta">rank #8</div></td>
+  <td class="num">6,039<div class="ep-meta">rank #6</div></td>
+  <td class="center"><span class="grade" style="color:#3fb950;border-color:#3fb95055">A</span><div class="ep-meta">0/100 low</div></td>
+  <td class="center"><span class="infl-neg">-2</span></td>
+  <td class="ind">none observed</td>
+</tr></tbody>
+</table></div>
+<p class="note"><b>n/v (not verifiable):</b> for some endpoints — typically ones settling through a facilitator — batch or deferred settlement means direct on-chain USDC transfers to the receiving wallet can legitimately be absent. We do not display a wash grade where the score is driven mainly by missing visibility rather than positive wash signals. Raw scores remain in the <a href="data/index.html">open data</a>.</p>
+
+<h2 id="wrapper-watch">Wrapper Watch — resale-authorization audits by brand</h2>
+<p class="note">We scanned 23,376 unique x402-paywalled endpoints across the public discovery registries (Coinbase Bazaar, GoPlausible/Algorand) for reseller signatures against 44 first-party API brands. 1,097 endpoints reference a first-party brand while hosted off that brand's domain (80 high-confidence, 700 medium); 989 showed paid activity in the last 30 days. Everything is stated as <em>suspected unauthorized resale — verification recommended</em>; a flagged endpoint may hold a legitimate redistribution license.</p>
+<ul class="brandlist"><li><a href="brands/twitter.html">X / Twitter</a> <span class="dim">— 390 suspected</span></li>
+<li><a href="brands/coingecko.html">CoinGecko</a> <span class="dim">— 127 suspected</span></li>
+<li><a href="brands/youtube.html">YouTube Data</a> <span class="dim">— 116 suspected</span></li>
+<li><a href="brands/instagram.html">Instagram</a> <span class="dim">— 97 suspected</span></li>
+<li><a href="brands/openai.html">OpenAI</a> <span class="dim">— 85 suspected</span></li>
+<li><a href="brands/tiktok.html">TikTok</a> <span class="dim">— 83 suspected</span></li>
+<li><a href="brands/anthropic.html">Anthropic</a> <span class="dim">— 80 suspected</span></li>
+<li><a href="brands/apify.html">Apify</a> <span class="dim">— 69 suspected</span></li>
+<li><a href="brands/reddit.html">Reddit</a> <span class="dim">— 62 suspected</span></li>
+<li><a href="brands/linkedin.html">LinkedIn</a> <span class="dim">— 61 suspected</span></li>
+<li><a href="brands/flightaware.html">FlightAware</a> <span class="dim">— 52 suspected</span></li>
+<li><a href="brands/exa.html">Exa</a> <span class="dim">— 33 suspected</span></li>
+<li><a href="brands/binance.html">Binance</a> <span class="dim">— 27 suspected</span></li>
+<li><a href="brands/dexscreener.html">DEX Screener</a> <span class="dim">— 24 suspected</span></li>
+<li><a href="brands/google-maps.html">Google Maps Platform</a> <span class="dim">— 23 suspected</span></li>
+<li><a href="brands/google-search.html">Google Search (SERP)</a> <span class="dim">— 21 suspected</span></li>
+<li><a href="brands/etherscan.html">Etherscan</a> <span class="dim">— 18 suspected</span></li>
+<li><a href="brands/firecrawl.html">Firecrawl</a> <span class="dim">— 17 suspected</span></li>
+<li><a href="brands/tavily.html">Tavily</a> <span class="dim">— 15 suspected</span></li>
+<li><a href="brands/perplexity.html">Perplexity</a> <span class="dim">— 12 suspected</span></li>
+<li><a href="brands/zillow.html">Zillow</a> <span class="dim">— 11 suspected</span></li>
+<li><a href="brands/aviationstack.html">Aviationstack</a> <span class="dim">— 9 suspected</span></li>
+<li><a href="brands/yahoo-finance.html">Yahoo Finance</a> <span class="dim">— 8 suspected</span></li>
+<li><a href="brands/gemini.html">Google Gemini</a> <span class="dim">— 6 suspected</span></li>
+<li><a href="brands/xai-grok.html">xAI (Grok)</a> <span class="dim">— 6 suspected</span></li>
+<li><a href="brands/openweather.html">OpenWeatherMap</a> <span class="dim">— 5 suspected</span></li>
+<li><a href="brands/yelp.html">Yelp</a> <span class="dim">— 5 suspected</span></li>
+<li><a href="brands/elevenlabs.html">ElevenLabs</a> <span class="dim">— 4 suspected</span></li>
+<li><a href="brands/alphavantage.html">Alpha Vantage</a> <span class="dim">— 3 suspected</span></li>
+<li><a href="brands/serpapi.html">SerpApi</a> <span class="dim">— 3 suspected</span></li>
+<li><a href="brands/weatherapi.html">WeatherAPI.com</a> <span class="dim">— 3 suspected</span></li>
+<li><a href="brands/bloomberg.html">Bloomberg</a> <span class="dim">— 3 suspected</span></li>
+<li><a href="brands/newsapi.html">NewsAPI.org</a> <span class="dim">— 3 suspected</span></li>
+<li><a href="brands/opensea.html">OpenSea</a> <span class="dim">— 2 suspected</span></li>
+<li><a href="brands/stability.html">Stability AI</a> <span class="dim">— 2 suspected</span></li>
+<li><a href="brands/tripadvisor.html">Tripadvisor</a> <span class="dim">— 2 suspected</span></li>
+<li><a href="brands/shodan.html">Shodan</a> <span class="dim">— 1 suspected</span></li>
+<li><a href="brands/wolfram.html">Wolfram|Alpha</a> <span class="dim">— 1 suspected</span></li></ul>
+
+<h2>Use this data</h2>
+<div class="cols">
+  <div class="card"><h3><a href="data/index.html">Open data downloads</a></h3><p>Machine-readable JSON for the wash report and per-brand wrapper aggregates. CC-BY-4.0 — cite Provenance.</p></div>
+  <div class="card"><h3><a href="https://www.npmjs.com/package/provenance-guard">provenance-guard</a></h3><p>A seatbelt for agent payments: one line that blocks x402 payments to endpoints whose revenue looks fabricated.</p></div>
+  <div class="card"><h3><a href="https://www.npmjs.com/package/provenance-mcp">provenance-mcp</a></h3><p>MCP server so your agent can check any x402 endpoint's wash risk before trusting or paying it.</p></div>
+  <div class="card"><h3><a href="methodology.html">Methodology</a></h3><p>The 8-signal organic-revenue-quality model, wash indicators, reseller signatures, limitations, and the dispute path.</p></div>
+</div>
+<footer class="site">
+  <nav>
+    <a href="https://provenance.q3epzs69b902a.us-west-2.cs.amazonlightsail.com">Live Provenance API</a>
+    <a href="https://www.npmjs.com/package/provenance-mcp">provenance-mcp (npm)</a>
+    <a href="https://www.npmjs.com/package/provenance-guard">provenance-guard (npm)</a>
+    <a href="https://github.com/apeirontrade/provenance-site">GitHub</a>
+    <a href="./methodology.html">Methodology</a>
+    <a href="./data/index.html">Open data (CC-BY-4.0)</a>
+    <a href="https://github.com/apeirontrade/provenance-site/issues">Disputes &amp; corrections</a>
+  </nav>
+  <div>All figures are statistical estimates derived from public on-chain payment data and public x402 discovery registries. Nothing here asserts fraud or contract breach by any named party — see the <a href="./methodology.html">methodology and disclaimer</a>. Data is CC-BY-4.0; cite Provenance.</div>
+  <div>Provenance · independent trust ratings for machine-payable (x402) API endpoints · generated 2026-07-06</div>
+</footer>
+</div></body></html>

@@ -1,0 +1,872 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>x402 endpoints offering Apify data — resale-authorization audit (69 suspected) — Provenance</title>
+<meta name="description" content="Apify API resold via x402? 69 suspected unauthorized Apify reseller endpoints found in public x402 registries (24 high-confidence, 69 active in 30d). Evidence, prices, on-chain payment counts. Verification recommended.">
+<link rel="canonical" href="https://apeirontrade.github.io/provenance-site/brands/apify.html">
+<meta property="og:title" content="x402 endpoints offering Apify data — resale-authorization audit (69 suspected) — Provenance">
+<meta property="og:description" content="Apify API resold via x402? 69 suspected unauthorized Apify reseller endpoints found in public x402 registries (24 high-confidence, 69 active in 30d). Evidence, prices, on-chain payment counts. Verification recommended.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://apeirontrade.github.io/provenance-site/brands/apify.html">
+<meta name="robots" content="index,follow">
+<style>
+  :root{color-scheme:light dark;
+    --bg:#0d1117;--panel:#161b22;--border:#30363d;--fg:#e6edf3;--dim:#8b949e;--accent:#58a6ff;--accent2:#d2a8ff;}
+  @media (prefers-color-scheme: light){:root{--bg:#f6f8fa;--panel:#ffffff;--border:#d0d7de;--fg:#1f2328;--dim:#57606a;--accent:#0969da;--accent2:#8250df;}}
+  *{box-sizing:border-box;margin:0}
+  body{background:var(--bg);color:var(--fg);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;padding:2.2rem 1rem 4rem}
+  .wrap{max-width:1080px;margin:0 auto}
+  header.site{margin-bottom:1.6rem}
+  .crumb{font-size:.82rem;color:var(--dim);margin-bottom:1rem}
+  .crumb a{color:var(--dim)}
+  h1{font-size:1.65rem;letter-spacing:-.01em;line-height:1.25}
+  h2{font-size:1.15rem;margin:2.2rem 0 .8rem}
+  h3{font-size:1rem;margin:1.6rem 0 .6rem}
+  .sub{color:var(--dim);margin:.5rem 0 1.4rem;max-width:62rem}
+  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.8rem;margin:1.4rem 0 1.8rem}
+  .tile{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:.85rem 1rem}
+  .tile b{display:block;font-size:1.4rem;font-weight:600}
+  .tile span{color:var(--dim);font-size:.8rem}
+  .tblwrap{overflow-x:auto;border:1px solid var(--border);border-radius:8px;background:var(--panel);margin:.6rem 0 1rem}
+  table{border-collapse:collapse;width:100%;font-size:.9rem}
+  th{color:var(--dim);font-weight:600;font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;text-align:left;padding:.65rem .8rem;border-bottom:1px solid var(--border);white-space:nowrap}
+  td{padding:.6rem .8rem;border-bottom:1px solid var(--border);vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82rem}
+  .dim{color:var(--dim)}
+  .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .center{text-align:center}
+  .ep-name{font-weight:600;overflow-wrap:anywhere}
+  .ep-meta{color:var(--dim);font-size:.76rem;margin-top:.15rem;overflow-wrap:anywhere}
+  .grade{display:inline-block;border:1px solid;border-radius:6px;padding:.05rem .55rem;font-weight:700;font-size:.98rem;white-space:nowrap}
+  .infl-pos{color:#f85149;font-weight:700;font-variant-numeric:tabular-nums}
+  .infl-neg{color:#3fb950;font-weight:600;font-variant-numeric:tabular-nums}
+  .infl-zero{color:var(--dim)}
+  .ind{font-size:.82rem;color:var(--dim);max-width:300px}
+  .pill{display:inline-block;border:1px solid var(--border);border-radius:99px;padding:.02rem .55rem;font-size:.74rem;color:var(--dim);white-space:nowrap}
+  .pill.ok{color:#3fb950;border-color:#3fb95055}
+  .pill.hi{color:#f0883e;border-color:#f0883e55}
+  .pill.med{color:#d29922;border-color:#d2992255}
+  .note,.callout{color:var(--dim);font-size:.84rem;margin:1.1rem 0;line-height:1.6;max-width:62rem}
+  .callout{background:var(--panel);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:6px;padding:.8rem 1rem;color:var(--fg)}
+  .callout.warn{border-left-color:#d29922}
+  ul.ev{margin:.2rem 0 .2rem 1rem;padding:0;font-size:.82rem;color:var(--dim)}
+  ul.ev li{margin:.15rem 0}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85em;background:var(--panel);border:1px solid var(--border);border-radius:4px;padding:.05em .3em}
+  .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.8rem;margin:1rem 0}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:1rem}
+  .card h3{margin:0 0 .4rem;font-size:.95rem}
+  .card p{font-size:.83rem;color:var(--dim)}
+  .brandlist{columns:3;column-gap:1.5rem;font-size:.9rem}
+  @media(max-width:800px){.brandlist{columns:2}}
+  @media(max-width:520px){.brandlist{columns:1}}
+  .brandlist li{margin:.25rem 0;break-inside:avoid}
+  footer.site{border-top:1px solid var(--border);margin-top:3rem;padding-top:1.1rem;color:var(--dim);font-size:.82rem;line-height:1.7}
+  footer.site nav{margin-bottom:.4rem}
+  footer.site nav a{margin-right:1.1rem}
+  dl.kv{display:grid;grid-template-columns:max-content 1fr;gap:.35rem 1.2rem;font-size:.9rem;margin:.8rem 0}
+  dl.kv dt{color:var(--dim)}
+  dl.kv dd{overflow-wrap:anywhere}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://apeirontrade.github.io/provenance-site/#org","name":"Provenance","url":"https://apeirontrade.github.io/provenance-site/","description":"Independent trust ratings for x402 machine-payable API endpoints, derived from public on-chain payment data and public discovery registries.","sameAs":["https://www.npmjs.com/package/provenance-mcp","https://www.npmjs.com/package/provenance-guard","https://github.com/apeirontrade/provenance-mcp","https://github.com/apeirontrade/provenance-guard"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Report","headline":"x402 endpoints offering Apify data — resale-authorization audit","author":{"@id":"https://apeirontrade.github.io/provenance-site/#org"},"datePublished":"2026-07-05","about":{"@type":"Brand","name":"Apify"},"mainEntityOfPage":"https://apeirontrade.github.io/provenance-site/brands/apify.html"}</script>
+</head><body><div class="wrap">
+<div class="crumb"><a href="../index.html">Provenance x402 Trust Index</a> &middot; <a href="../methodology.html">Methodology</a> &middot; <a href="../data/index.html">Open data</a></div>
+
+<h1>x402 endpoints offering Apify data <span class="dim">— resale-authorization audit</span></h1>
+<p class="sub">69 machine-payable (x402) endpoints in the public discovery registries exhibit reseller signatures referencing <b>Apify</b> while hosted off Apify's own domains. Resale-authorization status: <b>unknown — suspected unauthorized resale, verification recommended</b>. Any of these endpoints may hold a legitimate redistribution license.</p>
+
+<div class="callout">Context: Apify operates a revenue-share Actor marketplace; re-wrapping outside it bypasses that model.</div>
+
+<div class="tiles">
+  <div class="tile"><b>69</b><span>suspected reseller endpoints</span></div>
+  <div class="tile"><b>24</b><span>high-confidence signatures (≥70/100)</span></div>
+  <div class="tile"><b>69</b><span>with paid activity in the last 30d</span></div>
+  <div class="tile"><b>0</b><span>live-402 confirmed by probe</span></div>
+</div>
+
+<p class="note">Scan of 23,376 unique x402 endpoints on 2026-07-05, sources: Coinbase Bazaar + GoPlausible registry. Payment counts come from the registries' own published 30-day quality signals. Evidence bullets are automated signature matches — see the <a href="../methodology.html">methodology</a> for signal definitions, false-positive modes, and the <a href="https://github.com/apeirontrade/provenance-site/issues">dispute path</a>. If you are on Apify's API or trust team and want the full evidence set or a re-verification, open an issue — it's free.</p>
+
+<div class="tblwrap"><table>
+<thead><tr><th>Endpoint</th><th>Price/call</th><th>Calls 30d</th><th>Signature</th><th>Evidence (automated signature matches)</th></tr></thead>
+<tbody><tr>
+  <td>
+    <div class="ep-name mono">https://apify-api-git-br-better-actor-pay-merit-systems.vercel.app/api/actors/apify/instagram-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;Instagram Scraper&quot; Apify actor (apify/instagram-scraper). Scrape and download Instagram posts, profiles, places, hashtags, photos, and comments. Get data from Instagram …</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">4<div class="ep-meta">3 payers</div></td>
+  <td class="center"><span class="pill hi">high · 85/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Instagram, Apify (via &quot;instagram&quot; in url) but is hosted on apify-api-git-br-better-actor-pay-merit-systems.vercel.app, not the brand's domain</li><li>brand term &quot;instagram&quot; appears in the endpoint URL itself</li><li>declares upstream data source: &quot;data from Instagram&quot;</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/anchor/linkedin-profile-enrichment/call</div>
+    <div class="ep-meta"> — Start the &quot;LinkedIn Profile Scraper for cheap lead enrichment ✅&quot; Apify actor (anchor/linkedin-profile-enrichment). Extract LIVE LinkedIn profile data from LinkedIn URLs. Works with…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 73/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references LinkedIn, Apify (via &quot;linkedin&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;linkedin&quot; appears in the endpoint URL itself</li><li>declares upstream data source: &quot;data from LinkedIn&quot;</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/apify/instagram-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;Instagram Scraper&quot; Apify actor (apify/instagram-scraper). Scrape and download Instagram posts, profiles, places, hashtags, photos, and comments. Get data from Instagram …</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 73/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Instagram, Apify (via &quot;instagram&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;instagram&quot; appears in the endpoint URL itself</li><li>declares upstream data source: &quot;data from Instagram&quot;</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/clockworks/tiktok-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;TikTok Scraper&quot; Apify actor (clockworks/tiktok-scraper). Extract data from TikTok videos, hashtags, and users. Use URLs or search queries to scrape TikTok profiles, hash…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 73/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references TikTok, Apify (via &quot;tiktok&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;tiktok&quot; appears in the endpoint URL itself</li><li>declares upstream data source: &quot;data from TikTok&quot;</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://apify-api-git-br-apify-typed-input-schemas-merit-systems.vercel.app/api/actors/apimaestro/linkedin-profile-detail/call</div>
+    <div class="ep-meta"> — Start the &quot;Profile Details Scraper for LinkedIn + EMAIL (No Cookies)&quot; Apify actor (apimaestro/linkedin-profile-detail). Scrape comprehensive LinkedIn profile data including work ex…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.10</td>
+  <td class="num">6<div class="ep-meta">4 payers</div></td>
+  <td class="center"><span class="pill hi">high · 70/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references LinkedIn, Apify (via &quot;linkedin&quot; in url) but is hosted on apify-api-git-br-apify-typed-input-schemas-merit-systems.vercel.app, not the brand's domain</li><li>brand term &quot;linkedin&quot; appears in the endpoint URL itself</li><li>$0.1000/call ≈ 50.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://apify-dlfd68ww7-merit-systems.vercel.app/api/actors/maxcopell/zillow-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;Zillow Search Scraper&quot; Apify actor (maxcopell/zillow-scraper). Extract data about properties for sale and rent on Zillow using the Zillow API, but with no daily call lim…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">4<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 70/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Zillow, Apify (via &quot;zillow&quot; in url) but is hosted on apify-dlfd68ww7-merit-systems.vercel.app, not the brand's domain</li><li>brand term &quot;zillow&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://apify-dlfd68ww7-merit-systems.vercel.app/api/actors/apify/rag-web-browser/call</div>
+    <div class="ep-meta"> — Start the &quot;RAG Web Browser&quot; Apify actor (apify/rag-web-browser). Web search and fetch tool for AI agents and RAG pipelines. It queries Google Search, scrapes the top N pages using …</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">3<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 70/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Google Search (SERP), Apify (via &quot;google search&quot; in description) but is hosted on apify-dlfd68ww7-merit-systems.vercel.app, not the brand's domain</li><li>brand term &quot;apify&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 2.0× Google Search (SERP)'s public ~$0.005/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://apify-dlfd68ww7-merit-systems.vercel.app/api/actors/maxcopell/zillow-detail-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;Zillow Detail Scraper&quot; Apify actor (maxcopell/zillow-detail-scraper). Get details of Zillow properties from URLs. This Actor can be easily integrated with other Zillow S…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">3<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 70/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Zillow, Apify (via &quot;zillow&quot; in url) but is hosted on apify-dlfd68ww7-merit-systems.vercel.app, not the brand's domain</li><li>brand term &quot;zillow&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://apify-api-git-br-apify-typed-input-schemas-merit-systems.vercel.app/api/actors/apify/rag-web-browser/call</div>
+    <div class="ep-meta"> — Start the &quot;RAG Web Browser&quot; Apify actor (apify/rag-web-browser). Web search and fetch tool for AI agents and RAG pipelines. It queries Google Search, scrapes the top N pages using …</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.10</td>
+  <td class="num">3<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 70/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Google Search (SERP), Apify (via &quot;google search&quot; in description) but is hosted on apify-api-git-br-apify-typed-input-schemas-merit-systems.vercel.app, not the brand's domain</li><li>brand term &quot;apify&quot; appears in the endpoint URL itself</li><li>$0.1000/call ≈ 20.0× Google Search (SERP)'s public ~$0.005/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://apify-api-git-br-apify-typed-input-schemas-merit-systems.vercel.app/api/actors/apify/instagram-hashtag-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;Instagram Hashtag Scraper&quot; Apify actor (apify/instagram-hashtag-scraper). Scrape Instagram posts and reels by hashtags. Just add one or more hashtags and extract caption…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.10</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 70/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Instagram, Apify (via &quot;instagram&quot; in url) but is hosted on apify-api-git-br-apify-typed-input-schemas-merit-systems.vercel.app, not the brand's domain</li><li>brand term &quot;instagram&quot; appears in the endpoint URL itself</li><li>$0.1000/call ≈ 50.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://apify-api-git-br-better-actor-pay-merit-systems.vercel.app/api/actors/streamers/youtube-channel-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;Fast YouTube Channel Scraper&quot; Apify actor (streamers/youtube-channel-scraper). This alternative YouTube Data API has no limits or quotas. Use it to scrape one or multipl…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 70/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data, Apify (via &quot;youtube&quot; in url) but is hosted on apify-api-git-br-better-actor-pay-merit-systems.vercel.app, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://apify-api-git-br-apify-typed-input-schemas-merit-systems.vercel.app/api/actors/scraperlink/google-search-results-serp-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;Google Search Results (~$0.05/1K Results)&quot; Apify actor (scraperlink/google-search-results-serp-scraper). 🔥 ~$0.05/1K results ($0.50/1,000 SERPs) 🔥 **CHEAPEST** Google …</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.10</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 70/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Google Search (SERP), Apify (via &quot;google search&quot; in url) but is hosted on apify-api-git-br-apify-typed-input-schemas-merit-systems.vercel.app, not the brand's domain</li><li>brand term &quot;google search&quot; appears in the endpoint URL itself</li><li>$0.1000/call ≈ 20.0× Google Search (SERP)'s public ~$0.005/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://apify-api-git-br-apify-typed-input-schemas-merit-systems.vercel.app/api/actors/pintostudio/youtube-transcript-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;Youtube Transcript Scraper&quot; Apify actor (pintostudio/youtube-transcript-scraper). Looking for a reliable way to extract transcripts from YouTube videos? 🎥✨ Look no furt…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.10</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 70/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data, Apify (via &quot;youtube&quot; in url) but is hosted on apify-api-git-br-apify-typed-input-schemas-merit-systems.vercel.app, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li><li>$0.1000/call ≈ 50.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://apify-api-git-br-better-actor-pay-merit-systems.vercel.app/api/actors/maxcopell/zillow-detail-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;Zillow Detail Scraper&quot; Apify actor (maxcopell/zillow-detail-scraper). Get details of Zillow properties from URLs. This Actor can be easily integrated with other Zillow S…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 70/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Zillow, Apify (via &quot;zillow&quot; in url) but is hosted on apify-api-git-br-better-actor-pay-merit-systems.vercel.app, not the brand's domain</li><li>brand term &quot;zillow&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://apify-api-merit-systems.vercel.app/api/actors/maxcopell/zillow-detail-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;Zillow Detail Scraper&quot; Apify actor (maxcopell/zillow-detail-scraper). Get details of Zillow properties from URLs. This Actor can be easily integrated with other Zillow S…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 70/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Zillow, Apify (via &quot;zillow&quot; in url) but is hosted on apify-api-merit-systems.vercel.app, not the brand's domain</li><li>brand term &quot;zillow&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://apify-api-git-apify-top100-routes-merit-systems.vercel.app/api/actors/apify/rag-web-browser/call</div>
+    <div class="ep-meta"> — Start the &quot;RAG Web Browser&quot; Apify actor (apify/rag-web-browser). Web search and fetch tool for AI agents and RAG pipelines. It queries Google Search, scrapes the top N pages using …</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.10</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 70/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Google Search (SERP), Apify (via &quot;google search&quot; in description) but is hosted on apify-api-git-apify-top100-routes-merit-systems.vercel.app, not the brand's domain</li><li>brand term &quot;apify&quot; appears in the endpoint URL itself</li><li>$0.1000/call ≈ 20.0× Google Search (SERP)'s public ~$0.005/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://apify-api-chi.vercel.app/api/actors/maxcopell/zillow-detail-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;Zillow Detail Scraper&quot; Apify actor (maxcopell/zillow-detail-scraper). Get details of Zillow properties from URLs. This Actor can be easily integrated with other Zillow S…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 70/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Zillow, Apify (via &quot;zillow&quot; in url) but is hosted on apify-api-chi.vercel.app, not the brand's domain</li><li>brand term &quot;zillow&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://apify-api-chi.vercel.app/api/actors/maxcopell/zillow-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;Zillow Search Scraper&quot; Apify actor (maxcopell/zillow-scraper). Extract data about properties for sale and rent on Zillow using the Zillow API, but with no daily call lim…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 70/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Zillow, Apify (via &quot;zillow&quot; in url) but is hosted on apify-api-chi.vercel.app, not the brand's domain</li><li>brand term &quot;zillow&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://apify-jwhre9stu-merit-systems.vercel.app/api/actors/apify/rag-web-browser/call</div>
+    <div class="ep-meta"> — Start the &quot;RAG Web Browser&quot; Apify actor (apify/rag-web-browser). Web search and fetch tool for AI agents and RAG pipelines. It queries Google Search, scrapes the top N pages using …</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 70/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Google Search (SERP), Apify (via &quot;google search&quot; in description) but is hosted on apify-jwhre9stu-merit-systems.vercel.app, not the brand's domain</li><li>brand term &quot;apify&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 2.0× Google Search (SERP)'s public ~$0.005/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://apify-api-git-br-better-actor-pay-merit-systems.vercel.app/api/actors/clockworks/free-tiktok-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;TikTok Data Extractor&quot; Apify actor (clockworks/free-tiktok-scraper). Extract data about videos, users, and channels based on hashtags or scrape full user profiles includ…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 70/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references TikTok, Apify (via &quot;tiktok&quot; in url) but is hosted on apify-api-git-br-better-actor-pay-merit-systems.vercel.app, not the brand's domain</li><li>brand term &quot;tiktok&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://apify-4kne39v7m-merit-systems.vercel.app/api/actors/maxcopell/zillow-scraper/call</div>
+    <div class="ep-meta"> — Start the Zillow Search Scraper Apify actor (maxcopell/zillow-scraper).</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 70/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Zillow, Apify (via &quot;zillow&quot; in url) but is hosted on apify-4kne39v7m-merit-systems.vercel.app, not the brand's domain</li><li>brand term &quot;zillow&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://apify-pjhpk2l0p-merit-systems.vercel.app/api/actors/maxcopell/zillow-detail-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;Zillow Detail Scraper&quot; Apify actor (maxcopell/zillow-detail-scraper). Get details of Zillow properties from URLs. This Actor can be easily integrated with other Zillow S…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 70/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Zillow, Apify (via &quot;zillow&quot; in url) but is hosted on apify-pjhpk2l0p-merit-systems.vercel.app, not the brand's domain</li><li>brand term &quot;zillow&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://apify-jwhre9stu-merit-systems.vercel.app/api/actors/maxcopell/zillow-detail-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;Zillow Detail Scraper&quot; Apify actor (maxcopell/zillow-detail-scraper). Get details of Zillow properties from URLs. This Actor can be easily integrated with other Zillow S…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 70/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Zillow, Apify (via &quot;zillow&quot; in url) but is hosted on apify-jwhre9stu-merit-systems.vercel.app, not the brand's domain</li><li>brand term &quot;zillow&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://apify-api-git-br-better-actor-pay-merit-systems.vercel.app/api/actors/apify/rag-web-browser/call</div>
+    <div class="ep-meta"> — Start the &quot;RAG Web Browser&quot; Apify actor (apify/rag-web-browser). Web search and fetch tool for AI agents and RAG pipelines. It queries Google Search, scrapes the top N pages using …</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 70/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Google Search (SERP), Apify (via &quot;google search&quot; in description) but is hosted on apify-api-git-br-better-actor-pay-merit-systems.vercel.app, not the brand's domain</li><li>brand term &quot;apify&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 2.0× Google Search (SERP)'s public ~$0.005/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/apify/google-trends-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;Google Trends Scraper&quot; Apify actor (apify/google-trends-scraper). Scrape data from Google Trends by search terms or URLs. Specify locations, define time ranges, select c…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">17<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 68/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Apify (via &quot;apify&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;apify&quot; appears in the endpoint URL itself</li><li>declares upstream data source: &quot;data from Google&quot;</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/valig/linkedin-jobs-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;🏆 LinkedIn Jobs Scraper&quot; Apify actor (valig/linkedin-jobs-scraper). $0.4/1K jobs | Scrape LinkedIn job listings based on your selected role and location, saving you tim…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">99<div class="ep-meta">4 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">probe: HTTP 405</span></div></td>
+  <td><ul class="ev"><li>references LinkedIn, Apify (via &quot;linkedin&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;linkedin&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/kaitoeasyapi/twitter-x-data-tweet-scraper-pay-per-result-cheapest/call</div>
+    <div class="ep-meta"> — Start the &quot;Tweet Scraper|$0.25/1K Tweets | Pay-Per Result | No Rate Limits&quot; Apify actor (kaitoeasyapi/twitter-x-data-tweet-scraper-pay-per-result-cheapest). Only $0.25/1000 tweets …</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">34<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Apify (via &quot;twitter&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;twitter&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 2.0× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/compass/Google-Maps-Reviews-Scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;Google Maps Reviews Scraper&quot; Apify actor (compass/Google-Maps-Reviews-Scraper). Extract all reviews of Google Maps places using place URLs. Get review text, published da…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">14<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Google Maps Platform, Apify (via &quot;google maps&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;google maps&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 2.0× Google Maps Platform's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://ads.apitoll.cloud/v1/ads/tiktok/top</div>
+    <div class="ep-meta">ApiToll TikTok Top Ads — TikTok ad library — TikTok Creative Center’s global Top Ads leaderboard: the best-performing TikTok ads in any of 81 countries (incl. US and full MENA), ranked by TikTok’s CTR / li…</div>
+    <div class="ep-meta mono">pays to 0x4ce8…975a on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0300</td>
+  <td class="num">6<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references TikTok, Apify (via &quot;tiktok&quot; in url) but is hosted on ads.apitoll.cloud, not the brand's domain</li><li>brand term &quot;tiktok&quot; appears in the endpoint URL itself</li><li>$0.0300/call ≈ 15.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/apidojo/tweet-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;🏯 Tweet Scraper V2 - X / Twitter Scraper&quot; Apify actor (apidojo/tweet-scraper). ⚡️ Lightning-fast search, URL, list, and profile scraping, with customizable filters. At …</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">6<div class="ep-meta">3 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Apify (via &quot;tweet&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;tweet&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 2.0× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/apidojo/tiktok-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;🏯 Tiktok Scraper (Pay Per Result)&quot; Apify actor (apidojo/tiktok-scraper). Extract TikTok profiles, videos, hashtags, comments at 600 posts/sec. No proxy, 98% success rat…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">5<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references TikTok, Apify (via &quot;tiktok&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;tiktok&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/maxcopell/zillow-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;Zillow Search Scraper&quot; Apify actor (maxcopell/zillow-scraper). Extract data about properties for sale and rent on Zillow using the Zillow API, but with no daily call lim…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">5<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Zillow, Apify (via &quot;zillow&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;zillow&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/apimaestro/linkedin-company-employees-scraper-no-cookies/call</div>
+    <div class="ep-meta"> — Start the &quot;Company Employees Scraper for LinkedIn | No Cookies&quot; Apify actor (apimaestro/linkedin-company-employees-scraper-no-cookies). Extract LinkedIn company employees without s…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">3<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references LinkedIn, Apify (via &quot;linkedin&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;linkedin&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/fantastic-jobs/advanced-linkedin-job-search-api/call</div>
+    <div class="ep-meta"> — Start the &quot;Advanced LinkedIn Job Search API&quot; Apify actor (fantastic-jobs/advanced-linkedin-job-search-api). Access our real-time LinkedIn Jobs database with over 10 million new job…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references LinkedIn, Apify (via &quot;linkedin&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;linkedin&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/apidojo/twitter-user-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;Fast Twitter (X) User Scraper API | Extract Profiles, Followers&quot; Apify actor (apidojo/twitter-user-scraper). Introducing Twitter (X) User Scraper, the ultimate solution …</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Apify (via &quot;twitter&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;twitter&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 2.0× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/harshmaur/reddit-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;Reddit Scraper - MCP, AI, PPR&quot; Apify actor (harshmaur/reddit-scraper). Reddit Scraper lets you extract posts, comments, users, and communities without API rate limits. W…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Reddit, Apify (via &quot;reddit&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;reddit&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 41.7× Reddit's public ~$0.00024/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/harvestapi/linkedin-post-reactions/call</div>
+    <div class="ep-meta"> — Start the &quot;LinkedIn Post Reactions Scraper (No Cookies) ✅ (No Cookies)&quot; Apify actor (harvestapi/linkedin-post-reactions). Extract reactions of LinkedIn posts or comments, such as l…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references LinkedIn, Apify (via &quot;linkedin&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;linkedin&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/apimaestro/linkedin-company-posts/call</div>
+    <div class="ep-meta"> — Start the &quot;Company Posts Scraper for LinkedIn – No Cookies&quot; Apify actor (apimaestro/linkedin-company-posts). Extract public posts and activity from companies including post content…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references LinkedIn, Apify (via &quot;linkedin&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;linkedin&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/clockworks/tiktok-hashtag-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;TikTok Hashtag Scraper&quot; Apify actor (clockworks/tiktok-hashtag-scraper). Scrape TikTok hashtag data. Just add one or more hashtags and extract TikTok videos with that ha…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references TikTok, Apify (via &quot;tiktok&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;tiktok&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/cheap_scraper/linkedin-job-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;LinkedIn Jobs Scraper | Remove Duplicate Jobs | Pay Per Result&quot; Apify actor (cheap_scraper/linkedin-job-scraper). LinkedIn Jobs Scraper | Remove Duplicate Jobs.
+
+The Lin…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references LinkedIn, Apify (via &quot;linkedin&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;linkedin&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/scraperlink/google-search-results-serp-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;Google Search Results (~$0.05/1K Results)&quot; Apify actor (scraperlink/google-search-results-serp-scraper). 🔥 ~$0.05/1K results ($0.50/1,000 SERPs) 🔥 **CHEAPEST** Google …</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Google Search (SERP), Apify (via &quot;google search&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;google search&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 2.0× Google Search (SERP)'s public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/harvestapi/linkedin-post-comments/call</div>
+    <div class="ep-meta"> — Start the &quot;LinkedIn Post Comments Scraper (No Cookies) ✅ (No Cookies)&quot; Apify actor (harvestapi/linkedin-post-comments). Extract LinkedIn post comments or comment replies in bulk, a…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references LinkedIn, Apify (via &quot;linkedin&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;linkedin&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/apidojo/youtube-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;🏯 Youtube Scraper (Pay Per Result)&quot; Apify actor (apidojo/youtube-scraper). Experience unparalleled efficiency and depth with its ultra-fast capabilities in searching, U…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data, Apify (via &quot;youtube&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/clockworks/tiktok-video-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;TikTok Video Scraper&quot; Apify actor (clockworks/tiktok-video-scraper). Extract data from chosen tiktoks. Just add a TikTok URL and get TikTok video and profile data: URLs,…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references TikTok, Apify (via &quot;tiktok&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;tiktok&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/apify/instagram-api-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;Instagram API Scraper&quot; Apify actor (apify/instagram-api-scraper). Scrape and download Instagram posts, profiles, places, hashtags, photos without login. Supports search …</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Instagram, Apify (via &quot;instagram&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;instagram&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/apimaestro/linkedin-posts-search-scraper-no-cookies/call</div>
+    <div class="ep-meta"> — Start the &quot;Posts Search Scraper for LinkedIn | No Cookies&quot; Apify actor (apimaestro/linkedin-posts-search-scraper-no-cookies). Scrape LinkedIn posts by keyword without login. Get po…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references LinkedIn, Apify (via &quot;linkedin&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;linkedin&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/harvestapi/linkedin-company-posts/call</div>
+    <div class="ep-meta"> — Start the &quot;LinkedIn Company Posts Scraper (No Cookies)&quot; Apify actor (harvestapi/linkedin-company-posts). Extract posts from LinkedIn companies including content, media, engagement,…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references LinkedIn, Apify (via &quot;linkedin&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;linkedin&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/harvestapi/linkedin-profile-posts/call</div>
+    <div class="ep-meta"> — Start the &quot;LinkedIn Profile Posts Scraper (No Cookies)&quot; Apify actor (harvestapi/linkedin-profile-posts). Extract posts from LinkedIn profiles, including content, media, engagement,…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references LinkedIn, Apify (via &quot;linkedin&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;linkedin&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/clockworks/free-tiktok-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;TikTok Data Extractor&quot; Apify actor (clockworks/free-tiktok-scraper). Extract data about videos, users, and channels based on hashtags or scrape full user profiles includ…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references TikTok, Apify (via &quot;tiktok&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;tiktok&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/harvestapi/linkedin-post-search/call</div>
+    <div class="ep-meta"> — Start the &quot;Linkedin Post Search Scraper (No Cookies)&quot; Apify actor (harvestapi/linkedin-post-search). Search LinkedIn Posts with advanced filters by target profiles or companies. No…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references LinkedIn, Apify (via &quot;linkedin&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;linkedin&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/harvestapi/linkedin-company/call</div>
+    <div class="ep-meta"> — Start the &quot;Linkedin Company Details Scraper (No Cookies) ✅ Bulk&quot; Apify actor (harvestapi/linkedin-company). Extract detailed information from LinkedIn Companies such as company nam…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references LinkedIn, Apify (via &quot;linkedin&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;linkedin&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/clockworks/tiktok-comments-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;TikTok Comments Scraper&quot; Apify actor (clockworks/tiktok-comments-scraper). Extract TikTok comments. Just add a TikTok URL and get TikTok video and profile data: comments…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references TikTok, Apify (via &quot;tiktok&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;tiktok&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/apimaestro/linkedin-profile-posts/call</div>
+    <div class="ep-meta"> — Start the &quot;Profile Posts Scraper for LinkedIn [No Cookies]&quot; Apify actor (apimaestro/linkedin-profile-posts). Scrape LinkedIn posts data for a given LinkedIn profile including post …</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references LinkedIn, Apify (via &quot;linkedin&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;linkedin&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/trudax/reddit-scraper-lite/call</div>
+    <div class="ep-meta"> — Start the &quot;Reddit Scraper Lite&quot; Apify actor (trudax/reddit-scraper-lite). Pay Per Result, unlimited Reddit web scraper to crawl posts, comments, communities, and users without logi…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Reddit, Apify (via &quot;reddit&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;reddit&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 41.7× Reddit's public ~$0.00024/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/streamers/youtube-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;YouTube Scraper&quot; Apify actor (streamers/youtube-scraper). YouTube crawler and video scraper. Alternative YouTube API with no limits or quotas. Extract and download chann…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data, Apify (via &quot;youtube&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/apimaestro/linkedin-profile-detail/call</div>
+    <div class="ep-meta"> — Start the &quot;Profile Details Scraper for LinkedIn + EMAIL (No Cookies)&quot; Apify actor (apimaestro/linkedin-profile-detail). Scrape comprehensive LinkedIn profile data including work ex…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references LinkedIn, Apify (via &quot;linkedin&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;linkedin&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/apify/rag-web-browser/call</div>
+    <div class="ep-meta"> — Start the &quot;RAG Web Browser&quot; Apify actor (apify/rag-web-browser). Web search and fetch tool for AI agents and RAG pipelines. It queries Google Search, scrapes the top N pages using …</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Google Search (SERP), Apify (via &quot;google search&quot; in description) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;apify&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 2.0× Google Search (SERP)'s public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/maxcopell/zillow-detail-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;Zillow Detail Scraper&quot; Apify actor (maxcopell/zillow-detail-scraper). Get details of Zillow properties from URLs. This Actor can be easily integrated with other Zillow S…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Zillow, Apify (via &quot;zillow&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;zillow&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/apidojo/instagram-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;🏯 Instagram Scraper (Pay Per Result)&quot; Apify actor (apidojo/instagram-scraper). Famous for its blazing-fast speed and completeness, it offers rapid and efficient scrapin…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Instagram, Apify (via &quot;instagram&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;instagram&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/apimaestro/linkedin-profile-batch-scraper-no-cookies-required/call</div>
+    <div class="ep-meta"> — Start the &quot;Profile Details Batch Scraper for LinkedIn + EMAIL (No Cookies)&quot; Apify actor (apimaestro/linkedin-profile-batch-scraper-no-cookies-required). (no cookies need) Extract I…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references LinkedIn, Apify (via &quot;linkedin&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;linkedin&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/streamers/youtube-comments-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;YouTube Comments Scraper&quot; Apify actor (streamers/youtube-comments-scraper). This alternative YouTube Data API has no limits or quotas. Extract YouTube comments data from…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data, Apify (via &quot;youtube&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/worldunboxer/rapid-linkedin-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;⚡️Rapid Linkedin Jobs Scraper&quot; Apify actor (worldunboxer/rapid-linkedin-scraper). LinkedIn job scraper tool to extract job listings, company, and complete job informatio…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references LinkedIn, Apify (via &quot;linkedin&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;linkedin&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/apidojo/twitter-scraper-lite/call</div>
+    <div class="ep-meta"> — Start the &quot;Twitter (X.com) Scraper Unlimited: No Limits&quot; Apify actor (apidojo/twitter-scraper-lite). Introducing Twitter Scraper Unlimited, the most comprehensive Twitter data extr…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Apify (via &quot;twitter&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;twitter&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 2.0× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/pintostudio/youtube-transcript-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;Youtube Transcript Scraper&quot; Apify actor (pintostudio/youtube-transcript-scraper). Looking for a reliable way to extract transcripts from YouTube videos? 🎥✨ Look no furt…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references YouTube Data, Apify (via &quot;youtube&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;youtube&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/apify/facebook-pages-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;Facebook Pages Scraper&quot; Apify actor (apify/facebook-pages-scraper). Extract basic data from multiple Facebook Pages or Profiles. Extract Facebook page details, website, …</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Apify (via &quot;apify&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;apify&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stableapify.dev/api/actors/apify/facebook-search-scraper/call</div>
+    <div class="ep-meta"> — Start the &quot;Facebook Search Scraper&quot; Apify actor (apify/facebook-search-scraper). Extract Facebook search data from pages that match your search query. Get page URL, address, email,…</div>
+    <div class="ep-meta mono">pays to 0x23d9…8411 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Apify (via &quot;apify&quot; in url) but is hosted on stableapify.dev, not the brand's domain</li><li>brand term &quot;apify&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 5.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://ads.apitoll.cloud/v1/ads/facebook/search</div>
+    <div class="ep-meta"> — Facebook Ad Library search by keyword — every live and recent ad matching a search term across all advertisers on Facebook, Instagram, Messenger and Threads. Returns the full ad cr…</div>
+    <div class="ep-meta mono">pays to 0x4ce8…975a on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0300</td>
+  <td class="num">12<div class="ep-meta">3 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Instagram, Apify (via &quot;instagram&quot; in description) but is hosted on ads.apitoll.cloud, not the brand's domain</li><li>$0.0300/call ≈ 15.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://ads.apitoll.cloud/v1/ads/facebook/advertiser</div>
+    <div class="ep-meta">ApiToll Facebook Advertiser Ads — Facebook ads from a specific advertiser by brand name — every live and recent ad a brand runs across Facebook, Instagram, Messenger and Threads, isolated to that ONE advertiser (fi…</div>
+    <div class="ep-meta mono">pays to 0x4ce8…975a on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0300</td>
+  <td class="num">4<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Instagram, Apify (via &quot;instagram&quot; in description) but is hosted on ads.apitoll.cloud, not the brand's domain</li><li>$0.0300/call ≈ 15.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://ads.apitoll.cloud/v1/ads/facebook/page</div>
+    <div class="ep-meta">ApiToll Facebook Page Ad Monitor — Facebook ads from a specific advertiser page — monitor every live and recent ad a competitor runs by passing their Facebook page URL, vanity handle, or page id. Returns the full ad…</div>
+    <div class="ep-meta mono">pays to 0x4ce8…975a on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0300</td>
+  <td class="num">3<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Instagram, Apify (via &quot;instagram&quot; in description) but is hosted on ads.apitoll.cloud, not the brand's domain</li><li>$0.0300/call ≈ 15.0× Apify's public ~$0.002/call — consistent with cost-plus resale margin</li></ul></td>
+</tr></tbody>
+</table></div>
+
+<p class="note"><b>Framing note:</b> every row above is a statistical signature match, published so that Apify's own team — the only party who can actually verify authorization — can review it. Nothing on this page asserts that any listed operator is acting unlawfully or in breach of any agreement.</p>
+<footer class="site">
+  <nav>
+    <a href="https://provenance.q3epzs69b902a.us-west-2.cs.amazonlightsail.com">Live Provenance API</a>
+    <a href="https://www.npmjs.com/package/provenance-mcp">provenance-mcp (npm)</a>
+    <a href="https://www.npmjs.com/package/provenance-guard">provenance-guard (npm)</a>
+    <a href="https://github.com/apeirontrade/provenance-site">GitHub</a>
+    <a href="../methodology.html">Methodology</a>
+    <a href="../data/index.html">Open data (CC-BY-4.0)</a>
+    <a href="https://github.com/apeirontrade/provenance-site/issues">Disputes &amp; corrections</a>
+  </nav>
+  <div>All figures are statistical estimates derived from public on-chain payment data and public x402 discovery registries. Nothing here asserts fraud or contract breach by any named party — see the <a href="../methodology.html">methodology and disclaimer</a>. Data is CC-BY-4.0; cite Provenance.</div>
+  <div>Provenance · independent trust ratings for machine-payable (x402) API endpoints · generated 2026-07-06</div>
+</footer>
+</div></body></html>

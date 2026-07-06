@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Open data — x402 wash-report &amp; reseller-audit JSON downloads (CC-BY-4.0) — Provenance</title>
+<meta name="description" content="Download the Bazaar Wash Report (week of 2026-06-29) and the Wrapper Watch per-brand reseller summary as JSON. CC-BY-4.0, cite Provenance.">
+<link rel="canonical" href="https://apeirontrade.github.io/provenance-site/data/index.html">
+<meta property="og:title" content="Open data — x402 wash-report &amp; reseller-audit JSON downloads (CC-BY-4.0) — Provenance">
+<meta property="og:description" content="Download the Bazaar Wash Report (week of 2026-06-29) and the Wrapper Watch per-brand reseller summary as JSON. CC-BY-4.0, cite Provenance.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://apeirontrade.github.io/provenance-site/data/index.html">
+<meta name="robots" content="index,follow">
+<style>
+  :root{color-scheme:light dark;
+    --bg:#0d1117;--panel:#161b22;--border:#30363d;--fg:#e6edf3;--dim:#8b949e;--accent:#58a6ff;--accent2:#d2a8ff;}
+  @media (prefers-color-scheme: light){:root{--bg:#f6f8fa;--panel:#ffffff;--border:#d0d7de;--fg:#1f2328;--dim:#57606a;--accent:#0969da;--accent2:#8250df;}}
+  *{box-sizing:border-box;margin:0}
+  body{background:var(--bg);color:var(--fg);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;padding:2.2rem 1rem 4rem}
+  .wrap{max-width:1080px;margin:0 auto}
+  header.site{margin-bottom:1.6rem}
+  .crumb{font-size:.82rem;color:var(--dim);margin-bottom:1rem}
+  .crumb a{color:var(--dim)}
+  h1{font-size:1.65rem;letter-spacing:-.01em;line-height:1.25}
+  h2{font-size:1.15rem;margin:2.2rem 0 .8rem}
+  h3{font-size:1rem;margin:1.6rem 0 .6rem}
+  .sub{color:var(--dim);margin:.5rem 0 1.4rem;max-width:62rem}
+  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.8rem;margin:1.4rem 0 1.8rem}
+  .tile{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:.85rem 1rem}
+  .tile b{display:block;font-size:1.4rem;font-weight:600}
+  .tile span{color:var(--dim);font-size:.8rem}
+  .tblwrap{overflow-x:auto;border:1px solid var(--border);border-radius:8px;background:var(--panel);margin:.6rem 0 1rem}
+  table{border-collapse:collapse;width:100%;font-size:.9rem}
+  th{color:var(--dim);font-weight:600;font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;text-align:left;padding:.65rem .8rem;border-bottom:1px solid var(--border);white-space:nowrap}
+  td{padding:.6rem .8rem;border-bottom:1px solid var(--border);vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82rem}
+  .dim{color:var(--dim)}
+  .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .center{text-align:center}
+  .ep-name{font-weight:600;overflow-wrap:anywhere}
+  .ep-meta{color:var(--dim);font-size:.76rem;margin-top:.15rem;overflow-wrap:anywhere}
+  .grade{display:inline-block;border:1px solid;border-radius:6px;padding:.05rem .55rem;font-weight:700;font-size:.98rem;white-space:nowrap}
+  .infl-pos{color:#f85149;font-weight:700;font-variant-numeric:tabular-nums}
+  .infl-neg{color:#3fb950;font-weight:600;font-variant-numeric:tabular-nums}
+  .infl-zero{color:var(--dim)}
+  .ind{font-size:.82rem;color:var(--dim);max-width:300px}
+  .pill{display:inline-block;border:1px solid var(--border);border-radius:99px;padding:.02rem .55rem;font-size:.74rem;color:var(--dim);white-space:nowrap}
+  .pill.ok{color:#3fb950;border-color:#3fb95055}
+  .pill.hi{color:#f0883e;border-color:#f0883e55}
+  .pill.med{color:#d29922;border-color:#d2992255}
+  .note,.callout{color:var(--dim);font-size:.84rem;margin:1.1rem 0;line-height:1.6;max-width:62rem}
+  .callout{background:var(--panel);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:6px;padding:.8rem 1rem;color:var(--fg)}
+  .callout.warn{border-left-color:#d29922}
+  ul.ev{margin:.2rem 0 .2rem 1rem;padding:0;font-size:.82rem;color:var(--dim)}
+  ul.ev li{margin:.15rem 0}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85em;background:var(--panel);border:1px solid var(--border);border-radius:4px;padding:.05em .3em}
+  .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.8rem;margin:1rem 0}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:1rem}
+  .card h3{margin:0 0 .4rem;font-size:.95rem}
+  .card p{font-size:.83rem;color:var(--dim)}
+  .brandlist{columns:3;column-gap:1.5rem;font-size:.9rem}
+  @media(max-width:800px){.brandlist{columns:2}}
+  @media(max-width:520px){.brandlist{columns:1}}
+  .brandlist li{margin:.25rem 0;break-inside:avoid}
+  footer.site{border-top:1px solid var(--border);margin-top:3rem;padding-top:1.1rem;color:var(--dim);font-size:.82rem;line-height:1.7}
+  footer.site nav{margin-bottom:.4rem}
+  footer.site nav a{margin-right:1.1rem}
+  dl.kv{display:grid;grid-template-columns:max-content 1fr;gap:.35rem 1.2rem;font-size:.9rem;margin:.8rem 0}
+  dl.kv dt{color:var(--dim)}
+  dl.kv dd{overflow-wrap:anywhere}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://apeirontrade.github.io/provenance-site/#org","name":"Provenance","url":"https://apeirontrade.github.io/provenance-site/","description":"Independent trust ratings for x402 machine-payable API endpoints, derived from public on-chain payment data and public discovery registries.","sameAs":["https://www.npmjs.com/package/provenance-mcp","https://www.npmjs.com/package/provenance-guard","https://github.com/apeirontrade/provenance-mcp","https://github.com/apeirontrade/provenance-guard"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"Bazaar Wash Report — week of 2026-06-29 (JSON)","description":"Per-merchant wash-risk scores, grades, indicators and wash-rank inflation for the top 24 Coinbase x402 Bazaar merchants on Base.","url":"https://apeirontrade.github.io/provenance-site/data/index.html","license":"https://creativecommons.org/licenses/by/4.0/","creator":{"@id":"https://apeirontrade.github.io/provenance-site/#org"},"distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://apeirontrade.github.io/provenance-site/data/wash-report-2026-06-29.json"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"Wrapper Watch per-brand summary (JSON)","description":"Per-brand aggregates of 1,097 suspected x402 reseller endpoints across 38 first-party API brands, with top endpoints and confidence tiers.","url":"https://apeirontrade.github.io/provenance-site/data/index.html","license":"https://creativecommons.org/licenses/by/4.0/","creator":{"@id":"https://apeirontrade.github.io/provenance-site/#org"},"distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://apeirontrade.github.io/provenance-site/data/wrapper-watch-summary.json"}]}</script>
+</head><body><div class="wrap">
+<div class="crumb"><a href="../index.html">Provenance x402 Trust Index</a> &middot; <a href="../methodology.html">Methodology</a> &middot; <a href="../data/index.html">Open data</a></div>
+
+<h1>Open data</h1>
+<p class="sub">Machine-readable JSON behind every page on this site. Licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a> — free to use, share and build on, <b>cite Provenance</b> (a link to <code>https://apeirontrade.github.io/provenance-site/</code> is perfect).</p>
+
+<div class="cols">
+  <div class="card">
+    <h3><a href="wash-report-2026-06-29.json">wash-report-2026-06-29.json</a></h3>
+    <p>The Bazaar Wash Report, week of 2026-06-29: 24 merchants, full scores (raw scores preserved even where the site displays n/v), indicators, ranks, on-chain observations. ~23 KB.</p>
+  </div>
+  <div class="card">
+    <h3><a href="wrapper-watch-summary.json">wrapper-watch-summary.json</a></h3>
+    <p>Wrapper Watch per-brand summary: 38 brands, suspect counts by confidence tier, activity, and the top endpoints per brand. Full per-endpoint evidence lives on the <a href="../index.html#wrapper-watch">brand pages</a>.</p>
+  </div>
+</div>
+
+<p class="note">Refresh cadence: weekly. For programmatic checks (per-address verdicts) use the <a href="https://provenance.q3epzs69b902a.us-west-2.cs.amazonlightsail.com">live Provenance API</a> or <a href="https://www.npmjs.com/package/provenance-mcp">provenance-mcp</a>. Questions or corrections: <a href="https://github.com/apeirontrade/provenance-site/issues">GitHub issues</a>.</p>
+<footer class="site">
+  <nav>
+    <a href="https://provenance.q3epzs69b902a.us-west-2.cs.amazonlightsail.com">Live Provenance API</a>
+    <a href="https://www.npmjs.com/package/provenance-mcp">provenance-mcp (npm)</a>
+    <a href="https://www.npmjs.com/package/provenance-guard">provenance-guard (npm)</a>
+    <a href="https://github.com/apeirontrade/provenance-site">GitHub</a>
+    <a href="../methodology.html">Methodology</a>
+    <a href="../data/index.html">Open data (CC-BY-4.0)</a>
+    <a href="https://github.com/apeirontrade/provenance-site/issues">Disputes &amp; corrections</a>
+  </nav>
+  <div>All figures are statistical estimates derived from public on-chain payment data and public x402 discovery registries. Nothing here asserts fraud or contract breach by any named party — see the <a href="../methodology.html">methodology and disclaimer</a>. Data is CC-BY-4.0; cite Provenance.</div>
+  <div>Provenance · independent trust ratings for machine-payable (x402) API endpoints · generated 2026-07-06</div>
+</footer>
+</div></body></html>

@@ -1,0 +1,1513 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>x402 endpoints offering CoinGecko data — resale-authorization audit (127 suspected) — Provenance</title>
+<meta name="description" content="CoinGecko API resold via x402? 127 suspected unauthorized CoinGecko reseller endpoints found in public x402 registries (2 high-confidence, 118 active in 30d). Evidence, prices, on-chain payment counts. Verification recommended.">
+<link rel="canonical" href="https://apeirontrade.github.io/provenance-site/brands/coingecko.html">
+<meta property="og:title" content="x402 endpoints offering CoinGecko data — resale-authorization audit (127 suspected) — Provenance">
+<meta property="og:description" content="CoinGecko API resold via x402? 127 suspected unauthorized CoinGecko reseller endpoints found in public x402 registries (2 high-confidence, 118 active in 30d). Evidence, prices, on-chain payment counts. Verification recommended.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://apeirontrade.github.io/provenance-site/brands/coingecko.html">
+<meta name="robots" content="index,follow">
+<style>
+  :root{color-scheme:light dark;
+    --bg:#0d1117;--panel:#161b22;--border:#30363d;--fg:#e6edf3;--dim:#8b949e;--accent:#58a6ff;--accent2:#d2a8ff;}
+  @media (prefers-color-scheme: light){:root{--bg:#f6f8fa;--panel:#ffffff;--border:#d0d7de;--fg:#1f2328;--dim:#57606a;--accent:#0969da;--accent2:#8250df;}}
+  *{box-sizing:border-box;margin:0}
+  body{background:var(--bg);color:var(--fg);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;padding:2.2rem 1rem 4rem}
+  .wrap{max-width:1080px;margin:0 auto}
+  header.site{margin-bottom:1.6rem}
+  .crumb{font-size:.82rem;color:var(--dim);margin-bottom:1rem}
+  .crumb a{color:var(--dim)}
+  h1{font-size:1.65rem;letter-spacing:-.01em;line-height:1.25}
+  h2{font-size:1.15rem;margin:2.2rem 0 .8rem}
+  h3{font-size:1rem;margin:1.6rem 0 .6rem}
+  .sub{color:var(--dim);margin:.5rem 0 1.4rem;max-width:62rem}
+  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.8rem;margin:1.4rem 0 1.8rem}
+  .tile{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:.85rem 1rem}
+  .tile b{display:block;font-size:1.4rem;font-weight:600}
+  .tile span{color:var(--dim);font-size:.8rem}
+  .tblwrap{overflow-x:auto;border:1px solid var(--border);border-radius:8px;background:var(--panel);margin:.6rem 0 1rem}
+  table{border-collapse:collapse;width:100%;font-size:.9rem}
+  th{color:var(--dim);font-weight:600;font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;text-align:left;padding:.65rem .8rem;border-bottom:1px solid var(--border);white-space:nowrap}
+  td{padding:.6rem .8rem;border-bottom:1px solid var(--border);vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82rem}
+  .dim{color:var(--dim)}
+  .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .center{text-align:center}
+  .ep-name{font-weight:600;overflow-wrap:anywhere}
+  .ep-meta{color:var(--dim);font-size:.76rem;margin-top:.15rem;overflow-wrap:anywhere}
+  .grade{display:inline-block;border:1px solid;border-radius:6px;padding:.05rem .55rem;font-weight:700;font-size:.98rem;white-space:nowrap}
+  .infl-pos{color:#f85149;font-weight:700;font-variant-numeric:tabular-nums}
+  .infl-neg{color:#3fb950;font-weight:600;font-variant-numeric:tabular-nums}
+  .infl-zero{color:var(--dim)}
+  .ind{font-size:.82rem;color:var(--dim);max-width:300px}
+  .pill{display:inline-block;border:1px solid var(--border);border-radius:99px;padding:.02rem .55rem;font-size:.74rem;color:var(--dim);white-space:nowrap}
+  .pill.ok{color:#3fb950;border-color:#3fb95055}
+  .pill.hi{color:#f0883e;border-color:#f0883e55}
+  .pill.med{color:#d29922;border-color:#d2992255}
+  .note,.callout{color:var(--dim);font-size:.84rem;margin:1.1rem 0;line-height:1.6;max-width:62rem}
+  .callout{background:var(--panel);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:6px;padding:.8rem 1rem;color:var(--fg)}
+  .callout.warn{border-left-color:#d29922}
+  ul.ev{margin:.2rem 0 .2rem 1rem;padding:0;font-size:.82rem;color:var(--dim)}
+  ul.ev li{margin:.15rem 0}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85em;background:var(--panel);border:1px solid var(--border);border-radius:4px;padding:.05em .3em}
+  .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.8rem;margin:1rem 0}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:1rem}
+  .card h3{margin:0 0 .4rem;font-size:.95rem}
+  .card p{font-size:.83rem;color:var(--dim)}
+  .brandlist{columns:3;column-gap:1.5rem;font-size:.9rem}
+  @media(max-width:800px){.brandlist{columns:2}}
+  @media(max-width:520px){.brandlist{columns:1}}
+  .brandlist li{margin:.25rem 0;break-inside:avoid}
+  footer.site{border-top:1px solid var(--border);margin-top:3rem;padding-top:1.1rem;color:var(--dim);font-size:.82rem;line-height:1.7}
+  footer.site nav{margin-bottom:.4rem}
+  footer.site nav a{margin-right:1.1rem}
+  dl.kv{display:grid;grid-template-columns:max-content 1fr;gap:.35rem 1.2rem;font-size:.9rem;margin:.8rem 0}
+  dl.kv dt{color:var(--dim)}
+  dl.kv dd{overflow-wrap:anywhere}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://apeirontrade.github.io/provenance-site/#org","name":"Provenance","url":"https://apeirontrade.github.io/provenance-site/","description":"Independent trust ratings for x402 machine-payable API endpoints, derived from public on-chain payment data and public discovery registries.","sameAs":["https://www.npmjs.com/package/provenance-mcp","https://www.npmjs.com/package/provenance-guard","https://github.com/apeirontrade/provenance-mcp","https://github.com/apeirontrade/provenance-guard"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Report","headline":"x402 endpoints offering CoinGecko data — resale-authorization audit","author":{"@id":"https://apeirontrade.github.io/provenance-site/#org"},"datePublished":"2026-07-05","about":{"@type":"Brand","name":"CoinGecko"},"mainEntityOfPage":"https://apeirontrade.github.io/provenance-site/brands/coingecko.html"}</script>
+</head><body><div class="wrap">
+<div class="crumb"><a href="../index.html">Provenance x402 Trust Index</a> &middot; <a href="../methodology.html">Methodology</a> &middot; <a href="../data/index.html">Open data</a></div>
+
+<h1>x402 endpoints offering CoinGecko data <span class="dim">— resale-authorization audit</span></h1>
+<p class="sub">127 machine-payable (x402) endpoints in the public discovery registries exhibit reseller signatures referencing <b>CoinGecko</b> while hosted off CoinGecko's own domains. Resale-authorization status: <b>unknown — suspected unauthorized resale, verification recommended</b>. Any of these endpoints may hold a legitimate redistribution license.</p>
+
+<div class="callout">Context: CoinGecko sells API tiers and requires attribution even on its free tier.</div>
+
+<div class="tiles">
+  <div class="tile"><b>127</b><span>suspected reseller endpoints</span></div>
+  <div class="tile"><b>2</b><span>high-confidence signatures (≥70/100)</span></div>
+  <div class="tile"><b>118</b><span>with paid activity in the last 30d</span></div>
+  <div class="tile"><b>2</b><span>live-402 confirmed by probe</span></div>
+</div>
+
+<p class="note">Scan of 23,376 unique x402 endpoints on 2026-07-05, sources: Coinbase Bazaar + GoPlausible registry. Payment counts come from the registries' own published 30-day quality signals. Evidence bullets are automated signature matches — see the <a href="../methodology.html">methodology</a> for signal definitions, false-positive modes, and the <a href="https://github.com/apeirontrade/provenance-site/issues">dispute path</a>. If you are on CoinGecko's API or trust team and want the full evidence set or a re-verification, open an issue — it's free.</p>
+
+<div class="tblwrap"><table>
+<thead><tr><th>Endpoint</th><th>Price/call</th><th>Calls 30d</th><th>Signature</th><th>Evidence (automated signature matches)</th></tr></thead>
+<tbody><tr>
+  <td>
+    <div class="ep-name mono">https://bazaar-gateway.vercel.app/api/market-report</div>
+    <div class="ep-meta">Navi Market Report — AI-generated cryptocurrency market analysis report. Fetches real-time prices from CoinGecko then uses Claude AI to generate a professional market analysis with trends, risks, and o…</div>
+    <div class="ep-meta mono">pays to 0xd20F…7d0D on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0200</td>
+  <td class="num">4<div class="ep-meta">3 payers</div></td>
+  <td class="center"><span class="pill hi">high · 75/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic, CoinGecko (via &quot;claude&quot; in description) but is hosted on bazaar-gateway.vercel.app, not the brand's domain</li><li>declares upstream data source: &quot;prices from CoinGecko&quot;</li><li>$0.0200/call ≈ 2.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://eltociear-tokenguard.hf.space/btc_rates</div>
+    <div class="ep-meta"> — BTC-denominated exchange rates for 76 fiat currencies and crypto — real-time cross-rates via CoinGecko, no API key required.</div>
+    <div class="ep-meta mono">pays to 0x2B60…7392 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0050</td>
+  <td class="num">2<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill hi">high · 70/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in description) but is hosted on eltociear-tokenguard.hf.space, not the brand's domain</li><li>sells key-free access (upstream key laundering): &quot;no API key required&quot;</li><li>$0.0050/call ≈ 6.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (hf.space) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://tokenaru.vercel.app/api/lookup</div>
+    <div class="ep-meta"> — Resolve a token contract address with CoinGecko-backed metadata.</div>
+    <div class="ep-meta mono">pays to 0xE113…CD2f on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0020</td>
+  <td class="num">5<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 65/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in description) but is hosted on tokenaru.vercel.app, not the brand's domain</li><li>input schema is a bare passthrough (q) — consistent with forwarding to an upstream API</li><li>$0.0020/call ≈ 2.5× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-entity-resolver-production.up.railway.app/resolve</div>
+    <div class="ep-meta">x402 Entity-ID Resolver — Name in, official IDs out. Give it a company or crypto name or ticker (&quot;Apple&quot;, &quot;ETH&quot;, &quot;Stripe&quot;) and get the verified IDs that identify it everywhere: SEC CIK + ticker, GLEIF LEI, …</div>
+    <div class="ep-meta mono">pays to 0x5fa6…4a16 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0050</td>
+  <td class="num">3<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 65/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in description) but is hosted on x402-entity-resolver-production.up.railway.app, not the brand's domain</li><li>input schema is a bare passthrough (q) — consistent with forwarding to an upstream API</li><li>$0.0050/call ≈ 6.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (railway.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.questflow.ai/x402/agent/qrn:agent:687df68ab234010b7d331717</div>
+    <div class="ep-meta">Questflow — 
+      DEX Screener is a platform that provides data directly from the blockchains it tracks, using a custom-built indexer to parse, analyze, and store raw blockchain logs.
+      I…</div>
+    <div class="ep-meta mono">pays to 0x008E…F607 on base · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill med">medium · 65/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko, DEX Screener (via &quot;coingecko&quot; in description) but is hosted on api.questflow.ai, not the brand's domain</li><li>'powered by' upstream-provider phrasing: &quot;Powered by&quot;</li><li>input schema is a bare passthrough (input) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api-dev.intra-tls2.dctx.link/x402/agent/qrn:agent:6823065f5380bd59df4992e4</div>
+    <div class="ep-meta"> — 
+      DEX Screener is a platform that provides data directly from the blockchains it tracks, using a custom-built indexer to parse, analyze, and store raw blockchain logs.
+      I…</div>
+    <div class="ep-meta mono">pays to 0x2fE7…3460 on base-sepolia · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill med">medium · 65/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko, DEX Screener (via &quot;coingecko&quot; in description) but is hosted on api-dev.intra-tls2.dctx.link, not the brand's domain</li><li>'powered by' upstream-provider phrasing: &quot;Powered by&quot;</li><li>input schema is a bare passthrough (input) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://meryol-agenticmarket-x402.hf.space/price/cross/:chain/:token</div>
+    <div class="ep-meta"> — Pre-quote price sanity check: median across CoinGecko + DexScreener + GeckoTerminal with per-source quotes and spread in bps (broken &gt;20%-off sources excluded from spread, kept vis…</div>
+    <div class="ep-meta mono">pays to 0x8eeF…b601 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0020</td>
+  <td class="num">9<div class="ep-meta">3 payers</div></td>
+  <td class="center"><span class="pill med">medium · 60/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko, DEX Screener (via &quot;coingecko&quot; in description) but is hosted on meryol-agenticmarket-x402.hf.space, not the brand's domain</li><li>$0.0020/call ≈ 2.5× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (hf.space) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-deployer.x402-deployer.workers.dev/wallet-pnl</div>
+    <div class="ep-meta"> — Wallet token P&amp;L / FIFO cost basis / realized + unrealized profit / EVM portfolio analytics. For any (wallet, ERC-20, chain) triple, pulls all transfers from Etherscan v2, prices e…</div>
+    <div class="ep-meta mono">pays to 0x6c07…5621 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0500</td>
+  <td class="num">5<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 60/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko, Etherscan (via &quot;coingecko&quot; in description) but is hosted on x402-deployer.x402-deployer.workers.dev, not the brand's domain</li><li>$0.0500/call ≈ 62.5× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (workers.dev) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-deployer.x402-deployer.workers.dev/arbitrage-spread</div>
+    <div class="ep-meta"> — Cross-exchange arbitrage spread / max-min price / CEX price dispersion / spread % calculator. For any CoinGecko-listed coin, pulls every tracked exchange ticker, computes the lowes…</div>
+    <div class="ep-meta mono">pays to 0x6c07…5621 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0050</td>
+  <td class="num">4<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 60/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko, Binance (via &quot;coingecko&quot; in description) but is hosted on x402-deployer.x402-deployer.workers.dev, not the brand's domain</li><li>$0.0050/call ≈ 6.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (workers.dev) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://eltociear-tokenguard.hf.space/derivatives</div>
+    <div class="ep-meta"> — Derivatives exchanges ranked by open interest in BTC — futures/perpetuals platforms with volume, pairs count, trust score (CoinGecko, free, no key).</div>
+    <div class="ep-meta mono">pays to 0x2B60…7392 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0050</td>
+  <td class="num">2<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 60/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko, Binance (via &quot;coingecko&quot; in description) but is hosted on eltociear-tokenguard.hf.space, not the brand's domain</li><li>$0.0050/call ≈ 6.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (hf.space) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://eltociear-tokenguard.hf.space/exchange</div>
+    <div class="ep-meta"> — Top CEX/DEX by trust score and 24h BTC volume (CoinGecko, free, no key). Exchange rank, country, year established, trading pairs count.</div>
+    <div class="ep-meta mono">pays to 0x2B60…7392 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0050</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 60/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko, Binance (via &quot;coingecko&quot; in description) but is hosted on eltociear-tokenguard.hf.space, not the brand's domain</li><li>$0.0050/call ≈ 6.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (hf.space) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.questflow.ai/x402/agent/qrn:agent:68f8b2fbbd72982773f4b112</div>
+    <div class="ep-meta">Questflow — Coingecko provides real-time and historical price feeds, market data, trading volumes, market capitalization, metadata, and analytics for thousands of crypto assets, NFTs, and exch…</div>
+    <div class="ep-meta mono">pays to 0x5883…9E16 on base · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill med">medium · 60/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in description) but is hosted on api.questflow.ai, not the brand's domain</li><li>'powered by' upstream-provider phrasing: &quot;Powered by&quot;</li><li>input schema is a bare passthrough (input) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.questflow.ai/x402/agent/qrn:agent:687df7c0b234010b7d331c25</div>
+    <div class="ep-meta">Questflow — 
+        OKLink | Welcome to OKLink Explorer APIs, an essential resource offering Web3 developers a suite of accessible and scalable APIs. Our APIs support block data from over 40 …</div>
+    <div class="ep-meta mono">pays to 0x1088…777d on base · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill med">medium · 60/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in description) but is hosted on api.questflow.ai, not the brand's domain</li><li>'powered by' upstream-provider phrasing: &quot;Powered by&quot;</li><li>input schema is a bare passthrough (input) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.questflow.ai/x402/swarm/qrn:swarm:68e795cd7ad7f91b3bd36b15</div>
+    <div class="ep-meta">Questflow — Your crypto intelligence companion powered by CoinGecko Pro. Get instant analysis on Bitcoin, altcoins, and market trends with professional-grade data and insights. | Powered by Qu…</div>
+    <div class="ep-meta mono">pays to 0x556a…0F28 on base · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill med">medium · 60/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in description) but is hosted on api.questflow.ai, not the brand's domain</li><li>'powered by' upstream-provider phrasing: &quot;powered by&quot;</li><li>input schema is a bare passthrough (input) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.questflow.ai/x402/agent/qrn:agent:687df68fb234010b7d33175c</div>
+    <div class="ep-meta">Questflow — CoinGecko is a comprehensive cryptocurrency data aggregator that provides users with real-time information on over 17,000 crypto assets across more than 1,000 exchanges, enabling i…</div>
+    <div class="ep-meta mono">pays to 0x9D09…991A on base · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill med">medium · 60/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in description) but is hosted on api.questflow.ai, not the brand's domain</li><li>'powered by' upstream-provider phrasing: &quot;Powered by&quot;</li><li>input schema is a bare passthrough (input) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api-staging.intra-tls2.dctx.link/x402/agent/qrn:agent:68f59a6a93d1a55ee56c7d3b</div>
+    <div class="ep-meta"> — Coingecko provides abilities to obtain price feeds, market data, metadata, and historical data of crypto assets, NFTs, and exchanges. | Powered by Questflow</div>
+    <div class="ep-meta mono">pays to 0xac50…F2FF on base-sepolia · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill med">medium · 60/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in description) but is hosted on api-staging.intra-tls2.dctx.link, not the brand's domain</li><li>'powered by' upstream-provider phrasing: &quot;Powered by&quot;</li><li>input schema is a bare passthrough (input) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api-dev.intra-tls2.dctx.link/x402/agent/qrn:agent:68355af5edb8edd20e1c362d</div>
+    <div class="ep-meta"> — CoinGecko is a comprehensive cryptocurrency data aggregator that provides users with real-time information on over 17,000 crypto assets across more than 1,000 exchanges, enabling i…</div>
+    <div class="ep-meta mono">pays to 0xEb22…F470 on base-sepolia · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill med">medium · 60/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in description) but is hosted on api-dev.intra-tls2.dctx.link, not the brand's domain</li><li>'powered by' upstream-provider phrasing: &quot;Powered by&quot;</li><li>input schema is a bare passthrough (input) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api-dev.intra-tls2.dctx.link/x402/agent/qrn:agent:68f59a6a93d1a55ee56c7d3b</div>
+    <div class="ep-meta"> — Coingecko provides abilities to obtain price feeds, market data, metadata, and historical data of crypto assets, NFTs, and exchanges. | Powered by Questflow</div>
+    <div class="ep-meta mono">pays to 0xac50…F2FF on base-sepolia · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill med">medium · 60/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in description) but is hosted on api-dev.intra-tls2.dctx.link, not the brand's domain</li><li>'powered by' upstream-provider phrasing: &quot;Powered by&quot;</li><li>input schema is a bare passthrough (input) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://the-stall.intuitek.ai/cap/btc-game-theory</div>
+    <div class="ep-meta"> — Bitcoin mining game theory and systems dynamics in one call. Returns: selfish-mining profitability threshold (Eyal-Sirer), 51%-attack electricity cost estimate, fee-vs-subsidy reve…</div>
+    <div class="ep-meta mono">pays to 0x03d7…584c on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0060</td>
+  <td class="num">3<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in description) but is hosted on the-stall.intuitek.ai, not the brand's domain</li><li>sells key-free access (upstream key laundering): &quot;no API key required&quot;</li><li>$0.0060/call ≈ 7.5× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://the-stall.intuitek.ai/cap/defillama-coin-price</div>
+    <div class="ep-meta"> — Returns on-chain aggregated token prices via DefiLlama coins API. Accepts coingecko IDs, contract addresses, or shorthand (eth, btc, sol). Up to 10 tokens per call. Undercuts block…</div>
+    <div class="ep-meta mono">pays to 0x03d7…584c on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0160</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in description) but is hosted on the-stall.intuitek.ai, not the brand's domain</li><li>declares upstream data source: &quot;prices via DefiLlama&quot;</li><li>$0.0160/call ≈ 20.0× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://the-stall.intuitek.ai/cap/wallet-balance</div>
+    <div class="ep-meta"> — Returns the native token balance (ETH, POL, BNB) for any EVM wallet address. Supports Ethereum, Base, Polygon, Arbitrum, Optimism, and BSC. Includes optional USD value. $0.002/call…</div>
+    <div class="ep-meta mono">pays to 0x03d7…584c on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0020</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in description) but is hosted on the-stall.intuitek.ai, not the brand's domain</li><li>sells key-free access (upstream key laundering): &quot;no API key required&quot;</li><li>$0.0020/call ≈ 2.5× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://oracle.the-undesirables.com/api/v1/coin-history</div>
+    <div class="ep-meta"> — Historical Token Simulator: Fetches OHLC (Open, High, Low, Close) token data from CoinGecko and applies Merton Jump-Diffusion Monte Carlo simulation to project future trajectories.</div>
+    <div class="ep-meta mono">pays to 0x642e…Cc1B on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0500</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in description) but is hosted on oracle.the-undesirables.com, not the brand's domain</li><li>declares upstream data source: &quot;data from CoinGecko&quot;</li><li>$0.0500/call ≈ 62.5× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://market.memoryapi.org/x402/market/tokenized</div>
+    <div class="ep-meta"> — Tokenized securities prices from CoinGecko. Real-time quotes for tokenized stocks and real-world assets (RWA tokens).</div>
+    <div class="ep-meta mono">pays to 0x24FA…9bf2 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in description) but is hosted on market.memoryapi.org, not the brand's domain</li><li>declares upstream data source: &quot;prices from CoinGecko.&quot;</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-agent-store.rileycraig14.workers.dev/crypto/prices</div>
+    <div class="ep-meta">Token Price Snapshot — Current USD prices for one or more tokens by CoinGecko id (e.g. bitcoin, ethereum, solana, usd-coin). Returns price, symbol, and confidence per token in one call. Sourced live from…</div>
+    <div class="ep-meta mono">pays to 0xc91c…b95c on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">6<div class="ep-meta">5 payers</div></td>
+  <td class="center"><span class="pill med">medium · 55/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in description) but is hosted on x402-agent-store.rileycraig14.workers.dev, not the brand's domain</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (workers.dev) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://bazaar-gateway.vercel.app/api/crypto-prices</div>
+    <div class="ep-meta">Navi Crypto Prices — Real-time cryptocurrency prices for BTC, ETH, SOL, and other major coins. Data sourced from CoinGecko. Returns current price in USD, 24h change percentage, and market cap.</div>
+    <div class="ep-meta mono">pays to 0xd20F…7d0D on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">5<div class="ep-meta">4 payers</div></td>
+  <td class="center"><span class="pill med">medium · 55/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in description) but is hosted on bazaar-gateway.vercel.app, not the brand's domain</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-data-api.onrender.com/api/price/:coin</div>
+    <div class="ep-meta"> — Current USD spot price and 24-hour percent change for any crypto asset by CoinGecko id. Cheap, high-volume price lookups for trading and analytics agents.</div>
+    <div class="ep-meta mono">pays to 0xdd5f…1ba6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">5<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 55/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in description) but is hosted on x402-data-api.onrender.com, not the brand's domain</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (onrender.com) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-deployer.x402-deployer.workers.dev/token-volatility</div>
+    <div class="ep-meta"> — Token volatility / historical volatility / annualized vol / standard deviation of returns / crypto vol calculator. For any CoinGecko-listed token, computes log-return standard devi…</div>
+    <div class="ep-meta mono">pays to 0x6c07…5621 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0050</td>
+  <td class="num">4<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 55/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in description) but is hosted on x402-deployer.x402-deployer.workers.dev, not the brand's domain</li><li>$0.0050/call ≈ 6.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (workers.dev) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-crypto-data.vercel.app/api/price</div>
+    <div class="ep-meta">Crypto Data Agent — Current crypto prices for up to 25 coins (DefiLlama).</div>
+    <div class="ep-meta mono">pays to 0x23c9…dB35 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0020</td>
+  <td class="num">2<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 55/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in schema) but is hosted on x402-crypto-data.vercel.app, not the brand's domain</li><li>$0.0020/call ≈ 2.5× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://eltociear-tokenguard.hf.space/trending</div>
+    <div class="ep-meta"> — Top trending crypto coins + NFTs by search volume (CoinGecko, free, no API key). Price, 24h change, sparkline, market cap rank.</div>
+    <div class="ep-meta mono">pays to 0x2B60…7392 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0050</td>
+  <td class="num">2<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 55/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in description) but is hosted on eltociear-tokenguard.hf.space, not the brand's domain</li><li>$0.0050/call ≈ 6.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (hf.space) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://eltociear-tokenguard.hf.space/global_defi</div>
+    <div class="ep-meta"> — DeFi global market overview: total DeFi market cap, ETH ratio, 24h trading volume, DeFi dominance, top DeFi coin via CoinGecko.</div>
+    <div class="ep-meta mono">pays to 0x2B60…7392 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0050</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 55/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in description) but is hosted on eltociear-tokenguard.hf.space, not the brand's domain</li><li>$0.0050/call ≈ 6.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (hf.space) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://eltociear-tokenguard.hf.space/token_dev</div>
+    <div class="ep-meta"> — GitHub developer activity for any crypto project — commits, stars, forks, PRs, code additions/deletions via CoinGecko.</div>
+    <div class="ep-meta mono">pays to 0x2B60…7392 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0050</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 55/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in description) but is hosted on eltociear-tokenguard.hf.space, not the brand's domain</li><li>$0.0050/call ≈ 6.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (hf.space) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://eltociear-tokenguard.hf.space/token_chart</div>
+    <div class="ep-meta"> — Historical price and volume chart for any crypto token (up to 365 days) via CoinGecko — candlestick-ready OHLCV data, no API key.</div>
+    <div class="ep-meta mono">pays to 0x2B60…7392 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0050</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 55/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in description) but is hosted on eltociear-tokenguard.hf.space, not the brand's domain</li><li>$0.0050/call ≈ 6.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (hf.space) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://eltociear-tokenguard.hf.space/categories</div>
+    <div class="ep-meta"> — Top coin categories ranked by market cap: DeFi, NFTs, L1, L2, gaming, etc. 24h change, volume, top 3 coins per category (CoinGecko, free, no key).</div>
+    <div class="ep-meta mono">pays to 0x2B60…7392 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0050</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 55/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in description) but is hosted on eltociear-tokenguard.hf.space, not the brand's domain</li><li>$0.0050/call ≈ 6.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (hf.space) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://eltociear-tokenguard.hf.space/market</div>
+    <div class="ep-meta"> — Global crypto market overview: total market cap, 24h volume, BTC/ETH dominance, active coins &amp; markets (CoinGecko, free, no key).</div>
+    <div class="ep-meta mono">pays to 0x2B60…7392 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0050</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 55/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in description) but is hosted on eltociear-tokenguard.hf.space, not the brand's domain</li><li>$0.0050/call ≈ 6.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (hf.space) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://entityresolver.xyz/resolve</div>
+    <div class="ep-meta">x402 Entity-ID Resolver — Name in, official IDs out. Give it a company or crypto name or ticker (&quot;Apple&quot;, &quot;ETH&quot;, &quot;Stripe&quot;) and get the verified IDs that identify it everywhere: SEC CIK + ticker, GLEIF LEI, …</div>
+    <div class="ep-meta mono">pays to 0x5fa6…4a16 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0050</td>
+  <td class="num">85<div class="ep-meta">3 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill ok">live 402 confirmed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in description) but is hosted on entityresolver.xyz, not the brand's domain</li><li>input schema is a bare passthrough (q) — consistent with forwarding to an upstream API</li><li>$0.0050/call ≈ 6.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://proxy.suverse.io/v1/data/coingecko-btc-eth-prices</div>
+    <div class="ep-meta"> — Current Bitcoin BTC and Ethereum ETH spot prices in USD from CoinGecko. AI agent dual price feed, BTC-USD ETH-USD ticker, market data API, pay-per-call USDC.</div>
+    <div class="ep-meta mono">pays to 0x260f…82b0 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0500</td>
+  <td class="num">42<div class="ep-meta">10 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill ok">live 402 confirmed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on proxy.suverse.io, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0500/call ≈ 62.5× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://coingecko.use.x402atlas.com/markets</div>
+    <div class="ep-meta">CoinGecko Crypto Price &amp; Data — Top crypto coins ranked by market cap — paginated market data (price, market-cap rank, symbol) in any currency, CoinGecko-sourced.</div>
+    <div class="ep-meta mono">pays to 0x3279…6d02 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0050</td>
+  <td class="num">12<div class="ep-meta">5 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on coingecko.use.x402atlas.com, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0050/call ≈ 6.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stablecrypto.dev/api/coingecko/trending</div>
+    <div class="ep-meta"> — Get trending coins, NFTs, and categories</div>
+    <div class="ep-meta mono">pays to 0x124F…4478 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">12<div class="ep-meta">4 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on stablecrypto.dev, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 12.5× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stablecrypto.dev/api/coingecko/onchain/trending</div>
+    <div class="ep-meta"> — Get trending pools across all networks</div>
+    <div class="ep-meta mono">pays to 0x124F…4478 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">10<div class="ep-meta">3 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on stablecrypto.dev, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 12.5× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:bitcoin,coingecko:ethereum,coingecko:solana</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">9<div class="ep-meta">4 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:bitcoin,coingecko:ethereum</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">7<div class="ep-meta">4 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://coingecko.use.x402atlas.com/trending</div>
+    <div class="ep-meta">CoinGecko Crypto Price &amp; Data — Trending crypto coins in the last 24h — the most-searched tokens on CoinGecko right now with name, symbol and market-cap rank.</div>
+    <div class="ep-meta mono">pays to 0x3279…6d02 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0050</td>
+  <td class="num">7<div class="ep-meta">3 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on coingecko.use.x402atlas.com, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0050/call ≈ 6.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://coingecko.use.x402atlas.com/price</div>
+    <div class="ep-meta">CoinGecko Crypto Price &amp; Data — Crypto token price in USD, EUR and more — real-time spot prices for one or many coins by CoinGecko id (bitcoin, ethereum, solana).</div>
+    <div class="ep-meta mono">pays to 0x3279…6d02 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0050</td>
+  <td class="num">7<div class="ep-meta">3 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on coingecko.use.x402atlas.com, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0050/call ≈ 6.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://coingecko.use.x402atlas.com/coin</div>
+    <div class="ep-meta">CoinGecko Crypto Price &amp; Data — Crypto coin metadata and market data by CoinGecko id — name, symbol, market-cap rank, price, homepage and categories for any token.</div>
+    <div class="ep-meta mono">pays to 0x3279…6d02 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0050</td>
+  <td class="num">7<div class="ep-meta">3 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on coingecko.use.x402atlas.com, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0050/call ≈ 6.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stablecrypto.dev/api/coingecko/global</div>
+    <div class="ep-meta"> — Get global crypto market stats</div>
+    <div class="ep-meta mono">pays to 0x124F…4478 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">7<div class="ep-meta">5 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on stablecrypto.dev, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 12.5× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://coingecko.use.x402atlas.com/ohlc</div>
+    <div class="ep-meta">CoinGecko Crypto Price &amp; Data — OHLC candlestick data for crypto — daily open/high/low/close candles over 1-365 days for any coin by CoinGecko id, chart-ready.</div>
+    <div class="ep-meta mono">pays to 0x3279…6d02 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0050</td>
+  <td class="num">6<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on coingecko.use.x402atlas.com, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0050/call ≈ 6.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:ethereum</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">5<div class="ep-meta">4 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://coingecko.use.x402atlas.com/history</div>
+    <div class="ep-meta">CoinGecko Crypto Price &amp; Data — Historical crypto price on a specific date — price, market cap and 24h volume snapshot for any coin by CoinGecko id, in USD or more.</div>
+    <div class="ep-meta mono">pays to 0x3279…6d02 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0050</td>
+  <td class="num">5<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on coingecko.use.x402atlas.com, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0050/call ≈ 6.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:polygon,coingecko:arbitrum</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">4<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:bitcoin</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">4<div class="ep-meta">4 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stablecrypto.dev/api/coingecko/onchain/new-pools</div>
+    <div class="ep-meta"> — Get new pools across all networks</div>
+    <div class="ep-meta mono">pays to 0x124F…4478 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">4<div class="ep-meta">3 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on stablecrypto.dev, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 12.5× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:chainlink,coingecko:uniswap</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">3<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:base,coingecko:optimism</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">3<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stablecrypto.dev/api/coingecko/categories</div>
+    <div class="ep-meta"> — Get all coin categories with market data</div>
+    <div class="ep-meta mono">pays to 0x124F…4478 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">3<div class="ep-meta">3 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on stablecrypto.dev, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 12.5× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://stablecrypto.dev/api/coingecko/onchain/networks</div>
+    <div class="ep-meta"> — Get supported on-chain networks</div>
+    <div class="ep-meta mono">pays to 0x124F…4478 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">3<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on stablecrypto.dev, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0100/call ≈ 12.5× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:ethereum,coingecko:solana</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">2<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:solana,coingecko:avalanche-2</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">2<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:solana</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.printmoneylab.com/api/v1/market-read</div>
+    <div class="ep-meta"> — AI-powered Korean crypto market analysis — 12+ data sources + exchange intelligence + Claude AI token-level signals</div>
+    <div class="ep-meta mono">pays to 0xcF92…42fB on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.10</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic, CoinGecko, Binance (via &quot;claude&quot; in description) but is hosted on api.printmoneylab.com, not the brand's domain</li><li>$0.1000/call ≈ 10.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:ethereum,coingecko:bitcoin</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:aave,coingecko:curve-dao-token</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:eigenlayer,coingecko:ondo-finance</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:wrapped-bitcoin,coingecko:coinbase-wrapped-btc</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:polkadot,coingecko:cosmos</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:injective-protocol,coingecko:sui</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:filecoin,coingecko:near</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:cardano,coingecko:matic-network</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:kaspa,coingecko:iota</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:binancecoin,coingecko:monero</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:wrapped-bitcoin,coingecko:staked-ether</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:tron,coingecko:eos</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:cardano,coingecko:algorand</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:xrp,coingecko:stellar</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:ocean-protocol,coingecko:singularitynet</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:akash-network,coingecko:flux</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:artificial-superintelligence-alliance,coingecko:bittensor</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:dai,coingecko:true-usd</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:ethena-usde,coingecko:frax</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:worldcoin-wld,coingecko:worldcoin</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:superverse,coingecko:ronin</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:pixels,coingecko:matr1x-fire</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:treasure-magiccraft,coingecko:beam-2</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:gods-unchained,coingecko:illuvium</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:axie-infinity,coingecko:gala</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:the-sandbox,coingecko:decentraland</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:alpha-finance,coingecko:venus</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:reserve-rights-token,coingecko:frax-share</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:ethereum-name-service,coingecko:unstoppable-domains</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:lido-dao,coingecko:rocket-pool</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:dydx-chain,coingecko:gmx</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:immutable-x,coingecko:blur</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:filecoin,coingecko:helium</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:cosmos,coingecko:polkadot</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:bitcoin-cash,coingecko:litecoin</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:grass,coingecko:io-net</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:movement,coingecko:sonic-3</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:hyperliquid,coingecko:berachain-bera</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:near,coingecko:internet-computer</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:sui,coingecko:aptos</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:ondo-finance,coingecko:pendle</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:ethena,coingecko:usual</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:jupiter-exchange-solana,coingecko:jito-governance-token</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:wormhole,coingecko:celestia</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:brett-based,coingecko:virtual-protocol</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:shiba-inu,coingecko:floki</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:pepe,coingecko:dogecoin</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:mantle,coingecko:scroll</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:sei-network,coingecko:starknet</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:render-token,coingecko:injective-protocol</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:the-graph,coingecko:fetch-ai</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:maker,coingecko:curve-dao-token</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:aave,coingecko:compound-governance-token</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:optimism,coingecko:avalanche-2</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://blockrun.ai/api/v1/defillama/prices/coingecko:solana,coingecko:base</div>
+    <div class="ep-meta">BlockRun.AI — Token price lookup. Pass coin identifiers as `/v1/defillama/prices/{coins}` (e.g. `coingecko:bitcoin`, `ethereum:0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`). Supports comma-separa…</div>
+    <div class="ep-meta mono">pays to 0xe903…1aBf on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on blockrun.ai, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.hyperd.ai/api/token/info</div>
+    <div class="ep-meta"> — Aggregated token metadata (CoinGecko + DefiLlama): market cap, supply, addresses across chains, recent volume.</div>
+    <div class="ep-meta mono">pays to 0x61b5…f1C6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in description) but is hosted on api.hyperd.ai, not the brand's domain</li><li>input schema is a bare passthrough (query) — consistent with forwarding to an upstream API</li><li>$0.0100/call ≈ 12.5× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://agent402.tools/api/price-coingecko</div>
+    <div class="ep-meta">Agent402.tools — Live spot price (and optional 24-hour change) for one or more coins from CoinGecko's public Simple Price endpoint. Identify coins by their CoinGecko ID slug (bitcoin, ethereum, sol…</div>
+    <div class="ep-meta mono">pays to 0xaBF4…a9D0 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on agent402.tools, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.x402node.dev/finance/crypto</div>
+    <div class="ep-meta"> — Current crypto prices via CoinGecko (free tier). Returns price in vs_currency, 24h change, market cap, volume, last update. Use ?id=bitcoin and vs=usd or ?id=bitcoin,ethereum,solan…</div>
+    <div class="ep-meta mono">pays to 0x4466…125e on base · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">4<div class="ep-meta">4 payers</div></td>
+  <td class="center"><span class="pill med">medium · 50/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in description) but is hosted on api.x402node.dev, not the brand's domain</li><li>declares upstream data source: &quot;prices via CoinGecko&quot;</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402.ottoai.services/base-season</div>
+    <div class="ep-meta">Otto AI — Base social intelligence: a current Base sentiment summary + the quality-screened Base tokens (CoinGecko-listed, market-cap/age/liquidity gated) that trusted KOLs are actually talk…</div>
+    <div class="ep-meta mono">pays to 0x0E84…b808 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">22<div class="ep-meta">8 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, CoinGecko (via &quot;twitter&quot; in tags) but is hosted on x402.ottoai.services, not the brand's domain</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://2s.io/api/crypto/coin</div>
+    <div class="ep-meta">2s — Full coin profile by CoinGecko id (e.g. bitcoin, ethereum, solana). Returns price, market cap + rank, FDV, 24h volume, all-time high/low with dates, circulating/total/max supply, p…</div>
+    <div class="ep-meta mono">pays to 0x2b6D…32C5 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0014</td>
+  <td class="num">5<div class="ep-meta">3 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Reddit, CoinGecko (via &quot;subreddit&quot; in description) but is hosted on 2s.io, not the brand's domain</li><li>$0.0014/call ≈ 6.0× Reddit's public ~$0.00024/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://the-stall.intuitek.ai/cap/market-movers</div>
+    <div class="ep-meta"> — Today's top market movers — equity gainers, losers, most-active, and crypto gainers/losers by 24h change. Sourced from Yahoo Finance screener and CoinGecko (free, no API key). Retu…</div>
+    <div class="ep-meta mono">pays to 0x03d7…584c on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0060</td>
+  <td class="num">3<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko, Yahoo Finance (via &quot;coingecko&quot; in description) but is hosted on the-stall.intuitek.ai, not the brand's domain</li><li>$0.0060/call ≈ 7.5× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://market.memoryapi.org/x402/market/preipo</div>
+    <div class="ep-meta"> — Pre-IPO and private company token prices — SpaceX, OpenAI, and other unicorns trading as tokenized assets via CoinGecko.</div>
+    <div class="ep-meta mono">pays to 0x24FA…9bf2 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, CoinGecko (via &quot;openai&quot; in description) but is hosted on market.memoryapi.org, not the brand's domain</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://market.memoryapi.org/x402/market/cex_arb</div>
+    <div class="ep-meta"> — Cross-exchange cryptocurrency arbitrage opportunities. Find best buy/sell prices across major exchanges.</div>
+    <div class="ep-meta mono">pays to 0x24FA…9bf2 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko, Binance (via &quot;coingecko&quot; in schema) but is hosted on market.memoryapi.org, not the brand's domain</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://gateway.apiosk.com/coingecko/search/trending</div>
+    <div class="ep-meta"> — The top trending coins on CoinGecko over the last 24 hours, ranked by how often users searched them.</div>
+    <div class="ep-meta mono">pays to 0xA039…3B79 on base · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">5<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on gateway.apiosk.com, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://gateway.apiosk.com/coingecko/simple/price</div>
+    <div class="ep-meta"> — Live price of one or more coins in one or more fiat/crypto currencies, with optional market cap and 24h change.</div>
+    <div class="ep-meta mono">pays to 0xA039…3B79 on base · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">3<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on gateway.apiosk.com, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://gateway.apiosk.com/coingecko/coins/list</div>
+    <div class="ep-meta"> — The full list of coins CoinGecko tracks — each with its id, symbol and name. Use the id to query prices and market data.</div>
+    <div class="ep-meta mono">pays to 0xA039…3B79 on base · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on gateway.apiosk.com, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://gateway.apiosk.com/coingecko/coins/markets</div>
+    <div class="ep-meta"> — Market data (price, market cap, volume, 24h change) for coins, ranked.</div>
+    <div class="ep-meta mono">pays to 0xA039…3B79 on base · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on gateway.apiosk.com, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://httpay.xyz/api/gateway/coingecko/%7B*path%7D</div>
+    <div class="ep-meta"> — API Gateway: CoinGecko crypto data API</div>
+    <div class="ep-meta mono">pays to 0x5f5d…4359 on base · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko (via &quot;coingecko&quot; in url) but is hosted on httpay.xyz, not the brand's domain</li><li>brand term &quot;coingecko&quot; appears in the endpoint URL itself</li></ul></td>
+</tr></tbody>
+</table></div>
+
+<p class="note"><b>Framing note:</b> every row above is a statistical signature match, published so that CoinGecko's own team — the only party who can actually verify authorization — can review it. Nothing on this page asserts that any listed operator is acting unlawfully or in breach of any agreement.</p>
+<footer class="site">
+  <nav>
+    <a href="https://provenance.q3epzs69b902a.us-west-2.cs.amazonlightsail.com">Live Provenance API</a>
+    <a href="https://www.npmjs.com/package/provenance-mcp">provenance-mcp (npm)</a>
+    <a href="https://www.npmjs.com/package/provenance-guard">provenance-guard (npm)</a>
+    <a href="https://github.com/apeirontrade/provenance-site">GitHub</a>
+    <a href="../methodology.html">Methodology</a>
+    <a href="../data/index.html">Open data (CC-BY-4.0)</a>
+    <a href="https://github.com/apeirontrade/provenance-site/issues">Disputes &amp; corrections</a>
+  </nav>
+  <div>All figures are statistical estimates derived from public on-chain payment data and public x402 discovery registries. Nothing here asserts fraud or contract breach by any named party — see the <a href="../methodology.html">methodology and disclaimer</a>. Data is CC-BY-4.0; cite Provenance.</div>
+  <div>Provenance · independent trust ratings for machine-payable (x402) API endpoints · generated 2026-07-06</div>
+</footer>
+</div></body></html>

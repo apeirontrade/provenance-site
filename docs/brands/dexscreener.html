@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>x402 endpoints offering DEX Screener data — resale-authorization audit (24 suspected) — Provenance</title>
+<meta name="description" content="DEX Screener API resold via x402? 24 suspected unauthorized DEX Screener reseller endpoints found in public x402 registries (0 high-confidence, 21 active in 30d). Evidence, prices, on-chain payment counts. Verification recommended.">
+<link rel="canonical" href="https://apeirontrade.github.io/provenance-site/brands/dexscreener.html">
+<meta property="og:title" content="x402 endpoints offering DEX Screener data — resale-authorization audit (24 suspected) — Provenance">
+<meta property="og:description" content="DEX Screener API resold via x402? 24 suspected unauthorized DEX Screener reseller endpoints found in public x402 registries (0 high-confidence, 21 active in 30d). Evidence, prices, on-chain payment counts. Verification recommended.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://apeirontrade.github.io/provenance-site/brands/dexscreener.html">
+<meta name="robots" content="index,follow">
+<style>
+  :root{color-scheme:light dark;
+    --bg:#0d1117;--panel:#161b22;--border:#30363d;--fg:#e6edf3;--dim:#8b949e;--accent:#58a6ff;--accent2:#d2a8ff;}
+  @media (prefers-color-scheme: light){:root{--bg:#f6f8fa;--panel:#ffffff;--border:#d0d7de;--fg:#1f2328;--dim:#57606a;--accent:#0969da;--accent2:#8250df;}}
+  *{box-sizing:border-box;margin:0}
+  body{background:var(--bg);color:var(--fg);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;padding:2.2rem 1rem 4rem}
+  .wrap{max-width:1080px;margin:0 auto}
+  header.site{margin-bottom:1.6rem}
+  .crumb{font-size:.82rem;color:var(--dim);margin-bottom:1rem}
+  .crumb a{color:var(--dim)}
+  h1{font-size:1.65rem;letter-spacing:-.01em;line-height:1.25}
+  h2{font-size:1.15rem;margin:2.2rem 0 .8rem}
+  h3{font-size:1rem;margin:1.6rem 0 .6rem}
+  .sub{color:var(--dim);margin:.5rem 0 1.4rem;max-width:62rem}
+  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.8rem;margin:1.4rem 0 1.8rem}
+  .tile{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:.85rem 1rem}
+  .tile b{display:block;font-size:1.4rem;font-weight:600}
+  .tile span{color:var(--dim);font-size:.8rem}
+  .tblwrap{overflow-x:auto;border:1px solid var(--border);border-radius:8px;background:var(--panel);margin:.6rem 0 1rem}
+  table{border-collapse:collapse;width:100%;font-size:.9rem}
+  th{color:var(--dim);font-weight:600;font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;text-align:left;padding:.65rem .8rem;border-bottom:1px solid var(--border);white-space:nowrap}
+  td{padding:.6rem .8rem;border-bottom:1px solid var(--border);vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82rem}
+  .dim{color:var(--dim)}
+  .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .center{text-align:center}
+  .ep-name{font-weight:600;overflow-wrap:anywhere}
+  .ep-meta{color:var(--dim);font-size:.76rem;margin-top:.15rem;overflow-wrap:anywhere}
+  .grade{display:inline-block;border:1px solid;border-radius:6px;padding:.05rem .55rem;font-weight:700;font-size:.98rem;white-space:nowrap}
+  .infl-pos{color:#f85149;font-weight:700;font-variant-numeric:tabular-nums}
+  .infl-neg{color:#3fb950;font-weight:600;font-variant-numeric:tabular-nums}
+  .infl-zero{color:var(--dim)}
+  .ind{font-size:.82rem;color:var(--dim);max-width:300px}
+  .pill{display:inline-block;border:1px solid var(--border);border-radius:99px;padding:.02rem .55rem;font-size:.74rem;color:var(--dim);white-space:nowrap}
+  .pill.ok{color:#3fb950;border-color:#3fb95055}
+  .pill.hi{color:#f0883e;border-color:#f0883e55}
+  .pill.med{color:#d29922;border-color:#d2992255}
+  .note,.callout{color:var(--dim);font-size:.84rem;margin:1.1rem 0;line-height:1.6;max-width:62rem}
+  .callout{background:var(--panel);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:6px;padding:.8rem 1rem;color:var(--fg)}
+  .callout.warn{border-left-color:#d29922}
+  ul.ev{margin:.2rem 0 .2rem 1rem;padding:0;font-size:.82rem;color:var(--dim)}
+  ul.ev li{margin:.15rem 0}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85em;background:var(--panel);border:1px solid var(--border);border-radius:4px;padding:.05em .3em}
+  .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.8rem;margin:1rem 0}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:1rem}
+  .card h3{margin:0 0 .4rem;font-size:.95rem}
+  .card p{font-size:.83rem;color:var(--dim)}
+  .brandlist{columns:3;column-gap:1.5rem;font-size:.9rem}
+  @media(max-width:800px){.brandlist{columns:2}}
+  @media(max-width:520px){.brandlist{columns:1}}
+  .brandlist li{margin:.25rem 0;break-inside:avoid}
+  footer.site{border-top:1px solid var(--border);margin-top:3rem;padding-top:1.1rem;color:var(--dim);font-size:.82rem;line-height:1.7}
+  footer.site nav{margin-bottom:.4rem}
+  footer.site nav a{margin-right:1.1rem}
+  dl.kv{display:grid;grid-template-columns:max-content 1fr;gap:.35rem 1.2rem;font-size:.9rem;margin:.8rem 0}
+  dl.kv dt{color:var(--dim)}
+  dl.kv dd{overflow-wrap:anywhere}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://apeirontrade.github.io/provenance-site/#org","name":"Provenance","url":"https://apeirontrade.github.io/provenance-site/","description":"Independent trust ratings for x402 machine-payable API endpoints, derived from public on-chain payment data and public discovery registries.","sameAs":["https://www.npmjs.com/package/provenance-mcp","https://www.npmjs.com/package/provenance-guard","https://github.com/apeirontrade/provenance-mcp","https://github.com/apeirontrade/provenance-guard"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Report","headline":"x402 endpoints offering DEX Screener data — resale-authorization audit","author":{"@id":"https://apeirontrade.github.io/provenance-site/#org"},"datePublished":"2026-07-05","about":{"@type":"Brand","name":"DEX Screener"},"mainEntityOfPage":"https://apeirontrade.github.io/provenance-site/brands/dexscreener.html"}</script>
+</head><body><div class="wrap">
+<div class="crumb"><a href="../index.html">Provenance x402 Trust Index</a> &middot; <a href="../methodology.html">Methodology</a> &middot; <a href="../data/index.html">Open data</a></div>
+
+<h1>x402 endpoints offering DEX Screener data <span class="dim">— resale-authorization audit</span></h1>
+<p class="sub">24 machine-payable (x402) endpoints in the public discovery registries exhibit reseller signatures referencing <b>DEX Screener</b> while hosted off DEX Screener's own domains. Resale-authorization status: <b>unknown — suspected unauthorized resale, verification recommended</b>. Any of these endpoints may hold a legitimate redistribution license.</p>
+
+<div class="callout">Context: DEX Screener offers a free, rate-limited API; paywalled proxies monetize access to it.</div>
+
+<div class="tiles">
+  <div class="tile"><b>24</b><span>suspected reseller endpoints</span></div>
+  <div class="tile"><b>0</b><span>high-confidence signatures (≥70/100)</span></div>
+  <div class="tile"><b>21</b><span>with paid activity in the last 30d</span></div>
+  <div class="tile"><b>0</b><span>live-402 confirmed by probe</span></div>
+</div>
+
+<p class="note">Scan of 23,376 unique x402 endpoints on 2026-07-05, sources: Coinbase Bazaar + GoPlausible registry. Payment counts come from the registries' own published 30-day quality signals. Evidence bullets are automated signature matches — see the <a href="../methodology.html">methodology</a> for signal definitions, false-positive modes, and the <a href="https://github.com/apeirontrade/provenance-site/issues">dispute path</a>. If you are on DEX Screener's API or trust team and want the full evidence set or a re-verification, open an issue — it's free.</p>
+
+<div class="tblwrap"><table>
+<thead><tr><th>Endpoint</th><th>Price/call</th><th>Calls 30d</th><th>Signature</th><th>Evidence (automated signature matches)</th></tr></thead>
+<tbody><tr>
+  <td>
+    <div class="ep-name mono">https://api.questflow.ai/x402/swarm/qrn:swarm:688a23cbc6520a7b2678f77a</div>
+    <div class="ep-meta">Questflow — Snipr is an autonomous Swarm built to hunt early Base, BNB and Solana chain tokens before they explode.
+It scans Dexscreener for low-FDV, high-volume movers, checks for Twitter hyp…</div>
+    <div class="ep-meta mono">pays to 0xD57E…2F20 on base · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill med">medium · 65/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, DEX Screener (via &quot;twitter&quot; in description) but is hosted on api.questflow.ai, not the brand's domain</li><li>'powered by' upstream-provider phrasing: &quot;Powered by&quot;</li><li>input schema is a bare passthrough (input) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.questflow.ai/x402/agent/qrn:agent:687df68ab234010b7d331717</div>
+    <div class="ep-meta">Questflow — 
+      DEX Screener is a platform that provides data directly from the blockchains it tracks, using a custom-built indexer to parse, analyze, and store raw blockchain logs.
+      I…</div>
+    <div class="ep-meta mono">pays to 0x008E…F607 on base · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill med">medium · 65/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko, DEX Screener (via &quot;coingecko&quot; in description) but is hosted on api.questflow.ai, not the brand's domain</li><li>'powered by' upstream-provider phrasing: &quot;Powered by&quot;</li><li>input schema is a bare passthrough (input) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api-dev.intra-tls2.dctx.link/x402/agent/qrn:agent:6823065f5380bd59df4992e4</div>
+    <div class="ep-meta"> — 
+      DEX Screener is a platform that provides data directly from the blockchains it tracks, using a custom-built indexer to parse, analyze, and store raw blockchain logs.
+      I…</div>
+    <div class="ep-meta mono">pays to 0x2fE7…3460 on base-sepolia · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill med">medium · 65/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko, DEX Screener (via &quot;coingecko&quot; in description) but is hosted on api-dev.intra-tls2.dctx.link, not the brand's domain</li><li>'powered by' upstream-provider phrasing: &quot;Powered by&quot;</li><li>input schema is a bare passthrough (input) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://meryol-agenticmarket-x402.hf.space/price/cross/:chain/:token</div>
+    <div class="ep-meta"> — Pre-quote price sanity check: median across CoinGecko + DexScreener + GeckoTerminal with per-source quotes and spread in bps (broken &gt;20%-off sources excluded from spread, kept vis…</div>
+    <div class="ep-meta mono">pays to 0x8eeF…b601 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0020</td>
+  <td class="num">9<div class="ep-meta">3 payers</div></td>
+  <td class="center"><span class="pill med">medium · 60/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko, DEX Screener (via &quot;coingecko&quot; in description) but is hosted on meryol-agenticmarket-x402.hf.space, not the brand's domain</li><li>$0.0020/call ≈ 2.5× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (hf.space) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-endpoints.onrender.com/crypto/token-dossier</div>
+    <div class="ep-meta">Token Dossier — Full degen token dossier in one call: safety score + honeypot/tax + detailed TOP HOLDERS and concentration + liquidity/FDV/volume/pool-age + contract control (owner, creator, minta…</div>
+    <div class="ep-meta mono">pays to 0x1D1B…620f on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.10</td>
+  <td class="num">3<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 60/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic, DEX Screener (via &quot;claude&quot; in schema) but is hosted on x402-endpoints.onrender.com, not the brand's domain</li><li>$0.1000/call ≈ 10.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (onrender.com) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-solana-cva8.onrender.com/crypto/token-dossier</div>
+    <div class="ep-meta">Token Dossier — Full degen token dossier in one call: safety score + honeypot/tax + detailed TOP HOLDERS and concentration + liquidity/FDV/volume/pool-age + contract control (owner, creator, minta…</div>
+    <div class="ep-meta mono">pays to CucGfd…DLEF on solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp · via bazaar</div>
+  </td>
+  <td class="num">$0.10</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 60/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic, DEX Screener (via &quot;claude&quot; in schema) but is hosted on x402-solana-cva8.onrender.com, not the brand's domain</li><li>$0.1000/call ≈ 10.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (onrender.com) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-endpoints.onrender.com/crypto/dex-cex-spread</div>
+    <div class="ep-meta">DEX-CEX Arbitrage Spread — DEX vs CEX arbitrage spread — the price difference between DEX and CEX with the fee-adjusted NET spread and execution direction, not two raw prices. Compares the most liquid DEX pa…</div>
+    <div class="ep-meta mono">pays to 0x1D1B…620f on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0500</td>
+  <td class="num">4<div class="ep-meta">3 payers</div></td>
+  <td class="center"><span class="pill med">medium · 52/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references DEX Screener, Binance (via &quot;dexscreener&quot; in description) but is hosted on x402-endpoints.onrender.com, not the brand's domain</li><li>hosted on generic infrastructure (onrender.com) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://the-stall.intuitek.ai/cap/meme-radar</div>
+    <div class="ep-meta"> — Solana meme coin quality-volume radar. Returns trending tokens ranked by a quality score that rewards organic buy pressure, liquidity depth, and volume consistency. Filters out low…</div>
+    <div class="ep-meta mono">pays to 0x03d7…584c on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0050</td>
+  <td class="num">3<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 50/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references DEX Screener (via &quot;dexscreener&quot; in description) but is hosted on the-stall.intuitek.ai, not the brand's domain</li><li>sells key-free access (upstream key laundering): &quot;no API key required&quot;</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-endpoints.onrender.com/crypto/token-safety</div>
+    <div class="ep-meta">Token Safety Check — Token safety check before buying — is this token a honeypot or a rug pull? Bundles honeypot detection, buy/sell tax, holder concentration, LP lock and liquidity (GoPlus, Honeypot.i…</div>
+    <div class="ep-meta mono">pays to 0x1D1B…620f on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0500</td>
+  <td class="num">6<div class="ep-meta">3 payers</div></td>
+  <td class="center"><span class="pill ">low · 47/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references DEX Screener (via &quot;dexscreener&quot; in description) but is hosted on x402-endpoints.onrender.com, not the brand's domain</li><li>hosted on generic infrastructure (onrender.com) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-endpoints.onrender.com/crypto/wallet-xray</div>
+    <div class="ep-meta">Wallet Risk X-Ray — Wallet risk analysis in one call — native + ERC-20 balances, USD portfolio valuation, token count and an OFAC sanctions flag (Blockscout, DexScreener, OFAC list). A full on-chain w…</div>
+    <div class="ep-meta mono">pays to 0x1D1B…620f on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0500</td>
+  <td class="num">4<div class="ep-meta">3 payers</div></td>
+  <td class="center"><span class="pill ">low · 47/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references DEX Screener (via &quot;dexscreener&quot; in description) but is hosted on x402-endpoints.onrender.com, not the brand's domain</li><li>hosted on generic infrastructure (onrender.com) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-endpoints.onrender.com/solana/token-safety</div>
+    <div class="ep-meta">Solana Token Safety Pro — Solana SPL token safety, rug check and honeypot / scam detection before trading: is this Solana token a rug pull, honeypot or scam? Verdict SAFE/RISKY/CRITICAL + 0-100 score combin…</div>
+    <div class="ep-meta mono">pays to 0x1D1B…620f on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">3<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 47/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references DEX Screener (via &quot;dexscreener&quot; in schema) but is hosted on x402-endpoints.onrender.com, not the brand's domain</li><li>hosted on generic infrastructure (onrender.com) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-endpoints.onrender.com/solana/pre-trade</div>
+    <div class="ep-meta">Solana Pre-Trade Bundle — All-in-one Solana pre-trade decision in ONE call: BUY-SAFE/CAUTION/AVOID fusing four scored modules — token security, EXECUTABLE liquidity depth (estimated slippage at $100/$1k/$10…</div>
+    <div class="ep-meta mono">pays to 0x1D1B…620f on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0500</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 47/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references DEX Screener (via &quot;dexscreener&quot; in schema) but is hosted on x402-endpoints.onrender.com, not the brand's domain</li><li>hosted on generic infrastructure (onrender.com) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://booaip.vercel.app/api/price</div>
+    <div class="ep-meta"> — Token price, liquidity, 24h volume and FDV from DEX pairs (DexScreener).</div>
+    <div class="ep-meta mono">pays to 0xcd6b…cefa on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">2<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill ">low · 47/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references DEX Screener (via &quot;dexscreener&quot; in description) but is hosted on booaip.vercel.app, not the brand's domain</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-solana-cva8.onrender.com/solana/pre-trade</div>
+    <div class="ep-meta">Solana Pre-Trade Bundle — All-in-one Solana pre-trade decision in ONE call: BUY-SAFE/CAUTION/AVOID fusing four scored modules — token security, EXECUTABLE liquidity depth (estimated slippage at $100/$1k/$10…</div>
+    <div class="ep-meta mono">pays to CucGfd…DLEF on solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp · via bazaar</div>
+  </td>
+  <td class="num">$0.0500</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 47/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references DEX Screener (via &quot;dexscreener&quot; in schema) but is hosted on x402-solana-cva8.onrender.com, not the brand's domain</li><li>hosted on generic infrastructure (onrender.com) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-solana-cva8.onrender.com/solana/token-safety</div>
+    <div class="ep-meta">Solana Token Safety Pro — Solana SPL token safety, rug check and honeypot / scam detection before trading: is this Solana token a rug pull, honeypot or scam? Verdict SAFE/RISKY/CRITICAL + 0-100 score combin…</div>
+    <div class="ep-meta mono">pays to CucGfd…DLEF on solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 47/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references DEX Screener (via &quot;dexscreener&quot; in schema) but is hosted on x402-solana-cva8.onrender.com, not the brand's domain</li><li>hosted on generic infrastructure (onrender.com) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-solana-cva8.onrender.com/crypto/token-safety</div>
+    <div class="ep-meta">Token Safety Check — Token safety check before buying — is this token a honeypot or a rug pull? Bundles honeypot detection, buy/sell tax, holder concentration, LP lock and liquidity (GoPlus, Honeypot.i…</div>
+    <div class="ep-meta mono">pays to CucGfd…DLEF on solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp · via bazaar</div>
+  </td>
+  <td class="num">$0.0500</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 47/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references DEX Screener (via &quot;dexscreener&quot; in description) but is hosted on x402-solana-cva8.onrender.com, not the brand's domain</li><li>hosted on generic infrastructure (onrender.com) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://statepulse-api.hahavoid0.workers.dev/blockchain/token-safety</div>
+    <div class="ep-meta">StatePulse API — One call that bundles the checks needed before trusting an unfamiliar ERC-20 token: scans deployed bytecode for dangerous function selectors (mint/pause/blacklist), reads on-chain …</div>
+    <div class="ep-meta mono">pays to 0x4a82…5bFE on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0500</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 47/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references DEX Screener (via &quot;dexscreener&quot; in description) but is hosted on statepulse-api.hahavoid0.workers.dev, not the brand's domain</li><li>hosted on generic infrastructure (workers.dev) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-agent-store.rileycraig14.workers.dev/connect/token</div>
+    <div class="ep-meta"> — ONE call that connects pre-trade safety and live market data into a single token-intelligence report: GoPlus rug-check (honeypot, taxes, mint/owner risk) + Dexscreener price/liquid…</div>
+    <div class="ep-meta mono">pays to 0xc91c…b95c on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0050</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 47/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references DEX Screener (via &quot;dexscreener&quot; in description) but is hosted on x402-agent-store.rileycraig14.workers.dev, not the brand's domain</li><li>hosted on generic infrastructure (workers.dev) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api-production-2800.up.railway.app/v1/token-risk</div>
+    <div class="ep-meta"> — Token risk scanner API by AgentSpendGuard for Base and EVM wallet, trading, and DeFi agents before swapping or interacting with a token. Search keywords: token risk, Base token sec…</div>
+    <div class="ep-meta mono">pays to 0x118F…Ce58 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0150</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 47/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references DEX Screener (via &quot;dexscreener&quot; in description) but is hosted on api-production-2800.up.railway.app, not the brand's domain</li><li>hosted on generic infrastructure (railway.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api-production-853c.up.railway.app/v1/crypto/risk-brief</div>
+    <div class="ep-meta"> — Generate an explainable crypto token risk brief for AI agents before wallet approval, listing, or trading workflows. Checks DexScreener market/liquidity data and GoPlus or RugCheck…</div>
+    <div class="ep-meta mono">pays to 0x118F…Ce58 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0200</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 47/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references DEX Screener (via &quot;dexscreener&quot; in description) but is hosted on api-production-853c.up.railway.app, not the brand's domain</li><li>hosted on generic infrastructure (railway.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://evm-meme-intel.vercel.app/api/momentum</div>
+    <div class="ep-meta"> — Real-time momentum/activity for an EVM token from DexScreener: price change 5m/1h/6h/24h, volume, 24h buy/sell ratio, liquidity, pair age, socials. Shows recent flow, NOT a price p…</div>
+    <div class="ep-meta mono">pays to 0xcd6b…cefa on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 47/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references DEX Screener (via &quot;dexscreener&quot; in description) but is hosted on evm-meme-intel.vercel.app, not the brand's domain</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://evm-meme-intel.vercel.app/api/discover</div>
+    <div class="ep-meta"> — Discover newly surfaced meme tokens on an EVM chain (eth, bnb, base) from DexScreener boosted (PAID-promoted) and newly profiled tokens, enriched with price, liquidity, and volume.…</div>
+    <div class="ep-meta mono">pays to 0xcd6b…cefa on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 47/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references DEX Screener (via &quot;dexscreener&quot; in description) but is hosted on evm-meme-intel.vercel.app, not the brand's domain</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://sol-meme-intel.vercel.app/api/momentum</div>
+    <div class="ep-meta"> — Real-time momentum/activity for a Solana token from DexScreener: price change 5m/1h/6h/24h, volume, buy/sell ratio, liquidity, pair age, socials. NOT a prediction. Body: { mint }.</div>
+    <div class="ep-meta mono">pays to 0xcd6b…cefa on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 47/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references DEX Screener (via &quot;dexscreener&quot; in description) but is hosted on sol-meme-intel.vercel.app, not the brand's domain</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://sol-meme-intel.vercel.app/api/discover</div>
+    <div class="ep-meta"> — Discover newly surfaced meme tokens on Solana from DexScreener boosted (PAID-promoted) and newly profiled tokens, enriched with price, liquidity, volume. Discovery starting point; …</div>
+    <div class="ep-meta mono">pays to 0xcd6b…cefa on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 47/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references DEX Screener (via &quot;dexscreener&quot; in description) but is hosted on sol-meme-intel.vercel.app, not the brand's domain</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr></tbody>
+</table></div>
+
+<p class="note"><b>Framing note:</b> every row above is a statistical signature match, published so that DEX Screener's own team — the only party who can actually verify authorization — can review it. Nothing on this page asserts that any listed operator is acting unlawfully or in breach of any agreement.</p>
+<footer class="site">
+  <nav>
+    <a href="https://provenance.q3epzs69b902a.us-west-2.cs.amazonlightsail.com">Live Provenance API</a>
+    <a href="https://www.npmjs.com/package/provenance-mcp">provenance-mcp (npm)</a>
+    <a href="https://www.npmjs.com/package/provenance-guard">provenance-guard (npm)</a>
+    <a href="https://github.com/apeirontrade/provenance-site">GitHub</a>
+    <a href="../methodology.html">Methodology</a>
+    <a href="../data/index.html">Open data (CC-BY-4.0)</a>
+    <a href="https://github.com/apeirontrade/provenance-site/issues">Disputes &amp; corrections</a>
+  </nav>
+  <div>All figures are statistical estimates derived from public on-chain payment data and public x402 discovery registries. Nothing here asserts fraud or contract breach by any named party — see the <a href="../methodology.html">methodology and disclaimer</a>. Data is CC-BY-4.0; cite Provenance.</div>
+  <div>Provenance · independent trust ratings for machine-payable (x402) API endpoints · generated 2026-07-06</div>
+</footer>
+</div></body></html>

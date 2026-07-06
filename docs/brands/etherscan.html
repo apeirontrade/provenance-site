@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>x402 endpoints offering Etherscan data — resale-authorization audit (18 suspected) — Provenance</title>
+<meta name="description" content="Etherscan API resold via x402? 18 suspected unauthorized Etherscan reseller endpoints found in public x402 registries (0 high-confidence, 16 active in 30d). Evidence, prices, on-chain payment counts. Verification recommended.">
+<link rel="canonical" href="https://apeirontrade.github.io/provenance-site/brands/etherscan.html">
+<meta property="og:title" content="x402 endpoints offering Etherscan data — resale-authorization audit (18 suspected) — Provenance">
+<meta property="og:description" content="Etherscan API resold via x402? 18 suspected unauthorized Etherscan reseller endpoints found in public x402 registries (0 high-confidence, 16 active in 30d). Evidence, prices, on-chain payment counts. Verification recommended.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://apeirontrade.github.io/provenance-site/brands/etherscan.html">
+<meta name="robots" content="index,follow">
+<style>
+  :root{color-scheme:light dark;
+    --bg:#0d1117;--panel:#161b22;--border:#30363d;--fg:#e6edf3;--dim:#8b949e;--accent:#58a6ff;--accent2:#d2a8ff;}
+  @media (prefers-color-scheme: light){:root{--bg:#f6f8fa;--panel:#ffffff;--border:#d0d7de;--fg:#1f2328;--dim:#57606a;--accent:#0969da;--accent2:#8250df;}}
+  *{box-sizing:border-box;margin:0}
+  body{background:var(--bg);color:var(--fg);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;padding:2.2rem 1rem 4rem}
+  .wrap{max-width:1080px;margin:0 auto}
+  header.site{margin-bottom:1.6rem}
+  .crumb{font-size:.82rem;color:var(--dim);margin-bottom:1rem}
+  .crumb a{color:var(--dim)}
+  h1{font-size:1.65rem;letter-spacing:-.01em;line-height:1.25}
+  h2{font-size:1.15rem;margin:2.2rem 0 .8rem}
+  h3{font-size:1rem;margin:1.6rem 0 .6rem}
+  .sub{color:var(--dim);margin:.5rem 0 1.4rem;max-width:62rem}
+  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.8rem;margin:1.4rem 0 1.8rem}
+  .tile{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:.85rem 1rem}
+  .tile b{display:block;font-size:1.4rem;font-weight:600}
+  .tile span{color:var(--dim);font-size:.8rem}
+  .tblwrap{overflow-x:auto;border:1px solid var(--border);border-radius:8px;background:var(--panel);margin:.6rem 0 1rem}
+  table{border-collapse:collapse;width:100%;font-size:.9rem}
+  th{color:var(--dim);font-weight:600;font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;text-align:left;padding:.65rem .8rem;border-bottom:1px solid var(--border);white-space:nowrap}
+  td{padding:.6rem .8rem;border-bottom:1px solid var(--border);vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82rem}
+  .dim{color:var(--dim)}
+  .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .center{text-align:center}
+  .ep-name{font-weight:600;overflow-wrap:anywhere}
+  .ep-meta{color:var(--dim);font-size:.76rem;margin-top:.15rem;overflow-wrap:anywhere}
+  .grade{display:inline-block;border:1px solid;border-radius:6px;padding:.05rem .55rem;font-weight:700;font-size:.98rem;white-space:nowrap}
+  .infl-pos{color:#f85149;font-weight:700;font-variant-numeric:tabular-nums}
+  .infl-neg{color:#3fb950;font-weight:600;font-variant-numeric:tabular-nums}
+  .infl-zero{color:var(--dim)}
+  .ind{font-size:.82rem;color:var(--dim);max-width:300px}
+  .pill{display:inline-block;border:1px solid var(--border);border-radius:99px;padding:.02rem .55rem;font-size:.74rem;color:var(--dim);white-space:nowrap}
+  .pill.ok{color:#3fb950;border-color:#3fb95055}
+  .pill.hi{color:#f0883e;border-color:#f0883e55}
+  .pill.med{color:#d29922;border-color:#d2992255}
+  .note,.callout{color:var(--dim);font-size:.84rem;margin:1.1rem 0;line-height:1.6;max-width:62rem}
+  .callout{background:var(--panel);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:6px;padding:.8rem 1rem;color:var(--fg)}
+  .callout.warn{border-left-color:#d29922}
+  ul.ev{margin:.2rem 0 .2rem 1rem;padding:0;font-size:.82rem;color:var(--dim)}
+  ul.ev li{margin:.15rem 0}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85em;background:var(--panel);border:1px solid var(--border);border-radius:4px;padding:.05em .3em}
+  .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.8rem;margin:1rem 0}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:1rem}
+  .card h3{margin:0 0 .4rem;font-size:.95rem}
+  .card p{font-size:.83rem;color:var(--dim)}
+  .brandlist{columns:3;column-gap:1.5rem;font-size:.9rem}
+  @media(max-width:800px){.brandlist{columns:2}}
+  @media(max-width:520px){.brandlist{columns:1}}
+  .brandlist li{margin:.25rem 0;break-inside:avoid}
+  footer.site{border-top:1px solid var(--border);margin-top:3rem;padding-top:1.1rem;color:var(--dim);font-size:.82rem;line-height:1.7}
+  footer.site nav{margin-bottom:.4rem}
+  footer.site nav a{margin-right:1.1rem}
+  dl.kv{display:grid;grid-template-columns:max-content 1fr;gap:.35rem 1.2rem;font-size:.9rem;margin:.8rem 0}
+  dl.kv dt{color:var(--dim)}
+  dl.kv dd{overflow-wrap:anywhere}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://apeirontrade.github.io/provenance-site/#org","name":"Provenance","url":"https://apeirontrade.github.io/provenance-site/","description":"Independent trust ratings for x402 machine-payable API endpoints, derived from public on-chain payment data and public discovery registries.","sameAs":["https://www.npmjs.com/package/provenance-mcp","https://www.npmjs.com/package/provenance-guard","https://github.com/apeirontrade/provenance-mcp","https://github.com/apeirontrade/provenance-guard"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Report","headline":"x402 endpoints offering Etherscan data — resale-authorization audit","author":{"@id":"https://apeirontrade.github.io/provenance-site/#org"},"datePublished":"2026-07-05","about":{"@type":"Brand","name":"Etherscan"},"mainEntityOfPage":"https://apeirontrade.github.io/provenance-site/brands/etherscan.html"}</script>
+</head><body><div class="wrap">
+<div class="crumb"><a href="../index.html">Provenance x402 Trust Index</a> &middot; <a href="../methodology.html">Methodology</a> &middot; <a href="../data/index.html">Open data</a></div>
+
+<h1>x402 endpoints offering Etherscan data <span class="dim">— resale-authorization audit</span></h1>
+<p class="sub">18 machine-payable (x402) endpoints in the public discovery registries exhibit reseller signatures referencing <b>Etherscan</b> while hosted off Etherscan's own domains. Resale-authorization status: <b>unknown — suspected unauthorized resale, verification recommended</b>. Any of these endpoints may hold a legitimate redistribution license.</p>
+
+<div class="callout">Context: Etherscan's API terms restrict redistribution; its paid Pro tier exists for commercial use.</div>
+
+<div class="tiles">
+  <div class="tile"><b>18</b><span>suspected reseller endpoints</span></div>
+  <div class="tile"><b>0</b><span>high-confidence signatures (≥70/100)</span></div>
+  <div class="tile"><b>16</b><span>with paid activity in the last 30d</span></div>
+  <div class="tile"><b>0</b><span>live-402 confirmed by probe</span></div>
+</div>
+
+<p class="note">Scan of 23,376 unique x402 endpoints on 2026-07-05, sources: Coinbase Bazaar + GoPlausible registry. Payment counts come from the registries' own published 30-day quality signals. Evidence bullets are automated signature matches — see the <a href="../methodology.html">methodology</a> for signal definitions, false-positive modes, and the <a href="https://github.com/apeirontrade/provenance-site/issues">dispute path</a>. If you are on Etherscan's API or trust team and want the full evidence set or a re-verification, open an issue — it's free.</p>
+
+<div class="tblwrap"><table>
+<thead><tr><th>Endpoint</th><th>Price/call</th><th>Calls 30d</th><th>Signature</th><th>Evidence (automated signature matches)</th></tr></thead>
+<tbody><tr>
+  <td>
+    <div class="ep-name mono">https://x402-deployer.x402-deployer.workers.dev/wallet-pnl</div>
+    <div class="ep-meta"> — Wallet token P&amp;L / FIFO cost basis / realized + unrealized profit / EVM portfolio analytics. For any (wallet, ERC-20, chain) triple, pulls all transfers from Etherscan v2, prices e…</div>
+    <div class="ep-meta mono">pays to 0x6c07…5621 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0500</td>
+  <td class="num">5<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 60/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references CoinGecko, Etherscan (via &quot;coingecko&quot; in description) but is hosted on x402-deployer.x402-deployer.workers.dev, not the brand's domain</li><li>$0.0500/call ≈ 62.5× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (workers.dev) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-deployer.x402-deployer.workers.dev/contract-source</div>
+    <div class="ep-meta"> — Verified contract source code / Etherscan source / contract ABI fetcher / Solidity source lookup. For any deployed contract on Ethereum, Base, Optimism, Arbitrum, or Polygon: retur…</div>
+    <div class="ep-meta mono">pays to 0x6c07…5621 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">5<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 55/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Etherscan (via &quot;etherscan&quot; in description) but is hosted on x402-deployer.x402-deployer.workers.dev, not the brand's domain</li><li>$0.0100/call ≈ 50.0× Etherscan's public ~$0.0002/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (workers.dev) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-deployer.x402-deployer.workers.dev/wallet-label</div>
+    <div class="ep-meta"> — Wallet label / address tagger / known-address lookup / EOA-vs-contract check / deployer tracer. Best-effort labelling for any EVM address against an in-handler dictionary of well-k…</div>
+    <div class="ep-meta mono">pays to 0x6c07…5621 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0050</td>
+  <td class="num">5<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 55/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Etherscan (via &quot;etherscan&quot; in description) but is hosted on x402-deployer.x402-deployer.workers.dev, not the brand's domain</li><li>$0.0050/call ≈ 25.0× Etherscan's public ~$0.0002/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (workers.dev) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-deployer.x402-deployer.workers.dev/lp-lock-check</div>
+    <div class="ep-meta"> — LP lock check / liquidity-lock auditor / Unicrypt + Team Finance + burn-address detection. For any LP token (Uniswap V2-shaped) on Ethereum or Base, reports the % of supply held by…</div>
+    <div class="ep-meta mono">pays to 0x6c07…5621 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">5<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 55/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Etherscan (via &quot;etherscan&quot; in schema) but is hosted on x402-deployer.x402-deployer.workers.dev, not the brand's domain</li><li>$0.0100/call ≈ 50.0× Etherscan's public ~$0.0002/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (workers.dev) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://statepulse-api.hahavoid0.workers.dev/blockchain/abi</div>
+    <div class="ep-meta">StatePulse API — Resolves the contract interface JSON (ABI) for verified smart contracts on Base or Ethereum. Matches: get verified smart contract source interface, Basescan verified ABI fetcher, E…</div>
+    <div class="ep-meta mono">pays to 0x4a82…5bFE on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0050</td>
+  <td class="num">3<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 55/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Etherscan (via &quot;etherscan&quot; in description) but is hosted on statepulse-api.hahavoid0.workers.dev, not the brand's domain</li><li>$0.0050/call ≈ 25.0× Etherscan's public ~$0.0002/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (workers.dev) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-deployer.x402-deployer.workers.dev/gas-now-base</div>
+    <div class="ep-meta"> — Gas oracle / gas price API / EIP-1559 fee estimator / Base + Ethereum + Optimism + Arbitrum + Polygon gas tracker / etherscan-gas alternative / pre-tx cost estimator / USD gas-cost…</div>
+    <div class="ep-meta mono">pays to 0x6c07…5621 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0200</td>
+  <td class="num">2<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 55/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Etherscan (via &quot;etherscan&quot; in description) but is hosted on x402-deployer.x402-deployer.workers.dev, not the brand's domain</li><li>$0.0200/call ≈ 100.0× Etherscan's public ~$0.0002/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (workers.dev) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://tools-agent-x402-production.up.railway.app/tx-explainer</div>
+    <div class="ep-meta"> — Decode and explain any EVM blockchain transaction across 11 chains (Base, Ethereum, Arbitrum, Optimism, Avalanche, Polygon, Mantle, Monad, Plasma, BSC, Hyperliquid). Get a human-re…</div>
+    <div class="ep-meta mono">pays to 0x0E84…b808 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill med">medium · 55/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Etherscan (via &quot;basescan&quot; in schema) but is hosted on tools-agent-x402-production.up.railway.app, not the brand's domain</li><li>$0.0100/call ≈ 50.0× Etherscan's public ~$0.0002/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (railway.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402.coinstats.app/coins</div>
+    <div class="ep-meta"> — CoinStats list of all cryptocurrencies with live market data — price, volume, market cap, rank, % changes</div>
+    <div class="ep-meta mono">pays to 0x0750…162f on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references X / Twitter, Reddit, Etherscan, Binance (via &quot;twitter&quot; in schema) but is hosted on x402.coinstats.app, not the brand's domain</li><li>$0.0010/call ≈ 4.2× Reddit's public ~$0.00024/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://httpay.xyz/api/whale-tracker</div>
+    <div class="ep-meta"> — Monitor large token transfers (whales) on Base. Tracks USDC, WETH, cbETH, cbBTC transfers above a USD threshold. Labels known entities (Coinbase, Aave, Uniswap, Aerodrome). Powered…</div>
+    <div class="ep-meta mono">pays to 0x5f5d…4359 on base · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 50/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Etherscan (via &quot;basescan&quot; in description) but is hosted on httpay.xyz, not the brand's domain</li><li>'powered by' upstream-provider phrasing: &quot;Powered by&quot;</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://httpay.xyz/api/whale-alert-base</div>
+    <div class="ep-meta"> — Latest large transactions on Base (&gt;$10K) in the last hour. Real on-chain USDC/WETH transfer data via BaseScan.</div>
+    <div class="ep-meta mono">pays to 0x5f5d…4359 on base · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 50/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Etherscan (via &quot;basescan&quot; in description) but is hosted on httpay.xyz, not the brand's domain</li><li>declares upstream data source: &quot;data via BaseScan.&quot;</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://arbipulse.vercel.app/api/flash</div>
+    <div class="ep-meta">ArbiPulse — ArbiPulse flash loan strategy builder — zero-capital execution calldata for Aave V3 and Balancer flash loans with executor contract templates</div>
+    <div class="ep-meta mono">pays to 0x50ab…12fc on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.75</td>
+  <td class="num">25<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill ">low · 47/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Etherscan (via &quot;basescan&quot; in schema) but is hosted on arbipulse.vercel.app, not the brand's domain</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-deployer.x402-deployer.workers.dev/token-risk</div>
+    <div class="ep-meta"> — Token risk score / token security audit / rug-pull score / token safety check. Composite 0-100 score from honeypot.is + GoPlus Security + Etherscan contract age. Subscores: honeypo…</div>
+    <div class="ep-meta mono">pays to 0x6c07…5621 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.10</td>
+  <td class="num">5<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill ">low · 47/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Etherscan (via &quot;etherscan&quot; in description) but is hosted on x402-deployer.x402-deployer.workers.dev, not the brand's domain</li><li>hosted on generic infrastructure (workers.dev) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://avisradar-production.up.railway.app/api/agent/clawd/export</div>
+    <div class="ep-meta"> — Paid bulk export of every PumpClaw token MainStreet has indexed (~177 tokens). Returns creator wallet, token address, symbol, indexed-at timestamp, basescan URL per row. Use for an…</div>
+    <div class="ep-meta mono">pays to 0xAC3c…aDa9 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.50</td>
+  <td class="num">3<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 47/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Etherscan (via &quot;basescan&quot; in description) but is hosted on avisradar-production.up.railway.app, not the brand's domain</li><li>hosted on generic infrastructure (railway.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-cybercentry-ethereum-token-verification.up.railway.app/verify</div>
+    <div class="ep-meta"> — Verify Ethereum and EVM-compatible contract addresses using the Cybercentry Ethereum Token Verification (CETV) API. Returns a verification_report with detailed security analysis</div>
+    <div class="ep-meta mono">pays to 0xfEE1…19e6 on base · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill ">low · 47/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Etherscan (via &quot;etherscan&quot; in schema) but is hosted on x402-cybercentry-ethereum-token-verification.up.railway.app, not the brand's domain</li><li>hosted on generic infrastructure (railway.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://giveth.0000402.xyz/matches</div>
+    <div class="ep-meta"> — Pay $0.10 USDC to search Giveth projects by donor intent. Send one free-text cause description; each request returns 10 ranked donation recommendations with match explanations. Net…</div>
+    <div class="ep-meta mono">pays to 0xeE72…977c on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.10</td>
+  <td class="num">6<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Etherscan (via &quot;basescan&quot; in schema) but is hosted on giveth.0000402.xyz, not the brand's domain</li><li>input schema is a bare passthrough (query) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://httpay.xyz/api/gateway/etherscan/%7B*path%7D</div>
+    <div class="ep-meta"> — API Gateway: Etherscan blockchain explorer API</div>
+    <div class="ep-meta mono">pays to 0x5f5d…4359 on base · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Etherscan (via &quot;etherscan&quot; in url) but is hosted on httpay.xyz, not the brand's domain</li><li>brand term &quot;etherscan&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://httpay.xyz/api/gateway/basescan/%7B*path%7D</div>
+    <div class="ep-meta"> — API Gateway: BaseScan Base chain explorer API</div>
+    <div class="ep-meta mono">pays to 0x5f5d…4359 on base · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Etherscan (via &quot;basescan&quot; in url) but is hosted on httpay.xyz, not the brand's domain</li><li>brand term &quot;basescan&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://httpay.xyz/api/gateway/basescan/%7B*path%7D/*</div>
+    <div class="ep-meta"> — API Gateway: BaseScan Base chain explorer API</div>
+    <div class="ep-meta mono">pays to 0x5f5d…4359 on base · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Etherscan (via &quot;basescan&quot; in url) but is hosted on httpay.xyz, not the brand's domain</li><li>brand term &quot;basescan&quot; appears in the endpoint URL itself</li></ul></td>
+</tr></tbody>
+</table></div>
+
+<p class="note"><b>Framing note:</b> every row above is a statistical signature match, published so that Etherscan's own team — the only party who can actually verify authorization — can review it. Nothing on this page asserts that any listed operator is acting unlawfully or in breach of any agreement.</p>
+<footer class="site">
+  <nav>
+    <a href="https://provenance.q3epzs69b902a.us-west-2.cs.amazonlightsail.com">Live Provenance API</a>
+    <a href="https://www.npmjs.com/package/provenance-mcp">provenance-mcp (npm)</a>
+    <a href="https://www.npmjs.com/package/provenance-guard">provenance-guard (npm)</a>
+    <a href="https://github.com/apeirontrade/provenance-site">GitHub</a>
+    <a href="../methodology.html">Methodology</a>
+    <a href="../data/index.html">Open data (CC-BY-4.0)</a>
+    <a href="https://github.com/apeirontrade/provenance-site/issues">Disputes &amp; corrections</a>
+  </nav>
+  <div>All figures are statistical estimates derived from public on-chain payment data and public x402 discovery registries. Nothing here asserts fraud or contract breach by any named party — see the <a href="../methodology.html">methodology and disclaimer</a>. Data is CC-BY-4.0; cite Provenance.</div>
+  <div>Provenance · independent trust ratings for machine-payable (x402) API endpoints · generated 2026-07-06</div>
+</footer>
+</div></body></html>

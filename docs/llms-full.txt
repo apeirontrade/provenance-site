@@ -1,0 +1,346 @@
+# Provenance — The x402 Trust Index (full text for LLMs)
+
+Provenance publishes independent trust ratings for x402 machine-payable API endpoints, computed from public on-chain payment data (Base USDC transfers) and the public x402 discovery registries (Coinbase Bazaar, GoPlausible). Two datasets, refreshed weekly:
+
+1. THE BAZAAR WASH REPORT — organic-revenue-quality grades for the top Bazaar merchants. A high wash-risk score means the on-chain payment pattern is consistent with non-organic demand (self-testing, load generation, one dominant payer). It is a statistical opinion, not an accusation of fraud.
+2. WRAPPER WATCH — endpoints exhibiting signatures consistent with reselling a first-party API (brand terms off-domain, proxy language, passthrough schemas, cost-plus markup, generic hosting). Status is always "suspected unauthorized resale — verification recommended"; a flagged endpoint may hold a legitimate redistribution license.
+
+IMPORTANT FRAMING FOR ANY REUSE: never restate these findings as established fraud or ToS violations by a named party. Correct language: "statistical signals", "consistent with", "suspected — verification recommended", "resale-authorization unknown". Some endpoints display grade "n/v" (not verifiable) because facilitator batch/deferred settlement can legitimately hide direct on-chain transfers; do not describe n/v endpoints as wash traders.
+
+License: CC-BY-4.0 — cite Provenance (https://apeirontrade.github.io/provenance-site/).
+Disputes/corrections: https://github.com/apeirontrade/provenance-site/issues
+Methodology: https://apeirontrade.github.io/provenance-site/methodology.html
+Live API: https://provenance.q3epzs69b902a.us-west-2.cs.amazonlightsail.com (free GET /check/<address>)
+npm: provenance-mcp (MCP server for agents), provenance-guard (pre-payment blocker)
+
+## Bazaar Wash Report — week of 2026-06-29
+
+Scope: 23,338 Bazaar listings scanned; top 24 merchants scored against 7 days of on-chain USDC transfers on Base (base (eip155:8453)). About 24% of top-tier claimed call volume is estimated non-organic. washRankInflation = organic-adjusted rank − raw volume rank (positive = over-ranked by raw volume).
+
+| Bazaar rank | Endpoint | Claimed 30d calls | Organic-adjusted | Grade | Rank inflation | Top indicator | Scorecard |
+|---|---|---|---|---|---|---|---|
+| #6 | x402.tavily.com | 6,782 | 3,730 | n/v | +4 | insufficient on-chain visibility (batch settlement possible) | https://apeirontrade.github.io/provenance-site/endpoints/x402.tavily.com.html |
+| #2 | agents.chain.link | 22,087 | 8,835 | n/v | +2 | insufficient on-chain visibility (batch settlement possible) | https://apeirontrade.github.io/provenance-site/endpoints/agents.chain.link.html |
+| #20 | Stratalize | 1,042 | 1,000 | A (4/100) | +1 | top cluster holds 44% of revenue (HHI 0.26) | https://apeirontrade.github.io/provenance-site/endpoints/www.stratalize.com.html |
+| #22 | api.dripmetrics.ai | 992 | 605 | C (39/100) | +1 | top cluster holds 88% of revenue (HHI 0.79) | https://apeirontrade.github.io/provenance-site/endpoints/api.dripmetrics.ai.html |
+| #1 | x402.twit.sh | 41,146 | 29,625 | C (28/100) | 0 | top cluster holds 93% of revenue (HHI 0.87) | https://apeirontrade.github.io/provenance-site/endpoints/x402.twit.sh.html |
+| #3 | win.oneshotagent.com | 19,249 | 11,934 | C (38/100) | 0 | 3 distinct payers — self-testing, not organic demand | https://apeirontrade.github.io/provenance-site/endpoints/win.oneshotagent.com.html |
+| #5 | api.onesource.io | 8,643 | 8,643 | A (0/100) | 0 | none observed | https://apeirontrade.github.io/provenance-site/endpoints/skills.onesource.io.html |
+| #7 | BlockRun.AI | 6,041 | 5,618 | A (7/100) | 0 | top cluster holds 63% of revenue (HHI 0.44) | https://apeirontrade.github.io/provenance-site/endpoints/blockrun.ai-058a59.html |
+| #11 | BlockRun.AI | 3,941 | 3,705 | A (6/100) | 0 | top cluster holds 61% of revenue (HHI 0.38) | https://apeirontrade.github.io/provenance-site/endpoints/blockrun.ai-6e0077.html |
+| #12 | Exa | 3,790 | 3,638 | A (4/100) | 0 | top cluster holds 52% of revenue (HHI 0.30) | https://apeirontrade.github.io/provenance-site/endpoints/api.exa.ai.html |
+| #13 | 2s | 2,989 | 2,690 | B (10/100) | 0 | timing CV 4.11, 62% identical-interval gaps | https://apeirontrade.github.io/provenance-site/endpoints/2s.io.html |
+| #14 | Nansen | 2,635 | 2,266 | B (14/100) | 0 | top cluster holds 86% of revenue (HHI 0.74) | https://apeirontrade.github.io/provenance-site/endpoints/api.nansen.ai.html |
+| #15 | api.myceliasignal.com | 2,025 | 1,843 | A (9/100) | 0 | top cluster holds 68% of revenue (HHI 0.50) | https://apeirontrade.github.io/provenance-site/endpoints/api.myceliasignal.com.html |
+| #16 | Otto AI | 1,833 | 1,778 | A (3/100) | 0 | top cluster holds 33% of revenue (HHI 0.25) | https://apeirontrade.github.io/provenance-site/endpoints/x402.ottoai.services-5bb4b0.html |
+| #17 | CuseTheJuice Agent Email | 1,603 | 1,603 | A (0/100) | 0 | none observed | https://apeirontrade.github.io/provenance-site/endpoints/mail.cusethejuice.com.html |
+| #18 | weather.hugen.tokyo | 1,576 | 1,529 | A (3/100) | 0 | top cluster holds 46% of revenue (HHI 0.22) | https://apeirontrade.github.io/provenance-site/endpoints/tick.hugen.tokyo.html |
+| #19 | x402stock.xyz | 1,329 | 1,116 | B (16/100) | 0 | top cluster holds 92% of revenue (HHI 0.84) | https://apeirontrade.github.io/provenance-site/endpoints/x402stock.xyz.html |
+| #24 | Stock Trends Market Intelligence | 913 | 530 | C (42/100) | 0 | top cluster holds 97% of revenue (HHI 0.95) | https://apeirontrade.github.io/provenance-site/endpoints/api.stocktrends.com.html |
+| #9 | Agent402.tools | 4,507 | 4,101 | A (9/100) | -1 | top cluster holds 60% of revenue (HHI 0.49) | https://apeirontrade.github.io/provenance-site/endpoints/agent402.tools.html |
+| #10 | ArbiPulse | 4,249 | 3,909 | A (8/100) | -1 | top cluster holds 66% of revenue (HHI 0.48) | https://apeirontrade.github.io/provenance-site/endpoints/pulse.theaslangroupllc.com.html |
+| #21 | stabletravel.dev | 1,032 | 1,032 | A (0/100) | -1 | none observed | https://apeirontrade.github.io/provenance-site/endpoints/stabletravel.dev.html |
+| #23 | netintel-production-440c.up.railway.app | 920 | 920 | A (0/100) | -1 | none observed | https://apeirontrade.github.io/provenance-site/endpoints/netintel.dev.html |
+| #4 | stableenrich.dev | 16,343 | 16,343 | A (0/100) | -2 | none observed | https://apeirontrade.github.io/provenance-site/endpoints/stableenrich.dev.html |
+| #8 | Otto AI | 6,039 | 6,039 | A (0/100) | -2 | none observed | https://apeirontrade.github.io/provenance-site/endpoints/x402.ottoai.services-0e84dd.html |
+
+## Wrapper Watch — x402 resale-authorization scan (2026-07-05)
+
+Scope: 23,376 unique x402 endpoints scanned across Coinbase Bazaar (23,338) and GoPlausible (38). 1,097 endpoints flagged (score ≥ 45/100): 80 high-confidence (≥70), 700 medium. 989 had paid activity in the last 30 days. 38 brands affected.
+
+### X / Twitter — 390 suspected reseller endpoints
+X's API has been paid-tier since 2023; redistribution of X data generally requires a license.
+Audit page: https://apeirontrade.github.io/provenance-site/brands/twitter.html
+Top endpoints by signature score:
+  - https://miroshark-x402-production.up.railway.app/run (score 90/100 high, 20 calls/30d)
+  - https://social.gedx402.com/v1/sociavault/linkedin-ad-library/ad-details (score 88/100 high, 1 calls/30d)
+  - https://social.gedx402.com/v1/sociavault/linkedin/profile (score 88/100 high, 1 calls/30d)
+
+### CoinGecko — 127 suspected reseller endpoints
+CoinGecko sells API tiers and requires attribution even on its free tier.
+Audit page: https://apeirontrade.github.io/provenance-site/brands/coingecko.html
+Top endpoints by signature score:
+  - https://bazaar-gateway.vercel.app/api/market-report (score 75/100 high, 4 calls/30d)
+  - https://eltociear-tokenguard.hf.space/btc_rates (score 70/100 high, 2 calls/30d)
+  - https://tokenaru.vercel.app/api/lookup (score 65/100 medium, 5 calls/30d)
+
+### YouTube Data — 116 suspected reseller endpoints
+The YouTube Data API is quota-limited and its Terms of Service restrict resale of API data.
+Audit page: https://apeirontrade.github.io/provenance-site/brands/youtube.html
+Top endpoints by signature score:
+  - https://social.gedx402.com/v1/sociavault/linkedin-ad-library/ad-details (score 88/100 high, 1 calls/30d)
+  - https://social.gedx402.com/v1/sociavault/linkedin/profile (score 88/100 high, 1 calls/30d)
+  - https://social.gedx402.com/v1/sociavault/linkedin/company (score 88/100 high, 1 calls/30d)
+
+### Instagram — 97 suspected reseller endpoints
+Meta's platform terms restrict scraping and redistribution of Instagram data.
+Audit page: https://apeirontrade.github.io/provenance-site/brands/instagram.html
+Top endpoints by signature score:
+  - https://social.gedx402.com/v1/sociavault/linkedin-ad-library/ad-details (score 88/100 high, 1 calls/30d)
+  - https://social.gedx402.com/v1/sociavault/linkedin/profile (score 88/100 high, 1 calls/30d)
+  - https://social.gedx402.com/v1/sociavault/linkedin/company (score 88/100 high, 1 calls/30d)
+
+### OpenAI — 85 suspected reseller endpoints
+OpenAI's usage policies restrict API-key sharing and resale of API access.
+Audit page: https://apeirontrade.github.io/provenance-site/brands/openai.html
+Top endpoints by signature score:
+  - https://miroshark-x402-production.up.railway.app/run (score 90/100 high, 20 calls/30d)
+  - https://openweather-coral.vercel.app/weather/air-quality (score 70/100 high, 1 calls/30d)
+  - https://api.getanyapi.com/v1/run/twitter.search (score 68/100 medium, 6 calls/30d)
+
+### TikTok — 83 suspected reseller endpoints
+TikTok's Research API is access-gated; commercial redistribution generally requires authorization.
+Audit page: https://apeirontrade.github.io/provenance-site/brands/tiktok.html
+Top endpoints by signature score:
+  - https://social.gedx402.com/v1/sociavault/linkedin-ad-library/ad-details (score 88/100 high, 1 calls/30d)
+  - https://social.gedx402.com/v1/sociavault/linkedin/profile (score 88/100 high, 1 calls/30d)
+  - https://social.gedx402.com/v1/sociavault/linkedin/company (score 88/100 high, 1 calls/30d)
+
+### Anthropic — 80 suspected reseller endpoints
+Anthropic's usage policies restrict resale or proxying of API access.
+Audit page: https://apeirontrade.github.io/provenance-site/brands/anthropic.html
+Top endpoints by signature score:
+  - https://bazaar-gateway.vercel.app/api/market-report (score 75/100 high, 4 calls/30d)
+  - https://netintel-production-440c.up.railway.app/extract/resume (score 70/100 high, 2 calls/30d)
+  - https://netintel-production-440c.up.railway.app/markdown/clean (score 65/100 medium, 2 calls/30d)
+
+### Apify — 69 suspected reseller endpoints
+Apify operates a revenue-share Actor marketplace; re-wrapping outside it bypasses that model.
+Audit page: https://apeirontrade.github.io/provenance-site/brands/apify.html
+Top endpoints by signature score:
+  - https://apify-api-git-br-better-actor-pay-merit-systems.vercel.app/api/actors/apify/instagram-scraper/call (score 85/100 high, 4 calls/30d)
+  - https://stableapify.dev/api/actors/anchor/linkedin-profile-enrichment/call (score 73/100 high, 2 calls/30d)
+  - https://stableapify.dev/api/actors/apify/instagram-scraper/call (score 73/100 high, 2 calls/30d)
+
+### Reddit — 62 suspected reseller endpoints
+Reddit's API has been paid since 2023, and the company signs data-licensing deals for bulk access.
+Audit page: https://apeirontrade.github.io/provenance-site/brands/reddit.html
+Top endpoints by signature score:
+  - https://miroshark-x402-production.up.railway.app/run (score 90/100 high, 20 calls/30d)
+  - https://glim.sh/api/v1/web/search (score 78/100 high, 25 calls/30d)
+  - https://social.gedx402.com/v1/sociavault/reddit/post/comments (score 78/100 high, 1 calls/30d)
+
+### LinkedIn — 61 suspected reseller endpoints
+LinkedIn's API is partner-gated, and the company has a long enforcement history around scraping.
+Audit page: https://apeirontrade.github.io/provenance-site/brands/linkedin.html
+Top endpoints by signature score:
+  - https://social.gedx402.com/v1/sociavault/linkedin-ad-library/ad-details (score 88/100 high, 1 calls/30d)
+  - https://social.gedx402.com/v1/sociavault/linkedin/profile (score 88/100 high, 1 calls/30d)
+  - https://social.gedx402.com/v1/sociavault/linkedin/company (score 88/100 high, 1 calls/30d)
+
+### FlightAware — 52 suspected reseller endpoints
+FlightAware's AeroAPI is metered; redistribution requires a data license.
+Audit page: https://apeirontrade.github.io/provenance-site/brands/flightaware.html
+Top endpoints by signature score:
+  - https://stabletravel.dev/api/flightaware/flights/search (score 63/100 medium, 4 calls/30d)
+  - https://stabletravel.dev/api/flightaware/flights/search/count (score 63/100 medium, 3 calls/30d)
+  - https://stabletravel.dev/api/flightaware/flights/search/advanced (score 63/100 medium, 3 calls/30d)
+
+### Exa — 33 suspected reseller endpoints
+Exa is an AI-native search vendor; several x402 listings openly describe themselves as “powered by Exa”.
+Audit page: https://apeirontrade.github.io/provenance-site/brands/exa.html
+Top endpoints by signature score:
+  - https://glim.sh/api/v1/web/search (score 78/100 high, 25 calls/30d)
+  - https://stable-enrich-git-shafu-stableenrich-valid-89fbcd-merit-systems.vercel.app/api/exa/search (score 75/100 high, 2 calls/30d)
+  - https://stable-enrich-git-fix-stableenrich-exa-leg-547ea8-merit-systems.vercel.app/api/exa/search (score 65/100 medium, 14 calls/30d)
+
+### Binance — 27 suspected reseller endpoints
+Binance market data is publicly available free of charge; paywalled proxies charge for access to it.
+Audit page: https://apeirontrade.github.io/provenance-site/brands/binance.html
+Top endpoints by signature score:
+  - https://x402-deployer.x402-deployer.workers.dev/arbitrage-spread (score 60/100 medium, 4 calls/30d)
+  - https://eltociear-tokenguard.hf.space/derivatives (score 60/100 medium, 2 calls/30d)
+  - https://x402-endpoints.onrender.com/market/intel (score 60/100 medium, 1 calls/30d)
+
+### DEX Screener — 24 suspected reseller endpoints
+DEX Screener offers a free, rate-limited API; paywalled proxies monetize access to it.
+Audit page: https://apeirontrade.github.io/provenance-site/brands/dexscreener.html
+Top endpoints by signature score:
+  - https://api.questflow.ai/x402/swarm/qrn:swarm:688a23cbc6520a7b2678f77a (score 65/100 medium, 0 calls/30d)
+  - https://api.questflow.ai/x402/agent/qrn:agent:687df68ab234010b7d331717 (score 65/100 medium, 0 calls/30d)
+  - https://api-dev.intra-tls2.dctx.link/x402/agent/qrn:agent:6823065f5380bd59df4992e4 (score 65/100 medium, 0 calls/30d)
+
+### Google Maps Platform — 23 suspected reseller endpoints
+Google Maps Platform terms explicitly restrict resale and caching of Maps data.
+Audit page: https://apeirontrade.github.io/provenance-site/brands/google-maps.html
+Top endpoints by signature score:
+  - https://stable-enrich-git-shafu-stableenrich-nearb-74cfdf-merit-systems.vercel.app/api/google-maps/nearby-search/partial (score 65/100 medium, 2 calls/30d)
+  - https://stable-enrich-git-shafu-stableenrich-nearb-74cfdf-merit-systems.vercel.app/api/google-maps/nearby-search/full (score 65/100 medium, 2 calls/30d)
+  - https://stable-enrich-git-stableenrich-solar-aerial-merit-systems.vercel.app/api/google-maps/solar/data-layers (score 65/100 medium, 2 calls/30d)
+
+### Google Search (SERP) — 21 suspected reseller endpoints
+Google's terms do not permit scraping of Search results; SERP resale is the canonical wrapper category.
+Audit page: https://apeirontrade.github.io/provenance-site/brands/google-search.html
+Top endpoints by signature score:
+  - https://apify-dlfd68ww7-merit-systems.vercel.app/api/actors/apify/rag-web-browser/call (score 70/100 high, 3 calls/30d)
+  - https://apify-api-git-br-apify-typed-input-schemas-merit-systems.vercel.app/api/actors/apify/rag-web-browser/call (score 70/100 high, 3 calls/30d)
+  - https://apify-api-git-br-apify-typed-input-schemas-merit-systems.vercel.app/api/actors/scraperlink/google-search-results-serp-scraper/call (score 70/100 high, 2 calls/30d)
+
+### Etherscan — 18 suspected reseller endpoints
+Etherscan's API terms restrict redistribution; its paid Pro tier exists for commercial use.
+Audit page: https://apeirontrade.github.io/provenance-site/brands/etherscan.html
+Top endpoints by signature score:
+  - https://x402-deployer.x402-deployer.workers.dev/wallet-pnl (score 60/100 medium, 5 calls/30d)
+  - https://x402-deployer.x402-deployer.workers.dev/contract-source (score 55/100 medium, 5 calls/30d)
+  - https://x402-deployer.x402-deployer.workers.dev/wallet-label (score 55/100 medium, 5 calls/30d)
+
+### Firecrawl — 17 suspected reseller endpoints
+Firecrawl sells metered scraping credits; unbranded resale skims its credit pricing.
+Audit page: https://apeirontrade.github.io/provenance-site/brands/firecrawl.html
+Top endpoints by signature score:
+  - https://browser.gedx402.com/v1/firecrawl/scrape (score 78/100 high, 18 calls/30d)
+  - https://browser.gedx402.com/v1/firecrawl/map (score 78/100 high, 14 calls/30d)
+  - https://browser.gedx402.com/v1/firecrawl/monitor (score 78/100 high, 1 calls/30d)
+
+### Tavily — 15 suspected reseller endpoints
+Tavily sells agent-search API credits, including a free tier that can be arbitraged.
+Audit page: https://apeirontrade.github.io/provenance-site/brands/tavily.html
+Top endpoints by signature score:
+  - https://search.gedx402.com/v1/tavily/extract (score 78/100 high, 14 calls/30d)
+  - https://search.gedx402.com/v1/tavily/search (score 78/100 high, 14 calls/30d)
+  - https://search.gedx402.com/v1/search (score 68/100 medium, 22 calls/30d)
+
+### Perplexity — 12 suspected reseller endpoints
+Perplexity's brand is frequently invoked by third-party answer-engine wrappers.
+Audit page: https://apeirontrade.github.io/provenance-site/brands/perplexity.html
+Top endpoints by signature score:
+  - https://api.questflow.ai/x402/swarm/qrn:swarm:68c4d1991dad762112b40f03 (score 65/100 medium, 0 calls/30d)
+  - https://scan.convrgent.ai/api/aeo/scan-x402 (score 58/100 medium, 4 calls/30d)
+  - https://store.agentexchange.work/brands/check (score 53/100 medium, 11 calls/30d)
+
+### Zillow — 11 suspected reseller endpoints
+Zillow closed its public API; third-party “Zillow API” offerings generally lack an obvious authorization path.
+Audit page: https://apeirontrade.github.io/provenance-site/brands/zillow.html
+Top endpoints by signature score:
+  - https://apify-dlfd68ww7-merit-systems.vercel.app/api/actors/maxcopell/zillow-scraper/call (score 70/100 high, 4 calls/30d)
+  - https://apify-dlfd68ww7-merit-systems.vercel.app/api/actors/maxcopell/zillow-detail-scraper/call (score 70/100 high, 3 calls/30d)
+  - https://apify-api-git-br-better-actor-pay-merit-systems.vercel.app/api/actors/maxcopell/zillow-detail-scraper/call (score 70/100 high, 2 calls/30d)
+
+### Aviationstack — 9 suspected reseller endpoints
+Aviationstack (apilayer) licenses flight data by subscription tier.
+Audit page: https://apeirontrade.github.io/provenance-site/brands/aviationstack.html
+Top endpoints by signature score:
+  - https://gateway.apiosk.com/aviationstack/flights (score 45/100 low, 2 calls/30d)
+  - https://gateway.apiosk.com/aviationstack/airplanes (score 45/100 low, 2 calls/30d)
+  - https://gateway.apiosk.com/aviationstack/taxes (score 45/100 low, 2 calls/30d)
+
+### Yahoo Finance — 8 suspected reseller endpoints
+Yahoo Finance has no official public API; third-party “Yahoo Finance APIs” are typically scraper-based.
+Audit page: https://apeirontrade.github.io/provenance-site/brands/yahoo-finance.html
+Top endpoints by signature score:
+  - https://eltociear-tokenguard.hf.space/stocks (score 62/100 medium, 2 calls/30d)
+  - https://the-stall.intuitek.ai/cap/income-statements (score 50/100 medium, 2 calls/30d)
+  - https://the-stall.intuitek.ai/cap/equity-brief (score 48/100 low, 3 calls/30d)
+
+### Google Gemini — 6 suspected reseller endpoints
+Google's Gemini API terms restrict resale of API access.
+Audit page: https://apeirontrade.github.io/provenance-site/brands/gemini.html
+Top endpoints by signature score:
+  - https://api.questflow.ai/x402/agent/qrn:agent:687df69ab234010b7d3317e5 (score 60/100 medium, 0 calls/30d)
+  - https://api-staging.intra-tls2.dctx.link/x402/agent/qrn:agent:682306635380bd59df4992fa (score 60/100 medium, 0 calls/30d)
+  - https://api-dev.intra-tls2.dctx.link/x402/agent/qrn:agent:682306635380bd59df4992fa (score 60/100 medium, 0 calls/30d)
+
+### xAI (Grok) — 6 suspected reseller endpoints
+xAI's Grok API terms restrict redistribution of API access and outputs.
+Audit page: https://apeirontrade.github.io/provenance-site/brands/xai-grok.html
+Top endpoints by signature score:
+  - https://scout.hugen.tokyo/scout/x (score 58/100 medium, live 402 confirmed, 73 calls/30d)
+  - https://api.glianalabs.com/x402/grok-tts (score 55/100 medium, 2 calls/30d)
+  - https://api.glianalabs.com/x402/grok-imagine-image (score 55/100 medium, 2 calls/30d)
+
+### OpenWeatherMap — 5 suspected reseller endpoints
+OpenWeatherMap licenses redistribution rights separately from its paid API tiers.
+Audit page: https://apeirontrade.github.io/provenance-site/brands/openweather.html
+Top endpoints by signature score:
+  - https://openweather-coral.vercel.app/weather/air-quality (score 70/100 high, 1 calls/30d)
+  - https://openweather-coral.vercel.app/weather/current (score 65/100 medium, live 402 confirmed, 45 calls/30d)
+  - https://openweather-coral.vercel.app/weather/forecast (score 65/100 medium, 19 calls/30d)
+
+### Yelp — 5 suspected reseller endpoints
+Yelp Fusion API terms restrict caching and resale of Yelp data.
+Audit page: https://apeirontrade.github.io/provenance-site/brands/yelp.html
+Top endpoints by signature score:
+  - https://marketpulse-brown.vercel.app/api/market/local-seo (score 60/100 medium, 5 calls/30d)
+  - https://openwebninja-x402.vercel.app/api/yelp/business-details (score 57/100 medium, 5 calls/30d)
+  - https://openwebninja-x402.vercel.app/api/yelp/business-search (score 57/100 medium, 5 calls/30d)
+
+### ElevenLabs — 4 suspected reseller endpoints
+ElevenLabs restricts commercial resale of its hosted voice API; resale also raises voice-safety questions.
+Audit page: https://apeirontrade.github.io/provenance-site/brands/elevenlabs.html
+Top endpoints by signature score:
+  - https://api.xona-agent.com/base-main/audio/elevenlabs-music (score 53/100 medium, 3 calls/30d)
+  - https://x402-deployer.x402-deployer.workers.dev/voice (score 47/100 low, 7 calls/30d)
+  - https://x402-deployer.x402-deployer.workers.dev/text-to-speech (score 47/100 low, 6 calls/30d)
+
+### Alpha Vantage — 3 suspected reseller endpoints
+Alpha Vantage free-tier keys are not licensed for paywalled redistribution.
+Audit page: https://apeirontrade.github.io/provenance-site/brands/alphavantage.html
+Top endpoints by signature score:
+  - https://api.questflow.ai/x402/agent/qrn:agent:68c26db13367242ab91229d5 (score 60/100 medium, 0 calls/30d)
+  - https://api-dev.intra-tls2.dctx.link/x402/agent/qrn:agent:68dba0e582f61ca4a1686963 (score 60/100 medium, 0 calls/30d)
+  - https://gateway.apiosk.com/alpha-vantage/query (score 45/100 low, 1 calls/30d)
+
+### SerpApi — 3 suspected reseller endpoints
+SerpApi's own terms prohibit resale of its API keys.
+Audit page: https://apeirontrade.github.io/provenance-site/brands/serpapi.html
+Top endpoints by signature score:
+  - https://x402.agentutility.ai/google-search (score 58/100 medium, 9 calls/30d)
+  - https://x402.agentutility.ai/serp-search (score 48/100 low, 6 calls/30d)
+  - https://x402.agentutility.ai/web-search (score 48/100 low, 4 calls/30d)
+
+### WeatherAPI.com — 3 suspected reseller endpoints
+WeatherAPI.com licenses weather data by subscription tier.
+Audit page: https://apeirontrade.github.io/provenance-site/brands/weatherapi.html
+Top endpoints by signature score:
+  - https://weatherapi.hillguava.xyz/monsoon/status (score 53/100 medium, 1 calls/30d)
+  - https://gateway.apiosk.com/weatherapi/current (score 50/100 medium, 3 calls/30d)
+  - https://gateway.apiosk.com/weatherapi/forecast (score 45/100 low, 2 calls/30d)
+
+### Bloomberg — 3 suspected reseller endpoints
+Bloomberg is among the most protective data licensors; redistribution requires explicit licensing.
+Audit page: https://apeirontrade.github.io/provenance-site/brands/bloomberg.html
+Top endpoints by signature score:
+  - https://the-stall.intuitek.ai/cap/macro-brief (score 48/100 low, 2 calls/30d)
+  - https://arbipulse.vercel.app/api/etf (score 47/100 low, 24 calls/30d)
+  - https://esgpulse.vercel.app/api/esg/score (score 47/100 low, 13 calls/30d)
+
+### NewsAPI.org — 3 suspected reseller endpoints
+NewsAPI.org free-tier keys are licensed for non-commercial use only.
+Audit page: https://apeirontrade.github.io/provenance-site/brands/newsapi.html
+Top endpoints by signature score:
+  - https://gateway.apiosk.com/newsapi/everything (score 45/100 low, 2 calls/30d)
+  - https://gateway.apiosk.com/newsapi/top-headlines (score 45/100 low, 1 calls/30d)
+  - https://httpay.xyz/api/gateway/newsapi/%7B*path%7D (score 45/100 low, 1 calls/30d)
+
+### OpenSea — 2 suspected reseller endpoints
+OpenSea's keyed API developer terms restrict resale.
+Audit page: https://apeirontrade.github.io/provenance-site/brands/opensea.html
+Top endpoints by signature score:
+  - https://cc0.company/api/store/agent-services/cc0pedia/invoke (score 58/100 medium, 3 calls/30d)
+  - https://nft-alpha-x402.fly.dev/api/nft-signal (score 47/100 low, 6 calls/30d)
+
+### Stability AI — 2 suspected reseller endpoints
+Stability AI's membership terms restrict commercial resale of its hosted API.
+Audit page: https://apeirontrade.github.io/provenance-site/brands/stability.html
+Top endpoints by signature score:
+  - https://ged-x402-image.jvalamis.workers.dev/v1/image/:model (score 47/100 low, 13 calls/30d)
+  - https://x402-dev.dopamint.ai/api/ai/generations/images/stable-diffusion-v35-large (score 45/100 low, 0 calls/30d)
+
+### Tripadvisor — 2 suspected reseller endpoints
+Tripadvisor's Content API is partner-gated.
+Audit page: https://apeirontrade.github.io/provenance-site/brands/tripadvisor.html
+Top endpoints by signature score:
+  - https://tripadvisor.x402.paysponge.com/api/v1/location/search (score 45/100 low, 1 calls/30d)
+  - https://tripadvisor.x402.paysponge.com/api/v1/location/:locationId/details (score 45/100 low, 1 calls/30d)
+
+### Shodan — 1 suspected reseller endpoints
+Shodan licenses its security data; redistribution raises both licensing and ethics questions.
+Audit page: https://apeirontrade.github.io/provenance-site/brands/shodan.html
+Top endpoints by signature score:
+  - https://cyberpulse-six.vercel.app/api/cyber/osint (score 55/100 medium, 5 calls/30d)
+
+### Wolfram|Alpha — 1 suspected reseller endpoints
+Wolfram|Alpha's paid API terms restrict redistribution.
+Audit page: https://apeirontrade.github.io/provenance-site/brands/wolfram.html
+Top endpoints by signature score:
+  - https://wolframalpha.x402.paysponge.com/v1/simple (score 45/100 low, 2 calls/30d)

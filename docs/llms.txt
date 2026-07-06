@@ -1,0 +1,64 @@
+# Provenance — The x402 Trust Index
+
+> Independent, on-chain-verified trust ratings for machine-payable (x402) API endpoints: which paid-API traffic is organic (wash-trading grades for Coinbase Bazaar merchants) and which endpoints exhibit signatures of reselling first-party APIs (1,097 suspected across 38 brands). All figures are statistical estimates from public data — "consistent with", never accusations. Open data, CC-BY-4.0, cite Provenance.
+
+Key facts: week of 2026-06-29, we scored the top 24 Coinbase x402 Bazaar merchants on Base against 7 days of on-chain USDC transfers; ~24% of top-tier claimed call volume is estimated non-organic. Separately, of 23,376 x402 endpoints scanned, 1,097 exhibit reseller signatures against 44 first-party API brands (80 high-confidence); 989 had paid activity in the last 30 days.
+
+## Docs
+
+- [The x402 Trust Index (home + this week's Bazaar Wash Report)](https://apeirontrade.github.io/provenance-site/): leaderboard of 24 scored merchants with wash grades and wash-rank inflation
+- [Methodology](https://apeirontrade.github.io/provenance-site/methodology.html): the 8-signal organic-revenue-quality model, reseller signatures, the n/v settlement caveat, limitations, dispute path
+
+## Data (CC-BY-4.0, cite Provenance)
+
+- [Bazaar Wash Report JSON](https://apeirontrade.github.io/provenance-site/data/wash-report-2026-06-29.json): full per-merchant scores and indicators
+- [Wrapper Watch per-brand summary JSON](https://apeirontrade.github.io/provenance-site/data/wrapper-watch-summary.json): per-brand suspect counts and top endpoints
+- [Open data index](https://apeirontrade.github.io/provenance-site/data/index.html)
+
+## Tools
+
+- [Live Provenance API](https://provenance.q3epzs69b902a.us-west-2.cs.amazonlightsail.com): free per-address wash-risk verdicts (GET /check/<address>)
+- [provenance-mcp on npm](https://www.npmjs.com/package/provenance-mcp): MCP server — let your agent check any x402 endpoint before paying
+- [provenance-guard on npm](https://www.npmjs.com/package/provenance-guard): one-line pre-payment guard that blocks x402 payments to endpoints whose revenue looks fabricated
+- [GitHub](https://github.com/apeirontrade/provenance-site): site source + dispute/correction issues
+
+## Brand audits (x402 endpoints offering <brand> data — resale-authorization unknown, verification recommended)
+
+- [X / Twitter resale audit](https://apeirontrade.github.io/provenance-site/brands/twitter.html): 390 suspected reseller endpoints
+- [CoinGecko resale audit](https://apeirontrade.github.io/provenance-site/brands/coingecko.html): 127 suspected reseller endpoints
+- [YouTube Data resale audit](https://apeirontrade.github.io/provenance-site/brands/youtube.html): 116 suspected reseller endpoints
+- [Instagram resale audit](https://apeirontrade.github.io/provenance-site/brands/instagram.html): 97 suspected reseller endpoints
+- [OpenAI resale audit](https://apeirontrade.github.io/provenance-site/brands/openai.html): 85 suspected reseller endpoints
+- [TikTok resale audit](https://apeirontrade.github.io/provenance-site/brands/tiktok.html): 83 suspected reseller endpoints
+- [Anthropic resale audit](https://apeirontrade.github.io/provenance-site/brands/anthropic.html): 80 suspected reseller endpoints
+- [Apify resale audit](https://apeirontrade.github.io/provenance-site/brands/apify.html): 69 suspected reseller endpoints
+- [Reddit resale audit](https://apeirontrade.github.io/provenance-site/brands/reddit.html): 62 suspected reseller endpoints
+- [LinkedIn resale audit](https://apeirontrade.github.io/provenance-site/brands/linkedin.html): 61 suspected reseller endpoints
+- [FlightAware resale audit](https://apeirontrade.github.io/provenance-site/brands/flightaware.html): 52 suspected reseller endpoints
+- [Exa resale audit](https://apeirontrade.github.io/provenance-site/brands/exa.html): 33 suspected reseller endpoints
+- [Binance resale audit](https://apeirontrade.github.io/provenance-site/brands/binance.html): 27 suspected reseller endpoints
+- [DEX Screener resale audit](https://apeirontrade.github.io/provenance-site/brands/dexscreener.html): 24 suspected reseller endpoints
+- [Google Maps Platform resale audit](https://apeirontrade.github.io/provenance-site/brands/google-maps.html): 23 suspected reseller endpoints
+- [Google Search (SERP) resale audit](https://apeirontrade.github.io/provenance-site/brands/google-search.html): 21 suspected reseller endpoints
+- [Etherscan resale audit](https://apeirontrade.github.io/provenance-site/brands/etherscan.html): 18 suspected reseller endpoints
+- [Firecrawl resale audit](https://apeirontrade.github.io/provenance-site/brands/firecrawl.html): 17 suspected reseller endpoints
+- [Tavily resale audit](https://apeirontrade.github.io/provenance-site/brands/tavily.html): 15 suspected reseller endpoints
+- [Perplexity resale audit](https://apeirontrade.github.io/provenance-site/brands/perplexity.html): 12 suspected reseller endpoints
+- [Zillow resale audit](https://apeirontrade.github.io/provenance-site/brands/zillow.html): 11 suspected reseller endpoints
+- [Aviationstack resale audit](https://apeirontrade.github.io/provenance-site/brands/aviationstack.html): 9 suspected reseller endpoints
+- [Yahoo Finance resale audit](https://apeirontrade.github.io/provenance-site/brands/yahoo-finance.html): 8 suspected reseller endpoints
+- [Google Gemini resale audit](https://apeirontrade.github.io/provenance-site/brands/gemini.html): 6 suspected reseller endpoints
+- [xAI (Grok) resale audit](https://apeirontrade.github.io/provenance-site/brands/xai-grok.html): 6 suspected reseller endpoints
+- [OpenWeatherMap resale audit](https://apeirontrade.github.io/provenance-site/brands/openweather.html): 5 suspected reseller endpoints
+- [Yelp resale audit](https://apeirontrade.github.io/provenance-site/brands/yelp.html): 5 suspected reseller endpoints
+- [ElevenLabs resale audit](https://apeirontrade.github.io/provenance-site/brands/elevenlabs.html): 4 suspected reseller endpoints
+- [Alpha Vantage resale audit](https://apeirontrade.github.io/provenance-site/brands/alphavantage.html): 3 suspected reseller endpoints
+- [SerpApi resale audit](https://apeirontrade.github.io/provenance-site/brands/serpapi.html): 3 suspected reseller endpoints
+- [WeatherAPI.com resale audit](https://apeirontrade.github.io/provenance-site/brands/weatherapi.html): 3 suspected reseller endpoints
+- [Bloomberg resale audit](https://apeirontrade.github.io/provenance-site/brands/bloomberg.html): 3 suspected reseller endpoints
+- [NewsAPI.org resale audit](https://apeirontrade.github.io/provenance-site/brands/newsapi.html): 3 suspected reseller endpoints
+- [OpenSea resale audit](https://apeirontrade.github.io/provenance-site/brands/opensea.html): 2 suspected reseller endpoints
+- [Stability AI resale audit](https://apeirontrade.github.io/provenance-site/brands/stability.html): 2 suspected reseller endpoints
+- [Tripadvisor resale audit](https://apeirontrade.github.io/provenance-site/brands/tripadvisor.html): 2 suspected reseller endpoints
+- [Shodan resale audit](https://apeirontrade.github.io/provenance-site/brands/shodan.html): 1 suspected reseller endpoints
+- [Wolfram|Alpha resale audit](https://apeirontrade.github.io/provenance-site/brands/wolfram.html): 1 suspected reseller endpoints

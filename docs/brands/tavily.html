@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>x402 endpoints offering Tavily data — resale-authorization audit (15 suspected) — Provenance</title>
+<meta name="description" content="Tavily API resold via x402? 15 suspected unauthorized Tavily reseller endpoints found in public x402 registries (2 high-confidence, 13 active in 30d). Evidence, prices, on-chain payment counts. Verification recommended.">
+<link rel="canonical" href="https://apeirontrade.github.io/provenance-site/brands/tavily.html">
+<meta property="og:title" content="x402 endpoints offering Tavily data — resale-authorization audit (15 suspected) — Provenance">
+<meta property="og:description" content="Tavily API resold via x402? 15 suspected unauthorized Tavily reseller endpoints found in public x402 registries (2 high-confidence, 13 active in 30d). Evidence, prices, on-chain payment counts. Verification recommended.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://apeirontrade.github.io/provenance-site/brands/tavily.html">
+<meta name="robots" content="index,follow">
+<style>
+  :root{color-scheme:light dark;
+    --bg:#0d1117;--panel:#161b22;--border:#30363d;--fg:#e6edf3;--dim:#8b949e;--accent:#58a6ff;--accent2:#d2a8ff;}
+  @media (prefers-color-scheme: light){:root{--bg:#f6f8fa;--panel:#ffffff;--border:#d0d7de;--fg:#1f2328;--dim:#57606a;--accent:#0969da;--accent2:#8250df;}}
+  *{box-sizing:border-box;margin:0}
+  body{background:var(--bg);color:var(--fg);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;padding:2.2rem 1rem 4rem}
+  .wrap{max-width:1080px;margin:0 auto}
+  header.site{margin-bottom:1.6rem}
+  .crumb{font-size:.82rem;color:var(--dim);margin-bottom:1rem}
+  .crumb a{color:var(--dim)}
+  h1{font-size:1.65rem;letter-spacing:-.01em;line-height:1.25}
+  h2{font-size:1.15rem;margin:2.2rem 0 .8rem}
+  h3{font-size:1rem;margin:1.6rem 0 .6rem}
+  .sub{color:var(--dim);margin:.5rem 0 1.4rem;max-width:62rem}
+  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.8rem;margin:1.4rem 0 1.8rem}
+  .tile{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:.85rem 1rem}
+  .tile b{display:block;font-size:1.4rem;font-weight:600}
+  .tile span{color:var(--dim);font-size:.8rem}
+  .tblwrap{overflow-x:auto;border:1px solid var(--border);border-radius:8px;background:var(--panel);margin:.6rem 0 1rem}
+  table{border-collapse:collapse;width:100%;font-size:.9rem}
+  th{color:var(--dim);font-weight:600;font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;text-align:left;padding:.65rem .8rem;border-bottom:1px solid var(--border);white-space:nowrap}
+  td{padding:.6rem .8rem;border-bottom:1px solid var(--border);vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82rem}
+  .dim{color:var(--dim)}
+  .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .center{text-align:center}
+  .ep-name{font-weight:600;overflow-wrap:anywhere}
+  .ep-meta{color:var(--dim);font-size:.76rem;margin-top:.15rem;overflow-wrap:anywhere}
+  .grade{display:inline-block;border:1px solid;border-radius:6px;padding:.05rem .55rem;font-weight:700;font-size:.98rem;white-space:nowrap}
+  .infl-pos{color:#f85149;font-weight:700;font-variant-numeric:tabular-nums}
+  .infl-neg{color:#3fb950;font-weight:600;font-variant-numeric:tabular-nums}
+  .infl-zero{color:var(--dim)}
+  .ind{font-size:.82rem;color:var(--dim);max-width:300px}
+  .pill{display:inline-block;border:1px solid var(--border);border-radius:99px;padding:.02rem .55rem;font-size:.74rem;color:var(--dim);white-space:nowrap}
+  .pill.ok{color:#3fb950;border-color:#3fb95055}
+  .pill.hi{color:#f0883e;border-color:#f0883e55}
+  .pill.med{color:#d29922;border-color:#d2992255}
+  .note,.callout{color:var(--dim);font-size:.84rem;margin:1.1rem 0;line-height:1.6;max-width:62rem}
+  .callout{background:var(--panel);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:6px;padding:.8rem 1rem;color:var(--fg)}
+  .callout.warn{border-left-color:#d29922}
+  ul.ev{margin:.2rem 0 .2rem 1rem;padding:0;font-size:.82rem;color:var(--dim)}
+  ul.ev li{margin:.15rem 0}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85em;background:var(--panel);border:1px solid var(--border);border-radius:4px;padding:.05em .3em}
+  .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.8rem;margin:1rem 0}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:1rem}
+  .card h3{margin:0 0 .4rem;font-size:.95rem}
+  .card p{font-size:.83rem;color:var(--dim)}
+  .brandlist{columns:3;column-gap:1.5rem;font-size:.9rem}
+  @media(max-width:800px){.brandlist{columns:2}}
+  @media(max-width:520px){.brandlist{columns:1}}
+  .brandlist li{margin:.25rem 0;break-inside:avoid}
+  footer.site{border-top:1px solid var(--border);margin-top:3rem;padding-top:1.1rem;color:var(--dim);font-size:.82rem;line-height:1.7}
+  footer.site nav{margin-bottom:.4rem}
+  footer.site nav a{margin-right:1.1rem}
+  dl.kv{display:grid;grid-template-columns:max-content 1fr;gap:.35rem 1.2rem;font-size:.9rem;margin:.8rem 0}
+  dl.kv dt{color:var(--dim)}
+  dl.kv dd{overflow-wrap:anywhere}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://apeirontrade.github.io/provenance-site/#org","name":"Provenance","url":"https://apeirontrade.github.io/provenance-site/","description":"Independent trust ratings for x402 machine-payable API endpoints, derived from public on-chain payment data and public discovery registries.","sameAs":["https://www.npmjs.com/package/provenance-mcp","https://www.npmjs.com/package/provenance-guard","https://github.com/apeirontrade/provenance-mcp","https://github.com/apeirontrade/provenance-guard"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Report","headline":"x402 endpoints offering Tavily data — resale-authorization audit","author":{"@id":"https://apeirontrade.github.io/provenance-site/#org"},"datePublished":"2026-07-05","about":{"@type":"Brand","name":"Tavily"},"mainEntityOfPage":"https://apeirontrade.github.io/provenance-site/brands/tavily.html"}</script>
+</head><body><div class="wrap">
+<div class="crumb"><a href="../index.html">Provenance x402 Trust Index</a> &middot; <a href="../methodology.html">Methodology</a> &middot; <a href="../data/index.html">Open data</a></div>
+
+<h1>x402 endpoints offering Tavily data <span class="dim">— resale-authorization audit</span></h1>
+<p class="sub">15 machine-payable (x402) endpoints in the public discovery registries exhibit reseller signatures referencing <b>Tavily</b> while hosted off Tavily's own domains. Resale-authorization status: <b>unknown — suspected unauthorized resale, verification recommended</b>. Any of these endpoints may hold a legitimate redistribution license.</p>
+
+<div class="callout">Context: Tavily sells agent-search API credits, including a free tier that can be arbitraged.</div>
+
+<div class="tiles">
+  <div class="tile"><b>15</b><span>suspected reseller endpoints</span></div>
+  <div class="tile"><b>2</b><span>high-confidence signatures (≥70/100)</span></div>
+  <div class="tile"><b>13</b><span>with paid activity in the last 30d</span></div>
+  <div class="tile"><b>0</b><span>live-402 confirmed by probe</span></div>
+</div>
+
+<p class="note">Scan of 23,376 unique x402 endpoints on 2026-07-05, sources: Coinbase Bazaar + GoPlausible registry. Payment counts come from the registries' own published 30-day quality signals. Evidence bullets are automated signature matches — see the <a href="../methodology.html">methodology</a> for signal definitions, false-positive modes, and the <a href="https://github.com/apeirontrade/provenance-site/issues">dispute path</a>. If you are on Tavily's API or trust team and want the full evidence set or a re-verification, open an issue — it's free.</p>
+
+<div class="tblwrap"><table>
+<thead><tr><th>Endpoint</th><th>Price/call</th><th>Calls 30d</th><th>Signature</th><th>Evidence (automated signature matches)</th></tr></thead>
+<tbody><tr>
+  <td>
+    <div class="ep-name mono">https://search.gedx402.com/v1/tavily/extract</div>
+    <div class="ep-meta">GEDX402 Search — Tavily API proxy — extract. JSON body matches https://docs.tavily.com/documentation/api-reference/introduction. Poll GET routes (research status, usage) are free; POST routes are x…</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.10</td>
+  <td class="num">14<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 78/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Tavily (via &quot;tavily&quot; in url) but is hosted on search.gedx402.com, not the brand's domain</li><li>brand term &quot;tavily&quot; appears in the endpoint URL itself</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>input schema is a bare passthrough (query) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://search.gedx402.com/v1/tavily/search</div>
+    <div class="ep-meta">GEDX402 Search — Tavily API proxy — search. JSON body matches https://docs.tavily.com/documentation/api-reference/introduction. Poll GET routes (research status, usage) are free; POST routes are x4…</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0420</td>
+  <td class="num">14<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 78/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Tavily (via &quot;tavily&quot; in url) but is hosted on search.gedx402.com, not the brand's domain</li><li>brand term &quot;tavily&quot; appears in the endpoint URL itself</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>input schema is a bare passthrough (query) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://search.gedx402.com/v1/search</div>
+    <div class="ep-meta">GEDX402 Search — Tavily API proxy — search. JSON body matches https://docs.tavily.com/documentation/api-reference/introduction. Poll GET routes (research status, usage) are free; POST routes are x4…</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0420</td>
+  <td class="num">22<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 68/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Tavily (via &quot;tavily&quot; in description) but is hosted on search.gedx402.com, not the brand's domain</li><li>self-describes as an API proxy: &quot;API proxy&quot;</li><li>input schema is a bare passthrough (query) — consistent with forwarding to an upstream API</li><li>$0.0420/call ≈ 5.3× Tavily's public ~$0.008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://signal-engine-production-d88d.up.railway.app/v1/gateway/search/tavily</div>
+    <div class="ep-meta"> — AI-powered web search via Tavily</div>
+    <div class="ep-meta mono">pays to 0xf080…e035 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0120</td>
+  <td class="num">3<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 65/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Tavily (via &quot;tavily&quot; in url) but is hosted on signal-engine-production-d88d.up.railway.app, not the brand's domain</li><li>brand term &quot;tavily&quot; appears in the endpoint URL itself</li><li>$0.0120/call ≈ 1.5× Tavily's public ~$0.008/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (railway.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.auor.io/tavily/v1/search</div>
+    <div class="ep-meta"> — Use Tavily to search the web.</div>
+    <div class="ep-meta mono">pays to 0x5721…8867 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0200</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 63/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Tavily (via &quot;tavily&quot; in url) but is hosted on api.auor.io, not the brand's domain</li><li>brand term &quot;tavily&quot; appears in the endpoint URL itself</li><li>input schema is a bare passthrough (query) — consistent with forwarding to an upstream API</li><li>$0.0200/call ≈ 2.5× Tavily's public ~$0.008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.questflow.ai/x402/agent/qrn:agent:68ee1cfebd72982773cd07e8</div>
+    <div class="ep-meta">Questflow — The Tavily provides comprehensive web search and data extraction capabilities through four powerful tools: tavily-search for real-time web search, tavily-extract for intelligent da…</div>
+    <div class="ep-meta mono">pays to 0x4B33…fd25 on base · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill med">medium · 60/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Tavily (via &quot;tavily&quot; in description) but is hosted on api.questflow.ai, not the brand's domain</li><li>'powered by' upstream-provider phrasing: &quot;Powered by&quot;</li><li>input schema is a bare passthrough (input) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api-dev.intra-tls2.dctx.link/x402/agent/qrn:agent:68ee165dd8b26d2e2dffa01c</div>
+    <div class="ep-meta"> — The Tavily MCP server provides:
+search, extract, map, crawl tools
+Real-time web search capabilities through the tavily-search tool
+Intelligent data extraction from web pages via th…</div>
+    <div class="ep-meta mono">pays to 0xcD5C…DA79 on base-sepolia · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill med">medium · 60/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Tavily (via &quot;tavily&quot; in description) but is hosted on api-dev.intra-tls2.dctx.link, not the brand's domain</li><li>'powered by' upstream-provider phrasing: &quot;Powered by&quot;</li><li>input schema is a bare passthrough (input) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://search.gedx402.com/v1/exa/search</div>
+    <div class="ep-meta">GEDX402 Search — Exa neural search API — search. POST { query } for search or { urls } for contents. https://docs.exa.ai $0.013 USDC per request. Agent search: exa, neural search, semantic search, …</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0130</td>
+  <td class="num">12<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Exa, Tavily (via &quot;exa&quot; in url) but is hosted on search.gedx402.com, not the brand's domain</li><li>brand term &quot;exa&quot; appears in the endpoint URL itself</li><li>$0.0130/call ≈ 2.6× Exa's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://gateway.spraay.app/api/v1/search/web</div>
+    <div class="ep-meta"> — Web search with clean, LLM-ready results via Tavily. Basic or advanced depth.</div>
+    <div class="ep-meta mono">pays to 0xAd62…95c8 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0200</td>
+  <td class="num">9<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Tavily (via &quot;tavily&quot; in description) but is hosted on gateway.spraay.app, not the brand's domain</li><li>declares upstream data source: &quot;results via Tavily.&quot;</li><li>$0.0200/call ≈ 2.5× Tavily's public ~$0.008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://search.gedx402.com/v1/exa/contents</div>
+    <div class="ep-meta">GEDX402 Search — Exa neural search API — contents. POST { query } for search or { urls } for contents. https://docs.exa.ai $0.017 USDC per request. Agent search: exa fetch, webpage contents, markdo…</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0170</td>
+  <td class="num">7<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Exa, Tavily (via &quot;exa&quot; in url) but is hosted on search.gedx402.com, not the brand's domain</li><li>brand term &quot;exa&quot; appears in the endpoint URL itself</li><li>$0.0170/call ≈ 3.4× Exa's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://climatepulse-six.vercel.app/api/climate/severe</div>
+    <div class="ep-meta">ClimatePulse — Should I be worried about the storm headed this way? Severe weather threat assessment — active alerts, threat level, a safety timeline, a preparedness checklist, shelter guidance, …</div>
+    <div class="ep-meta mono">pays to 0x50ab…12fc on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0800</td>
+  <td class="num">4<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 55/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Tavily (via &quot;tavily&quot; in schema) but is hosted on climatepulse-six.vercel.app, not the brand's domain</li><li>$0.0800/call ≈ 10.0× Tavily's public ~$0.008/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://climatepulse-six.vercel.app/api/climate/compare</div>
+    <div class="ep-meta">ClimatePulse — Miami or Denver for a winter trip? Side-by-side climate comparison of 2-4 locations — temperature, humidity, UV, and 7-day outlook — with per-location outdoor scores and pros/cons …</div>
+    <div class="ep-meta mono">pays to 0x50ab…12fc on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.10</td>
+  <td class="num">4<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 55/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Tavily (via &quot;tavily&quot; in schema) but is hosted on climatepulse-six.vercel.app, not the brand's domain</li><li>$0.1000/call ≈ 12.5× Tavily's public ~$0.008/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://climatepulse-six.vercel.app/api/climate/activity</div>
+    <div class="ep-meta">ClimatePulse — Is Saturday good for hiking near Denver? Activity-specific go/no-go rating (1-10) for hiking, skiing, surfing, cycling, camping, running, golf, beach, or fishing, with a gear check…</div>
+    <div class="ep-meta mono">pays to 0x50ab…12fc on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.10</td>
+  <td class="num">4<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 55/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Tavily (via &quot;tavily&quot; in schema) but is hosted on climatepulse-six.vercel.app, not the brand's domain</li><li>$0.1000/call ≈ 12.5× Tavily's public ~$0.008/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.signalfuse.co/v1/gateway/search/tavily</div>
+    <div class="ep-meta"> — AI-powered web search via Tavily</div>
+    <div class="ep-meta mono">pays to 0xf080…e035 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0120</td>
+  <td class="num">180<div class="ep-meta">4 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">probe: HTTP 405</span></div></td>
+  <td><ul class="ev"><li>references Tavily (via &quot;tavily&quot; in url) but is hosted on api.signalfuse.co, not the brand's domain</li><li>brand term &quot;tavily&quot; appears in the endpoint URL itself</li><li>$0.0120/call ≈ 1.5× Tavily's public ~$0.008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.qonoro.ai/v1/outbound/personalize</div>
+    <div class="ep-meta"> — Generates a personalized B2B outbound message for a target prospect. Researches the company, person, and recent signals via 3 Tavily searches, then uses an LLM to craft a subject l…</div>
+    <div class="ep-meta mono">pays to 0x40B6…72eb on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.75</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references LinkedIn, Tavily (via &quot;linkedin&quot; in schema) but is hosted on api.qonoro.ai, not the brand's domain</li><li>$0.7500/call ≈ 93.8× Tavily's public ~$0.008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr></tbody>
+</table></div>
+
+<p class="note"><b>Framing note:</b> every row above is a statistical signature match, published so that Tavily's own team — the only party who can actually verify authorization — can review it. Nothing on this page asserts that any listed operator is acting unlawfully or in breach of any agreement.</p>
+<footer class="site">
+  <nav>
+    <a href="https://provenance.q3epzs69b902a.us-west-2.cs.amazonlightsail.com">Live Provenance API</a>
+    <a href="https://www.npmjs.com/package/provenance-mcp">provenance-mcp (npm)</a>
+    <a href="https://www.npmjs.com/package/provenance-guard">provenance-guard (npm)</a>
+    <a href="https://github.com/apeirontrade/provenance-site">GitHub</a>
+    <a href="../methodology.html">Methodology</a>
+    <a href="../data/index.html">Open data (CC-BY-4.0)</a>
+    <a href="https://github.com/apeirontrade/provenance-site/issues">Disputes &amp; corrections</a>
+  </nav>
+  <div>All figures are statistical estimates derived from public on-chain payment data and public x402 discovery registries. Nothing here asserts fraud or contract breach by any named party — see the <a href="../methodology.html">methodology and disclaimer</a>. Data is CC-BY-4.0; cite Provenance.</div>
+  <div>Provenance · independent trust ratings for machine-payable (x402) API endpoints · generated 2026-07-06</div>
+</footer>
+</div></body></html>

@@ -1,0 +1,2341 @@
+{
+ "title": "Wrapper Watch — x402 resale-authorization scan (per-brand summary)",
+ "generatedAt": "2026-07-05T21:21:01.502Z",
+ "license": "CC-BY-4.0 — https://creativecommons.org/licenses/by/4.0/ — cite Provenance",
+ "citation": "Provenance, \"Wrapper Watch\", 2026-07-05, https://apeirontrade.github.io/provenance-site/",
+ "note": "Suspected unauthorized resale — verification recommended. Signature matches, not conclusions; a flagged endpoint may hold a legitimate redistribution license. Methodology: https://apeirontrade.github.io/provenance-site/methodology.html",
+ "sources": {
+  "bazaar": {
+   "fetched": 23338,
+   "declaredTotal": 23338
+  },
+  "goplausible": {
+   "fetched": 38
+  },
+  "x402scan": "no public JSON API found — skipped"
+ },
+ "uniqueEndpointsScanned": 23376,
+ "suspectedWrappers": 1097,
+ "thresholds": {
+  "suspect": 45,
+  "high": 70,
+  "medium": 50,
+  "low": 35
+ },
+ "brands": [
+  {
+   "brandId": "twitter",
+   "brandName": "X / Twitter",
+   "auditPage": "https://apeirontrade.github.io/provenance-site/brands/twitter.html",
+   "suspectedEndpoints": 390,
+   "highConfidence": 45,
+   "mediumConfidence": 302,
+   "lowConfidence": 43,
+   "withPaidActivity30d": 370,
+   "totalCalls30d": 41428,
+   "live402Confirmed": 4,
+   "topEndpoints": [
+    {
+     "url": "https://miroshark-x402-production.up.railway.app/run",
+     "host": "miroshark-x402-production.up.railway.app",
+     "score": 90,
+     "confidence": "high",
+     "priceUsd": 1,
+     "calls30d": 20,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://social.gedx402.com/v1/sociavault/linkedin-ad-library/ad-details",
+     "host": "social.gedx402.com",
+     "score": 88,
+     "confidence": "high",
+     "priceUsd": 0.014,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://social.gedx402.com/v1/sociavault/linkedin/profile",
+     "host": "social.gedx402.com",
+     "score": 88,
+     "confidence": "high",
+     "priceUsd": 0.014,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://social.gedx402.com/v1/sociavault/linkedin/company",
+     "host": "social.gedx402.com",
+     "score": 88,
+     "confidence": "high",
+     "priceUsd": 0.014,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://glim.sh/api/v1/web/search",
+     "host": "glim.sh",
+     "score": 78,
+     "confidence": "high",
+     "priceUsd": 0.01,
+     "calls30d": 25,
+     "payers30d": 6,
+     "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+     "live402": null
+    }
+   ]
+  },
+  {
+   "brandId": "coingecko",
+   "brandName": "CoinGecko",
+   "auditPage": "https://apeirontrade.github.io/provenance-site/brands/coingecko.html",
+   "suspectedEndpoints": 127,
+   "highConfidence": 2,
+   "mediumConfidence": 115,
+   "lowConfidence": 10,
+   "withPaidActivity30d": 118,
+   "totalCalls30d": 432,
+   "live402Confirmed": 2,
+   "topEndpoints": [
+    {
+     "url": "https://bazaar-gateway.vercel.app/api/market-report",
+     "host": "bazaar-gateway.vercel.app",
+     "score": 75,
+     "confidence": "high",
+     "priceUsd": 0.02,
+     "calls30d": 4,
+     "payers30d": 3,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://eltociear-tokenguard.hf.space/btc_rates",
+     "host": "eltociear-tokenguard.hf.space",
+     "score": 70,
+     "confidence": "high",
+     "priceUsd": 0.005,
+     "calls30d": 2,
+     "payers30d": 2,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://tokenaru.vercel.app/api/lookup",
+     "host": "tokenaru.vercel.app",
+     "score": 65,
+     "confidence": "medium",
+     "priceUsd": 0.002,
+     "calls30d": 5,
+     "payers30d": 2,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://x402-entity-resolver-production.up.railway.app/resolve",
+     "host": "x402-entity-resolver-production.up.railway.app",
+     "score": 65,
+     "confidence": "medium",
+     "priceUsd": 0.005,
+     "calls30d": 3,
+     "payers30d": 2,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://api.questflow.ai/x402/agent/qrn:agent:687df68ab234010b7d331717",
+     "host": "api.questflow.ai",
+     "score": 65,
+     "confidence": "medium",
+     "priceUsd": null,
+     "calls30d": 0,
+     "payers30d": 0,
+     "network": "base",
+     "live402": null
+    }
+   ]
+  },
+  {
+   "brandId": "youtube",
+   "brandName": "YouTube Data",
+   "auditPage": "https://apeirontrade.github.io/provenance-site/brands/youtube.html",
+   "suspectedEndpoints": 116,
+   "highConfidence": 43,
+   "mediumConfidence": 25,
+   "lowConfidence": 48,
+   "withPaidActivity30d": 94,
+   "totalCalls30d": 424,
+   "live402Confirmed": 2,
+   "topEndpoints": [
+    {
+     "url": "https://social.gedx402.com/v1/sociavault/linkedin-ad-library/ad-details",
+     "host": "social.gedx402.com",
+     "score": 88,
+     "confidence": "high",
+     "priceUsd": 0.014,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://social.gedx402.com/v1/sociavault/linkedin/profile",
+     "host": "social.gedx402.com",
+     "score": 88,
+     "confidence": "high",
+     "priceUsd": 0.014,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://social.gedx402.com/v1/sociavault/linkedin/company",
+     "host": "social.gedx402.com",
+     "score": 88,
+     "confidence": "high",
+     "priceUsd": 0.014,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://social.gedx402.com/v1/sociavault/tiktok/search/keyword",
+     "host": "social.gedx402.com",
+     "score": 78,
+     "confidence": "high",
+     "priceUsd": 0.014,
+     "calls30d": 2,
+     "payers30d": 2,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://social.gedx402.com/v1/sociavault/tiktok/live",
+     "host": "social.gedx402.com",
+     "score": 78,
+     "confidence": "high",
+     "priceUsd": 0.014,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    }
+   ]
+  },
+  {
+   "brandId": "instagram",
+   "brandName": "Instagram",
+   "auditPage": "https://apeirontrade.github.io/provenance-site/brands/instagram.html",
+   "suspectedEndpoints": 97,
+   "highConfidence": 44,
+   "mediumConfidence": 18,
+   "lowConfidence": 35,
+   "withPaidActivity30d": 76,
+   "totalCalls30d": 268,
+   "live402Confirmed": 1,
+   "topEndpoints": [
+    {
+     "url": "https://social.gedx402.com/v1/sociavault/linkedin-ad-library/ad-details",
+     "host": "social.gedx402.com",
+     "score": 88,
+     "confidence": "high",
+     "priceUsd": 0.014,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://social.gedx402.com/v1/sociavault/linkedin/profile",
+     "host": "social.gedx402.com",
+     "score": 88,
+     "confidence": "high",
+     "priceUsd": 0.014,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://social.gedx402.com/v1/sociavault/linkedin/company",
+     "host": "social.gedx402.com",
+     "score": 88,
+     "confidence": "high",
+     "priceUsd": 0.014,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://apify-api-git-br-better-actor-pay-merit-systems.vercel.app/api/actors/apify/instagram-scraper/call",
+     "host": "apify-api-git-br-better-actor-pay-merit-systems.vercel.app",
+     "score": 85,
+     "confidence": "high",
+     "priceUsd": 0.01,
+     "calls30d": 4,
+     "payers30d": 3,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://social.gedx402.com/v1/sociavault/tiktok/search/keyword",
+     "host": "social.gedx402.com",
+     "score": 78,
+     "confidence": "high",
+     "priceUsd": 0.014,
+     "calls30d": 2,
+     "payers30d": 2,
+     "network": "eip155:8453",
+     "live402": null
+    }
+   ]
+  },
+  {
+   "brandId": "openai",
+   "brandName": "OpenAI",
+   "auditPage": "https://apeirontrade.github.io/provenance-site/brands/openai.html",
+   "suspectedEndpoints": 85,
+   "highConfidence": 2,
+   "mediumConfidence": 45,
+   "lowConfidence": 38,
+   "withPaidActivity30d": 74,
+   "totalCalls30d": 1380,
+   "live402Confirmed": 0,
+   "topEndpoints": [
+    {
+     "url": "https://miroshark-x402-production.up.railway.app/run",
+     "host": "miroshark-x402-production.up.railway.app",
+     "score": 90,
+     "confidence": "high",
+     "priceUsd": 1,
+     "calls30d": 20,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://openweather-coral.vercel.app/weather/air-quality",
+     "host": "openweather-coral.vercel.app",
+     "score": 70,
+     "confidence": "high",
+     "priceUsd": 0.002,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://api.getanyapi.com/v1/run/twitter.search",
+     "host": "api.getanyapi.com",
+     "score": 68,
+     "confidence": "medium",
+     "priceUsd": 0.014,
+     "calls30d": 6,
+     "payers30d": 3,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://agent402.tools/api/transcribe",
+     "host": "agent402.tools",
+     "score": 68,
+     "confidence": "medium",
+     "priceUsd": 0.03,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://agent402.tools/api/transcribe-pro",
+     "host": "agent402.tools",
+     "score": 68,
+     "confidence": "medium",
+     "priceUsd": 0.1,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    }
+   ]
+  },
+  {
+   "brandId": "tiktok",
+   "brandName": "TikTok",
+   "auditPage": "https://apeirontrade.github.io/provenance-site/brands/tiktok.html",
+   "suspectedEndpoints": 83,
+   "highConfidence": 43,
+   "mediumConfidence": 25,
+   "lowConfidence": 15,
+   "withPaidActivity30d": 83,
+   "totalCalls30d": 303,
+   "live402Confirmed": 0,
+   "topEndpoints": [
+    {
+     "url": "https://social.gedx402.com/v1/sociavault/linkedin-ad-library/ad-details",
+     "host": "social.gedx402.com",
+     "score": 88,
+     "confidence": "high",
+     "priceUsd": 0.014,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://social.gedx402.com/v1/sociavault/linkedin/profile",
+     "host": "social.gedx402.com",
+     "score": 88,
+     "confidence": "high",
+     "priceUsd": 0.014,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://social.gedx402.com/v1/sociavault/linkedin/company",
+     "host": "social.gedx402.com",
+     "score": 88,
+     "confidence": "high",
+     "priceUsd": 0.014,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://social.gedx402.com/v1/sociavault/tiktok/search/keyword",
+     "host": "social.gedx402.com",
+     "score": 78,
+     "confidence": "high",
+     "priceUsd": 0.014,
+     "calls30d": 2,
+     "payers30d": 2,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://social.gedx402.com/v1/sociavault/tiktok/live",
+     "host": "social.gedx402.com",
+     "score": 78,
+     "confidence": "high",
+     "priceUsd": 0.014,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    }
+   ]
+  },
+  {
+   "brandId": "anthropic",
+   "brandName": "Anthropic",
+   "auditPage": "https://apeirontrade.github.io/provenance-site/brands/anthropic.html",
+   "suspectedEndpoints": 80,
+   "highConfidence": 2,
+   "mediumConfidence": 52,
+   "lowConfidence": 26,
+   "withPaidActivity30d": 78,
+   "totalCalls30d": 346,
+   "live402Confirmed": 0,
+   "topEndpoints": [
+    {
+     "url": "https://bazaar-gateway.vercel.app/api/market-report",
+     "host": "bazaar-gateway.vercel.app",
+     "score": 75,
+     "confidence": "high",
+     "priceUsd": 0.02,
+     "calls30d": 4,
+     "payers30d": 3,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://netintel-production-440c.up.railway.app/extract/resume",
+     "host": "netintel-production-440c.up.railway.app",
+     "score": 70,
+     "confidence": "high",
+     "priceUsd": 0.08,
+     "calls30d": 2,
+     "payers30d": 2,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://netintel-production-440c.up.railway.app/markdown/clean",
+     "host": "netintel-production-440c.up.railway.app",
+     "score": 65,
+     "confidence": "medium",
+     "priceUsd": 0.03,
+     "calls30d": 2,
+     "payers30d": 2,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://netintel-production-440c.up.railway.app/content-moderate",
+     "host": "netintel-production-440c.up.railway.app",
+     "score": 65,
+     "confidence": "medium",
+     "priceUsd": 0.05,
+     "calls30d": 2,
+     "payers30d": 2,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://netintel-production-440c.up.railway.app/entity-extract",
+     "host": "netintel-production-440c.up.railway.app",
+     "score": 65,
+     "confidence": "medium",
+     "priceUsd": 0.05,
+     "calls30d": 2,
+     "payers30d": 2,
+     "network": "eip155:8453",
+     "live402": null
+    }
+   ]
+  },
+  {
+   "brandId": "apify",
+   "brandName": "Apify",
+   "auditPage": "https://apeirontrade.github.io/provenance-site/brands/apify.html",
+   "suspectedEndpoints": 69,
+   "highConfidence": 24,
+   "mediumConfidence": 42,
+   "lowConfidence": 3,
+   "withPaidActivity30d": 69,
+   "totalCalls30d": 318,
+   "live402Confirmed": 0,
+   "topEndpoints": [
+    {
+     "url": "https://apify-api-git-br-better-actor-pay-merit-systems.vercel.app/api/actors/apify/instagram-scraper/call",
+     "host": "apify-api-git-br-better-actor-pay-merit-systems.vercel.app",
+     "score": 85,
+     "confidence": "high",
+     "priceUsd": 0.01,
+     "calls30d": 4,
+     "payers30d": 3,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://stableapify.dev/api/actors/anchor/linkedin-profile-enrichment/call",
+     "host": "stableapify.dev",
+     "score": 73,
+     "confidence": "high",
+     "priceUsd": 0.01,
+     "calls30d": 2,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://stableapify.dev/api/actors/apify/instagram-scraper/call",
+     "host": "stableapify.dev",
+     "score": 73,
+     "confidence": "high",
+     "priceUsd": 0.01,
+     "calls30d": 2,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://stableapify.dev/api/actors/clockworks/tiktok-scraper/call",
+     "host": "stableapify.dev",
+     "score": 73,
+     "confidence": "high",
+     "priceUsd": 0.01,
+     "calls30d": 2,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://apify-api-git-br-apify-typed-input-schemas-merit-systems.vercel.app/api/actors/apimaestro/linkedin-profile-detail/call",
+     "host": "apify-api-git-br-apify-typed-input-schemas-merit-systems.vercel.app",
+     "score": 70,
+     "confidence": "high",
+     "priceUsd": 0.1,
+     "calls30d": 6,
+     "payers30d": 4,
+     "network": "eip155:8453",
+     "live402": null
+    }
+   ]
+  },
+  {
+   "brandId": "reddit",
+   "brandName": "Reddit",
+   "auditPage": "https://apeirontrade.github.io/provenance-site/brands/reddit.html",
+   "suspectedEndpoints": 62,
+   "highConfidence": 7,
+   "mediumConfidence": 43,
+   "lowConfidence": 12,
+   "withPaidActivity30d": 62,
+   "totalCalls30d": 1352,
+   "live402Confirmed": 0,
+   "topEndpoints": [
+    {
+     "url": "https://miroshark-x402-production.up.railway.app/run",
+     "host": "miroshark-x402-production.up.railway.app",
+     "score": 90,
+     "confidence": "high",
+     "priceUsd": 1,
+     "calls30d": 20,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://glim.sh/api/v1/web/search",
+     "host": "glim.sh",
+     "score": 78,
+     "confidence": "high",
+     "priceUsd": 0.01,
+     "calls30d": 25,
+     "payers30d": 6,
+     "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+     "live402": null
+    },
+    {
+     "url": "https://social.gedx402.com/v1/sociavault/reddit/post/comments",
+     "host": "social.gedx402.com",
+     "score": 78,
+     "confidence": "high",
+     "priceUsd": 0.014,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://social.gedx402.com/v1/sociavault/reddit/subreddit/details",
+     "host": "social.gedx402.com",
+     "score": 78,
+     "confidence": "high",
+     "priceUsd": 0.014,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://social.gedx402.com/v1/sociavault/reddit/subreddit",
+     "host": "social.gedx402.com",
+     "score": 78,
+     "confidence": "high",
+     "priceUsd": 0.014,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    }
+   ]
+  },
+  {
+   "brandId": "linkedin",
+   "brandName": "LinkedIn",
+   "auditPage": "https://apeirontrade.github.io/provenance-site/brands/linkedin.html",
+   "suspectedEndpoints": 61,
+   "highConfidence": 8,
+   "mediumConfidence": 30,
+   "lowConfidence": 23,
+   "withPaidActivity30d": 59,
+   "totalCalls30d": 682,
+   "live402Confirmed": 1,
+   "topEndpoints": [
+    {
+     "url": "https://social.gedx402.com/v1/sociavault/linkedin-ad-library/ad-details",
+     "host": "social.gedx402.com",
+     "score": 88,
+     "confidence": "high",
+     "priceUsd": 0.014,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://social.gedx402.com/v1/sociavault/linkedin/profile",
+     "host": "social.gedx402.com",
+     "score": 88,
+     "confidence": "high",
+     "priceUsd": 0.014,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://social.gedx402.com/v1/sociavault/linkedin/company",
+     "host": "social.gedx402.com",
+     "score": 88,
+     "confidence": "high",
+     "priceUsd": 0.014,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://social.gedx402.com/v1/sociavault/linkedin-ad-library/search",
+     "host": "social.gedx402.com",
+     "score": 78,
+     "confidence": "high",
+     "priceUsd": 0.014,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://tinkrr-api.tinkrr.workers.dev/video/analyze",
+     "host": "tinkrr-api.tinkrr.workers.dev",
+     "score": 75,
+     "confidence": "high",
+     "priceUsd": 0.15,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    }
+   ]
+  },
+  {
+   "brandId": "flightaware",
+   "brandName": "FlightAware",
+   "auditPage": "https://apeirontrade.github.io/provenance-site/brands/flightaware.html",
+   "suspectedEndpoints": 52,
+   "highConfidence": 0,
+   "mediumConfidence": 44,
+   "lowConfidence": 8,
+   "withPaidActivity30d": 52,
+   "totalCalls30d": 183,
+   "live402Confirmed": 1,
+   "topEndpoints": [
+    {
+     "url": "https://stabletravel.dev/api/flightaware/flights/search",
+     "host": "stabletravel.dev",
+     "score": 63,
+     "confidence": "medium",
+     "priceUsd": 0.1,
+     "calls30d": 4,
+     "payers30d": 2,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://stabletravel.dev/api/flightaware/flights/search/count",
+     "host": "stabletravel.dev",
+     "score": 63,
+     "confidence": "medium",
+     "priceUsd": 0.04,
+     "calls30d": 3,
+     "payers30d": 2,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://stabletravel.dev/api/flightaware/flights/search/advanced",
+     "host": "stabletravel.dev",
+     "score": 63,
+     "confidence": "medium",
+     "priceUsd": 0.1,
+     "calls30d": 3,
+     "payers30d": 2,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://stable-travel-git-migrate-stabletravel-router-140-merit-systems.vercel.app/api/flightaware/airports/KLAX/weather/observations",
+     "host": "stable-travel-git-migrate-stabletravel-router-140-merit-systems.vercel.app",
+     "score": 57,
+     "confidence": "medium",
+     "priceUsd": 0.004,
+     "calls30d": 2,
+     "payers30d": 2,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://stable-travel-git-migrate-stabletravel-router-140-merit-systems.vercel.app/api/flightaware/airports/KJFK/weather/observations",
+     "host": "stable-travel-git-migrate-stabletravel-router-140-merit-systems.vercel.app",
+     "score": 57,
+     "confidence": "medium",
+     "priceUsd": 0.004,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    }
+   ]
+  },
+  {
+   "brandId": "exa",
+   "brandName": "Exa",
+   "auditPage": "https://apeirontrade.github.io/provenance-site/brands/exa.html",
+   "suspectedEndpoints": 33,
+   "highConfidence": 2,
+   "mediumConfidence": 25,
+   "lowConfidence": 6,
+   "withPaidActivity30d": 26,
+   "totalCalls30d": 11248,
+   "live402Confirmed": 1,
+   "topEndpoints": [
+    {
+     "url": "https://glim.sh/api/v1/web/search",
+     "host": "glim.sh",
+     "score": 78,
+     "confidence": "high",
+     "priceUsd": 0.01,
+     "calls30d": 25,
+     "payers30d": 6,
+     "network": "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
+     "live402": null
+    },
+    {
+     "url": "https://stable-enrich-git-shafu-stableenrich-valid-89fbcd-merit-systems.vercel.app/api/exa/search",
+     "host": "stable-enrich-git-shafu-stableenrich-valid-89fbcd-merit-systems.vercel.app",
+     "score": 75,
+     "confidence": "high",
+     "priceUsd": 0.01,
+     "calls30d": 2,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://stable-enrich-git-fix-stableenrich-exa-leg-547ea8-merit-systems.vercel.app/api/exa/search",
+     "host": "stable-enrich-git-fix-stableenrich-exa-leg-547ea8-merit-systems.vercel.app",
+     "score": 65,
+     "confidence": "medium",
+     "priceUsd": 0.01,
+     "calls30d": 14,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://stable-enrich-git-fix-stableenrich-exa-api-schema-merit-systems.vercel.app/api/exa/search",
+     "host": "stable-enrich-git-fix-stableenrich-exa-api-schema-merit-systems.vercel.app",
+     "score": 65,
+     "confidence": "medium",
+     "priceUsd": 0.01,
+     "calls30d": 3,
+     "payers30d": 2,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://stable-enrich-git-shafu-stabledomains-pork-25b57c-merit-systems.vercel.app/api/exa/search",
+     "host": "stable-enrich-git-shafu-stabledomains-pork-25b57c-merit-systems.vercel.app",
+     "score": 65,
+     "confidence": "medium",
+     "priceUsd": 0.01,
+     "calls30d": 2,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    }
+   ]
+  },
+  {
+   "brandId": "binance",
+   "brandName": "Binance",
+   "auditPage": "https://apeirontrade.github.io/provenance-site/brands/binance.html",
+   "suspectedEndpoints": 27,
+   "highConfidence": 0,
+   "mediumConfidence": 8,
+   "lowConfidence": 19,
+   "withPaidActivity30d": 27,
+   "totalCalls30d": 161,
+   "live402Confirmed": 0,
+   "topEndpoints": [
+    {
+     "url": "https://x402-deployer.x402-deployer.workers.dev/arbitrage-spread",
+     "host": "x402-deployer.x402-deployer.workers.dev",
+     "score": 60,
+     "confidence": "medium",
+     "priceUsd": 0.005,
+     "calls30d": 4,
+     "payers30d": 2,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://eltociear-tokenguard.hf.space/derivatives",
+     "host": "eltociear-tokenguard.hf.space",
+     "score": 60,
+     "confidence": "medium",
+     "priceUsd": 0.005,
+     "calls30d": 2,
+     "payers30d": 2,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://x402-endpoints.onrender.com/market/intel",
+     "host": "x402-endpoints.onrender.com",
+     "score": 60,
+     "confidence": "medium",
+     "priceUsd": 0.1,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://eltociear-tokenguard.hf.space/exchange",
+     "host": "eltociear-tokenguard.hf.space",
+     "score": 60,
+     "confidence": "medium",
+     "priceUsd": 0.005,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://api.phoneagent.xyz/services",
+     "host": "api.phoneagent.xyz",
+     "score": 53,
+     "confidence": "medium",
+     "priceUsd": 0.01,
+     "calls30d": 2,
+     "payers30d": 2,
+     "network": "eip155:8453",
+     "live402": null
+    }
+   ]
+  },
+  {
+   "brandId": "dexscreener",
+   "brandName": "DEX Screener",
+   "auditPage": "https://apeirontrade.github.io/provenance-site/brands/dexscreener.html",
+   "suspectedEndpoints": 24,
+   "highConfidence": 0,
+   "mediumConfidence": 8,
+   "lowConfidence": 16,
+   "withPaidActivity30d": 21,
+   "totalCalls30d": 48,
+   "live402Confirmed": 0,
+   "topEndpoints": [
+    {
+     "url": "https://api.questflow.ai/x402/swarm/qrn:swarm:688a23cbc6520a7b2678f77a",
+     "host": "api.questflow.ai",
+     "score": 65,
+     "confidence": "medium",
+     "priceUsd": null,
+     "calls30d": 0,
+     "payers30d": 0,
+     "network": "base",
+     "live402": null
+    },
+    {
+     "url": "https://api.questflow.ai/x402/agent/qrn:agent:687df68ab234010b7d331717",
+     "host": "api.questflow.ai",
+     "score": 65,
+     "confidence": "medium",
+     "priceUsd": null,
+     "calls30d": 0,
+     "payers30d": 0,
+     "network": "base",
+     "live402": null
+    },
+    {
+     "url": "https://api-dev.intra-tls2.dctx.link/x402/agent/qrn:agent:6823065f5380bd59df4992e4",
+     "host": "api-dev.intra-tls2.dctx.link",
+     "score": 65,
+     "confidence": "medium",
+     "priceUsd": null,
+     "calls30d": 0,
+     "payers30d": 0,
+     "network": "base-sepolia",
+     "live402": null
+    },
+    {
+     "url": "https://meryol-agenticmarket-x402.hf.space/price/cross/:chain/:token",
+     "host": "meryol-agenticmarket-x402.hf.space",
+     "score": 60,
+     "confidence": "medium",
+     "priceUsd": 0.002,
+     "calls30d": 9,
+     "payers30d": 3,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://x402-endpoints.onrender.com/crypto/token-dossier",
+     "host": "x402-endpoints.onrender.com",
+     "score": 60,
+     "confidence": "medium",
+     "priceUsd": 0.1,
+     "calls30d": 3,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    }
+   ]
+  },
+  {
+   "brandId": "google-maps",
+   "brandName": "Google Maps Platform",
+   "auditPage": "https://apeirontrade.github.io/provenance-site/brands/google-maps.html",
+   "suspectedEndpoints": 23,
+   "highConfidence": 0,
+   "mediumConfidence": 20,
+   "lowConfidence": 3,
+   "withPaidActivity30d": 23,
+   "totalCalls30d": 978,
+   "live402Confirmed": 0,
+   "topEndpoints": [
+    {
+     "url": "https://stable-enrich-git-shafu-stableenrich-nearb-74cfdf-merit-systems.vercel.app/api/google-maps/nearby-search/partial",
+     "host": "stable-enrich-git-shafu-stableenrich-nearb-74cfdf-merit-systems.vercel.app",
+     "score": 65,
+     "confidence": "medium",
+     "priceUsd": 0.02,
+     "calls30d": 2,
+     "payers30d": 2,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://stable-enrich-git-shafu-stableenrich-nearb-74cfdf-merit-systems.vercel.app/api/google-maps/nearby-search/full",
+     "host": "stable-enrich-git-shafu-stableenrich-nearb-74cfdf-merit-systems.vercel.app",
+     "score": 65,
+     "confidence": "medium",
+     "priceUsd": 0.08,
+     "calls30d": 2,
+     "payers30d": 2,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://stable-enrich-git-stableenrich-solar-aerial-merit-systems.vercel.app/api/google-maps/solar/data-layers",
+     "host": "stable-enrich-git-stableenrich-solar-aerial-merit-systems.vercel.app",
+     "score": 65,
+     "confidence": "medium",
+     "priceUsd": 0.08,
+     "calls30d": 2,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://stable-enrich-git-stableenrich-solar-rgb-image-merit-systems.vercel.app/api/google-maps/solar/rgb-image",
+     "host": "stable-enrich-git-stableenrich-solar-rgb-image-merit-systems.vercel.app",
+     "score": 65,
+     "confidence": "medium",
+     "priceUsd": 0.05,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://stable-enrich-git-stableenrich-solar-aerial-merit-systems.vercel.app/api/google-maps/solar/building-insights",
+     "host": "stable-enrich-git-stableenrich-solar-aerial-merit-systems.vercel.app",
+     "score": 65,
+     "confidence": "medium",
+     "priceUsd": 0.02,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    }
+   ]
+  },
+  {
+   "brandId": "google-search",
+   "brandName": "Google Search (SERP)",
+   "auditPage": "https://apeirontrade.github.io/provenance-site/brands/google-search.html",
+   "suspectedEndpoints": 21,
+   "highConfidence": 6,
+   "mediumConfidence": 10,
+   "lowConfidence": 5,
+   "withPaidActivity30d": 20,
+   "totalCalls30d": 78,
+   "live402Confirmed": 0,
+   "topEndpoints": [
+    {
+     "url": "https://apify-dlfd68ww7-merit-systems.vercel.app/api/actors/apify/rag-web-browser/call",
+     "host": "apify-dlfd68ww7-merit-systems.vercel.app",
+     "score": 70,
+     "confidence": "high",
+     "priceUsd": 0.01,
+     "calls30d": 3,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://apify-api-git-br-apify-typed-input-schemas-merit-systems.vercel.app/api/actors/apify/rag-web-browser/call",
+     "host": "apify-api-git-br-apify-typed-input-schemas-merit-systems.vercel.app",
+     "score": 70,
+     "confidence": "high",
+     "priceUsd": 0.1,
+     "calls30d": 3,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://apify-api-git-br-apify-typed-input-schemas-merit-systems.vercel.app/api/actors/scraperlink/google-search-results-serp-scraper/call",
+     "host": "apify-api-git-br-apify-typed-input-schemas-merit-systems.vercel.app",
+     "score": 70,
+     "confidence": "high",
+     "priceUsd": 0.1,
+     "calls30d": 2,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://apify-api-git-apify-top100-routes-merit-systems.vercel.app/api/actors/apify/rag-web-browser/call",
+     "host": "apify-api-git-apify-top100-routes-merit-systems.vercel.app",
+     "score": 70,
+     "confidence": "high",
+     "priceUsd": 0.1,
+     "calls30d": 2,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://apify-jwhre9stu-merit-systems.vercel.app/api/actors/apify/rag-web-browser/call",
+     "host": "apify-jwhre9stu-merit-systems.vercel.app",
+     "score": 70,
+     "confidence": "high",
+     "priceUsd": 0.01,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    }
+   ]
+  },
+  {
+   "brandId": "etherscan",
+   "brandName": "Etherscan",
+   "auditPage": "https://apeirontrade.github.io/provenance-site/brands/etherscan.html",
+   "suspectedEndpoints": 18,
+   "highConfidence": 0,
+   "mediumConfidence": 10,
+   "lowConfidence": 8,
+   "withPaidActivity30d": 16,
+   "totalCalls30d": 70,
+   "live402Confirmed": 0,
+   "topEndpoints": [
+    {
+     "url": "https://x402-deployer.x402-deployer.workers.dev/wallet-pnl",
+     "host": "x402-deployer.x402-deployer.workers.dev",
+     "score": 60,
+     "confidence": "medium",
+     "priceUsd": 0.05,
+     "calls30d": 5,
+     "payers30d": 2,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://x402-deployer.x402-deployer.workers.dev/contract-source",
+     "host": "x402-deployer.x402-deployer.workers.dev",
+     "score": 55,
+     "confidence": "medium",
+     "priceUsd": 0.01,
+     "calls30d": 5,
+     "payers30d": 2,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://x402-deployer.x402-deployer.workers.dev/wallet-label",
+     "host": "x402-deployer.x402-deployer.workers.dev",
+     "score": 55,
+     "confidence": "medium",
+     "priceUsd": 0.005,
+     "calls30d": 5,
+     "payers30d": 2,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://x402-deployer.x402-deployer.workers.dev/lp-lock-check",
+     "host": "x402-deployer.x402-deployer.workers.dev",
+     "score": 55,
+     "confidence": "medium",
+     "priceUsd": 0.01,
+     "calls30d": 5,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://statepulse-api.hahavoid0.workers.dev/blockchain/abi",
+     "host": "statepulse-api.hahavoid0.workers.dev",
+     "score": 55,
+     "confidence": "medium",
+     "priceUsd": 0.005,
+     "calls30d": 3,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    }
+   ]
+  },
+  {
+   "brandId": "firecrawl",
+   "brandName": "Firecrawl",
+   "auditPage": "https://apeirontrade.github.io/provenance-site/brands/firecrawl.html",
+   "suspectedEndpoints": 17,
+   "highConfidence": 5,
+   "mediumConfidence": 8,
+   "lowConfidence": 4,
+   "withPaidActivity30d": 11,
+   "totalCalls30d": 1362,
+   "live402Confirmed": 0,
+   "topEndpoints": [
+    {
+     "url": "https://browser.gedx402.com/v1/firecrawl/scrape",
+     "host": "browser.gedx402.com",
+     "score": 78,
+     "confidence": "high",
+     "priceUsd": 0.042,
+     "calls30d": 18,
+     "payers30d": 2,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://browser.gedx402.com/v1/firecrawl/map",
+     "host": "browser.gedx402.com",
+     "score": 78,
+     "confidence": "high",
+     "priceUsd": 0.01,
+     "calls30d": 14,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://browser.gedx402.com/v1/firecrawl/monitor",
+     "host": "browser.gedx402.com",
+     "score": 78,
+     "confidence": "high",
+     "priceUsd": 0.026,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://browser.gedx402.com/v1/firecrawl/interact",
+     "host": "browser.gedx402.com",
+     "score": 70,
+     "confidence": "high",
+     "priceUsd": 0.162,
+     "calls30d": 14,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://browser.gedx402.com/v1/firecrawl/extract",
+     "host": "browser.gedx402.com",
+     "score": 70,
+     "confidence": "high",
+     "priceUsd": 0.162,
+     "calls30d": 14,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    }
+   ]
+  },
+  {
+   "brandId": "tavily",
+   "brandName": "Tavily",
+   "auditPage": "https://apeirontrade.github.io/provenance-site/brands/tavily.html",
+   "suspectedEndpoints": 15,
+   "highConfidence": 2,
+   "mediumConfidence": 12,
+   "lowConfidence": 1,
+   "withPaidActivity30d": 13,
+   "totalCalls30d": 275,
+   "live402Confirmed": 0,
+   "topEndpoints": [
+    {
+     "url": "https://search.gedx402.com/v1/tavily/extract",
+     "host": "search.gedx402.com",
+     "score": 78,
+     "confidence": "high",
+     "priceUsd": 0.102,
+     "calls30d": 14,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://search.gedx402.com/v1/tavily/search",
+     "host": "search.gedx402.com",
+     "score": 78,
+     "confidence": "high",
+     "priceUsd": 0.042,
+     "calls30d": 14,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://search.gedx402.com/v1/search",
+     "host": "search.gedx402.com",
+     "score": 68,
+     "confidence": "medium",
+     "priceUsd": 0.042,
+     "calls30d": 22,
+     "payers30d": 2,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://signal-engine-production-d88d.up.railway.app/v1/gateway/search/tavily",
+     "host": "signal-engine-production-d88d.up.railway.app",
+     "score": 65,
+     "confidence": "medium",
+     "priceUsd": 0.012,
+     "calls30d": 3,
+     "payers30d": 2,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://api.auor.io/tavily/v1/search",
+     "host": "api.auor.io",
+     "score": 63,
+     "confidence": "medium",
+     "priceUsd": 0.02,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    }
+   ]
+  },
+  {
+   "brandId": "perplexity",
+   "brandName": "Perplexity",
+   "auditPage": "https://apeirontrade.github.io/provenance-site/brands/perplexity.html",
+   "suspectedEndpoints": 12,
+   "highConfidence": 0,
+   "mediumConfidence": 5,
+   "lowConfidence": 7,
+   "withPaidActivity30d": 11,
+   "totalCalls30d": 47,
+   "live402Confirmed": 0,
+   "topEndpoints": [
+    {
+     "url": "https://api.questflow.ai/x402/swarm/qrn:swarm:68c4d1991dad762112b40f03",
+     "host": "api.questflow.ai",
+     "score": 65,
+     "confidence": "medium",
+     "priceUsd": null,
+     "calls30d": 0,
+     "payers30d": 0,
+     "network": "base",
+     "live402": null
+    },
+    {
+     "url": "https://scan.convrgent.ai/api/aeo/scan-x402",
+     "host": "scan.convrgent.ai",
+     "score": 58,
+     "confidence": "medium",
+     "priceUsd": 0.01,
+     "calls30d": 4,
+     "payers30d": 3,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://store.agentexchange.work/brands/check",
+     "host": "store.agentexchange.work",
+     "score": 53,
+     "confidence": "medium",
+     "priceUsd": 0.49,
+     "calls30d": 11,
+     "payers30d": 2,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://aeonos.basechainlabs.com/api/agent",
+     "host": "aeonos.basechainlabs.com",
+     "score": 53,
+     "confidence": "medium",
+     "priceUsd": 0.05,
+     "calls30d": 5,
+     "payers30d": 2,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://aeonos.basechainlabs.com/api/llms-txt",
+     "host": "aeonos.basechainlabs.com",
+     "score": 53,
+     "confidence": "medium",
+     "priceUsd": 0.5,
+     "calls30d": 3,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    }
+   ]
+  },
+  {
+   "brandId": "zillow",
+   "brandName": "Zillow",
+   "auditPage": "https://apeirontrade.github.io/provenance-site/brands/zillow.html",
+   "suspectedEndpoints": 11,
+   "highConfidence": 9,
+   "mediumConfidence": 2,
+   "lowConfidence": 0,
+   "withPaidActivity30d": 11,
+   "totalCalls30d": 24,
+   "live402Confirmed": 0,
+   "topEndpoints": [
+    {
+     "url": "https://apify-dlfd68ww7-merit-systems.vercel.app/api/actors/maxcopell/zillow-scraper/call",
+     "host": "apify-dlfd68ww7-merit-systems.vercel.app",
+     "score": 70,
+     "confidence": "high",
+     "priceUsd": 0.01,
+     "calls30d": 4,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://apify-dlfd68ww7-merit-systems.vercel.app/api/actors/maxcopell/zillow-detail-scraper/call",
+     "host": "apify-dlfd68ww7-merit-systems.vercel.app",
+     "score": 70,
+     "confidence": "high",
+     "priceUsd": 0.01,
+     "calls30d": 3,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://apify-api-git-br-better-actor-pay-merit-systems.vercel.app/api/actors/maxcopell/zillow-detail-scraper/call",
+     "host": "apify-api-git-br-better-actor-pay-merit-systems.vercel.app",
+     "score": 70,
+     "confidence": "high",
+     "priceUsd": 0.01,
+     "calls30d": 2,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://apify-api-merit-systems.vercel.app/api/actors/maxcopell/zillow-detail-scraper/call",
+     "host": "apify-api-merit-systems.vercel.app",
+     "score": 70,
+     "confidence": "high",
+     "priceUsd": 0.01,
+     "calls30d": 2,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://apify-api-chi.vercel.app/api/actors/maxcopell/zillow-detail-scraper/call",
+     "host": "apify-api-chi.vercel.app",
+     "score": 70,
+     "confidence": "high",
+     "priceUsd": 0.01,
+     "calls30d": 2,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    }
+   ]
+  },
+  {
+   "brandId": "aviationstack",
+   "brandName": "Aviationstack",
+   "auditPage": "https://apeirontrade.github.io/provenance-site/brands/aviationstack.html",
+   "suspectedEndpoints": 9,
+   "highConfidence": 0,
+   "mediumConfidence": 0,
+   "lowConfidence": 9,
+   "withPaidActivity30d": 9,
+   "totalCalls30d": 13,
+   "live402Confirmed": 0,
+   "topEndpoints": [
+    {
+     "url": "https://gateway.apiosk.com/aviationstack/flights",
+     "host": "gateway.apiosk.com",
+     "score": 45,
+     "confidence": "low",
+     "priceUsd": null,
+     "calls30d": 2,
+     "payers30d": 2,
+     "network": "base",
+     "live402": null
+    },
+    {
+     "url": "https://gateway.apiosk.com/aviationstack/airplanes",
+     "host": "gateway.apiosk.com",
+     "score": 45,
+     "confidence": "low",
+     "priceUsd": null,
+     "calls30d": 2,
+     "payers30d": 2,
+     "network": "base",
+     "live402": null
+    },
+    {
+     "url": "https://gateway.apiosk.com/aviationstack/taxes",
+     "host": "gateway.apiosk.com",
+     "score": 45,
+     "confidence": "low",
+     "priceUsd": null,
+     "calls30d": 2,
+     "payers30d": 2,
+     "network": "base",
+     "live402": null
+    },
+    {
+     "url": "https://gateway.apiosk.com/aviationstack/flightsFuture",
+     "host": "gateway.apiosk.com",
+     "score": 45,
+     "confidence": "low",
+     "priceUsd": null,
+     "calls30d": 2,
+     "payers30d": 2,
+     "network": "base",
+     "live402": null
+    },
+    {
+     "url": "https://gateway.apiosk.com/aviationstack/cities",
+     "host": "gateway.apiosk.com",
+     "score": 45,
+     "confidence": "low",
+     "priceUsd": null,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "base",
+     "live402": null
+    }
+   ]
+  },
+  {
+   "brandId": "yahoo-finance",
+   "brandName": "Yahoo Finance",
+   "auditPage": "https://apeirontrade.github.io/provenance-site/brands/yahoo-finance.html",
+   "suspectedEndpoints": 8,
+   "highConfidence": 0,
+   "mediumConfidence": 2,
+   "lowConfidence": 6,
+   "withPaidActivity30d": 8,
+   "totalCalls30d": 19,
+   "live402Confirmed": 0,
+   "topEndpoints": [
+    {
+     "url": "https://eltociear-tokenguard.hf.space/stocks",
+     "host": "eltociear-tokenguard.hf.space",
+     "score": 62,
+     "confidence": "medium",
+     "priceUsd": 0.005,
+     "calls30d": 2,
+     "payers30d": 2,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://the-stall.intuitek.ai/cap/income-statements",
+     "host": "the-stall.intuitek.ai",
+     "score": 50,
+     "confidence": "medium",
+     "priceUsd": 0.012,
+     "calls30d": 2,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://the-stall.intuitek.ai/cap/equity-brief",
+     "host": "the-stall.intuitek.ai",
+     "score": 48,
+     "confidence": "low",
+     "priceUsd": 0.35,
+     "calls30d": 3,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://the-stall.intuitek.ai/cap/market-movers",
+     "host": "the-stall.intuitek.ai",
+     "score": 48,
+     "confidence": "low",
+     "priceUsd": 0.006,
+     "calls30d": 3,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://the-stall.intuitek.ai/cap/energy-brief",
+     "host": "the-stall.intuitek.ai",
+     "score": 48,
+     "confidence": "low",
+     "priceUsd": 0.65,
+     "calls30d": 2,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    }
+   ]
+  },
+  {
+   "brandId": "gemini",
+   "brandName": "Google Gemini",
+   "auditPage": "https://apeirontrade.github.io/provenance-site/brands/gemini.html",
+   "suspectedEndpoints": 6,
+   "highConfidence": 0,
+   "mediumConfidence": 4,
+   "lowConfidence": 2,
+   "withPaidActivity30d": 3,
+   "totalCalls30d": 16,
+   "live402Confirmed": 0,
+   "topEndpoints": [
+    {
+     "url": "https://api.questflow.ai/x402/agent/qrn:agent:687df69ab234010b7d3317e5",
+     "host": "api.questflow.ai",
+     "score": 60,
+     "confidence": "medium",
+     "priceUsd": null,
+     "calls30d": 0,
+     "payers30d": 0,
+     "network": "base",
+     "live402": null
+    },
+    {
+     "url": "https://api-staging.intra-tls2.dctx.link/x402/agent/qrn:agent:682306635380bd59df4992fa",
+     "host": "api-staging.intra-tls2.dctx.link",
+     "score": 60,
+     "confidence": "medium",
+     "priceUsd": null,
+     "calls30d": 0,
+     "payers30d": 0,
+     "network": "base-sepolia",
+     "live402": null
+    },
+    {
+     "url": "https://api-dev.intra-tls2.dctx.link/x402/agent/qrn:agent:682306635380bd59df4992fa",
+     "host": "api-dev.intra-tls2.dctx.link",
+     "score": 60,
+     "confidence": "medium",
+     "priceUsd": null,
+     "calls30d": 0,
+     "payers30d": 0,
+     "network": "base-sepolia",
+     "live402": null
+    },
+    {
+     "url": "https://omnicall.gocreativeai.com/v1/ai/pro/:var1",
+     "host": "omnicall.gocreativeai.com",
+     "score": 53,
+     "confidence": "medium",
+     "priceUsd": 0.08,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://omnicall.gocreativeai.com/v1/ai/ask/:var1",
+     "host": "omnicall.gocreativeai.com",
+     "score": 48,
+     "confidence": "low",
+     "priceUsd": 0.02,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    }
+   ]
+  },
+  {
+   "brandId": "xai-grok",
+   "brandName": "xAI (Grok)",
+   "auditPage": "https://apeirontrade.github.io/provenance-site/brands/xai-grok.html",
+   "suspectedEndpoints": 6,
+   "highConfidence": 0,
+   "mediumConfidence": 4,
+   "lowConfidence": 2,
+   "withPaidActivity30d": 6,
+   "totalCalls30d": 91,
+   "live402Confirmed": 1,
+   "topEndpoints": [
+    {
+     "url": "https://scout.hugen.tokyo/scout/x",
+     "host": "scout.hugen.tokyo",
+     "score": 58,
+     "confidence": "medium",
+     "priceUsd": 0.2,
+     "calls30d": 73,
+     "payers30d": 13,
+     "network": "eip155:8453",
+     "live402": true
+    },
+    {
+     "url": "https://api.glianalabs.com/x402/grok-tts",
+     "host": "api.glianalabs.com",
+     "score": 55,
+     "confidence": "medium",
+     "priceUsd": 0.017,
+     "calls30d": 2,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://api.glianalabs.com/x402/grok-imagine-image",
+     "host": "api.glianalabs.com",
+     "score": 55,
+     "confidence": "medium",
+     "priceUsd": 0.029,
+     "calls30d": 2,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://api.glianalabs.com/x402/grok-imagine-image-quality",
+     "host": "api.glianalabs.com",
+     "score": 55,
+     "confidence": "medium",
+     "priceUsd": 0.0725,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://polynews.news/api/v1/market-context",
+     "host": "polynews.news",
+     "score": 48,
+     "confidence": "low",
+     "priceUsd": 0.05,
+     "calls30d": 5,
+     "payers30d": 2,
+     "network": "eip155:8453",
+     "live402": null
+    }
+   ]
+  },
+  {
+   "brandId": "openweather",
+   "brandName": "OpenWeatherMap",
+   "auditPage": "https://apeirontrade.github.io/provenance-site/brands/openweather.html",
+   "suspectedEndpoints": 5,
+   "highConfidence": 1,
+   "mediumConfidence": 2,
+   "lowConfidence": 2,
+   "withPaidActivity30d": 5,
+   "totalCalls30d": 72,
+   "live402Confirmed": 1,
+   "topEndpoints": [
+    {
+     "url": "https://openweather-coral.vercel.app/weather/air-quality",
+     "host": "openweather-coral.vercel.app",
+     "score": 70,
+     "confidence": "high",
+     "priceUsd": 0.002,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://openweather-coral.vercel.app/weather/current",
+     "host": "openweather-coral.vercel.app",
+     "score": 65,
+     "confidence": "medium",
+     "priceUsd": 0.002,
+     "calls30d": 45,
+     "payers30d": 8,
+     "network": "eip155:8453",
+     "live402": true
+    },
+    {
+     "url": "https://openweather-coral.vercel.app/weather/forecast",
+     "host": "openweather-coral.vercel.app",
+     "score": 65,
+     "confidence": "medium",
+     "priceUsd": 0.003,
+     "calls30d": 19,
+     "payers30d": 3,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://gateway.apiosk.com/openweather/current",
+     "host": "gateway.apiosk.com",
+     "score": 45,
+     "confidence": "low",
+     "priceUsd": null,
+     "calls30d": 5,
+     "payers30d": 2,
+     "network": "base",
+     "live402": null
+    },
+    {
+     "url": "https://gateway.apiosk.com/openweather/forecast",
+     "host": "gateway.apiosk.com",
+     "score": 45,
+     "confidence": "low",
+     "priceUsd": null,
+     "calls30d": 2,
+     "payers30d": 1,
+     "network": "base",
+     "live402": null
+    }
+   ]
+  },
+  {
+   "brandId": "yelp",
+   "brandName": "Yelp",
+   "auditPage": "https://apeirontrade.github.io/provenance-site/brands/yelp.html",
+   "suspectedEndpoints": 5,
+   "highConfidence": 0,
+   "mediumConfidence": 3,
+   "lowConfidence": 2,
+   "withPaidActivity30d": 5,
+   "totalCalls30d": 23,
+   "live402Confirmed": 0,
+   "topEndpoints": [
+    {
+     "url": "https://marketpulse-brown.vercel.app/api/market/local-seo",
+     "host": "marketpulse-brown.vercel.app",
+     "score": 60,
+     "confidence": "medium",
+     "priceUsd": 0.08,
+     "calls30d": 5,
+     "payers30d": 2,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://openwebninja-x402.vercel.app/api/yelp/business-details",
+     "host": "openwebninja-x402.vercel.app",
+     "score": 57,
+     "confidence": "medium",
+     "priceUsd": 0.01,
+     "calls30d": 5,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://openwebninja-x402.vercel.app/api/yelp/business-search",
+     "host": "openwebninja-x402.vercel.app",
+     "score": 57,
+     "confidence": "medium",
+     "priceUsd": 0.01,
+     "calls30d": 5,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://stableninja.dev/api/yelp/business-details",
+     "host": "stableninja.dev",
+     "score": 45,
+     "confidence": "low",
+     "priceUsd": 0.01,
+     "calls30d": 4,
+     "payers30d": 2,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://stableninja.dev/api/yelp/business-search",
+     "host": "stableninja.dev",
+     "score": 45,
+     "confidence": "low",
+     "priceUsd": 0.01,
+     "calls30d": 4,
+     "payers30d": 3,
+     "network": "eip155:8453",
+     "live402": null
+    }
+   ]
+  },
+  {
+   "brandId": "elevenlabs",
+   "brandName": "ElevenLabs",
+   "auditPage": "https://apeirontrade.github.io/provenance-site/brands/elevenlabs.html",
+   "suspectedEndpoints": 4,
+   "highConfidence": 0,
+   "mediumConfidence": 1,
+   "lowConfidence": 3,
+   "withPaidActivity30d": 4,
+   "totalCalls30d": 18,
+   "live402Confirmed": 0,
+   "topEndpoints": [
+    {
+     "url": "https://api.xona-agent.com/base-main/audio/elevenlabs-music",
+     "host": "api.xona-agent.com",
+     "score": 53,
+     "confidence": "medium",
+     "priceUsd": 0.25,
+     "calls30d": 3,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://x402-deployer.x402-deployer.workers.dev/voice",
+     "host": "x402-deployer.x402-deployer.workers.dev",
+     "score": 47,
+     "confidence": "low",
+     "priceUsd": 0.05,
+     "calls30d": 7,
+     "payers30d": 3,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://x402-deployer.x402-deployer.workers.dev/text-to-speech",
+     "host": "x402-deployer.x402-deployer.workers.dev",
+     "score": 47,
+     "confidence": "low",
+     "priceUsd": 0.05,
+     "calls30d": 6,
+     "payers30d": 2,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://stable-enrich-git-shafu-stableenrich-compa-a1ba99-merit-systems.vercel.app/api/fullenrich/company-search",
+     "host": "stable-enrich-git-shafu-stableenrich-compa-a1ba99-merit-systems.vercel.app",
+     "score": 47,
+     "confidence": "low",
+     "priceUsd": 0.05,
+     "calls30d": 2,
+     "payers30d": 2,
+     "network": "eip155:8453",
+     "live402": null
+    }
+   ]
+  },
+  {
+   "brandId": "alphavantage",
+   "brandName": "Alpha Vantage",
+   "auditPage": "https://apeirontrade.github.io/provenance-site/brands/alphavantage.html",
+   "suspectedEndpoints": 3,
+   "highConfidence": 0,
+   "mediumConfidence": 2,
+   "lowConfidence": 1,
+   "withPaidActivity30d": 1,
+   "totalCalls30d": 1,
+   "live402Confirmed": 0,
+   "topEndpoints": [
+    {
+     "url": "https://api.questflow.ai/x402/agent/qrn:agent:68c26db13367242ab91229d5",
+     "host": "api.questflow.ai",
+     "score": 60,
+     "confidence": "medium",
+     "priceUsd": null,
+     "calls30d": 0,
+     "payers30d": 0,
+     "network": "base",
+     "live402": null
+    },
+    {
+     "url": "https://api-dev.intra-tls2.dctx.link/x402/agent/qrn:agent:68dba0e582f61ca4a1686963",
+     "host": "api-dev.intra-tls2.dctx.link",
+     "score": 60,
+     "confidence": "medium",
+     "priceUsd": null,
+     "calls30d": 0,
+     "payers30d": 0,
+     "network": "base-sepolia",
+     "live402": null
+    },
+    {
+     "url": "https://gateway.apiosk.com/alpha-vantage/query",
+     "host": "gateway.apiosk.com",
+     "score": 45,
+     "confidence": "low",
+     "priceUsd": null,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "base",
+     "live402": null
+    }
+   ]
+  },
+  {
+   "brandId": "serpapi",
+   "brandName": "SerpApi",
+   "auditPage": "https://apeirontrade.github.io/provenance-site/brands/serpapi.html",
+   "suspectedEndpoints": 3,
+   "highConfidence": 0,
+   "mediumConfidence": 1,
+   "lowConfidence": 2,
+   "withPaidActivity30d": 3,
+   "totalCalls30d": 19,
+   "live402Confirmed": 0,
+   "topEndpoints": [
+    {
+     "url": "https://x402.agentutility.ai/google-search",
+     "host": "x402.agentutility.ai",
+     "score": 58,
+     "confidence": "medium",
+     "priceUsd": 0.02,
+     "calls30d": 9,
+     "payers30d": 3,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://x402.agentutility.ai/serp-search",
+     "host": "x402.agentutility.ai",
+     "score": 48,
+     "confidence": "low",
+     "priceUsd": 0.02,
+     "calls30d": 6,
+     "payers30d": 3,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://x402.agentutility.ai/web-search",
+     "host": "x402.agentutility.ai",
+     "score": 48,
+     "confidence": "low",
+     "priceUsd": 0.02,
+     "calls30d": 4,
+     "payers30d": 3,
+     "network": "eip155:8453",
+     "live402": null
+    }
+   ]
+  },
+  {
+   "brandId": "weatherapi",
+   "brandName": "WeatherAPI.com",
+   "auditPage": "https://apeirontrade.github.io/provenance-site/brands/weatherapi.html",
+   "suspectedEndpoints": 3,
+   "highConfidence": 0,
+   "mediumConfidence": 2,
+   "lowConfidence": 1,
+   "withPaidActivity30d": 3,
+   "totalCalls30d": 6,
+   "live402Confirmed": 0,
+   "topEndpoints": [
+    {
+     "url": "https://weatherapi.hillguava.xyz/monsoon/status",
+     "host": "weatherapi.hillguava.xyz",
+     "score": 53,
+     "confidence": "medium",
+     "priceUsd": 0.003,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://gateway.apiosk.com/weatherapi/current",
+     "host": "gateway.apiosk.com",
+     "score": 50,
+     "confidence": "medium",
+     "priceUsd": null,
+     "calls30d": 3,
+     "payers30d": 2,
+     "network": "base",
+     "live402": null
+    },
+    {
+     "url": "https://gateway.apiosk.com/weatherapi/forecast",
+     "host": "gateway.apiosk.com",
+     "score": 45,
+     "confidence": "low",
+     "priceUsd": null,
+     "calls30d": 2,
+     "payers30d": 1,
+     "network": "base",
+     "live402": null
+    }
+   ]
+  },
+  {
+   "brandId": "bloomberg",
+   "brandName": "Bloomberg",
+   "auditPage": "https://apeirontrade.github.io/provenance-site/brands/bloomberg.html",
+   "suspectedEndpoints": 3,
+   "highConfidence": 0,
+   "mediumConfidence": 0,
+   "lowConfidence": 3,
+   "withPaidActivity30d": 3,
+   "totalCalls30d": 39,
+   "live402Confirmed": 0,
+   "topEndpoints": [
+    {
+     "url": "https://the-stall.intuitek.ai/cap/macro-brief",
+     "host": "the-stall.intuitek.ai",
+     "score": 48,
+     "confidence": "low",
+     "priceUsd": 0.35,
+     "calls30d": 2,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://arbipulse.vercel.app/api/etf",
+     "host": "arbipulse.vercel.app",
+     "score": 47,
+     "confidence": "low",
+     "priceUsd": 0.1,
+     "calls30d": 24,
+     "payers30d": 3,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://esgpulse.vercel.app/api/esg/score",
+     "host": "esgpulse.vercel.app",
+     "score": 47,
+     "confidence": "low",
+     "priceUsd": 0.1,
+     "calls30d": 13,
+     "payers30d": 4,
+     "network": "eip155:8453",
+     "live402": null
+    }
+   ]
+  },
+  {
+   "brandId": "newsapi",
+   "brandName": "NewsAPI.org",
+   "auditPage": "https://apeirontrade.github.io/provenance-site/brands/newsapi.html",
+   "suspectedEndpoints": 3,
+   "highConfidence": 0,
+   "mediumConfidence": 0,
+   "lowConfidence": 3,
+   "withPaidActivity30d": 3,
+   "totalCalls30d": 4,
+   "live402Confirmed": 0,
+   "topEndpoints": [
+    {
+     "url": "https://gateway.apiosk.com/newsapi/everything",
+     "host": "gateway.apiosk.com",
+     "score": 45,
+     "confidence": "low",
+     "priceUsd": null,
+     "calls30d": 2,
+     "payers30d": 2,
+     "network": "base",
+     "live402": null
+    },
+    {
+     "url": "https://gateway.apiosk.com/newsapi/top-headlines",
+     "host": "gateway.apiosk.com",
+     "score": 45,
+     "confidence": "low",
+     "priceUsd": null,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "base",
+     "live402": null
+    },
+    {
+     "url": "https://httpay.xyz/api/gateway/newsapi/%7B*path%7D",
+     "host": "httpay.xyz",
+     "score": 45,
+     "confidence": "low",
+     "priceUsd": null,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "base",
+     "live402": null
+    }
+   ]
+  },
+  {
+   "brandId": "opensea",
+   "brandName": "OpenSea",
+   "auditPage": "https://apeirontrade.github.io/provenance-site/brands/opensea.html",
+   "suspectedEndpoints": 2,
+   "highConfidence": 0,
+   "mediumConfidence": 1,
+   "lowConfidence": 1,
+   "withPaidActivity30d": 2,
+   "totalCalls30d": 9,
+   "live402Confirmed": 0,
+   "topEndpoints": [
+    {
+     "url": "https://cc0.company/api/store/agent-services/cc0pedia/invoke",
+     "host": "cc0.company",
+     "score": 58,
+     "confidence": "medium",
+     "priceUsd": 0.01,
+     "calls30d": 3,
+     "payers30d": 3,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://nft-alpha-x402.fly.dev/api/nft-signal",
+     "host": "nft-alpha-x402.fly.dev",
+     "score": 47,
+     "confidence": "low",
+     "priceUsd": 0.05,
+     "calls30d": 6,
+     "payers30d": 3,
+     "network": "eip155:8453",
+     "live402": null
+    }
+   ]
+  },
+  {
+   "brandId": "stability",
+   "brandName": "Stability AI",
+   "auditPage": "https://apeirontrade.github.io/provenance-site/brands/stability.html",
+   "suspectedEndpoints": 2,
+   "highConfidence": 0,
+   "mediumConfidence": 0,
+   "lowConfidence": 2,
+   "withPaidActivity30d": 1,
+   "totalCalls30d": 13,
+   "live402Confirmed": 0,
+   "topEndpoints": [
+    {
+     "url": "https://ged-x402-image.jvalamis.workers.dev/v1/image/:model",
+     "host": "ged-x402-image.jvalamis.workers.dev",
+     "score": 47,
+     "confidence": "low",
+     "priceUsd": 0.024,
+     "calls30d": 13,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://x402-dev.dopamint.ai/api/ai/generations/images/stable-diffusion-v35-large",
+     "host": "x402-dev.dopamint.ai",
+     "score": 45,
+     "confidence": "low",
+     "priceUsd": null,
+     "calls30d": 0,
+     "payers30d": 0,
+     "network": "base",
+     "live402": null
+    }
+   ]
+  },
+  {
+   "brandId": "tripadvisor",
+   "brandName": "Tripadvisor",
+   "auditPage": "https://apeirontrade.github.io/provenance-site/brands/tripadvisor.html",
+   "suspectedEndpoints": 2,
+   "highConfidence": 0,
+   "mediumConfidence": 0,
+   "lowConfidence": 2,
+   "withPaidActivity30d": 2,
+   "totalCalls30d": 2,
+   "live402Confirmed": 0,
+   "topEndpoints": [
+    {
+     "url": "https://tripadvisor.x402.paysponge.com/api/v1/location/search",
+     "host": "tripadvisor.x402.paysponge.com",
+     "score": 45,
+     "confidence": "low",
+     "priceUsd": 0.01,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    },
+    {
+     "url": "https://tripadvisor.x402.paysponge.com/api/v1/location/:locationId/details",
+     "host": "tripadvisor.x402.paysponge.com",
+     "score": 45,
+     "confidence": "low",
+     "priceUsd": 0.01,
+     "calls30d": 1,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    }
+   ]
+  },
+  {
+   "brandId": "shodan",
+   "brandName": "Shodan",
+   "auditPage": "https://apeirontrade.github.io/provenance-site/brands/shodan.html",
+   "suspectedEndpoints": 1,
+   "highConfidence": 0,
+   "mediumConfidence": 1,
+   "lowConfidence": 0,
+   "withPaidActivity30d": 1,
+   "totalCalls30d": 5,
+   "live402Confirmed": 0,
+   "topEndpoints": [
+    {
+     "url": "https://cyberpulse-six.vercel.app/api/cyber/osint",
+     "host": "cyberpulse-six.vercel.app",
+     "score": 55,
+     "confidence": "medium",
+     "priceUsd": 0.15,
+     "calls30d": 5,
+     "payers30d": 3,
+     "network": "eip155:8453",
+     "live402": null
+    }
+   ]
+  },
+  {
+   "brandId": "wolfram",
+   "brandName": "Wolfram|Alpha",
+   "auditPage": "https://apeirontrade.github.io/provenance-site/brands/wolfram.html",
+   "suspectedEndpoints": 1,
+   "highConfidence": 0,
+   "mediumConfidence": 0,
+   "lowConfidence": 1,
+   "withPaidActivity30d": 1,
+   "totalCalls30d": 2,
+   "live402Confirmed": 0,
+   "topEndpoints": [
+    {
+     "url": "https://wolframalpha.x402.paysponge.com/v1/simple",
+     "host": "wolframalpha.x402.paysponge.com",
+     "score": 45,
+     "confidence": "low",
+     "priceUsd": 0.01,
+     "calls30d": 2,
+     "payers30d": 1,
+     "network": "eip155:8453",
+     "live402": null
+    }
+   ]
+  }
+ ]
+}

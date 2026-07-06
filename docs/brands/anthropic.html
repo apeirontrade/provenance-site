@@ -1,0 +1,991 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>x402 endpoints offering Anthropic data — resale-authorization audit (80 suspected) — Provenance</title>
+<meta name="description" content="Anthropic API resold via x402? 80 suspected unauthorized Anthropic reseller endpoints found in public x402 registries (2 high-confidence, 78 active in 30d). Evidence, prices, on-chain payment counts. Verification recommended.">
+<link rel="canonical" href="https://apeirontrade.github.io/provenance-site/brands/anthropic.html">
+<meta property="og:title" content="x402 endpoints offering Anthropic data — resale-authorization audit (80 suspected) — Provenance">
+<meta property="og:description" content="Anthropic API resold via x402? 80 suspected unauthorized Anthropic reseller endpoints found in public x402 registries (2 high-confidence, 78 active in 30d). Evidence, prices, on-chain payment counts. Verification recommended.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://apeirontrade.github.io/provenance-site/brands/anthropic.html">
+<meta name="robots" content="index,follow">
+<style>
+  :root{color-scheme:light dark;
+    --bg:#0d1117;--panel:#161b22;--border:#30363d;--fg:#e6edf3;--dim:#8b949e;--accent:#58a6ff;--accent2:#d2a8ff;}
+  @media (prefers-color-scheme: light){:root{--bg:#f6f8fa;--panel:#ffffff;--border:#d0d7de;--fg:#1f2328;--dim:#57606a;--accent:#0969da;--accent2:#8250df;}}
+  *{box-sizing:border-box;margin:0}
+  body{background:var(--bg);color:var(--fg);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;padding:2.2rem 1rem 4rem}
+  .wrap{max-width:1080px;margin:0 auto}
+  header.site{margin-bottom:1.6rem}
+  .crumb{font-size:.82rem;color:var(--dim);margin-bottom:1rem}
+  .crumb a{color:var(--dim)}
+  h1{font-size:1.65rem;letter-spacing:-.01em;line-height:1.25}
+  h2{font-size:1.15rem;margin:2.2rem 0 .8rem}
+  h3{font-size:1rem;margin:1.6rem 0 .6rem}
+  .sub{color:var(--dim);margin:.5rem 0 1.4rem;max-width:62rem}
+  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.8rem;margin:1.4rem 0 1.8rem}
+  .tile{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:.85rem 1rem}
+  .tile b{display:block;font-size:1.4rem;font-weight:600}
+  .tile span{color:var(--dim);font-size:.8rem}
+  .tblwrap{overflow-x:auto;border:1px solid var(--border);border-radius:8px;background:var(--panel);margin:.6rem 0 1rem}
+  table{border-collapse:collapse;width:100%;font-size:.9rem}
+  th{color:var(--dim);font-weight:600;font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;text-align:left;padding:.65rem .8rem;border-bottom:1px solid var(--border);white-space:nowrap}
+  td{padding:.6rem .8rem;border-bottom:1px solid var(--border);vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82rem}
+  .dim{color:var(--dim)}
+  .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .center{text-align:center}
+  .ep-name{font-weight:600;overflow-wrap:anywhere}
+  .ep-meta{color:var(--dim);font-size:.76rem;margin-top:.15rem;overflow-wrap:anywhere}
+  .grade{display:inline-block;border:1px solid;border-radius:6px;padding:.05rem .55rem;font-weight:700;font-size:.98rem;white-space:nowrap}
+  .infl-pos{color:#f85149;font-weight:700;font-variant-numeric:tabular-nums}
+  .infl-neg{color:#3fb950;font-weight:600;font-variant-numeric:tabular-nums}
+  .infl-zero{color:var(--dim)}
+  .ind{font-size:.82rem;color:var(--dim);max-width:300px}
+  .pill{display:inline-block;border:1px solid var(--border);border-radius:99px;padding:.02rem .55rem;font-size:.74rem;color:var(--dim);white-space:nowrap}
+  .pill.ok{color:#3fb950;border-color:#3fb95055}
+  .pill.hi{color:#f0883e;border-color:#f0883e55}
+  .pill.med{color:#d29922;border-color:#d2992255}
+  .note,.callout{color:var(--dim);font-size:.84rem;margin:1.1rem 0;line-height:1.6;max-width:62rem}
+  .callout{background:var(--panel);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:6px;padding:.8rem 1rem;color:var(--fg)}
+  .callout.warn{border-left-color:#d29922}
+  ul.ev{margin:.2rem 0 .2rem 1rem;padding:0;font-size:.82rem;color:var(--dim)}
+  ul.ev li{margin:.15rem 0}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85em;background:var(--panel);border:1px solid var(--border);border-radius:4px;padding:.05em .3em}
+  .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.8rem;margin:1rem 0}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:1rem}
+  .card h3{margin:0 0 .4rem;font-size:.95rem}
+  .card p{font-size:.83rem;color:var(--dim)}
+  .brandlist{columns:3;column-gap:1.5rem;font-size:.9rem}
+  @media(max-width:800px){.brandlist{columns:2}}
+  @media(max-width:520px){.brandlist{columns:1}}
+  .brandlist li{margin:.25rem 0;break-inside:avoid}
+  footer.site{border-top:1px solid var(--border);margin-top:3rem;padding-top:1.1rem;color:var(--dim);font-size:.82rem;line-height:1.7}
+  footer.site nav{margin-bottom:.4rem}
+  footer.site nav a{margin-right:1.1rem}
+  dl.kv{display:grid;grid-template-columns:max-content 1fr;gap:.35rem 1.2rem;font-size:.9rem;margin:.8rem 0}
+  dl.kv dt{color:var(--dim)}
+  dl.kv dd{overflow-wrap:anywhere}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://apeirontrade.github.io/provenance-site/#org","name":"Provenance","url":"https://apeirontrade.github.io/provenance-site/","description":"Independent trust ratings for x402 machine-payable API endpoints, derived from public on-chain payment data and public discovery registries.","sameAs":["https://www.npmjs.com/package/provenance-mcp","https://www.npmjs.com/package/provenance-guard","https://github.com/apeirontrade/provenance-mcp","https://github.com/apeirontrade/provenance-guard"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Report","headline":"x402 endpoints offering Anthropic data — resale-authorization audit","author":{"@id":"https://apeirontrade.github.io/provenance-site/#org"},"datePublished":"2026-07-05","about":{"@type":"Brand","name":"Anthropic"},"mainEntityOfPage":"https://apeirontrade.github.io/provenance-site/brands/anthropic.html"}</script>
+</head><body><div class="wrap">
+<div class="crumb"><a href="../index.html">Provenance x402 Trust Index</a> &middot; <a href="../methodology.html">Methodology</a> &middot; <a href="../data/index.html">Open data</a></div>
+
+<h1>x402 endpoints offering Anthropic data <span class="dim">— resale-authorization audit</span></h1>
+<p class="sub">80 machine-payable (x402) endpoints in the public discovery registries exhibit reseller signatures referencing <b>Anthropic</b> while hosted off Anthropic's own domains. Resale-authorization status: <b>unknown — suspected unauthorized resale, verification recommended</b>. Any of these endpoints may hold a legitimate redistribution license.</p>
+
+<div class="callout">Context: Anthropic's usage policies restrict resale or proxying of API access.</div>
+
+<div class="tiles">
+  <div class="tile"><b>80</b><span>suspected reseller endpoints</span></div>
+  <div class="tile"><b>2</b><span>high-confidence signatures (≥70/100)</span></div>
+  <div class="tile"><b>78</b><span>with paid activity in the last 30d</span></div>
+  <div class="tile"><b>0</b><span>live-402 confirmed by probe</span></div>
+</div>
+
+<p class="note">Scan of 23,376 unique x402 endpoints on 2026-07-05, sources: Coinbase Bazaar + GoPlausible registry. Payment counts come from the registries' own published 30-day quality signals. Evidence bullets are automated signature matches — see the <a href="../methodology.html">methodology</a> for signal definitions, false-positive modes, and the <a href="https://github.com/apeirontrade/provenance-site/issues">dispute path</a>. If you are on Anthropic's API or trust team and want the full evidence set or a re-verification, open an issue — it's free.</p>
+
+<div class="tblwrap"><table>
+<thead><tr><th>Endpoint</th><th>Price/call</th><th>Calls 30d</th><th>Signature</th><th>Evidence (automated signature matches)</th></tr></thead>
+<tbody><tr>
+  <td>
+    <div class="ep-name mono">https://bazaar-gateway.vercel.app/api/market-report</div>
+    <div class="ep-meta">Navi Market Report — AI-generated cryptocurrency market analysis report. Fetches real-time prices from CoinGecko then uses Claude AI to generate a professional market analysis with trends, risks, and o…</div>
+    <div class="ep-meta mono">pays to 0xd20F…7d0D on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0200</td>
+  <td class="num">4<div class="ep-meta">3 payers</div></td>
+  <td class="center"><span class="pill hi">high · 75/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic, CoinGecko (via &quot;claude&quot; in description) but is hosted on bazaar-gateway.vercel.app, not the brand's domain</li><li>declares upstream data source: &quot;prices from CoinGecko&quot;</li><li>$0.0200/call ≈ 2.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://netintel-production-440c.up.railway.app/extract/resume</div>
+    <div class="ep-meta"> — Extract structured data from resume/CV text using Claude Haiku — returns name, contact info, skills, work experience, and education as clean JSON arrays so agents can automate appl…</div>
+    <div class="ep-meta mono">pays to 0xdaDc…b9Df on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0800</td>
+  <td class="num">2<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill hi">high · 70/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic, LinkedIn (via &quot;claude&quot; in description) but is hosted on netintel-production-440c.up.railway.app, not the brand's domain</li><li>input schema is a bare passthrough (text) — consistent with forwarding to an upstream API</li><li>$0.0800/call ≈ 8.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (railway.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://netintel-production-440c.up.railway.app/markdown/clean</div>
+    <div class="ep-meta"> — Convert messy HTML or text into clean, well-structured Markdown using Claude Haiku — strips boilerplate, fixes heading hierarchy, normalizes lists and links, and returns readable M…</div>
+    <div class="ep-meta mono">pays to 0xdaDc…b9Df on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0300</td>
+  <td class="num">2<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 65/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;claude&quot; in description) but is hosted on netintel-production-440c.up.railway.app, not the brand's domain</li><li>input schema is a bare passthrough (text) — consistent with forwarding to an upstream API</li><li>$0.0300/call ≈ 3.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (railway.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://netintel-production-440c.up.railway.app/content-moderate</div>
+    <div class="ep-meta"> — Moderate text content using Claude Haiku — flags categories like harassment, hate, sexual content, violence, self-harm, and spam with per-category severity and an overall allow/fla…</div>
+    <div class="ep-meta mono">pays to 0xdaDc…b9Df on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0500</td>
+  <td class="num">2<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 65/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;claude&quot; in description) but is hosted on netintel-production-440c.up.railway.app, not the brand's domain</li><li>input schema is a bare passthrough (text) — consistent with forwarding to an upstream API</li><li>$0.0500/call ≈ 5.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (railway.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://netintel-production-440c.up.railway.app/entity-extract</div>
+    <div class="ep-meta"> — Extract named entities from text using Claude Haiku — people, organizations, locations, dates, emails, URLs, money amounts, and products — returned as structured typed arrays so ag…</div>
+    <div class="ep-meta mono">pays to 0xdaDc…b9Df on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0500</td>
+  <td class="num">2<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 65/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;claude&quot; in description) but is hosted on netintel-production-440c.up.railway.app, not the brand's domain</li><li>input schema is a bare passthrough (text) — consistent with forwarding to an upstream API</li><li>$0.0500/call ≈ 5.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (railway.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://netintel-production-440c.up.railway.app/extract/contact</div>
+    <div class="ep-meta"> — Extract structured contact details from text, an email signature, or webpage text using Claude Haiku — returns name, title, company, email, phone, and address as clean JSON so agen…</div>
+    <div class="ep-meta mono">pays to 0xdaDc…b9Df on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0500</td>
+  <td class="num">2<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 65/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;claude&quot; in description) but is hosted on netintel-production-440c.up.railway.app, not the brand's domain</li><li>input schema is a bare passthrough (text) — consistent with forwarding to an upstream API</li><li>$0.0500/call ≈ 5.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (railway.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://netintel-production-440c.up.railway.app/extract/invoice</div>
+    <div class="ep-meta"> — Extract structured data from invoice or receipt text using Claude Haiku — returns vendor, invoice number, dates, line items, subtotal, tax, total, and currency as clean JSON so age…</div>
+    <div class="ep-meta mono">pays to 0xdaDc…b9Df on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.10</td>
+  <td class="num">2<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 65/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;claude&quot; in description) but is hosted on netintel-production-440c.up.railway.app, not the brand's domain</li><li>input schema is a bare passthrough (text) — consistent with forwarding to an upstream API</li><li>$0.1000/call ≈ 10.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (railway.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://netintel-production-440c.up.railway.app/text-summarize</div>
+    <div class="ep-meta"> — Summarize any text or web page into a concise summary plus key bullet points using Claude Haiku — accepts raw text or a URL (which it fetches and extracts), enforces an input cap, …</div>
+    <div class="ep-meta mono">pays to 0xdaDc…b9Df on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0500</td>
+  <td class="num">2<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 65/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;claude&quot; in description) but is hosted on netintel-production-440c.up.railway.app, not the brand's domain</li><li>input schema is a bare passthrough (text) — consistent with forwarding to an upstream API</li><li>$0.0500/call ≈ 5.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (railway.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://netintel-production-440c.up.railway.app/extract/table</div>
+    <div class="ep-meta"> — Extract tabular data from messy text or HTML using Claude Haiku — detects columns and rows in unstructured content and returns clean structured JSON (columns + rows) so agents can …</div>
+    <div class="ep-meta mono">pays to 0xdaDc…b9Df on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0500</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 65/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;claude&quot; in description) but is hosted on netintel-production-440c.up.railway.app, not the brand's domain</li><li>input schema is a bare passthrough (text) — consistent with forwarding to an upstream API</li><li>$0.0500/call ≈ 5.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (railway.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://bazaar-gateway.vercel.app/api/translate</div>
+    <div class="ep-meta">Navi Translate — AI-powered text translation between any languages. Powered by Claude AI. Send text and target language, receive a high-quality translation with context awareness. Usage-based prici…</div>
+    <div class="ep-meta mono">pays to 0xd20F…7d0D on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0040</td>
+  <td class="num">27<div class="ep-meta">16 payers</div></td>
+  <td class="center"><span class="pill med">medium · 62/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;claude&quot; in description) but is hosted on bazaar-gateway.vercel.app, not the brand's domain</li><li>'powered by' upstream-provider phrasing: &quot;Powered by&quot;</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://power-pack-x402.fly.dev/api/score-email</div>
+    <div class="ep-meta"> — Score an outreach email on subject quality, body quality, predicted open rate, spam risk, tone, length, personalization, and CTA clarity. Returns top 3 specific improvement suggest…</div>
+    <div class="ep-meta mono">pays to 0x9b8a…f72f on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">7<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 62/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;claude&quot; in description) but is hosted on power-pack-x402.fly.dev, not the brand's domain</li><li>'powered by' upstream-provider phrasing: &quot;Powered by&quot;</li><li>hosted on generic infrastructure (fly.dev) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://bazaar-gateway.vercel.app/api/web-intelligence</div>
+    <div class="ep-meta">Navi Web Intelligence — Zero-transform web page intelligence for AI agents. Extracts OpenGraph + Twitter Card + Article metadata + JSON-LD structured data. Generates AI analysis via Claude Haiku tool_use:…</div>
+    <div class="ep-meta mono">pays to 0xd20F…7d0D on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0050</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 62/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic, X / Twitter (via &quot;claude&quot; in description) but is hosted on bazaar-gateway.vercel.app, not the brand's domain</li><li>input schema is a bare passthrough (url) — consistent with forwarding to an upstream API</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://marketpulse-brown.vercel.app/api/market/llm-visibility</div>
+    <div class="ep-meta">MarketPulse — Does ChatGPT, Claude, Gemini or Google AI Overviews even know this brand exists? Assesses current AI-answer visibility, scores the specific factors driving LLM citation, and return…</div>
+    <div class="ep-meta mono">pays to 0x50ab…12fc on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.15</td>
+  <td class="num">12<div class="ep-meta">3 payers</div></td>
+  <td class="center"><span class="pill med">medium · 60/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic (via &quot;chatgpt&quot; in description) but is hosted on marketpulse-brown.vercel.app, not the brand's domain</li><li>$0.1500/call ≈ 15.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://marketpulse-brown.vercel.app/api/market/content-brief</div>
+    <div class="ep-meta">MarketPulse — Will this content actually rank — and get cited by AI Overviews, ChatGPT or Claude? A complete content brief dual-optimized for traditional search and AI-answer citation: target qu…</div>
+    <div class="ep-meta mono">pays to 0x50ab…12fc on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.15</td>
+  <td class="num">5<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 60/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic (via &quot;chatgpt&quot; in description) but is hosted on marketpulse-brown.vercel.app, not the brand's domain</li><li>$0.1500/call ≈ 15.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-endpoints.onrender.com/crypto/token-dossier</div>
+    <div class="ep-meta">Token Dossier — Full degen token dossier in one call: safety score + honeypot/tax + detailed TOP HOLDERS and concentration + liquidity/FDV/volume/pool-age + contract control (owner, creator, minta…</div>
+    <div class="ep-meta mono">pays to 0x1D1B…620f on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.10</td>
+  <td class="num">3<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 60/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic, DEX Screener (via &quot;claude&quot; in schema) but is hosted on x402-endpoints.onrender.com, not the brand's domain</li><li>$0.1000/call ≈ 10.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (onrender.com) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-solana-cva8.onrender.com/crypto/token-dossier</div>
+    <div class="ep-meta">Token Dossier — Full degen token dossier in one call: safety score + honeypot/tax + detailed TOP HOLDERS and concentration + liquidity/FDV/volume/pool-age + contract control (owner, creator, minta…</div>
+    <div class="ep-meta mono">pays to CucGfd…DLEF on solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp · via bazaar</div>
+  </td>
+  <td class="num">$0.10</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 60/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic, DEX Screener (via &quot;claude&quot; in schema) but is hosted on x402-solana-cva8.onrender.com, not the brand's domain</li><li>$0.1000/call ≈ 10.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (onrender.com) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-endpoints.onrender.com/market/intel</div>
+    <div class="ep-meta">Market Intelligence — AI market intelligence report in one call for research and trading agents: cross-exchange perp derivatives (funding, open interest, long/short), fused directional signals and the e…</div>
+    <div class="ep-meta mono">pays to 0x1D1B…620f on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.10</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 60/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic, Binance (via &quot;claude&quot; in schema) but is hosted on x402-endpoints.onrender.com, not the brand's domain</li><li>$0.1000/call ≈ 10.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (onrender.com) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://402.com.tr/api/x402/ai-extract</div>
+    <div class="ep-meta">AI Extract — Pull named fields out of any text as clean JSON (e.g. name, email, company, date). Powered by Claude structured outputs.</div>
+    <div class="ep-meta mono">pays to 0x973a…12d6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0200</td>
+  <td class="num">2<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;claude&quot; in description) but is hosted on 402.com.tr, not the brand's domain</li><li>'powered by' upstream-provider phrasing: &quot;Powered by&quot;</li><li>$0.0200/call ≈ 2.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://netintel.dev/extract/resume</div>
+    <div class="ep-meta"> — Extract structured data from resume/CV text using Claude Haiku — returns name, contact info, skills, work experience, and education as clean JSON arrays so agents can automate appl…</div>
+    <div class="ep-meta mono">pays to 0xdaDc…b9Df on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0800</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic, LinkedIn (via &quot;claude&quot; in description) but is hosted on netintel.dev, not the brand's domain</li><li>input schema is a bare passthrough (text) — consistent with forwarding to an upstream API</li><li>$0.0800/call ≈ 8.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://content.hugen.tokyo/content/summary</div>
+    <div class="ep-meta"> — AI-powered content summarization — extracts clean text from any URL then generates a concise 2-4 sentence summary, 3-5 key points, and named entity extraction (people, organization…</div>
+    <div class="ep-meta mono">pays to 0x2932…4f60 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0200</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic (via &quot;gpt-4&quot; in schema) but is hosted on content.hugen.tokyo, not the brand's domain</li><li>input schema is a bare passthrough (url) — consistent with forwarding to an upstream API</li><li>$0.0200/call ≈ 2.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://tradingagents-x402.fly.dev/api/analyze-ticker</div>
+    <div class="ep-meta"> — Run a full multi-agent analysis for any publicly traded ticker. Body: { ticker: string, date?: 'YYYY-MM-DD' (defaults to today), analysts?: string[] (default ['market','social','ne…</div>
+    <div class="ep-meta mono">pays to 0x9b8a…f72f on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0500</td>
+  <td class="num">9<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 55/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;claude&quot; in description) but is hosted on tradingagents-x402.fly.dev, not the brand's domain</li><li>$0.0500/call ≈ 5.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (fly.dev) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-endpoints.onrender.com/agent/output-qa</div>
+    <div class="ep-meta">Agent Output QA — Review an agent's email or message before sending — spam check + quality QA in one call: a multi-criteria scorecard (clarity, spam-safety/deliverability, tone, length, personalizat…</div>
+    <div class="ep-meta mono">pays to 0x1D1B…620f on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.10</td>
+  <td class="num">4<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 55/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;claude&quot; in schema) but is hosted on x402-endpoints.onrender.com, not the brand's domain</li><li>$0.1000/call ≈ 10.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (onrender.com) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-endpoints.onrender.com/x402/seller-audit</div>
+    <div class="ep-meta">x402 Seller Audit — Deep audit of an x402/ACP seller before trusting it: give a seller wallet or domain and get a full report — on-chain settlement reputation (settlements, unique counterparties, wash…</div>
+    <div class="ep-meta mono">pays to 0x1D1B…620f on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.50</td>
+  <td class="num">3<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 55/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;claude&quot; in schema) but is hosted on x402-endpoints.onrender.com, not the brand's domain</li><li>$0.5000/call ≈ 50.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (onrender.com) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-endpoints.onrender.com/agent/analysis-report</div>
+    <div class="ep-meta">Agent Analysis Report — Structured analysis report in one call on any URL, company, product or subject: positioning + strengths + risks + opportunities + 0-100 actionable score + STRONG/MODERATE/WEAK rati…</div>
+    <div class="ep-meta mono">pays to 0x1D1B…620f on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.25</td>
+  <td class="num">3<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 55/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;claude&quot; in schema) but is hosted on x402-endpoints.onrender.com, not the brand's domain</li><li>$0.2500/call ≈ 25.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (onrender.com) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://netintel-production-440c.up.railway.app/sentiment/analyze</div>
+    <div class="ep-meta"> — Analyze the sentiment of text using Claude Haiku — returns overall polarity (positive/negative/neutral/mixed), a -1 to +1 score, detected emotions, and optional per-aspect sentimen…</div>
+    <div class="ep-meta mono">pays to 0xdaDc…b9Df on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0300</td>
+  <td class="num">2<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 55/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;claude&quot; in description) but is hosted on netintel-production-440c.up.railway.app, not the brand's domain</li><li>$0.0300/call ≈ 3.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (railway.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-endpoints.onrender.com/agent/due-diligence</div>
+    <div class="ep-meta">Agent Due Diligence — Vet any company, crypto project, counterparty or domain before engaging: one call composes a risk DOSSIER — synthesis + detected signals + sources + 0-100 risk score + GO/CAUTION/S…</div>
+    <div class="ep-meta mono">pays to 0x1D1B…620f on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.50</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 55/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;claude&quot; in schema) but is hosted on x402-endpoints.onrender.com, not the brand's domain</li><li>$0.5000/call ≈ 50.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (onrender.com) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-extract-api-production.up.railway.app/extract</div>
+    <div class="ep-meta"> — Extract structured JSON from any web page. 9 preset schemas (product_specs, company_info, article_summary, pricing, job_listing, reviews, contact_extraction, structured_table, soci…</div>
+    <div class="ep-meta mono">pays to 0x41B9…70E2 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0300</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 55/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;claude&quot; in schema) but is hosted on x402-extract-api-production.up.railway.app, not the brand's domain</li><li>$0.0300/call ≈ 3.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (railway.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://netintel-production-440c.up.railway.app/text-to-json</div>
+    <div class="ep-meta"> — Turn unstructured text into structured JSON matching a caller-supplied schema using Claude Haiku — the agent declares the fields and types it wants, and gets back populated JSON wi…</div>
+    <div class="ep-meta mono">pays to 0xdaDc…b9Df on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0500</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 55/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;claude&quot; in description) but is hosted on netintel-production-440c.up.railway.app, not the brand's domain</li><li>$0.0500/call ≈ 5.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (railway.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://netintel-production-440c.up.railway.app/normalize/json</div>
+    <div class="ep-meta"> — Conform messy or inconsistent JSON to a target schema using Claude Haiku — renames keys, coerces types (string→number, &quot;true&quot;→boolean, etc.), and fills missing fields with null, re…</div>
+    <div class="ep-meta mono">pays to 0xdaDc…b9Df on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0500</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 55/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;claude&quot; in description) but is hosted on netintel-production-440c.up.railway.app, not the brand's domain</li><li>$0.0500/call ≈ 5.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (railway.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://netintel-production-440c.up.railway.app/extract/address</div>
+    <div class="ep-meta"> — Parse and normalize a freeform address string using Claude Haiku — splits it into street, city, state/region, postal code, and country, plus a normalized single-line form, so agent…</div>
+    <div class="ep-meta mono">pays to 0xdaDc…b9Df on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0300</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 55/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;claude&quot; in description) but is hosted on netintel-production-440c.up.railway.app, not the brand's domain</li><li>$0.0300/call ≈ 3.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (railway.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://netintel-production-440c.up.railway.app/translate/short</div>
+    <div class="ep-meta"> — Translate up to 500 words between languages using Claude Haiku — auto-detects source language, supports 30+ target languages, preserves formatting, and returns the translation with…</div>
+    <div class="ep-meta mono">pays to 0xdaDc…b9Df on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0300</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 55/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;claude&quot; in description) but is hosted on netintel-production-440c.up.railway.app, not the brand's domain</li><li>$0.0300/call ≈ 3.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (railway.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://netintel-production-440c.up.railway.app/classify</div>
+    <div class="ep-meta"> — Classify text into caller-supplied categories using Claude Haiku — zero-shot classification where the agent provides the label set and gets back the best-matching category with con…</div>
+    <div class="ep-meta mono">pays to 0xdaDc…b9Df on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0300</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 55/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;claude&quot; in description) but is hosted on netintel-production-440c.up.railway.app, not the brand's domain</li><li>$0.0300/call ≈ 3.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (railway.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://cryptorugmunch.ngrok.app/api/agent/v1/marcus-quick</div>
+    <div class="ep-meta"> — AI forensic verdict by Marcus Aurelius (Claude Sonnet 4). One-paragraph analysis with risk score, key flags, and Stoic wisdom. The only LLM-powered crypto forensic analyst on x402.…</div>
+    <div class="ep-meta mono">pays to 0xeac8…46e1 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.15</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill med">medium · 55/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;claude&quot; in description) but is hosted on cryptorugmunch.ngrok.app, not the brand's domain</li><li>$0.1500/call ≈ 15.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (ngrok.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://store.agentexchange.work/brands/check</div>
+    <div class="ep-meta">Live Brand AI-Visibility Check — Live brand AI-visibility audit: does ChatGPT, Perplexity, Gemini, Google AI Overviews or Claude recommend this brand when buyers ask for the best in its category, or name competito…</div>
+    <div class="ep-meta mono">pays to 0xc91c…b95c on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.49</td>
+  <td class="num">11<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic, Perplexity (via &quot;chatgpt&quot; in description) but is hosted on store.agentexchange.work, not the brand's domain</li><li>$0.4900/call ≈ 49.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://netintel.dev/extract/table</div>
+    <div class="ep-meta"> — Extract tabular data from messy text or HTML using Claude Haiku — detects columns and rows in unstructured content and returns clean structured JSON (columns + rows) so agents can …</div>
+    <div class="ep-meta mono">pays to 0xdaDc…b9Df on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0500</td>
+  <td class="num">6<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;claude&quot; in description) but is hosted on netintel.dev, not the brand's domain</li><li>input schema is a bare passthrough (text) — consistent with forwarding to an upstream API</li><li>$0.0500/call ≈ 5.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://aeonos.basechainlabs.com/api/agent</div>
+    <div class="ep-meta"> — Improve AI search visibility and get cited by ChatGPT, Perplexity, Claude &amp; Google AI Overviews. AEO/GEO/SEO strategy, AI visibility audits, schema markup, llms.txt. 0.05 USDC/quer…</div>
+    <div class="ep-meta mono">pays to 0x400d…bacc on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0500</td>
+  <td class="num">5<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic, Perplexity (via &quot;chatgpt&quot; in description) but is hosted on aeonos.basechainlabs.com, not the brand's domain</li><li>$0.0500/call ≈ 5.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.myceliasignal.com/oracle/inference/anthropic/pricing</div>
+    <div class="ep-meta"> — Anthropic Claude model pricing — input/output $/M tokens, context windows — Ed25519 signed attestation</div>
+    <div class="ep-meta mono">pays to 0xD593…700d on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0200</td>
+  <td class="num">5<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;anthropic&quot; in url) but is hosted on api.myceliasignal.com, not the brand's domain</li><li>brand term &quot;anthropic&quot; appears in the endpoint URL itself</li><li>$0.0200/call ≈ 2.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://graphadvocate.com/ask</div>
+    <div class="ep-meta"> — Natural-language Q&amp;A over the x402 Base settlements warehouse. POST {question}. Backed by 132M settlement rows on Cloudflare R2 + pre-aggregated daily_stats (388 days, May 2025 - J…</div>
+    <div class="ep-meta mono">pays to 0x0FF5…7C86 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0500</td>
+  <td class="num">3<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;anthropic&quot; in description) but is hosted on graphadvocate.com, not the brand's domain</li><li>input schema is a bare passthrough (question) — consistent with forwarding to an upstream API</li><li>$0.0500/call ≈ 5.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://aeonos.basechainlabs.com/api/llms-txt</div>
+    <div class="ep-meta"> — Generate llms.txt to improve AI search visibility — structured file for ChatGPT, Perplexity &amp; Claude crawlers. Helps AI engines understand and cite your business. 0.50 USDC.</div>
+    <div class="ep-meta mono">pays to 0x400d…bacc on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.50</td>
+  <td class="num">3<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic, Perplexity (via &quot;chatgpt&quot; in description) but is hosted on aeonos.basechainlabs.com, not the brand's domain</li><li>$0.5000/call ≈ 50.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://netintel.dev/markdown/clean</div>
+    <div class="ep-meta"> — Convert messy HTML or text into clean, well-structured Markdown using Claude Haiku — strips boilerplate, fixes heading hierarchy, normalizes lists and links, and returns readable M…</div>
+    <div class="ep-meta mono">pays to 0xdaDc…b9Df on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0300</td>
+  <td class="num">3<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;claude&quot; in description) but is hosted on netintel.dev, not the brand's domain</li><li>input schema is a bare passthrough (text) — consistent with forwarding to an upstream API</li><li>$0.0300/call ≈ 3.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://netintel.dev/extract/contact</div>
+    <div class="ep-meta"> — Extract structured contact details from text, an email signature, or webpage text using Claude Haiku — returns name, title, company, email, phone, and address as clean JSON so agen…</div>
+    <div class="ep-meta mono">pays to 0xdaDc…b9Df on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0500</td>
+  <td class="num">3<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;claude&quot; in description) but is hosted on netintel.dev, not the brand's domain</li><li>input schema is a bare passthrough (text) — consistent with forwarding to an upstream API</li><li>$0.0500/call ≈ 5.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://netintel.dev/entity-extract</div>
+    <div class="ep-meta"> — Extract named entities from text using Claude Haiku — people, organizations, locations, dates, emails, URLs, money amounts, and products — returned as structured typed arrays so ag…</div>
+    <div class="ep-meta mono">pays to 0xdaDc…b9Df on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0500</td>
+  <td class="num">3<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;claude&quot; in description) but is hosted on netintel.dev, not the brand's domain</li><li>input schema is a bare passthrough (text) — consistent with forwarding to an upstream API</li><li>$0.0500/call ≈ 5.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://netintel.dev/content-moderate</div>
+    <div class="ep-meta"> — Moderate text content using Claude Haiku — flags categories like harassment, hate, sexual content, violence, self-harm, and spam with per-category severity and an overall allow/fla…</div>
+    <div class="ep-meta mono">pays to 0xdaDc…b9Df on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0500</td>
+  <td class="num">3<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;claude&quot; in description) but is hosted on netintel.dev, not the brand's domain</li><li>input schema is a bare passthrough (text) — consistent with forwarding to an upstream API</li><li>$0.0500/call ≈ 5.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.phoneagent.xyz/services</div>
+    <div class="ep-meta"> — PhoneAgent — full directory of services with rentable SMS phone numbers for AI agents. Returns 1,000+ service aliases: Telegram, WhatsApp, Google, Facebook, Instagram, Twitter/X, D…</div>
+    <div class="ep-meta mono">pays to 0xF670…576A on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">2<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic, X / Twitter, Instagram, Binance (via &quot;openai&quot; in description) but is hosted on api.phoneagent.xyz, not the brand's domain</li><li>$0.0100/call ≈ 2.0× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://anomaly.forgemesh.io/api/claude-feature-watch</div>
+    <div class="ep-meta"> — Watch Anthropic/Claude repos for recently merged features — SDK changes, Claude Code updates, new capabilities</div>
+    <div class="ep-meta mono">pays to 0xE295…d6E5 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0200</td>
+  <td class="num">2<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;claude&quot; in url) but is hosted on anomaly.forgemesh.io, not the brand's domain</li><li>brand term &quot;claude&quot; appears in the endpoint URL itself</li><li>$0.0200/call ≈ 2.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.printmoneylab.com/api/v1/market-read</div>
+    <div class="ep-meta"> — AI-powered Korean crypto market analysis — 12+ data sources + exchange intelligence + Claude AI token-level signals</div>
+    <div class="ep-meta mono">pays to 0xcF92…42fB on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.10</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic, CoinGecko, Binance (via &quot;claude&quot; in description) but is hosted on api.printmoneylab.com, not the brand's domain</li><li>$0.1000/call ≈ 10.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://netintel.dev/extract/invoice</div>
+    <div class="ep-meta"> — Extract structured data from invoice or receipt text using Claude Haiku — returns vendor, invoice number, dates, line items, subtotal, tax, total, and currency as clean JSON so age…</div>
+    <div class="ep-meta mono">pays to 0xdaDc…b9Df on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.10</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;claude&quot; in description) but is hosted on netintel.dev, not the brand's domain</li><li>input schema is a bare passthrough (text) — consistent with forwarding to an upstream API</li><li>$0.1000/call ≈ 10.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://www.rebatify.net/api/x402/anthropic-gap</div>
+    <div class="ep-meta"> — Cross-exchange Anthropic pre-IPO equity price gaps, ranked by basis-point spread (live arbitrage data).</div>
+    <div class="ep-meta mono">pays to 0xA9BD…d0b8 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$1.00</td>
+  <td class="num">2<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;anthropic&quot; in url) but is hosted on www.rebatify.net, not the brand's domain</li><li>brand term &quot;anthropic&quot; appears in the endpoint URL itself</li><li>$1.0000/call ≈ 100.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402.agentutility.ai/research-brief</div>
+    <div class="ep-meta">AgentUtility.ai — Builds a structured research brief on a company, person, product, or topic as fixed-shape JSON: overview, key_facts, recent_news (with date hints), all with source-index citations.…</div>
+    <div class="ep-meta mono">pays to 0x6c07…5621 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.10</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Google Search (SERP), OpenAI, Anthropic (via &quot;google serp&quot; in description) but is hosted on x402.agentutility.ai, not the brand's domain</li><li>$0.1000/call ≈ 20.0× Google Search (SERP)'s public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://deploy.crestsystems.ai/check</div>
+    <div class="ep-meta"> — Crest · trust_oracle — Should an autonomous agent trust this x402 service before paying? Full-stack evaluation: endpoint reachability, x402 protocol compliance, pricing reasonablen…</div>
+    <div class="ep-meta mono">pays to 0xAe0D…00b1 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.75</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;claude&quot; in description) but is hosted on deploy.crestsystems.ai, not the brand's domain</li><li>input schema is a bare passthrough (url) — consistent with forwarding to an upstream API</li><li>$0.7500/call ≈ 75.0× Anthropic's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://omnicall.gocreativeai.com/v1/ai/pro/:var1</div>
+    <div class="ep-meta"> — AI completion, frontier tier — Claude 4.5 Sonnet (default; ?model=gpt-5|gpt-4o|gemini-pro|gemini-3.1-pro). Pay USDC per call, no API key, no signup. For agents that need a frontier…</div>
+    <div class="ep-meta mono">pays to 0xbAf5…53Cc on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0800</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic, Google Gemini (via &quot;gpt-4o&quot; in description) but is hosted on omnicall.gocreativeai.com, not the brand's domain</li><li>$0.0800/call ≈ 8.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-deployer.x402-deployer.workers.dev/token-count</div>
+    <div class="ep-meta"> — Token count / tokenizer estimate / GPT-4 token count / Claude token count / Gemini token count / context-window pre-flight. Pure-local heuristic estimator targeting cl100k_base / o…</div>
+    <div class="ep-meta mono">pays to 0x6c07…5621 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">5<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 52/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic (via &quot;gpt-4&quot; in description) but is hosted on x402-deployer.x402-deployer.workers.dev, not the brand's domain</li><li>hosted on generic infrastructure (workers.dev) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-deployer.x402-deployer.workers.dev/citation-verify</div>
+    <div class="ep-meta"> — Citation verifier / fact-check against URL / does-this-source-support-this-claim / hallucination detector. Fetches a source URL (HTML stripped, 100KB cap), and asks Venice claude-s…</div>
+    <div class="ep-meta mono">pays to 0x6c07…5621 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">4<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 52/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic (via &quot;gpt-4&quot; in schema) but is hosted on x402-deployer.x402-deployer.workers.dev, not the brand's domain</li><li>hosted on generic infrastructure (workers.dev) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://orbisapi.com/proxy/image-to-content-api-5c7f80/:endpoint</div>
+    <div class="ep-meta">Image Intelligence API — Convert any image into captions, tags, summaries, metadata, sentiment, OCR and face analysis — powered by Claude AI.</div>
+    <div class="ep-meta mono">pays to 0x2bb7…ac6d on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0049</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 50/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;claude&quot; in description) but is hosted on orbisapi.com, not the brand's domain</li><li>'powered by' upstream-provider phrasing: &quot;powered by&quot;</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402stock.xyz/api/v1/private-stocks</div>
+    <div class="ep-meta"> — Live valuations for private, pre-IPO companies — Anthropic, OpenAI, SpaceX, Anduril, Neuralink, Kalshi, Polymarket — in one call, via PreStocks Solana tokens backed 1:1 by SPV expo…</div>
+    <div class="ep-meta mono">pays to 0x3070…fA85 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0200</td>
+  <td class="num">27<div class="ep-meta">4 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic (via &quot;openai&quot; in description) but is hosted on x402stock.xyz, not the brand's domain</li><li>$0.0200/call ≈ 2.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://gateway.gedx402.com/v1/unified/run</div>
+    <div class="ep-meta">GEDX402 Gateway — Frontier chat via env.AI.run(author/model) and unified billing credits — no operator BYOK keys. POST model slug (allowlisted) and messages[]; x402 wire priced per model worst-case …</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0780</td>
+  <td class="num">17<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic (via &quot;openai&quot; in tags) but is hosted on gateway.gedx402.com, not the brand's domain</li><li>$0.0780/call ≈ 7.8× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://tensorfeed.ai/api/premium/whats-new</div>
+    <div class="ep-meta"> — Agent morning brief. One paid call returns the last 24 hours of AI pricing changes, new and removed models, service-status incidents, and top news headlines. The endpoint an agent …</div>
+    <div class="ep-meta mono">pays to 0x549c…c6d1 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0200</td>
+  <td class="num">15<div class="ep-meta">12 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic (via &quot;openai&quot; in schema) but is hosted on tensorfeed.ai, not the brand's domain</li><li>$0.0200/call ≈ 2.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://voidfeed.ai/v1/content/fact-feed/latest</div>
+    <div class="ep-meta">VoidFeed — Returns verified, citation-backed facts about new AI model releases, benchmark scores, and protocol changes, each with source URLs and confidence.</div>
+    <div class="ep-meta mono">pays to 0x7103…3661 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0500</td>
+  <td class="num">7<div class="ep-meta">5 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic (via &quot;gpt-4o&quot; in schema) but is hosted on voidfeed.ai, not the brand's domain</li><li>$0.0500/call ≈ 5.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://voidfeed.ai/v1/content/extract/dataset/latest</div>
+    <div class="ep-meta">VoidFeed — Returns clean, normalized datasets of AI model benchmarks, pricing, leaderboard scores, and Ethereum EIPs, parsed from sources that are costly to scrape.</div>
+    <div class="ep-meta mono">pays to 0x7103…3661 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0500</td>
+  <td class="num">6<div class="ep-meta">5 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic (via &quot;openai&quot; in schema) but is hosted on voidfeed.ai, not the brand's domain</li><li>$0.0500/call ≈ 5.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://netintel.dev/messages</div>
+    <div class="ep-meta"> — OpenAI-compatible chat completions over x402, answered by Claude Sonnet 4.6 — send a messages array and get an assistant reply for Q&amp;A, reasoning, agent planning, coding help, summ…</div>
+    <div class="ep-meta mono">pays to 0xdaDc…b9Df on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0600</td>
+  <td class="num">5<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic (via &quot;openai&quot; in description) but is hosted on netintel.dev, not the brand's domain</li><li>$0.0600/call ≈ 6.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.myceliasignal.com/oracle/inference/all</div>
+    <div class="ep-meta"> — All LLM inference pricing — 6 providers, 26 models, normalized to $/M tokens. Ed25519 signed. — Ed25519 signed attestation</div>
+    <div class="ep-meta mono">pays to 0xD593…700d on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0200</td>
+  <td class="num">5<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic (via &quot;openai&quot; in schema) but is hosted on api.myceliasignal.com, not the brand's domain</li><li>$0.0200/call ≈ 2.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://agent402.tools/v1/chat/completions</div>
+    <div class="ep-meta">Agent402.tools — OpenAI-compatible chat completions over x402 — point any OpenAI SDK at base_url https://agent402.tools/v1 and pay per call in USDC (Base, Solana, Polygon, Arbitrum, Stellar), no AP…</div>
+    <div class="ep-meta mono">pays to 0xaBF4…a9D0 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0200</td>
+  <td class="num">5<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic (via &quot;openai&quot; in description) but is hosted on agent402.tools, not the brand's domain</li><li>$0.0200/call ≈ 2.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.hyperd.ai/api/governance/summarize</div>
+    <div class="ep-meta"> — DAO governance proposal summarization. Detects Snapshot/Tally URLs, fetches proposal data, returns a structured summary with impact analysis. LLM-powered when ANTHROPIC_API_KEY or …</div>
+    <div class="ep-meta mono">pays to 0x61b5…f1C6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.10</td>
+  <td class="num">3<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic (via &quot;openai&quot; in description) but is hosted on api.hyperd.ai, not the brand's domain</li><li>$0.1000/call ≈ 10.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://tensorfeed.ai/api/premium/providers/:name</div>
+    <div class="ep-meta"> — Per-provider digest. Pass the provider slug (anthropic, openai, google, etc.) as the URL path segment. Returns the model catalog scoped to that provider plus current pricing matrix…</div>
+    <div class="ep-meta mono">pays to 0x549c…c6d1 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.10</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic (via &quot;openai&quot; in description) but is hosted on tensorfeed.ai, not the brand's domain</li><li>$0.1000/call ≈ 10.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://tensorfeed.ai/api/premium/cost/projection</div>
+    <div class="ep-meta"> — Project the cost of a token-usage workload across 1-10 AI models. Returns daily, weekly, monthly, and yearly totals per model plus a ranking by cheapest monthly. The canonical &quot;giv…</div>
+    <div class="ep-meta mono">pays to 0x549c…c6d1 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0200</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic (via &quot;gpt-5&quot; in schema) but is hosted on tensorfeed.ai, not the brand's domain</li><li>$0.0200/call ≈ 2.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://tensorfeed.ai/api/premium/compare/models</div>
+    <div class="ep-meta"> — Side-by-side comparison of 2-5 AI models. Returns pricing, benchmarks normalized to union-of-keys with explicit nulls, live provider status, recent news mentions, and per-benchmark…</div>
+    <div class="ep-meta mono">pays to 0x549c…c6d1 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0200</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic (via &quot;gpt-5&quot; in schema) but is hosted on tensorfeed.ai, not the brand's domain</li><li>$0.0200/call ≈ 2.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://www.rebatify.net/api/x402/preipo-discovery</div>
+    <div class="ep-meta"> — Pre-IPO listing directory — which exchanges list which pre-IPO / prediction assets (SpaceX, OpenAI, Anthropic, Anduril, Kalshi, Polymarket). Filter by asset.</div>
+    <div class="ep-meta mono">pays to 0xA9BD…d0b8 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$1.00</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic (via &quot;openai&quot; in description) but is hosted on www.rebatify.net, not the brand's domain</li><li>$1.0000/call ≈ 100.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">http://algo.netintel.dev/ai-image/generate</div>
+    <div class="ep-meta"> — AI image asset generator for agents: app icons, logos, avatars, social graphics, OG images, blog thumbnails, banners, product mockups, web images, illustrations. A Claude Haiku pas…</div>
+    <div class="ep-meta mono">pays to KGIEWE…P6EM on algorand:wGHE2Pwdvd7S12BL5FaOP20EGYesN73ktiC1qzkkit8= · via goplausible</div>
+  </td>
+  <td class="num">$0.25</td>
+  <td class="num">1<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic (via &quot;openai&quot; in description) but is hosted on algo.netintel.dev, not the brand's domain</li><li>$0.2500/call ≈ 25.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">http://algo.netintel.dev/messages</div>
+    <div class="ep-meta"> — OpenAI-compatible chat completions endpoint served by Claude Sonnet 4.6. Send a chat.completions-shaped body (messages array, optional model/max_tokens/temperature); receive a chat…</div>
+    <div class="ep-meta mono">pays to KGIEWE…P6EM on algorand:wGHE2Pwdvd7S12BL5FaOP20EGYesN73ktiC1qzkkit8= · via goplausible</div>
+  </td>
+  <td class="num">$0.0600</td>
+  <td class="num">1<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic (via &quot;openai&quot; in description) but is hosted on algo.netintel.dev, not the brand's domain</li><li>$0.0600/call ≈ 6.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://web-production-78e17.up.railway.app/v1/summarize</div>
+    <div class="ep-meta">Text Summarizer Agent — Summarize and compress text, Markdown, or JSON into a structured summary. Output as prose, bullets, headline, or TLDR, with optional exact target word count. Built for agent and do…</div>
+    <div class="ep-meta mono">pays to 0x8fC4…dB1F on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0050</td>
+  <td class="num">17<div class="ep-meta">14 payers</div></td>
+  <td class="center"><span class="pill ">low · 47/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;claude&quot; in schema) but is hosted on web-production-78e17.up.railway.app, not the brand's domain</li><li>hosted on generic infrastructure (railway.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://suprapack-x402.fly.dev/api/find-skill</div>
+    <div class="ep-meta"> — Search 588+ curated Claude Code skills by keyword. Returns top matching skills with full markdown content, quality score, categories, and source repo. Optional filters: min_quality…</div>
+    <div class="ep-meta mono">pays to 0x9b8a…f72f on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">15<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill ">low · 47/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;claude&quot; in description) but is hosted on suprapack-x402.fly.dev, not the brand's domain</li><li>hosted on generic infrastructure (fly.dev) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://web-production-2d1051.up.railway.app/v1/classify</div>
+    <div class="ep-meta">Content Classifier Agent — Classify text or JSON into categories with AI: sentiment analysis, topic, intent detection, urgency triage, or a custom taxonomy. Returns labels with confidence scores and reasonin…</div>
+    <div class="ep-meta mono">pays to 0x8fC4…dB1F on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0050</td>
+  <td class="num">6<div class="ep-meta">5 payers</div></td>
+  <td class="center"><span class="pill ">low · 47/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;claude&quot; in schema) but is hosted on web-production-2d1051.up.railway.app, not the brand's domain</li><li>hosted on generic infrastructure (railway.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402joke.vercel.app/api/buy</div>
+    <div class="ep-meta"> — Pay-per-joke vending machine: send USDC, get a fresh Claude-generated joke. Optional &quot;theme&quot; picks the topic.</div>
+    <div class="ep-meta mono">pays to 0x2FE2…E7E6 on base · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">2<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill ">low · 47/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;claude&quot; in description) but is hosted on x402joke.vercel.app, not the brand's domain</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://proof-of-intelligence-mint-web.vercel.app/api/x402/question</div>
+    <div class="ep-meta"> — Generate AI-powered trivia question using Claude Sonnet 4.5. Payment goes to LP pool.</div>
+    <div class="ep-meta mono">pays to 0x32d8…2BF8 on base · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill ">low · 47/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;claude&quot; in description) but is hosted on proof-of-intelligence-mint-web.vercel.app, not the brand's domain</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://minifetch.com/api/v1/x402/extract/url-links</div>
+    <div class="ep-meta">Minifetch Technical SEO API — For SEO link audits: Extracts and categorizes all links on a page (internal, external, anchor) for SEO audits and site-structure analysis. Returns nofollow/rel attributes, anchor t…</div>
+    <div class="ep-meta mono">pays to 0xffA9…686f on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0020</td>
+  <td class="num">12<div class="ep-meta">4 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;anthropic&quot; in schema) but is hosted on minifetch.com, not the brand's domain</li><li>input schema is a bare passthrough (url) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://anthropic.yeetful.com/api/mcp/mcp</div>
+    <div class="ep-meta"> — Yeetful — Anthropic Claude Haiku 4.5 inference over MCP Streamable HTTP, hosted at anthropic.yeetful.com. Exposes ask_claude (single-prompt completion) and claude_chat (multi-turn)…</div>
+    <div class="ep-meta mono">pays to 0x6626…7257 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">9<div class="ep-meta">3 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;anthropic&quot; in url) but is hosted on anthropic.yeetful.com, not the brand's domain</li><li>brand term &quot;anthropic&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://httpay.xyz/api/gateway/anthropic/%7B*path%7D/*</div>
+    <div class="ep-meta"> — API Gateway: Anthropic Claude API</div>
+    <div class="ep-meta mono">pays to 0x5f5d…4359 on base · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">6<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;anthropic&quot; in url) but is hosted on httpay.xyz, not the brand's domain</li><li>brand term &quot;anthropic&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://netintel.dev/text-summarize</div>
+    <div class="ep-meta"> — Text summarizer / summarization API — condense text, Markdown, or a URL into a TL;DR plus key bullet points using Claude Haiku. Accepts raw text or a URL (fetched and extracted), e…</div>
+    <div class="ep-meta mono">pays to 0xdaDc…b9Df on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0050</td>
+  <td class="num">3<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Anthropic (via &quot;claude&quot; in description) but is hosted on netintel.dev, not the brand's domain</li><li>input schema is a bare passthrough (text) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://scan.convrgent.ai/api/aeo/fix</div>
+    <div class="ep-meta"> — Scanner + fix generator for AI search visibility (AEO, GEO) and agent readiness — audits JSON-LD Schema.org structured data, meta tags, robots.txt, llms.txt, sitemap, then outputs …</div>
+    <div class="ep-meta mono">pays to 0xc273…9882 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$5.00</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic, Perplexity (via &quot;chatgpt&quot; in description) but is hosted on scan.convrgent.ai, not the brand's domain</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://visibility.vevang.com/check/spot</div>
+    <div class="ep-meta">AI Visibility Analyst — AI Visibility Analyst — measure whether the AI answer engines (ChatGPT, Claude, Perplexity) recommend a brand when buyers ask. POST JSON: brand (+ optional url/category). Returns a…</div>
+    <div class="ep-meta mono">pays to 0x9eE3…42B9 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$4.00</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic, Perplexity (via &quot;chatgpt&quot; in description) but is hosted on visibility.vevang.com, not the brand's domain</li></ul></td>
+</tr></tbody>
+</table></div>
+
+<p class="note"><b>Framing note:</b> every row above is a statistical signature match, published so that Anthropic's own team — the only party who can actually verify authorization — can review it. Nothing on this page asserts that any listed operator is acting unlawfully or in breach of any agreement.</p>
+<footer class="site">
+  <nav>
+    <a href="https://provenance.q3epzs69b902a.us-west-2.cs.amazonlightsail.com">Live Provenance API</a>
+    <a href="https://www.npmjs.com/package/provenance-mcp">provenance-mcp (npm)</a>
+    <a href="https://www.npmjs.com/package/provenance-guard">provenance-guard (npm)</a>
+    <a href="https://github.com/apeirontrade/provenance-site">GitHub</a>
+    <a href="../methodology.html">Methodology</a>
+    <a href="../data/index.html">Open data (CC-BY-4.0)</a>
+    <a href="https://github.com/apeirontrade/provenance-site/issues">Disputes &amp; corrections</a>
+  </nav>
+  <div>All figures are statistical estimates derived from public on-chain payment data and public x402 discovery registries. Nothing here asserts fraud or contract breach by any named party — see the <a href="../methodology.html">methodology and disclaimer</a>. Data is CC-BY-4.0; cite Provenance.</div>
+  <div>Provenance · independent trust ratings for machine-payable (x402) API endpoints · generated 2026-07-06</div>
+</footer>
+</div></body></html>

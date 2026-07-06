@@ -1,0 +1,1046 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>x402 endpoints offering OpenAI data — resale-authorization audit (85 suspected) — Provenance</title>
+<meta name="description" content="OpenAI API resold via x402? 85 suspected unauthorized OpenAI reseller endpoints found in public x402 registries (2 high-confidence, 74 active in 30d). Evidence, prices, on-chain payment counts. Verification recommended.">
+<link rel="canonical" href="https://apeirontrade.github.io/provenance-site/brands/openai.html">
+<meta property="og:title" content="x402 endpoints offering OpenAI data — resale-authorization audit (85 suspected) — Provenance">
+<meta property="og:description" content="OpenAI API resold via x402? 85 suspected unauthorized OpenAI reseller endpoints found in public x402 registries (2 high-confidence, 74 active in 30d). Evidence, prices, on-chain payment counts. Verification recommended.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://apeirontrade.github.io/provenance-site/brands/openai.html">
+<meta name="robots" content="index,follow">
+<style>
+  :root{color-scheme:light dark;
+    --bg:#0d1117;--panel:#161b22;--border:#30363d;--fg:#e6edf3;--dim:#8b949e;--accent:#58a6ff;--accent2:#d2a8ff;}
+  @media (prefers-color-scheme: light){:root{--bg:#f6f8fa;--panel:#ffffff;--border:#d0d7de;--fg:#1f2328;--dim:#57606a;--accent:#0969da;--accent2:#8250df;}}
+  *{box-sizing:border-box;margin:0}
+  body{background:var(--bg);color:var(--fg);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;padding:2.2rem 1rem 4rem}
+  .wrap{max-width:1080px;margin:0 auto}
+  header.site{margin-bottom:1.6rem}
+  .crumb{font-size:.82rem;color:var(--dim);margin-bottom:1rem}
+  .crumb a{color:var(--dim)}
+  h1{font-size:1.65rem;letter-spacing:-.01em;line-height:1.25}
+  h2{font-size:1.15rem;margin:2.2rem 0 .8rem}
+  h3{font-size:1rem;margin:1.6rem 0 .6rem}
+  .sub{color:var(--dim);margin:.5rem 0 1.4rem;max-width:62rem}
+  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.8rem;margin:1.4rem 0 1.8rem}
+  .tile{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:.85rem 1rem}
+  .tile b{display:block;font-size:1.4rem;font-weight:600}
+  .tile span{color:var(--dim);font-size:.8rem}
+  .tblwrap{overflow-x:auto;border:1px solid var(--border);border-radius:8px;background:var(--panel);margin:.6rem 0 1rem}
+  table{border-collapse:collapse;width:100%;font-size:.9rem}
+  th{color:var(--dim);font-weight:600;font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;text-align:left;padding:.65rem .8rem;border-bottom:1px solid var(--border);white-space:nowrap}
+  td{padding:.6rem .8rem;border-bottom:1px solid var(--border);vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82rem}
+  .dim{color:var(--dim)}
+  .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .center{text-align:center}
+  .ep-name{font-weight:600;overflow-wrap:anywhere}
+  .ep-meta{color:var(--dim);font-size:.76rem;margin-top:.15rem;overflow-wrap:anywhere}
+  .grade{display:inline-block;border:1px solid;border-radius:6px;padding:.05rem .55rem;font-weight:700;font-size:.98rem;white-space:nowrap}
+  .infl-pos{color:#f85149;font-weight:700;font-variant-numeric:tabular-nums}
+  .infl-neg{color:#3fb950;font-weight:600;font-variant-numeric:tabular-nums}
+  .infl-zero{color:var(--dim)}
+  .ind{font-size:.82rem;color:var(--dim);max-width:300px}
+  .pill{display:inline-block;border:1px solid var(--border);border-radius:99px;padding:.02rem .55rem;font-size:.74rem;color:var(--dim);white-space:nowrap}
+  .pill.ok{color:#3fb950;border-color:#3fb95055}
+  .pill.hi{color:#f0883e;border-color:#f0883e55}
+  .pill.med{color:#d29922;border-color:#d2992255}
+  .note,.callout{color:var(--dim);font-size:.84rem;margin:1.1rem 0;line-height:1.6;max-width:62rem}
+  .callout{background:var(--panel);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:6px;padding:.8rem 1rem;color:var(--fg)}
+  .callout.warn{border-left-color:#d29922}
+  ul.ev{margin:.2rem 0 .2rem 1rem;padding:0;font-size:.82rem;color:var(--dim)}
+  ul.ev li{margin:.15rem 0}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85em;background:var(--panel);border:1px solid var(--border);border-radius:4px;padding:.05em .3em}
+  .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.8rem;margin:1rem 0}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:1rem}
+  .card h3{margin:0 0 .4rem;font-size:.95rem}
+  .card p{font-size:.83rem;color:var(--dim)}
+  .brandlist{columns:3;column-gap:1.5rem;font-size:.9rem}
+  @media(max-width:800px){.brandlist{columns:2}}
+  @media(max-width:520px){.brandlist{columns:1}}
+  .brandlist li{margin:.25rem 0;break-inside:avoid}
+  footer.site{border-top:1px solid var(--border);margin-top:3rem;padding-top:1.1rem;color:var(--dim);font-size:.82rem;line-height:1.7}
+  footer.site nav{margin-bottom:.4rem}
+  footer.site nav a{margin-right:1.1rem}
+  dl.kv{display:grid;grid-template-columns:max-content 1fr;gap:.35rem 1.2rem;font-size:.9rem;margin:.8rem 0}
+  dl.kv dt{color:var(--dim)}
+  dl.kv dd{overflow-wrap:anywhere}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://apeirontrade.github.io/provenance-site/#org","name":"Provenance","url":"https://apeirontrade.github.io/provenance-site/","description":"Independent trust ratings for x402 machine-payable API endpoints, derived from public on-chain payment data and public discovery registries.","sameAs":["https://www.npmjs.com/package/provenance-mcp","https://www.npmjs.com/package/provenance-guard","https://github.com/apeirontrade/provenance-mcp","https://github.com/apeirontrade/provenance-guard"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Report","headline":"x402 endpoints offering OpenAI data — resale-authorization audit","author":{"@id":"https://apeirontrade.github.io/provenance-site/#org"},"datePublished":"2026-07-05","about":{"@type":"Brand","name":"OpenAI"},"mainEntityOfPage":"https://apeirontrade.github.io/provenance-site/brands/openai.html"}</script>
+</head><body><div class="wrap">
+<div class="crumb"><a href="../index.html">Provenance x402 Trust Index</a> &middot; <a href="../methodology.html">Methodology</a> &middot; <a href="../data/index.html">Open data</a></div>
+
+<h1>x402 endpoints offering OpenAI data <span class="dim">— resale-authorization audit</span></h1>
+<p class="sub">85 machine-payable (x402) endpoints in the public discovery registries exhibit reseller signatures referencing <b>OpenAI</b> while hosted off OpenAI's own domains. Resale-authorization status: <b>unknown — suspected unauthorized resale, verification recommended</b>. Any of these endpoints may hold a legitimate redistribution license.</p>
+
+<div class="callout">Context: OpenAI's usage policies restrict API-key sharing and resale of API access.</div>
+
+<div class="tiles">
+  <div class="tile"><b>85</b><span>suspected reseller endpoints</span></div>
+  <div class="tile"><b>2</b><span>high-confidence signatures (≥70/100)</span></div>
+  <div class="tile"><b>74</b><span>with paid activity in the last 30d</span></div>
+  <div class="tile"><b>0</b><span>live-402 confirmed by probe</span></div>
+</div>
+
+<p class="note">Scan of 23,376 unique x402 endpoints on 2026-07-05, sources: Coinbase Bazaar + GoPlausible registry. Payment counts come from the registries' own published 30-day quality signals. Evidence bullets are automated signature matches — see the <a href="../methodology.html">methodology</a> for signal definitions, false-positive modes, and the <a href="https://github.com/apeirontrade/provenance-site/issues">dispute path</a>. If you are on OpenAI's API or trust team and want the full evidence set or a re-verification, open an issue — it's free.</p>
+
+<div class="tblwrap"><table>
+<thead><tr><th>Endpoint</th><th>Price/call</th><th>Calls 30d</th><th>Signature</th><th>Evidence (automated signature matches)</th></tr></thead>
+<tbody><tr>
+  <td>
+    <div class="ep-name mono">https://miroshark-x402-production.up.railway.app/run</div>
+    <div class="ep-meta">MiroShark — MiroShark: run a multi-agent social-media simulation. Submit a prompt or scenario, get back a URL where you can watch a 25-agent simulation play out across Twitter, Reddit, and Pol…</div>
+    <div class="ep-meta mono">pays to 0x6797…e3a2 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$1.00</td>
+  <td class="num">20<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 90/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, X / Twitter, Reddit (via &quot;openai&quot; in schema) but is hosted on miroshark-x402-production.up.railway.app, not the brand's domain</li><li>'powered by' upstream-provider phrasing: &quot;Powered by&quot;</li><li>input schema is a bare passthrough (prompt) — consistent with forwarding to an upstream API</li><li>$1.0000/call ≈ 100.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://openweather-coral.vercel.app/weather/air-quality</div>
+    <div class="ep-meta"> — Air quality index (AQI) with PM2.5, PM10, NO2, O3, CO, SO2 for any location</div>
+    <div class="ep-meta mono">pays to 0x5B56…96f0 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0020</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill hi">high · 70/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, OpenWeatherMap (via &quot;o3&quot; in description) but is hosted on openweather-coral.vercel.app, not the brand's domain</li><li>brand term &quot;openweather&quot; appears in the endpoint URL itself</li><li>$0.0020/call ≈ 1.3× OpenWeatherMap's public ~$0.0015/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.getanyapi.com/v1/run/twitter.search</div>
+    <div class="ep-meta"> — AnyAPI twitter.search (X / Twitter Search)</div>
+    <div class="ep-meta mono">pays to 0x754B…ef13 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0140</td>
+  <td class="num">6<div class="ep-meta">3 payers</div></td>
+  <td class="center"><span class="pill med">medium · 68/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, X / Twitter (via &quot;openai&quot; in schema) but is hosted on api.getanyapi.com, not the brand's domain</li><li>brand term &quot;twitter&quot; appears in the endpoint URL itself</li><li>input schema is a bare passthrough (query) — consistent with forwarding to an upstream API</li><li>$0.0140/call ≈ 1.4× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://agent402.tools/api/transcribe</div>
+    <div class="ep-meta">Agent402.tools — Transcribe audio to text using OpenAI (gpt-4o-mini-transcribe). Provide a URL to an audio file (mp3, wav, m4a, etc.) and get back the transcript. No API key needed; pay per call vi…</div>
+    <div class="ep-meta mono">pays to 0xaBF4…a9D0 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0300</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 68/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI (via &quot;openai&quot; in description) but is hosted on agent402.tools, not the brand's domain</li><li>sells key-free access (upstream key laundering): &quot;No API key needed&quot;</li><li>input schema is a bare passthrough (url) — consistent with forwarding to an upstream API</li><li>$0.0300/call ≈ 3.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://agent402.tools/api/transcribe-pro</div>
+    <div class="ep-meta">Agent402.tools — Transcribe audio to text using OpenAI (gpt-4o-transcribe). Higher accuracy than the standard tier. Provide a URL to an audio file and get back the transcript. No API key needed; pa…</div>
+    <div class="ep-meta mono">pays to 0xaBF4…a9D0 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.10</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 68/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI (via &quot;openai&quot; in description) but is hosted on agent402.tools, not the brand's domain</li><li>sells key-free access (upstream key laundering): &quot;No API key needed&quot;</li><li>input schema is a bare passthrough (url) — consistent with forwarding to an upstream API</li><li>$0.1000/call ≈ 10.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-deployer.x402-deployer.workers.dev/moderate-content</div>
+    <div class="ep-meta"> — Content moderation / safety classifier / OpenAI-style toxicity API. Morpheus primary, Venice fallback. Scores harassment, hate_speech, violence, sexual_content, self_harm, spam, ph…</div>
+    <div class="ep-meta mono">pays to 0x6c07…5621 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0200</td>
+  <td class="num">8<div class="ep-meta">3 payers</div></td>
+  <td class="center"><span class="pill med">medium · 65/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI (via &quot;openai&quot; in description) but is hosted on x402-deployer.x402-deployer.workers.dev, not the brand's domain</li><li>input schema is a bare passthrough (text) — consistent with forwarding to an upstream API</li><li>$0.0200/call ≈ 2.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (workers.dev) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-deployer.x402-deployer.workers.dev/ai-content-detector</div>
+    <div class="ep-meta"> — AI content detector / GPT detector / ChatGPT plagiarism checker. Calibrated probability (0-1), verdict, suspicious phrases, per-axis style signals (em-dash overuse, hedge phrases, …</div>
+    <div class="ep-meta mono">pays to 0x6c07…5621 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0300</td>
+  <td class="num">4<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 65/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI (via &quot;chatgpt&quot; in description) but is hosted on x402-deployer.x402-deployer.workers.dev, not the brand's domain</li><li>input schema is a bare passthrough (text) — consistent with forwarding to an upstream API</li><li>$0.0300/call ≈ 3.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (workers.dev) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://glim.sh/api/v1/twitter/users/:ref/tweets</div>
+    <div class="ep-meta">glim.sh — User tweets</div>
+    <div class="ep-meta mono">pays to 9MkM5R…1vde on solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp · via bazaar</div>
+  </td>
+  <td class="num">$0.0040</td>
+  <td class="num">5<div class="ep-meta">4 payers</div></td>
+  <td class="center"><span class="pill med">medium · 63/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, X / Twitter, Reddit (via &quot;openai&quot; in schema) but is hosted on glim.sh, not the brand's domain</li><li>brand term &quot;twitter&quot; appears in the endpoint URL itself</li><li>$0.0040/call ≈ 16.7× Reddit's public ~$0.00024/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://marketpulse-brown.vercel.app/api/market/llm-visibility</div>
+    <div class="ep-meta">MarketPulse — Does ChatGPT, Claude, Gemini or Google AI Overviews even know this brand exists? Assesses current AI-answer visibility, scores the specific factors driving LLM citation, and return…</div>
+    <div class="ep-meta mono">pays to 0x50ab…12fc on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.15</td>
+  <td class="num">12<div class="ep-meta">3 payers</div></td>
+  <td class="center"><span class="pill med">medium · 60/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic (via &quot;chatgpt&quot; in description) but is hosted on marketpulse-brown.vercel.app, not the brand's domain</li><li>$0.1500/call ≈ 15.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://marketpulse-brown.vercel.app/api/market/content-brief</div>
+    <div class="ep-meta">MarketPulse — Will this content actually rank — and get cited by AI Overviews, ChatGPT or Claude? A complete content brief dual-optimized for traditional search and AI-answer citation: target qu…</div>
+    <div class="ep-meta mono">pays to 0x50ab…12fc on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.15</td>
+  <td class="num">5<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 60/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic (via &quot;chatgpt&quot; in description) but is hosted on marketpulse-brown.vercel.app, not the brand's domain</li><li>$0.1500/call ≈ 15.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://agent402.tools/api/moderate</div>
+    <div class="ep-meta">Agent402.tools — Check text for harmful content using OpenAI moderation (omni-moderation-latest). Returns flagged status, category breakdown (harassment, hate, self-harm, sexual, violence, etc.), a…</div>
+    <div class="ep-meta mono">pays to 0xaBF4…a9D0 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0020</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 60/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI (via &quot;openai&quot; in description) but is hosted on agent402.tools, not the brand's domain</li><li>sells key-free access (upstream key laundering): &quot;No API key needed&quot;</li><li>input schema is a bare passthrough (text) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://agent402.tools/api/embed</div>
+    <div class="ep-meta">Agent402.tools — Generate a text embedding vector using OpenAI text-embedding-3-small (1536 dimensions). Ideal for semantic search, RAG, and clustering. No API key needed; pay per call via x402. Te…</div>
+    <div class="ep-meta mono">pays to 0xaBF4…a9D0 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0050</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 60/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI (via &quot;openai&quot; in description) but is hosted on agent402.tools, not the brand's domain</li><li>sells key-free access (upstream key laundering): &quot;No API key needed&quot;</li><li>input schema is a bare passthrough (text) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://agent402.tools/api/embed-large</div>
+    <div class="ep-meta">Agent402.tools — Generate a text embedding vector using OpenAI text-embedding-3-large (3072 dimensions). Higher accuracy than the small model. Ideal for semantic search, RAG, and clustering. No API…</div>
+    <div class="ep-meta mono">pays to 0xaBF4…a9D0 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 60/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI (via &quot;openai&quot; in description) but is hosted on agent402.tools, not the brand's domain</li><li>sells key-free access (upstream key laundering): &quot;No API key needed&quot;</li><li>input schema is a bare passthrough (text) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.questflow.ai/x402/swarm/qrn:swarm:68ea4ca4101cbfe6d82a11a1</div>
+    <div class="ep-meta">Questflow — AI-powered content creation powerhouse combining Sora 2 video generation, advanced web scraping, SEO optimization, and GitHub automation. Transform ideas into professional videos, …</div>
+    <div class="ep-meta mono">pays to 0x7bc2…756b on base · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill med">medium · 60/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI (via &quot;sora&quot; in description) but is hosted on api.questflow.ai, not the brand's domain</li><li>'powered by' upstream-provider phrasing: &quot;Powered by&quot;</li><li>input schema is a bare passthrough (input) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.questflow.ai/x402/agent/qrn:agent:68e4cc307ad7f91b3bcf0085</div>
+    <div class="ep-meta">Questflow — Generate high-quality videos using OpenAI Sora 2 Pro model. Supports text-to-video and video remix capabilities. | Powered by Questflow</div>
+    <div class="ep-meta mono">pays to 0x4D47…934c on base · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill med">medium · 60/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI (via &quot;openai&quot; in description) but is hosted on api.questflow.ai, not the brand's domain</li><li>'powered by' upstream-provider phrasing: &quot;Powered by&quot;</li><li>input schema is a bare passthrough (input) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.questflow.ai/x402/swarm/qrn:swarm:68e4e75ac6cf26284d555def</div>
+    <div class="ep-meta">Questflow — Generate high-quality videos using OpenAI Sora 2 Pro model. Supports text-to-video and video remix capabilities. | Powered by Questflow</div>
+    <div class="ep-meta mono">pays to 0xf009…23A0 on base · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill med">medium · 60/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI (via &quot;openai&quot; in description) but is hosted on api.questflow.ai, not the brand's domain</li><li>'powered by' upstream-provider phrasing: &quot;Powered by&quot;</li><li>input schema is a bare passthrough (input) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.questflow.ai/x402/agent/qrn:agent:687df6abb234010b7d3318ae</div>
+    <div class="ep-meta">Questflow — Generate high-quality images using OpenAI. | Powered by Questflow</div>
+    <div class="ep-meta mono">pays to 0x3A89…7D3b on base · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill med">medium · 60/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI (via &quot;openai&quot; in description) but is hosted on api.questflow.ai, not the brand's domain</li><li>'powered by' upstream-provider phrasing: &quot;Powered by&quot;</li><li>input schema is a bare passthrough (input) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api-dev.intra-tls2.dctx.link/x402/agent/qrn:agent:687f3708eb51e7d6d6849d8c</div>
+    <div class="ep-meta"> — Generate high-quality images using OpenAI. | Powered by Questflow</div>
+    <div class="ep-meta mono">pays to 0xDDc6…3eD7 on base-sepolia · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill med">medium · 60/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI (via &quot;openai&quot; in description) but is hosted on api-dev.intra-tls2.dctx.link, not the brand's domain</li><li>'powered by' upstream-provider phrasing: &quot;Powered by&quot;</li><li>input schema is a bare passthrough (input) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api-dev.intra-tls2.dctx.link/x402/swarm/qrn:swarm:68e4a9c2f71c46c3dab6c5da</div>
+    <div class="ep-meta"> — Sora is OpenAI's newest frontier in generative media – a state-of-the-art video model capable of creating richly detailed, dynamic clips with audio from natural language or images.…</div>
+    <div class="ep-meta mono">pays to 0x3bC8…07Ad on base-sepolia · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill med">medium · 60/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI (via &quot;openai&quot; in description) but is hosted on api-dev.intra-tls2.dctx.link, not the brand's domain</li><li>'powered by' upstream-provider phrasing: &quot;Powered by&quot;</li><li>input schema is a bare passthrough (input) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api-dev.intra-tls2.dctx.link/x402/agent/qrn:agent:68e4a5d524bb22800207a929</div>
+    <div class="ep-meta"> — Generate high-quality videos using OpenAI Sora 2 Pro model. Supports text-to-video and video remix capabilities. | Powered by Questflow</div>
+    <div class="ep-meta mono">pays to 0x7C61…56f5 on base-sepolia · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill med">medium · 60/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI (via &quot;openai&quot; in description) but is hosted on api-dev.intra-tls2.dctx.link, not the brand's domain</li><li>'powered by' upstream-provider phrasing: &quot;Powered by&quot;</li><li>input schema is a bare passthrough (input) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api-dev.intra-tls2.dctx.link/x402/agent/qrn:agent:687f06f575c60d9158e812f4</div>
+    <div class="ep-meta"> — Generate high-quality images using OpenAI. | Powered by Questflow</div>
+    <div class="ep-meta mono">pays to 0xB82e…2b54 on base-sepolia · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill med">medium · 60/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI (via &quot;openai&quot; in description) but is hosted on api-dev.intra-tls2.dctx.link, not the brand's domain</li><li>'powered by' upstream-provider phrasing: &quot;Powered by&quot;</li><li>input schema is a bare passthrough (input) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://scan.convrgent.ai/api/aeo/scan-x402</div>
+    <div class="ep-meta"> — Paid equivalent of /api/aeo/scan — scanner for AI search visibility (AEO, GEO) and agent readiness. Triple score + AI Identity Card + top issues covering JSON-LD Schema.org, meta t…</div>
+    <div class="ep-meta mono">pays to 0xc273…9882 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">4<div class="ep-meta">3 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Perplexity (via &quot;chatgpt&quot; in description) but is hosted on scan.convrgent.ai, not the brand's domain</li><li>input schema is a bare passthrough (url) — consistent with forwarding to an upstream API</li><li>$0.0100/call ≈ 2.0× Perplexity's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://content.hugen.tokyo/content/summary</div>
+    <div class="ep-meta"> — AI-powered content summarization — extracts clean text from any URL then generates a concise 2-4 sentence summary, 3-5 key points, and named entity extraction (people, organization…</div>
+    <div class="ep-meta mono">pays to 0x2932…4f60 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0200</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic (via &quot;gpt-4&quot; in schema) but is hosted on content.hugen.tokyo, not the brand's domain</li><li>input schema is a bare passthrough (url) — consistent with forwarding to an upstream API</li><li>$0.0200/call ≈ 2.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://agent402.tools/api/tts</div>
+    <div class="ep-meta">Agent402.tools — Convert text to speech using OpenAI TTS-1. Returns base64-encoded audio (mp3/opus/aac/flac/wav/pcm). 10 voices available. No API key needed; pay per call via x402. Text capped at 2…</div>
+    <div class="ep-meta mono">pays to 0xaBF4…a9D0 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0500</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI (via &quot;openai&quot; in description) but is hosted on agent402.tools, not the brand's domain</li><li>sells key-free access (upstream key laundering): &quot;No API key needed&quot;</li><li>$0.0500/call ≈ 5.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://agent402.tools/api/tts-hd</div>
+    <div class="ep-meta">Agent402.tools — Convert text to speech using OpenAI TTS-1-HD (higher fidelity). Returns base64-encoded audio. Same interface as /api/tts but with better audio quality. No API key needed; pay per c…</div>
+    <div class="ep-meta mono">pays to 0xaBF4…a9D0 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.10</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI (via &quot;openai&quot; in description) but is hosted on agent402.tools, not the brand's domain</li><li>sells key-free access (upstream key laundering): &quot;No API key needed&quot;</li><li>$0.1000/call ≈ 10.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://agent402.tools/api/llm-pro</div>
+    <div class="ep-meta">Agent402.tools — LLM inference proxy (Pro tier) — GPT-4o or GPT-4.1. Same OpenAI-format interface as /api/llm but with more capable models. No API key needed; pay per call via x402. Input capped at…</div>
+    <div class="ep-meta mono">pays to 0xaBF4…a9D0 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.10</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI (via &quot;openai&quot; in description) but is hosted on agent402.tools, not the brand's domain</li><li>sells key-free access (upstream key laundering): &quot;No API key needed&quot;</li><li>$0.1000/call ≈ 10.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://agent402.tools/api/llm-premium</div>
+    <div class="ep-meta">Agent402.tools — LLM inference proxy (Premium tier) — o3-mini reasoning model via the same OpenAI-format interface. No API key needed; pay per call via x402. Input capped at 32k chars, output at 20…</div>
+    <div class="ep-meta mono">pays to 0xaBF4…a9D0 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.50</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 58/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI (via &quot;openai&quot; in description) but is hosted on agent402.tools, not the brand's domain</li><li>sells key-free access (upstream key laundering): &quot;No API key needed&quot;</li><li>$0.5000/call ≈ 50.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://defi-shield-hazel.vercel.app/api/dev/secrets-scan</div>
+    <div class="ep-meta"> — Secrets detection — AWS, GitHub, Stripe, OpenAI, PEM keys, JWTs, DB URIs, Slack, Google, Twilio, SendGrid, passwords</div>
+    <div class="ep-meta mono">pays to 0x0814…Ed7b on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0200</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 55/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI (via &quot;openai&quot; in description) but is hosted on defi-shield-hazel.vercel.app, not the brand's domain</li><li>$0.0200/call ≈ 2.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402.miroshark.xyz/run</div>
+    <div class="ep-meta">MiroShark — MiroShark: run a 25-agent social-media simulation across Twitter, Reddit, and Polymarket over 10 rounds from a single prompt, URL, or article, then read a synthesized markdown repo…</div>
+    <div class="ep-meta mono">pays to 0x6797…e3a2 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$1.00</td>
+  <td class="num">134<div class="ep-meta">26 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">probe: HTTP 405</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, X / Twitter, Reddit (via &quot;openai&quot; in schema) but is hosted on x402.miroshark.xyz, not the brand's domain</li><li>$1.0000/call ≈ 100.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402stock.xyz/api/v1/screener/smart</div>
+    <div class="ep-meta"> — Describe a screen in plain English via `?q=` (e.g. 'oversold large caps up today on high volume'). An LLM parses it into a filter, screens the entire US market, optionally confirms…</div>
+    <div class="ep-meta mono">pays to 0x3070…fA85 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.20</td>
+  <td class="num">19<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI (via &quot;gpt-4o&quot; in schema) but is hosted on x402stock.xyz, not the brand's domain</li><li>input schema is a bare passthrough (q) — consistent with forwarding to an upstream API</li><li>$0.2000/call ≈ 20.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://store.agentexchange.work/brands/check</div>
+    <div class="ep-meta">Live Brand AI-Visibility Check — Live brand AI-visibility audit: does ChatGPT, Perplexity, Gemini, Google AI Overviews or Claude recommend this brand when buyers ask for the best in its category, or name competito…</div>
+    <div class="ep-meta mono">pays to 0xc91c…b95c on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.49</td>
+  <td class="num">11<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic, Perplexity (via &quot;chatgpt&quot; in description) but is hosted on store.agentexchange.work, not the brand's domain</li><li>$0.4900/call ≈ 49.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://aeonos.basechainlabs.com/api/agent</div>
+    <div class="ep-meta"> — Improve AI search visibility and get cited by ChatGPT, Perplexity, Claude &amp; Google AI Overviews. AEO/GEO/SEO strategy, AI visibility audits, schema markup, llms.txt. 0.05 USDC/quer…</div>
+    <div class="ep-meta mono">pays to 0x400d…bacc on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0500</td>
+  <td class="num">5<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic, Perplexity (via &quot;chatgpt&quot; in description) but is hosted on aeonos.basechainlabs.com, not the brand's domain</li><li>$0.0500/call ≈ 5.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.myceliasignal.com/oracle/inference/openai/pricing</div>
+    <div class="ep-meta"> — OpenAI model pricing — input/output $/M tokens, context windows — Ed25519 signed attestation</div>
+    <div class="ep-meta mono">pays to 0xD593…700d on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0200</td>
+  <td class="num">5<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI (via &quot;openai&quot; in url) but is hosted on api.myceliasignal.com, not the brand's domain</li><li>brand term &quot;openai&quot; appears in the endpoint URL itself</li><li>$0.0200/call ≈ 2.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://glim.sh/api/v1/inference/v1/chat/completions</div>
+    <div class="ep-meta">glim.sh — LLM chat completion (OpenAI-compatible, streaming supported)</div>
+    <div class="ep-meta mono">pays to 9MkM5R…1vde on solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp · via bazaar</div>
+  </td>
+  <td class="num">$0.0054</td>
+  <td class="num">4<div class="ep-meta">3 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, X / Twitter, Reddit (via &quot;openai&quot; in description) but is hosted on glim.sh, not the brand's domain</li><li>$0.0054/call ≈ 22.5× Reddit's public ~$0.00024/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://aeonos.basechainlabs.com/api/llms-txt</div>
+    <div class="ep-meta"> — Generate llms.txt to improve AI search visibility — structured file for ChatGPT, Perplexity &amp; Claude crawlers. Helps AI engines understand and cite your business. 0.50 USDC.</div>
+    <div class="ep-meta mono">pays to 0x400d…bacc on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.50</td>
+  <td class="num">3<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic, Perplexity (via &quot;chatgpt&quot; in description) but is hosted on aeonos.basechainlabs.com, not the brand's domain</li><li>$0.5000/call ≈ 50.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.phoneagent.xyz/services</div>
+    <div class="ep-meta"> — PhoneAgent — full directory of services with rentable SMS phone numbers for AI agents. Returns 1,000+ service aliases: Telegram, WhatsApp, Google, Facebook, Instagram, Twitter/X, D…</div>
+    <div class="ep-meta mono">pays to 0xF670…576A on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">2<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic, X / Twitter, Instagram, Binance (via &quot;openai&quot; in description) but is hosted on api.phoneagent.xyz, not the brand's domain</li><li>$0.0100/call ≈ 2.0× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://www.rebatify.net/api/x402/openai-gap</div>
+    <div class="ep-meta"> — Cross-exchange OpenAI pre-IPO equity price gaps, ranked by basis-point spread (live arbitrage data).</div>
+    <div class="ep-meta mono">pays to 0xA9BD…d0b8 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$1.00</td>
+  <td class="num">2<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI (via &quot;openai&quot; in url) but is hosted on www.rebatify.net, not the brand's domain</li><li>brand term &quot;openai&quot; appears in the endpoint URL itself</li><li>$1.0000/call ≈ 100.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402.agentutility.ai/research-brief</div>
+    <div class="ep-meta">AgentUtility.ai — Builds a structured research brief on a company, person, product, or topic as fixed-shape JSON: overview, key_facts, recent_news (with date hints), all with source-index citations.…</div>
+    <div class="ep-meta mono">pays to 0x6c07…5621 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.10</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references Google Search (SERP), OpenAI, Anthropic (via &quot;google serp&quot; in description) but is hosted on x402.agentutility.ai, not the brand's domain</li><li>$0.1000/call ≈ 20.0× Google Search (SERP)'s public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402.agentutility.ai/ai-content-detector</div>
+    <div class="ep-meta"> — AI content detector / GPT detector / ChatGPT plagiarism checker. Calibrated probability (0-1), verdict, suspicious phrases, per-axis style signals (em-dash overuse, hedge phrases, …</div>
+    <div class="ep-meta mono">pays to 0x6c07…5621 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0300</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI (via &quot;chatgpt&quot; in description) but is hosted on x402.agentutility.ai, not the brand's domain</li><li>input schema is a bare passthrough (text) — consistent with forwarding to an upstream API</li><li>$0.0300/call ≈ 3.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://omnicall.gocreativeai.com/v1/ai/pro/:var1</div>
+    <div class="ep-meta"> — AI completion, frontier tier — Claude 4.5 Sonnet (default; ?model=gpt-5|gpt-4o|gemini-pro|gemini-3.1-pro). Pay USDC per call, no API key, no signup. For agents that need a frontier…</div>
+    <div class="ep-meta mono">pays to 0xbAf5…53Cc on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0800</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 53/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic, Google Gemini (via &quot;gpt-4o&quot; in description) but is hosted on omnicall.gocreativeai.com, not the brand's domain</li><li>$0.0800/call ≈ 8.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-deployer.x402-deployer.workers.dev/token-count</div>
+    <div class="ep-meta"> — Token count / tokenizer estimate / GPT-4 token count / Claude token count / Gemini token count / context-window pre-flight. Pure-local heuristic estimator targeting cl100k_base / o…</div>
+    <div class="ep-meta mono">pays to 0x6c07…5621 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">5<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 52/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic (via &quot;gpt-4&quot; in description) but is hosted on x402-deployer.x402-deployer.workers.dev, not the brand's domain</li><li>hosted on generic infrastructure (workers.dev) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-deployer.x402-deployer.workers.dev/citation-verify</div>
+    <div class="ep-meta"> — Citation verifier / fact-check against URL / does-this-source-support-this-claim / hallucination detector. Fetches a source URL (HTML stripped, 100KB cap), and asks Venice claude-s…</div>
+    <div class="ep-meta mono">pays to 0x6c07…5621 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">4<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 52/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic (via &quot;gpt-4&quot; in schema) but is hosted on x402-deployer.x402-deployer.workers.dev, not the brand's domain</li><li>hosted on generic infrastructure (workers.dev) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://www.surplusintelligence.ai/x402/api/inference/v1/chat/completions</div>
+    <div class="ep-meta"> — Get OpenAI-compatible inference from many models at market prices via Surplus Intelligence.</div>
+    <div class="ep-meta mono">pays to 0x8581…c402 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0033</td>
+  <td class="num">861<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 50/100</span><div style="margin-top:.3rem"><span class="pill">probe: HTTP 404</span></div></td>
+  <td><ul class="ev"><li>references OpenAI (via &quot;openai&quot; in description) but is hosted on www.surplusintelligence.ai, not the brand's domain</li><li>declares upstream data source: &quot;prices via Surplus&quot;</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.surplusintelligence.ai/v1/chat/completions</div>
+    <div class="ep-meta"> — Get OpenAI-compatible inference from many models at market prices via Surplus Intelligence.</div>
+    <div class="ep-meta mono">pays to 0x8581…c402 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0033</td>
+  <td class="num">43<div class="ep-meta">6 payers</div></td>
+  <td class="center"><span class="pill med">medium · 50/100</span><div style="margin-top:.3rem"><span class="pill">probe: HTTP 404</span></div></td>
+  <td><ul class="ev"><li>references OpenAI (via &quot;openai&quot; in description) but is hosted on api.surplusintelligence.ai, not the brand's domain</li><li>declares upstream data source: &quot;prices via Surplus&quot;</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://cnvrt.ing/api/analyze-image</div>
+    <div class="ep-meta"> — Extract raw artifacts from images: OCR text and detected objects. No interpretation, just clean machine-readable data. Powered by GPT-4o Vision. Payment via USDC on base.</div>
+    <div class="ep-meta mono">pays to 0xfad6…2084 on base · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">7<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 50/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI (via &quot;gpt-4o&quot; in description) but is hosted on cnvrt.ing, not the brand's domain</li><li>'powered by' upstream-provider phrasing: &quot;Powered by&quot;</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://gateway.apiosk.com/weatherapi/current</div>
+    <div class="ep-meta"> — Returns real-time current weather for a location (city name, decimal lat,lon, US/UK/Canada postal code, IATA airport code such as iata:DXB, or auto:ip), including temperature, wind…</div>
+    <div class="ep-meta mono">pays to 0xA039…3B79 on base · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">3<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill med">medium · 50/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, WeatherAPI.com (via &quot;o3&quot; in schema) but is hosted on gateway.apiosk.com, not the brand's domain</li><li>brand term &quot;weatherapi&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://agent402.tools/api/llm</div>
+    <div class="ep-meta">Agent402.tools — LLM inference proxy — send an OpenAI-format chat/completions request and get a response from GPT-4o-mini. No API key needed; pay per call via x402. Supports temperature, top_p, sto…</div>
+    <div class="ep-meta mono">pays to 0xaBF4…a9D0 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill med">medium · 50/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI (via &quot;openai&quot; in description) but is hosted on agent402.tools, not the brand's domain</li><li>sells key-free access (upstream key laundering): &quot;No API key needed&quot;</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402stock.xyz/api/v1/private-stocks</div>
+    <div class="ep-meta"> — Live valuations for private, pre-IPO companies — Anthropic, OpenAI, SpaceX, Anduril, Neuralink, Kalshi, Polymarket — in one call, via PreStocks Solana tokens backed 1:1 by SPV expo…</div>
+    <div class="ep-meta mono">pays to 0x3070…fA85 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0200</td>
+  <td class="num">27<div class="ep-meta">4 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic (via &quot;openai&quot; in description) but is hosted on x402stock.xyz, not the brand's domain</li><li>$0.0200/call ≈ 2.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://pay.alephant.io/x402/serp-ranking-analysis-tool</div>
+    <div class="ep-meta">Alephant — Analyze keyword rankings, competitor visibility, and SERP performance to identify SEO opportunities and improve search result positioning.</div>
+    <div class="ep-meta mono">pays to GyUs49…VrJv on solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">20<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, X / Twitter (via &quot;openai&quot; in schema) but is hosted on pay.alephant.io, not the brand's domain</li><li>$0.0100/call ≈ 2.0× X / Twitter's public ~$0.005/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://gateway.gedx402.com/v1/unified/run</div>
+    <div class="ep-meta">GEDX402 Gateway — Frontier chat via env.AI.run(author/model) and unified billing credits — no operator BYOK keys. POST model slug (allowlisted) and messages[]; x402 wire priced per model worst-case …</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0780</td>
+  <td class="num">17<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic (via &quot;openai&quot; in tags) but is hosted on gateway.gedx402.com, not the brand's domain</li><li>$0.0780/call ≈ 7.8× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://tensorfeed.ai/api/premium/whats-new</div>
+    <div class="ep-meta"> — Agent morning brief. One paid call returns the last 24 hours of AI pricing changes, new and removed models, service-status incidents, and top news headlines. The endpoint an agent …</div>
+    <div class="ep-meta mono">pays to 0x549c…c6d1 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0200</td>
+  <td class="num">15<div class="ep-meta">12 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic (via &quot;openai&quot; in schema) but is hosted on tensorfeed.ai, not the brand's domain</li><li>$0.0200/call ≈ 2.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://store.agentexchange.work/crypto/ai-visibility</div>
+    <div class="ep-meta">Crypto Project AI-Visibility — Does ChatGPT / Perplexity / Google AI recommend this token, protocol, or chain when traders ask for the best in its category? Returns an AI-visibility score 0-100, mention rate, an…</div>
+    <div class="ep-meta mono">pays to 0xc91c…b95c on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0500</td>
+  <td class="num">14<div class="ep-meta">3 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Perplexity (via &quot;chatgpt&quot; in description) but is hosted on store.agentexchange.work, not the brand's domain</li><li>$0.0500/call ≈ 5.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://voidfeed.ai/v1/content/fact-feed/latest</div>
+    <div class="ep-meta">VoidFeed — Returns verified, citation-backed facts about new AI model releases, benchmark scores, and protocol changes, each with source URLs and confidence.</div>
+    <div class="ep-meta mono">pays to 0x7103…3661 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0500</td>
+  <td class="num">7<div class="ep-meta">5 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic (via &quot;gpt-4o&quot; in schema) but is hosted on voidfeed.ai, not the brand's domain</li><li>$0.0500/call ≈ 5.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://voidfeed.ai/v1/content/extract/dataset/latest</div>
+    <div class="ep-meta">VoidFeed — Returns clean, normalized datasets of AI model benchmarks, pricing, leaderboard scores, and Ethereum EIPs, parsed from sources that are costly to scrape.</div>
+    <div class="ep-meta mono">pays to 0x7103…3661 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0500</td>
+  <td class="num">6<div class="ep-meta">5 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic (via &quot;openai&quot; in schema) but is hosted on voidfeed.ai, not the brand's domain</li><li>$0.0500/call ≈ 5.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://scan.convrgent.ai/api/aeo/audit</div>
+    <div class="ep-meta"> — Scanner for AI search visibility (AEO, GEO) and agent readiness — audits JSON-LD Schema.org structured data, meta tags, robots.txt, llms.txt, sitemap, content quality, and agent-di…</div>
+    <div class="ep-meta mono">pays to 0xc273…9882 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$1.00</td>
+  <td class="num">5<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Perplexity (via &quot;chatgpt&quot; in description) but is hosted on scan.convrgent.ai, not the brand's domain</li><li>$1.0000/call ≈ 100.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://netintel.dev/messages</div>
+    <div class="ep-meta"> — OpenAI-compatible chat completions over x402, answered by Claude Sonnet 4.6 — send a messages array and get an assistant reply for Q&amp;A, reasoning, agent planning, coding help, summ…</div>
+    <div class="ep-meta mono">pays to 0xdaDc…b9Df on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0600</td>
+  <td class="num">5<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic (via &quot;openai&quot; in description) but is hosted on netintel.dev, not the brand's domain</li><li>$0.0600/call ≈ 6.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.myceliasignal.com/oracle/inference/all</div>
+    <div class="ep-meta"> — All LLM inference pricing — 6 providers, 26 models, normalized to $/M tokens. Ed25519 signed. — Ed25519 signed attestation</div>
+    <div class="ep-meta mono">pays to 0xD593…700d on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0200</td>
+  <td class="num">5<div class="ep-meta">2 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic (via &quot;openai&quot; in schema) but is hosted on api.myceliasignal.com, not the brand's domain</li><li>$0.0200/call ≈ 2.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://agent402.tools/v1/chat/completions</div>
+    <div class="ep-meta">Agent402.tools — OpenAI-compatible chat completions over x402 — point any OpenAI SDK at base_url https://agent402.tools/v1 and pay per call in USDC (Base, Solana, Polygon, Arbitrum, Stellar), no AP…</div>
+    <div class="ep-meta mono">pays to 0xaBF4…a9D0 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0200</td>
+  <td class="num">5<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic (via &quot;openai&quot; in description) but is hosted on agent402.tools, not the brand's domain</li><li>$0.0200/call ≈ 2.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://api.hyperd.ai/api/governance/summarize</div>
+    <div class="ep-meta"> — DAO governance proposal summarization. Detects Snapshot/Tally URLs, fetches proposal data, returns a structured summary with impact analysis. LLM-powered when ANTHROPIC_API_KEY or …</div>
+    <div class="ep-meta mono">pays to 0x61b5…f1C6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.10</td>
+  <td class="num">3<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic (via &quot;openai&quot; in description) but is hosted on api.hyperd.ai, not the brand's domain</li><li>$0.1000/call ≈ 10.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://the-stall.intuitek.ai/cap/equity-brief</div>
+    <div class="ep-meta"> — AI-synthesized equity situation brief for any US stock. Gathers five signal layers in parallel — current price/52w range, RSI-14 + SMA20/50/200 trend regime, insider buy/sell activ…</div>
+    <div class="ep-meta mono">pays to 0x03d7…584c on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.35</td>
+  <td class="num">3<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Yahoo Finance (via &quot;gpt-4o&quot; in description) but is hosted on the-stall.intuitek.ai, not the brand's domain</li><li>$0.3500/call ≈ 35.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://market.memoryapi.org/x402/market/preipo</div>
+    <div class="ep-meta"> — Pre-IPO and private company token prices — SpaceX, OpenAI, and other unicorns trading as tokenized assets via CoinGecko.</div>
+    <div class="ep-meta mono">pays to 0x24FA…9bf2 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, CoinGecko (via &quot;openai&quot; in description) but is hosted on market.memoryapi.org, not the brand's domain</li><li>$0.0010/call ≈ 1.3× CoinGecko's public ~$0.0008/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://the-stall.intuitek.ai/cap/energy-brief</div>
+    <div class="ep-meta"> — AI-synthesized US energy market intelligence brief. Assembles 9 real-time signals from Yahoo Finance: WTI crude futures, Brent crude (with spread), natural gas (Henry Hub proxy), e…</div>
+    <div class="ep-meta mono">pays to 0x03d7…584c on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.65</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Yahoo Finance (via &quot;gpt-4o&quot; in description) but is hosted on the-stall.intuitek.ai, not the brand's domain</li><li>$0.6500/call ≈ 65.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://the-stall.intuitek.ai/cap/macro-brief</div>
+    <div class="ep-meta"> — AI-synthesized US macroeconomic situation briefing. Gathers 7 real-time signals — HY/IG credit spreads, yield curve (10Y-3M), initial jobless claims, JOLTS openings, core PCE, and …</div>
+    <div class="ep-meta mono">pays to 0x03d7…584c on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.35</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Bloomberg (via &quot;gpt-4o&quot; in description) but is hosted on the-stall.intuitek.ai, not the brand's domain</li><li>$0.3500/call ≈ 35.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://tensorfeed.ai/api/premium/providers/:name</div>
+    <div class="ep-meta"> — Per-provider digest. Pass the provider slug (anthropic, openai, google, etc.) as the URL path segment. Returns the model catalog scoped to that provider plus current pricing matrix…</div>
+    <div class="ep-meta mono">pays to 0x549c…c6d1 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.10</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic (via &quot;openai&quot; in description) but is hosted on tensorfeed.ai, not the brand's domain</li><li>$0.1000/call ≈ 10.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://tensorfeed.ai/api/premium/cost/projection</div>
+    <div class="ep-meta"> — Project the cost of a token-usage workload across 1-10 AI models. Returns daily, weekly, monthly, and yearly totals per model plus a ranking by cheapest monthly. The canonical &quot;giv…</div>
+    <div class="ep-meta mono">pays to 0x549c…c6d1 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0200</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic (via &quot;gpt-5&quot; in schema) but is hosted on tensorfeed.ai, not the brand's domain</li><li>$0.0200/call ≈ 2.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://tensorfeed.ai/api/premium/compare/models</div>
+    <div class="ep-meta"> — Side-by-side comparison of 2-5 AI models. Returns pricing, benchmarks normalized to union-of-keys with explicit nulls, live provider status, recent news mentions, and per-benchmark…</div>
+    <div class="ep-meta mono">pays to 0x549c…c6d1 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0200</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic (via &quot;gpt-5&quot; in schema) but is hosted on tensorfeed.ai, not the brand's domain</li><li>$0.0200/call ≈ 2.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://www.rebatify.net/api/x402/preipo-discovery</div>
+    <div class="ep-meta"> — Pre-IPO listing directory — which exchanges list which pre-IPO / prediction assets (SpaceX, OpenAI, Anthropic, Anduril, Kalshi, Polymarket). Filter by asset.</div>
+    <div class="ep-meta mono">pays to 0xA9BD…d0b8 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$1.00</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic (via &quot;openai&quot; in description) but is hosted on www.rebatify.net, not the brand's domain</li><li>$1.0000/call ≈ 100.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://omnicall.gocreativeai.com/v1/ai/ask/:var1</div>
+    <div class="ep-meta"> — AI completion — send any prompt, get a frontier-quality answer (DeepSeek V3.1 default; ?model=gpt-5-mini|gemini-flash). Pay USDC per call, no API key, no signup — agents outsource …</div>
+    <div class="ep-meta mono">pays to 0xbAf5…53Cc on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0200</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Google Gemini (via &quot;gpt-5&quot; in description) but is hosted on omnicall.gocreativeai.com, not the brand's domain</li><li>$0.0200/call ≈ 2.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://the-stall.intuitek.ai/cap/healthcare-brief</div>
+    <div class="ep-meta"> — AI-synthesized US healthcare and biotech sector intelligence brief. Assembles 10 real-time signals from Yahoo Finance: healthcare sector ETF (XLV), large-cap biotech (IBB), small-c…</div>
+    <div class="ep-meta mono">pays to 0x03d7…584c on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.35</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Yahoo Finance (via &quot;gpt-4o&quot; in description) but is hosted on the-stall.intuitek.ai, not the brand's domain</li><li>$0.3500/call ≈ 35.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">http://algo.netintel.dev/ai-image/generate</div>
+    <div class="ep-meta"> — AI image asset generator for agents: app icons, logos, avatars, social graphics, OG images, blog thumbnails, banners, product mockups, web images, illustrations. A Claude Haiku pas…</div>
+    <div class="ep-meta mono">pays to KGIEWE…P6EM on algorand:wGHE2Pwdvd7S12BL5FaOP20EGYesN73ktiC1qzkkit8= · via goplausible</div>
+  </td>
+  <td class="num">$0.25</td>
+  <td class="num">1<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic (via &quot;openai&quot; in description) but is hosted on algo.netintel.dev, not the brand's domain</li><li>$0.2500/call ≈ 25.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">http://algo.netintel.dev/messages</div>
+    <div class="ep-meta"> — OpenAI-compatible chat completions endpoint served by Claude Sonnet 4.6. Send a chat.completions-shaped body (messages array, optional model/max_tokens/temperature); receive a chat…</div>
+    <div class="ep-meta mono">pays to KGIEWE…P6EM on algorand:wGHE2Pwdvd7S12BL5FaOP20EGYesN73ktiC1qzkkit8= · via goplausible</div>
+  </td>
+  <td class="num">$0.0600</td>
+  <td class="num">1<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill ">low · 48/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic (via &quot;openai&quot; in description) but is hosted on algo.netintel.dev, not the brand's domain</li><li>$0.0600/call ≈ 6.0× OpenAI's public ~$0.01/call — consistent with cost-plus resale margin</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-deployer.x402-deployer.workers.dev/image-generate</div>
+    <div class="ep-meta"> — Image generate (fast/cheap) / text-to-image / AI art. SFW, sub-5s turnaround. Four tiers backed by curated $0.01 Venice models: 'fast' (z-image-turbo, default), 'creative' (chroma)…</div>
+    <div class="ep-meta mono">pays to 0x6c07…5621 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">15<div class="ep-meta">6 payers</div></td>
+  <td class="center"><span class="pill ">low · 47/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI (via &quot;openai&quot; in description) but is hosted on x402-deployer.x402-deployer.workers.dev, not the brand's domain</li><li>hosted on generic infrastructure (workers.dev) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://x402-deployer.x402-deployer.workers.dev/text-embedding</div>
+    <div class="ep-meta"> — Text embedding / vector embedding / semantic vector / Venice embeddings / Gemini embeddings / BGE-M3. Embeds 1 to 100 strings via Venice. Tier shorthand: 'default' → gemini-embeddi…</div>
+    <div class="ep-meta mono">pays to 0x6c07…5621 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0020</td>
+  <td class="num">8<div class="ep-meta">4 payers</div></td>
+  <td class="center"><span class="pill ">low · 47/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI (via &quot;openai&quot; in description) but is hosted on x402-deployer.x402-deployer.workers.dev, not the brand's domain</li><li>hosted on generic infrastructure (workers.dev) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://judicious-earnest-vaporware.replit.app/pulse</div>
+    <div class="ep-meta">AI &amp; Tech News Pulse — Real-time AI/tech/startup news with sentiment scoring and an overall market pulse — a recurring feed for research and trading agents</div>
+    <div class="ep-meta mono">pays to 0xE3fb…cc20 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0020</td>
+  <td class="num">6<div class="ep-meta">4 payers</div></td>
+  <td class="center"><span class="pill ">low · 47/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI (via &quot;openai&quot; in schema) but is hosted on judicious-earnest-vaporware.replit.app, not the brand's domain</li><li>hosted on generic infrastructure (replit.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://ged-x402-media.jvalamis.workers.dev/v1/asr/:model</div>
+    <div class="ep-meta">GEDX402 Media — Transcribe speech to text with Whisper Tiny EN (@cf/openai/whisper-tiny-en). POST audio (base64) or audio URL; returns transcript text billed by audio duration.</div>
+    <div class="ep-meta mono">pays to 0xb3C2…2Ab6 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0077</td>
+  <td class="num">2<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 47/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI (via &quot;openai&quot; in description) but is hosted on ged-x402-media.jvalamis.workers.dev, not the brand's domain</li><li>hosted on generic infrastructure (workers.dev) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://wayback-x402.vercel.app/wayback/check</div>
+    <div class="ep-meta"> — Wayback Machine availability check. Returns whether a URL has been archived and the closest snapshot to a given timestamp. Use to verify if a page existed at a specific point in ti…</div>
+    <div class="ep-meta mono">pays to 0x5B56…96f0 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0020</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 47/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI (via &quot;openai&quot; in schema) but is hosted on wayback-x402.vercel.app, not the brand's domain</li><li>hosted on generic infrastructure (vercel.app) while referencing premium first-party data</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://httpay.xyz/api/gateway/openai/%7B*path%7D/*</div>
+    <div class="ep-meta"> — API Gateway: OpenAI API</div>
+    <div class="ep-meta mono">pays to 0x5f5d…4359 on base · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">5<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI (via &quot;openai&quot; in url) but is hosted on httpay.xyz, not the brand's domain</li><li>brand term &quot;openai&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://content.hugen.tokyo/content/extract</div>
+    <div class="ep-meta"> — Extract clean, readable text from any web page — removes navigation, ads, scripts, and boilerplate. Dual-engine extraction with JS-rendered page fallback for SPAs and dynamic conte…</div>
+    <div class="ep-meta mono">pays to 0x2932…4f60 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0100</td>
+  <td class="num">3<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI (via &quot;openai&quot; in schema) but is hosted on content.hugen.tokyo, not the brand's domain</li><li>input schema is a bare passthrough (url) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://gpt55.558686.xyz/v1/tools/x402-site-audit</div>
+    <div class="ep-meta">GPT-5.5 x402 API Gateway — Fetch a public API origin and audit x402 discovery, OpenAPI, pricing, llms.txt, robots, sitemap, MCP metadata, health, endpoint counts, payment schemes, and buyer-readiness signals…</div>
+    <div class="ep-meta mono">pays to 0x1f01…9a2f on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$0.0010</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI (via &quot;gpt-5&quot; in serviceName) but is hosted on gpt55.558686.xyz, not the brand's domain</li><li>input schema is a bare passthrough (url) — consistent with forwarding to an upstream API</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://scan.convrgent.ai/api/aeo/fix</div>
+    <div class="ep-meta"> — Scanner + fix generator for AI search visibility (AEO, GEO) and agent readiness — audits JSON-LD Schema.org structured data, meta tags, robots.txt, llms.txt, sitemap, then outputs …</div>
+    <div class="ep-meta mono">pays to 0xc273…9882 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$5.00</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic, Perplexity (via &quot;chatgpt&quot; in description) but is hosted on scan.convrgent.ai, not the brand's domain</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://visibility.vevang.com/check/spot</div>
+    <div class="ep-meta">AI Visibility Analyst — AI Visibility Analyst — measure whether the AI answer engines (ChatGPT, Claude, Perplexity) recommend a brand when buyers ask. POST JSON: brand (+ optional url/category). Returns a…</div>
+    <div class="ep-meta mono">pays to 0x9eE3…42B9 on eip155:8453 · via bazaar</div>
+  </td>
+  <td class="num">$4.00</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI, Anthropic, Perplexity (via &quot;chatgpt&quot; in description) but is hosted on visibility.vevang.com, not the brand's domain</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://httpay.xyz/api/gateway/openai/%7B*path%7D</div>
+    <div class="ep-meta"> — API Gateway: OpenAI API</div>
+    <div class="ep-meta mono">pays to 0x5f5d…4359 on base · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">1<div class="ep-meta">1 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI (via &quot;openai&quot; in url) but is hosted on httpay.xyz, not the brand's domain</li><li>brand term &quot;openai&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://lowpaymentfee.com/api/v1/integrations/openai/key</div>
+    <div class="ep-meta"> — Premium API Access</div>
+    <div class="ep-meta mono">pays to 0x1A2B…85F3 on base · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI (via &quot;openai&quot; in url) but is hosted on lowpaymentfee.com, not the brand's domain</li><li>brand term &quot;openai&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://lowpaymentfee.com/api/v1/integrations/openai/token</div>
+    <div class="ep-meta"> — Premium API Access</div>
+    <div class="ep-meta mono">pays to 0x1A2B…85F3 on base · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI (via &quot;openai&quot; in url) but is hosted on lowpaymentfee.com, not the brand's domain</li><li>brand term &quot;openai&quot; appears in the endpoint URL itself</li></ul></td>
+</tr>
+<tr>
+  <td>
+    <div class="ep-name mono">https://lowpaymentfee.com/api/v1/integrations/openai/secret</div>
+    <div class="ep-meta"> — Premium API Access</div>
+    <div class="ep-meta mono">pays to 0x1A2B…85F3 on base · via bazaar</div>
+  </td>
+  <td class="num">—</td>
+  <td class="num">0<div class="ep-meta">0 payers</div></td>
+  <td class="center"><span class="pill ">low · 45/100</span><div style="margin-top:.3rem"><span class="pill">not probed</span></div></td>
+  <td><ul class="ev"><li>references OpenAI (via &quot;openai&quot; in url) but is hosted on lowpaymentfee.com, not the brand's domain</li><li>brand term &quot;openai&quot; appears in the endpoint URL itself</li></ul></td>
+</tr></tbody>
+</table></div>
+
+<p class="note"><b>Framing note:</b> every row above is a statistical signature match, published so that OpenAI's own team — the only party who can actually verify authorization — can review it. Nothing on this page asserts that any listed operator is acting unlawfully or in breach of any agreement.</p>
+<footer class="site">
+  <nav>
+    <a href="https://provenance.q3epzs69b902a.us-west-2.cs.amazonlightsail.com">Live Provenance API</a>
+    <a href="https://www.npmjs.com/package/provenance-mcp">provenance-mcp (npm)</a>
+    <a href="https://www.npmjs.com/package/provenance-guard">provenance-guard (npm)</a>
+    <a href="https://github.com/apeirontrade/provenance-site">GitHub</a>
+    <a href="../methodology.html">Methodology</a>
+    <a href="../data/index.html">Open data (CC-BY-4.0)</a>
+    <a href="https://github.com/apeirontrade/provenance-site/issues">Disputes &amp; corrections</a>
+  </nav>
+  <div>All figures are statistical estimates derived from public on-chain payment data and public x402 discovery registries. Nothing here asserts fraud or contract breach by any named party — see the <a href="../methodology.html">methodology and disclaimer</a>. Data is CC-BY-4.0; cite Provenance.</div>
+  <div>Provenance · independent trust ratings for machine-payable (x402) API endpoints · generated 2026-07-06</div>
+</footer>
+</div></body></html>
