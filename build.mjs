@@ -80,6 +80,7 @@ const ORG = {
   "@type": "Organization",
   "@id": SITE + "/#org",
   name: "Provenance",
+  legalName: "Apeiron Capital Inc.",
   url: SITE + "/",
   description:
     "Independent trust ratings for x402 machine-payable API endpoints, derived from public on-chain payment data and public discovery registries.",
@@ -188,7 +189,7 @@ ${body}
     <a href="${LINKS.issues}">Disputes &amp; corrections</a>
   </nav>
   <div>All figures are statistical estimates derived from public on-chain payment data and public x402 discovery registries. Nothing here asserts fraud or contract breach by any named party — see the <a href="${rel}/methodology.html">methodology and disclaimer</a>. Data is CC-BY-4.0; cite Provenance.</div>
-  <div>Provenance · independent trust ratings for machine-payable (x402) API endpoints · generated ${esc(new Date().toISOString().slice(0, 10))}</div>
+  <div>Provenance · published by Apeiron Capital Inc. (Arizona, USA) · data snapshot: week of ${esc(wash.weekOf)} · page built ${esc(new Date().toISOString().slice(0, 10))}</div>
 </footer>
 </div></body></html>`;
 }
@@ -267,7 +268,7 @@ write(".nojekyll", "");
           : m.washRankInflation < 0
             ? `<span class="infl-neg">${m.washRankInflation}</span>`
             : `<span class="infl-zero">0</span>`;
-      const gradeSub = m.displayGrade === "n/v" ? "not verifiable" : `${m.washScore}/100 ${m.washLevel}`;
+      const gradeSub = m.displayGrade === "n/v" ? `not verifiable · raw ${m.washScore}/100` : `${m.washScore}/100 ${m.washLevel}`;
       return `<tr>
   <td class="mono dim">#${m.bazaarRank}</td>
   <td><div class="ep-name"><a href="endpoints/${m.slug}.html">${esc(m.name)}</a></div><div class="ep-meta mono">${esc(shortAddr(m.payTo))} · ${esc(m.domains[0])}</div></td>
@@ -308,7 +309,7 @@ write(".nojekyll", "");
     {
       "@type": "Dataset",
       name: "Wrapper Watch — x402 resale-authorization scan",
-      description: `Per-brand aggregates of ${num(ww.suspectedWrappers)} x402 endpoints (of ${num(ww.uniqueEndpoints)} scanned) exhibiting statistical reseller signatures against 44 first-party API brands. Suspected unauthorized resale — verification recommended.`,
+      description: `Per-brand aggregates of ${num(ww.suspectedWrappers)} x402 endpoints (of ${num(ww.uniqueEndpoints)} scanned) exhibiting statistical reseller signatures against 44 first-party API brands. Reseller signals only; authorization status unknown — verification recommended.`,
       url: SITE + "/",
       license: "https://creativecommons.org/licenses/by/4.0/",
       creator: { "@id": SITE + "/#org" },
@@ -325,33 +326,34 @@ write(".nojekyll", "");
   const body = `
 <header class="site">
 <h1>The x402 Trust Index <span class="dim">by Provenance</span></h1>
-<p class="sub">Independent, on-chain-verified trust ratings for machine-payable (x402) API endpoints — which paid-API traffic is organic, and which endpoints resell someone else's data. Built from public data; published as open data so agents, answer engines, and API-trust teams can check before they pay.</p>
+<p class="sub">Independent trust ratings, computed from publicly observable on-chain payments, for machine-payable (x402) API endpoints — which paid-API traffic is organic, and which endpoints resell someone else's data. Built from public data; published as open data so agents, answer engines, and API-trust teams can check before they pay.</p>
 </header>
 
 <div class="tiles">
   <div class="tile"><b>${num(wash.bazaarItemsScanned)}</b><span>Bazaar listings scanned</span></div>
-  <div class="tile"><b>${merchants.length}</b><span>top merchants scored on-chain</span></div>
+  <div class="tile"><b>${merchants.length}</b><span>top merchants scored (Base USDC)</span></div>
   <div class="tile"><b>${gradedCorWorse}/${merchants.length}</b><span>graded C or worse${nvCount ? ` (+${nvCount} not verifiable)` : ""}</span></div>
-  <div class="tile"><b>${pctNonOrganic}%</b><span>of top-tier claimed volume estimated non-organic</span></div>
+  <div class="tile"><b>${pctNonOrganic}%</b><span>of these ${merchants.length} merchants' claimed volume estimated non-organic (this snapshot only)</span></div>
   <div class="tile"><b>${num(ww.suspectedWrappers)}</b><span>endpoints with reseller signatures (${brandList.length} brands)</span></div>
 </div>
 
-<h2 id="wash-report">This week's Bazaar Wash Report — week of ${esc(wash.weekOf)}</h2>
+<div class="callout warn"><b>Dated snapshot — not a live feed.</b> This report covers the week of ${esc(wash.weekOf)} on <b>Base</b> (USDC, eip155:8453), using a ${wash.windowDays}-day on-chain window against the Bazaar's 30-day claimed calls. It is one operator's statistical estimate for ${merchants.length} merchants in that window; it is not a measurement of all x402 activity, and the figures do not update until a new snapshot is published. The live API, <code>provenance-mcp</code> and <code>provenance-guard</code> currently score <b>Algorand</b> addresses — a different set of endpoints from this table.</div>
+<h2 id="wash-report">Bazaar Wash Report — snapshot, week of ${esc(wash.weekOf)}</h2>
 <p class="note">The top ${merchants.length} Coinbase x402 Bazaar merchants on Base, graded on <b>organic revenue quality</b> and ranked by <b>wash-rank inflation</b>: how many leaderboard positions raw claimed volume buys beyond what organic-adjusted volume supports. Bazaar ranks by volume and recency with no fraud filtering; this table quantifies the gap. Click an endpoint for its full scorecard.</p>
 <div class="tblwrap"><table>
 <thead><tr><th>Bazaar rank</th><th>Endpoint</th><th>Bazaar 30d calls</th><th>Organic-adjusted</th><th>Wash grade</th><th>Wash-rank inflation</th><th>Top indicator</th></tr></thead>
 <tbody>${rows}</tbody>
 </table></div>
-<p class="note"><b>n/v (not verifiable):</b> for some endpoints — typically ones settling through a facilitator — batch or deferred settlement means direct on-chain USDC transfers to the receiving wallet can legitimately be absent. We do not display a wash grade where the score is driven mainly by missing visibility rather than positive wash signals. Raw scores remain in the <a href="data/index.html">open data</a>.</p>
+<p class="note"><b>n/v (not verifiable):</b> for some endpoints — typically ones settling through a facilitator — batch or deferred settlement means direct on-chain USDC transfers to the receiving wallet can legitimately be absent. We do not display a letter grade where the score is driven mainly by missing visibility rather than positive wash signals; the raw score is shown beside each n/v so nothing is hidden, and it also remains in the <a href="data/index.html">open data</a>.</p>
 
 <h2 id="wrapper-watch">Wrapper Watch — resale-authorization audits by brand</h2>
-<p class="note">We scanned ${num(ww.uniqueEndpoints)} unique x402-paywalled endpoints across the public discovery registries (Coinbase Bazaar, GoPlausible/Algorand) for reseller signatures against 44 first-party API brands. ${num(ww.suspectedWrappers)} endpoints reference a first-party brand while hosted off that brand's domain (${highConf} high-confidence, ${medConf} medium); ${num(activeSuspects)} showed paid activity in the last 30 days. Everything is stated as <em>suspected unauthorized resale — verification recommended</em>; a flagged endpoint may hold a legitimate redistribution license.</p>
+<p class="note">We scanned ${num(ww.uniqueEndpoints)} unique x402-paywalled endpoints across the public discovery registries (Coinbase Bazaar, GoPlausible/Algorand) for reseller signatures against 44 first-party API brands. ${num(ww.suspectedWrappers)} endpoints reference a first-party brand while hosted off that brand's domain (${highConf} high-confidence, ${medConf} medium); ${num(activeSuspects)} showed paid activity in the last 30 days. Everything is stated as <em>reseller signals present, authorization unknown — verification recommended</em>; a flagged endpoint may hold a legitimate redistribution license.</p>
 <ul class="brandlist">${brandLis}</ul>
 
 <h2>Use this data</h2>
 <div class="cols">
   <div class="card"><h3><a href="data/index.html">Open data downloads</a></h3><p>Machine-readable JSON for the wash report and per-brand wrapper aggregates. CC-BY-4.0 — cite Provenance.</p></div>
-  <div class="card"><h3><a href="${LINKS.guard}">provenance-guard</a></h3><p>A seatbelt for agent payments: one line that blocks x402 payments to endpoints whose revenue looks fabricated.</p></div>
+  <div class="card"><h3><a href="${LINKS.guard}">provenance-guard</a></h3><p>A pre-payment check for x402 clients: looks up the payee's wash-risk verdict before paying. Fails open by default; set <code>allowUnknown: false</code> to fail closed.</p></div>
   <div class="card"><h3><a href="${LINKS.mcp}">provenance-mcp</a></h3><p>MCP server so your agent can check any x402 endpoint's wash risk before trusting or paying it.</p></div>
   <div class="card"><h3><a href="methodology.html">Methodology</a></h3><p>The 8-signal organic-revenue-quality model, wash indicators, reseller signatures, limitations, and the dispute path.</p></div>
 </div>`;
@@ -360,7 +362,7 @@ write(".nojekyll", "");
     "index.html",
     page({
       title: "The x402 Trust Index by Provenance — wash-trading grades & API reseller audits",
-      description: `On-chain trust ratings for x402 endpoints: wash-trading grades for the top ${merchants.length} Coinbase Bazaar merchants (week of ${wash.weekOf}) and ${num(ww.suspectedWrappers)} suspected unauthorized API-reseller endpoints across ${brandList.length} brands. Open data, CC-BY-4.0.`,
+      description: `On-chain trust ratings for x402 endpoints: wash-trading grades for the top ${merchants.length} Coinbase Bazaar merchants (week of ${wash.weekOf}) and ${num(ww.suspectedWrappers)} endpoints showing API-reseller signals (authorization unknown) across ${brandList.length} brands. Open data, CC-BY-4.0.`,
       path: "",
       depth: 0,
       ld,
@@ -398,6 +400,34 @@ write(".nojekyll", "");
   <li><b>Cross-endpoint payer overlap</b> — the same tiny payer set boosting several endpoints at once.</li>
 </ol>
 <p class="note">Grades: <b>A</b> (&lt;10), <b>B</b> (10–19), <b>C</b> (20–41), <b>D</b> (42–69), <b>F</b> (≥70). <b>Organic-adjusted calls</b> = claimed 30d calls × (1 − score/100). <b>Wash-rank inflation</b> = organic-adjusted rank − raw-volume rank: how many leaderboard positions the raw number buys beyond what organic-adjusted volume supports.</p>
+
+<h2>Exact scoring (what the code does)</h2>
+<p class="note" style="color:var(--fg)">The letter grades in the Wash Report come from an <b>additive wash-risk score</b>, capped at 100. Each indicator has a severity from 0 to 1 that is multiplied by a fixed weight; weights deliberately sum past 100 so several strong tells saturate the score. Source: <code>packages/scoring/src/wash-risk.ts</code> in <a href="https://github.com/apeirontrade/agentkit">agentkit</a>, methodology version 0.1.0.</p>
+<div class="tblwrap"><table><thead><tr><th>Indicator</th><th>Weight</th><th>Severity rule</th></tr></thead><tbody>
+<tr><td>Few distinct payers</td><td>45</td><td>1 payer = 1.0; 2 = 0.9; 3–4 = 0.65; 5–9 = 0.35; 10+ = 0</td></tr>
+<tr><td>Self-dealing payout loops</td><td>25</td><td>share of revenue whose payer is reachable from the merchant's own payouts</td></tr>
+<tr><td>Revenue concentration</td><td>20</td><td>(HHI across payer clusters − 0.1) / 0.9, floored at 0</td></tr>
+<tr><td>Shared controlling key (Algorand rekey)</td><td>20</td><td>share of payers sharing an auth address; not applicable on Base</td></tr>
+<tr><td>Fresh payer wallets</td><td>15</td><td>median wallet age at first payment: &lt;1d = 1.0; &lt;3d = 0.7; &lt;7d = 0.4; &lt;30d = 0.15</td></tr>
+<tr><td>Metronomic timing</td><td>15</td><td>needs ≥5 payments; max of (1 − CV/0.3 when CV &lt; 0.3) and the share of identical-interval gaps when above 50%</td></tr>
+<tr><td>Single-funder ring</td><td>15</td><td>share of payers funded by one wallet, counted only above 30%</td></tr>
+</tbody></table></div>
+<p class="note">Levels: <b>low</b> &lt;20, <b>medium</b> 20–44, <b>high</b> 45–69, <b>critical</b> ≥70. Where the claimed-vs-observed gap is the main driver (no on-chain receipts despite claimed calls) the row is shown as n/v rather than graded.</p>
+<p class="note" style="color:var(--fg)">Separately, endpoints with enough data (at least 50 payments from at least 10 payer clusters) get an <b>organic-revenue-quality (ORQ)</b> score: a weighted geometric mean of eight sub-scores — funding graph 0.20, self-dealing 0.20, retention 0.15, temporal regularity 0.15, wallet fingerprint 0.10, amount distribution (including a Benford first-digit test) 0.08, concentration 0.07, cross-endpoint overlap 0.05 — with each sub-score floored at 0.02 so one zero caps rather than annihilates the result. ORQ grades: A ≥85, B ≥70, C ≥50, D ≥30, else F. A 90% confidence interval is computed by bootstrap, resampling whole payers (not individual payments) so each payer's timing structure is preserved; the interval is widened if needed to contain the observed score. Most endpoints today are below the data floor and receive only the wash-risk score above.</p>
+
+<h2>What has not been validated</h2>
+<ul style="font-size:.9rem;line-height:1.8;margin-left:1.2rem">
+  <li>The weights above were set by judgment, not fitted to data. There is no labelled ground-truth set yet, so we cannot publish a false-positive rate, precision/recall, or an ROC curve.</li>
+  <li>The model has not been benchmarked against published wash-trading detectors, peer-reviewed, or independently replicated. The code and data are open so that anyone can try.</li>
+  <li>A letter grade is a compact summary of a statistical estimate. It is not a finding about any operator's intent.</li>
+</ul>
+
+<h2>Which chain each product covers</h2>
+<ul style="font-size:.9rem;line-height:1.8;margin-left:1.2rem">
+  <li><b>This site's Wash Report:</b> Base mainnet USDC transfers, top Coinbase Bazaar merchants.</li>
+  <li><b>Live API, provenance-mcp, provenance-guard:</b> Algorand USDC (ASA 31566704). Addresses on other chains return “unknown”.</li>
+  <li><b>Wrapper Watch:</b> listing text from public registries on any chain; no payment data is used.</li>
+</ul>
 
 <h2>The settlement-visibility caveat (“n/v”)</h2>
 <p class="note" style="color:var(--fg)">x402 payments frequently settle through a <b>facilitator</b>, which may batch or defer transfers. In that architecture, few or no direct on-chain USDC transfers to the merchant's <code>payTo</code> address is <b>normal and legitimate</b>. Where a high score is driven mainly by <em>missing</em> on-chain receipts or a near-zero visible payer set — rather than by positive wash signals like metronomic timing or self-dealing loops — we display <b>n/v (not verifiable): insufficient on-chain visibility (batch settlement possible)</b> instead of a letter grade. The raw score is preserved in the open-data JSON for transparency, flagged with the same caveat.</p>
@@ -562,7 +592,7 @@ for (const b of brandList) {
 
   const body = `
 <h1>x402 endpoints offering ${esc(b.name)} data <span class="dim">— resale-authorization audit</span></h1>
-<p class="sub">${b.endpoints.length} machine-payable (x402) endpoints in the public discovery registries exhibit reseller signatures referencing <b>${esc(b.name)}</b> while hosted off ${esc(b.name)}'s own domains. Resale-authorization status: <b>unknown — suspected unauthorized resale, verification recommended</b>. Any of these endpoints may hold a legitimate redistribution license.</p>
+<p class="sub">${b.endpoints.length} machine-payable (x402) endpoints in the public discovery registries exhibit reseller signatures referencing <b>${esc(b.name)}</b> while hosted off ${esc(b.name)}'s own domains. Resale-authorization status: <b>unknown — reseller signals present, verification recommended</b>. Any of these endpoints may hold a legitimate redistribution license.</p>
 
 ${note ? `<div class="callout">Context: ${esc(note)}</div>` : ""}
 
@@ -586,7 +616,7 @@ ${note ? `<div class="callout">Context: ${esc(note)}</div>` : ""}
     `brands/${b.id}.html`,
     page({
       title: `x402 endpoints offering ${b.name} data — resale-authorization audit (${b.endpoints.length} suspected) — Provenance`,
-      description: `${b.name} API resold via x402? ${b.endpoints.length} suspected unauthorized ${b.name} reseller endpoints found in public x402 registries (${high.length} high-confidence, ${active.length} active in 30d). Evidence, prices, on-chain payment counts. Verification recommended.`,
+      description: `${b.name} API resold via x402? ${b.endpoints.length} ${b.name} reseller-signal endpoints (authorization unknown) found in public x402 registries (${high.length} high-confidence, ${active.length} active in 30d). Evidence, prices, on-chain payment counts. Verification recommended.`,
       path: `brands/${b.id}.html`,
       depth: 1,
       ld,
@@ -617,7 +647,7 @@ ${note ? `<div class="callout">Context: ${esc(note)}</div>` : ""}
     generatedAt: ww.generatedAt,
     license: "CC-BY-4.0 — https://creativecommons.org/licenses/by/4.0/ — cite Provenance",
     citation: `Provenance, "Wrapper Watch", ${ww.generatedAt.slice(0, 10)}, ${SITE}/`,
-    note: "Suspected unauthorized resale — verification recommended. Signature matches, not conclusions; a flagged endpoint may hold a legitimate redistribution license. Methodology: " + SITE + "/methodology.html",
+    note: "Reseller signals only — authorization status unknown, verification recommended. Signature matches, not conclusions; a flagged endpoint may hold a legitimate redistribution license. Methodology: " + SITE + "/methodology.html",
     sources: ww.sources,
     uniqueEndpointsScanned: ww.uniqueEndpoints,
     suspectedWrappers: ww.suspectedWrappers,
@@ -684,7 +714,7 @@ ${note ? `<div class="callout">Context: ${esc(note)}</div>` : ""}
   </div>
 </div>
 
-<p class="note">Refresh cadence: weekly. For programmatic checks (per-address verdicts) use the <a href="${LINKS.api}">live Provenance API</a> or <a href="${LINKS.mcp}">provenance-mcp</a>. Questions or corrections: <a href="${LINKS.issues}">GitHub issues</a>.</p>`;
+<p class="note">Published as dated snapshots; a new one appears only when a new study is run, so check the week shown above. For programmatic checks (per-address verdicts) use the <a href="${LINKS.api}">live Provenance API</a> or <a href="${LINKS.mcp}">provenance-mcp</a>. Questions or corrections: <a href="${LINKS.issues}">GitHub issues</a>.</p>`;
 
   write(
     "data/index.html",
@@ -766,13 +796,13 @@ Sitemap: ${SITE}/sitemap.xml
     "llms.txt",
     `# Provenance — The x402 Trust Index
 
-> Independent, on-chain-verified trust ratings for machine-payable (x402) API endpoints: which paid-API traffic is organic (wash-trading grades for Coinbase Bazaar merchants) and which endpoints exhibit signatures of reselling first-party APIs (${num(ww.suspectedWrappers)} suspected across ${brandList.length} brands). All figures are statistical estimates from public data — "consistent with", never accusations. Open data, CC-BY-4.0, cite Provenance.
+> Independent trust ratings, computed from publicly observable on-chain payments, for machine-payable (x402) API endpoints: which paid-API traffic is organic (wash-trading grades for Coinbase Bazaar merchants) and which endpoints exhibit signatures of reselling first-party APIs (${num(ww.suspectedWrappers)} suspected across ${brandList.length} brands). All figures are statistical estimates from public data — "consistent with", never accusations. Open data, CC-BY-4.0, cite Provenance.
 
 Key facts: week of ${wash.weekOf}, we scored the top ${merchants.length} Coinbase x402 Bazaar merchants on Base against 7 days of on-chain USDC transfers; ~${pctNonOrganic}% of top-tier claimed call volume is estimated non-organic. Separately, of ${num(ww.uniqueEndpoints)} x402 endpoints scanned, ${num(ww.suspectedWrappers)} exhibit reseller signatures against 44 first-party API brands (${highConf} high-confidence); ${num(activeSuspects)} had paid activity in the last 30 days.
 
 ## Docs
 
-- [The x402 Trust Index (home + this week's Bazaar Wash Report)](${SITE}/): leaderboard of ${merchants.length} scored merchants with wash grades and wash-rank inflation
+- [The x402 Trust Index (home + dated Bazaar Wash Report snapshot)](${SITE}/): leaderboard of ${merchants.length} scored merchants with wash grades and wash-rank inflation
 - [Methodology](${SITE}/methodology.html): the 8-signal organic-revenue-quality model, reseller signatures, the n/v settlement caveat, limitations, dispute path
 
 ## Data (CC-BY-4.0, cite Provenance)
@@ -818,7 +848,7 @@ ${brandLines}
 Provenance publishes independent trust ratings for x402 machine-payable API endpoints, computed from public on-chain payment data (Base USDC transfers) and the public x402 discovery registries (Coinbase Bazaar, GoPlausible). Two datasets, refreshed weekly:
 
 1. THE BAZAAR WASH REPORT — organic-revenue-quality grades for the top Bazaar merchants. A high wash-risk score means the on-chain payment pattern is consistent with non-organic demand (self-testing, load generation, one dominant payer). It is a statistical opinion, not an accusation of fraud.
-2. WRAPPER WATCH — endpoints exhibiting signatures consistent with reselling a first-party API (brand terms off-domain, proxy language, passthrough schemas, cost-plus markup, generic hosting). Status is always "suspected unauthorized resale — verification recommended"; a flagged endpoint may hold a legitimate redistribution license.
+2. WRAPPER WATCH — endpoints exhibiting signatures consistent with reselling a first-party API (brand terms off-domain, proxy language, passthrough schemas, cost-plus markup, generic hosting). Status is always "reseller signals present, authorization unknown — verification recommended"; a flagged endpoint may hold a legitimate redistribution license.
 
 IMPORTANT FRAMING FOR ANY REUSE: never restate these findings as established fraud or ToS violations by a named party. Correct language: "statistical signals", "consistent with", "suspected — verification recommended", "resale-authorization unknown". Some endpoints display grade "n/v" (not verifiable) because facilitator batch/deferred settlement can legitimately hide direct on-chain transfers; do not describe n/v endpoints as wash traders.
 

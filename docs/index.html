@@ -3,10 +3,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>The x402 Trust Index by Provenance — wash-trading grades &amp; API reseller audits</title>
-<meta name="description" content="On-chain trust ratings for x402 endpoints: wash-trading grades for the top 24 Coinbase Bazaar merchants (week of 2026-06-29) and 1,097 suspected unauthorized API-reseller endpoints across 38 brands. Open data, CC-BY-4.0.">
+<meta name="description" content="On-chain trust ratings for x402 endpoints: wash-trading grades for the top 24 Coinbase Bazaar merchants (week of 2026-06-29) and 1,097 endpoints showing API-reseller signals (authorization unknown) across 38 brands. Open data, CC-BY-4.0.">
 <link rel="canonical" href="https://apeirontrade.github.io/provenance-site/">
 <meta property="og:title" content="The x402 Trust Index by Provenance — wash-trading grades &amp; API reseller audits">
-<meta property="og:description" content="On-chain trust ratings for x402 endpoints: wash-trading grades for the top 24 Coinbase Bazaar merchants (week of 2026-06-29) and 1,097 suspected unauthorized API-reseller endpoints across 38 brands. Open data, CC-BY-4.0.">
+<meta property="og:description" content="On-chain trust ratings for x402 endpoints: wash-trading grades for the top 24 Coinbase Bazaar merchants (week of 2026-06-29) and 1,097 endpoints showing API-reseller signals (authorization unknown) across 38 brands. Open data, CC-BY-4.0.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://apeirontrade.github.io/provenance-site/">
 <meta name="robots" content="index,follow">
@@ -71,26 +71,27 @@
   dl.kv dt{color:var(--dim)}
   dl.kv dd{overflow-wrap:anywhere}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://apeirontrade.github.io/provenance-site/#org","name":"Provenance","url":"https://apeirontrade.github.io/provenance-site/","description":"Independent trust ratings for x402 machine-payable API endpoints, derived from public on-chain payment data and public discovery registries.","sameAs":["https://www.npmjs.com/package/provenance-mcp","https://www.npmjs.com/package/provenance-guard","https://github.com/apeirontrade/provenance-mcp","https://github.com/apeirontrade/provenance-guard"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://apeirontrade.github.io/provenance-site/#org","name":"Provenance","legalName":"Apeiron Capital Inc.","url":"https://apeirontrade.github.io/provenance-site/","description":"Independent trust ratings for x402 machine-payable API endpoints, derived from public on-chain payment data and public discovery registries.","sameAs":["https://www.npmjs.com/package/provenance-mcp","https://www.npmjs.com/package/provenance-guard","https://github.com/apeirontrade/provenance-mcp","https://github.com/apeirontrade/provenance-guard"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"Bazaar Wash Report — week of 2026-06-29","description":"Organic-revenue-quality grades for the top 24 Coinbase x402 Bazaar merchants on Base, computed from public on-chain USDC transfers. Includes wash-risk scores, wash-rank inflation, and per-endpoint indicators.","url":"https://apeirontrade.github.io/provenance-site/","license":"https://creativecommons.org/licenses/by/4.0/","creator":{"@id":"https://apeirontrade.github.io/provenance-site/#org"},"temporalCoverage":"2026-06-29/2026-07-05","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://apeirontrade.github.io/provenance-site/data/wash-report-2026-06-29.json"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"Wrapper Watch — x402 resale-authorization scan","description":"Per-brand aggregates of 1,097 x402 endpoints (of 23,376 scanned) exhibiting statistical reseller signatures against 44 first-party API brands. Suspected unauthorized resale — verification recommended.","url":"https://apeirontrade.github.io/provenance-site/","license":"https://creativecommons.org/licenses/by/4.0/","creator":{"@id":"https://apeirontrade.github.io/provenance-site/#org"},"distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://apeirontrade.github.io/provenance-site/data/wrapper-watch-summary.json"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"Wrapper Watch — x402 resale-authorization scan","description":"Per-brand aggregates of 1,097 x402 endpoints (of 23,376 scanned) exhibiting statistical reseller signatures against 44 first-party API brands. Reseller signals only; authorization status unknown — verification recommended.","url":"https://apeirontrade.github.io/provenance-site/","license":"https://creativecommons.org/licenses/by/4.0/","creator":{"@id":"https://apeirontrade.github.io/provenance-site/#org"},"distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://apeirontrade.github.io/provenance-site/data/wrapper-watch-summary.json"}]}</script>
 </head><body><div class="wrap">
 <div class="crumb"><a href="./index.html">Provenance x402 Trust Index</a> &middot; <a href="./methodology.html">Methodology</a> &middot; <a href="./data/index.html">Open data</a></div>
 
 <header class="site">
 <h1>The x402 Trust Index <span class="dim">by Provenance</span></h1>
-<p class="sub">Independent, on-chain-verified trust ratings for machine-payable (x402) API endpoints — which paid-API traffic is organic, and which endpoints resell someone else's data. Built from public data; published as open data so agents, answer engines, and API-trust teams can check before they pay.</p>
+<p class="sub">Independent trust ratings, computed from publicly observable on-chain payments, for machine-payable (x402) API endpoints — which paid-API traffic is organic, and which endpoints resell someone else's data. Built from public data; published as open data so agents, answer engines, and API-trust teams can check before they pay.</p>
 </header>
 
 <div class="tiles">
   <div class="tile"><b>23,338</b><span>Bazaar listings scanned</span></div>
-  <div class="tile"><b>24</b><span>top merchants scored on-chain</span></div>
+  <div class="tile"><b>24</b><span>top merchants scored (Base USDC)</span></div>
   <div class="tile"><b>4/24</b><span>graded C or worse (+2 not verifiable)</span></div>
-  <div class="tile"><b>24%</b><span>of top-tier claimed volume estimated non-organic</span></div>
+  <div class="tile"><b>24%</b><span>of these 24 merchants' claimed volume estimated non-organic (this snapshot only)</span></div>
   <div class="tile"><b>1,097</b><span>endpoints with reseller signatures (38 brands)</span></div>
 </div>
 
-<h2 id="wash-report">This week's Bazaar Wash Report — week of 2026-06-29</h2>
+<div class="callout warn"><b>Dated snapshot — not a live feed.</b> This report covers the week of 2026-06-29 on <b>Base</b> (USDC, eip155:8453), using a 7-day on-chain window against the Bazaar's 30-day claimed calls. It is one operator's statistical estimate for 24 merchants in that window; it is not a measurement of all x402 activity, and the figures do not update until a new snapshot is published. The live API, <code>provenance-mcp</code> and <code>provenance-guard</code> currently score <b>Algorand</b> addresses — a different set of endpoints from this table.</div>
+<h2 id="wash-report">Bazaar Wash Report — snapshot, week of 2026-06-29</h2>
 <p class="note">The top 24 Coinbase x402 Bazaar merchants on Base, graded on <b>organic revenue quality</b> and ranked by <b>wash-rank inflation</b>: how many leaderboard positions raw claimed volume buys beyond what organic-adjusted volume supports. Bazaar ranks by volume and recency with no fraud filtering; this table quantifies the gap. Click an endpoint for its full scorecard.</p>
 <div class="tblwrap"><table>
 <thead><tr><th>Bazaar rank</th><th>Endpoint</th><th>Bazaar 30d calls</th><th>Organic-adjusted</th><th>Wash grade</th><th>Wash-rank inflation</th><th>Top indicator</th></tr></thead>
@@ -99,7 +100,7 @@
   <td><div class="ep-name"><a href="endpoints/x402.tavily.com.html">x402.tavily.com</a></div><div class="ep-meta mono">0xb1c5…d179 · x402.tavily.com</div></td>
   <td class="num">6,782<div class="ep-meta">rank #6</div></td>
   <td class="num">3,730<div class="ep-meta">rank #10</div></td>
-  <td class="center"><span class="grade" style="color:#8b949e;border-color:#8b949e55">n/v</span><div class="ep-meta">not verifiable</div></td>
+  <td class="center"><span class="grade" style="color:#8b949e;border-color:#8b949e55">n/v</span><div class="ep-meta">not verifiable · raw 45/100</div></td>
   <td class="center"><span class="infl-pos">+4</span></td>
   <td class="ind">insufficient on-chain visibility (batch settlement possible)</td>
 </tr>
@@ -108,7 +109,7 @@
   <td><div class="ep-name"><a href="endpoints/agents.chain.link.html">agents.chain.link</a></div><div class="ep-meta mono">0x158e…3d00 · agents.chain.link</div></td>
   <td class="num">22,087<div class="ep-meta">rank #2</div></td>
   <td class="num">8,835<div class="ep-meta">rank #4</div></td>
-  <td class="center"><span class="grade" style="color:#8b949e;border-color:#8b949e55">n/v</span><div class="ep-meta">not verifiable</div></td>
+  <td class="center"><span class="grade" style="color:#8b949e;border-color:#8b949e55">n/v</span><div class="ep-meta">not verifiable · raw 60/100</div></td>
   <td class="center"><span class="infl-pos">+2</span></td>
   <td class="ind">insufficient on-chain visibility (batch settlement possible)</td>
 </tr>
@@ -311,10 +312,10 @@
   <td class="ind">none observed</td>
 </tr></tbody>
 </table></div>
-<p class="note"><b>n/v (not verifiable):</b> for some endpoints — typically ones settling through a facilitator — batch or deferred settlement means direct on-chain USDC transfers to the receiving wallet can legitimately be absent. We do not display a wash grade where the score is driven mainly by missing visibility rather than positive wash signals. Raw scores remain in the <a href="data/index.html">open data</a>.</p>
+<p class="note"><b>n/v (not verifiable):</b> for some endpoints — typically ones settling through a facilitator — batch or deferred settlement means direct on-chain USDC transfers to the receiving wallet can legitimately be absent. We do not display a letter grade where the score is driven mainly by missing visibility rather than positive wash signals; the raw score is shown beside each n/v so nothing is hidden, and it also remains in the <a href="data/index.html">open data</a>.</p>
 
 <h2 id="wrapper-watch">Wrapper Watch — resale-authorization audits by brand</h2>
-<p class="note">We scanned 23,376 unique x402-paywalled endpoints across the public discovery registries (Coinbase Bazaar, GoPlausible/Algorand) for reseller signatures against 44 first-party API brands. 1,097 endpoints reference a first-party brand while hosted off that brand's domain (80 high-confidence, 700 medium); 989 showed paid activity in the last 30 days. Everything is stated as <em>suspected unauthorized resale — verification recommended</em>; a flagged endpoint may hold a legitimate redistribution license.</p>
+<p class="note">We scanned 23,376 unique x402-paywalled endpoints across the public discovery registries (Coinbase Bazaar, GoPlausible/Algorand) for reseller signatures against 44 first-party API brands. 1,097 endpoints reference a first-party brand while hosted off that brand's domain (80 high-confidence, 700 medium); 989 showed paid activity in the last 30 days. Everything is stated as <em>reseller signals present, authorization unknown — verification recommended</em>; a flagged endpoint may hold a legitimate redistribution license.</p>
 <ul class="brandlist"><li><a href="brands/twitter.html">X / Twitter</a> <span class="dim">— 390 suspected</span></li>
 <li><a href="brands/coingecko.html">CoinGecko</a> <span class="dim">— 127 suspected</span></li>
 <li><a href="brands/youtube.html">YouTube Data</a> <span class="dim">— 116 suspected</span></li>
@@ -357,7 +358,7 @@
 <h2>Use this data</h2>
 <div class="cols">
   <div class="card"><h3><a href="data/index.html">Open data downloads</a></h3><p>Machine-readable JSON for the wash report and per-brand wrapper aggregates. CC-BY-4.0 — cite Provenance.</p></div>
-  <div class="card"><h3><a href="https://www.npmjs.com/package/provenance-guard">provenance-guard</a></h3><p>A seatbelt for agent payments: one line that blocks x402 payments to endpoints whose revenue looks fabricated.</p></div>
+  <div class="card"><h3><a href="https://www.npmjs.com/package/provenance-guard">provenance-guard</a></h3><p>A pre-payment check for x402 clients: looks up the payee's wash-risk verdict before paying. Fails open by default; set <code>allowUnknown: false</code> to fail closed.</p></div>
   <div class="card"><h3><a href="https://www.npmjs.com/package/provenance-mcp">provenance-mcp</a></h3><p>MCP server so your agent can check any x402 endpoint's wash risk before trusting or paying it.</p></div>
   <div class="card"><h3><a href="methodology.html">Methodology</a></h3><p>The 8-signal organic-revenue-quality model, wash indicators, reseller signatures, limitations, and the dispute path.</p></div>
 </div>
@@ -372,6 +373,6 @@
     <a href="https://github.com/apeirontrade/provenance-site/issues">Disputes &amp; corrections</a>
   </nav>
   <div>All figures are statistical estimates derived from public on-chain payment data and public x402 discovery registries. Nothing here asserts fraud or contract breach by any named party — see the <a href="./methodology.html">methodology and disclaimer</a>. Data is CC-BY-4.0; cite Provenance.</div>
-  <div>Provenance · independent trust ratings for machine-payable (x402) API endpoints · generated 2026-07-06</div>
+  <div>Provenance · published by Apeiron Capital Inc. (Arizona, USA) · data snapshot: week of 2026-06-29 · page built 2026-09-18</div>
 </footer>
 </div></body></html>

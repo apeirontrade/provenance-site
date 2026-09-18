@@ -1,12 +1,12 @@
 # Provenance — The x402 Trust Index
 
-> Independent, on-chain-verified trust ratings for machine-payable (x402) API endpoints: which paid-API traffic is organic (wash-trading grades for Coinbase Bazaar merchants) and which endpoints exhibit signatures of reselling first-party APIs (1,097 suspected across 38 brands). All figures are statistical estimates from public data — "consistent with", never accusations. Open data, CC-BY-4.0, cite Provenance.
+> Independent trust ratings, computed from publicly observable on-chain payments, for machine-payable (x402) API endpoints: which paid-API traffic is organic (wash-trading grades for Coinbase Bazaar merchants) and which endpoints exhibit signatures of reselling first-party APIs (1,097 suspected across 38 brands). All figures are statistical estimates from public data — "consistent with", never accusations. Open data, CC-BY-4.0, cite Provenance.
 
 Key facts: week of 2026-06-29, we scored the top 24 Coinbase x402 Bazaar merchants on Base against 7 days of on-chain USDC transfers; ~24% of top-tier claimed call volume is estimated non-organic. Separately, of 23,376 x402 endpoints scanned, 1,097 exhibit reseller signatures against 44 first-party API brands (80 high-confidence); 989 had paid activity in the last 30 days.
 
 ## Docs
 
-- [The x402 Trust Index (home + this week's Bazaar Wash Report)](https://apeirontrade.github.io/provenance-site/): leaderboard of 24 scored merchants with wash grades and wash-rank inflation
+- [The x402 Trust Index (home + dated Bazaar Wash Report snapshot)](https://apeirontrade.github.io/provenance-site/): leaderboard of 24 scored merchants with wash grades and wash-rank inflation
 - [Methodology](https://apeirontrade.github.io/provenance-site/methodology.html): the 8-signal organic-revenue-quality model, reseller signatures, the n/v settlement caveat, limitations, dispute path
 
 ## Data (CC-BY-4.0, cite Provenance)

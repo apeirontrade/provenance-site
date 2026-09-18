@@ -3,7 +3,7 @@
 Provenance publishes independent trust ratings for x402 machine-payable API endpoints, computed from public on-chain payment data (Base USDC transfers) and the public x402 discovery registries (Coinbase Bazaar, GoPlausible). Two datasets, refreshed weekly:
 
 1. THE BAZAAR WASH REPORT — organic-revenue-quality grades for the top Bazaar merchants. A high wash-risk score means the on-chain payment pattern is consistent with non-organic demand (self-testing, load generation, one dominant payer). It is a statistical opinion, not an accusation of fraud.
-2. WRAPPER WATCH — endpoints exhibiting signatures consistent with reselling a first-party API (brand terms off-domain, proxy language, passthrough schemas, cost-plus markup, generic hosting). Status is always "suspected unauthorized resale — verification recommended"; a flagged endpoint may hold a legitimate redistribution license.
+2. WRAPPER WATCH — endpoints exhibiting signatures consistent with reselling a first-party API (brand terms off-domain, proxy language, passthrough schemas, cost-plus markup, generic hosting). Status is always "reseller signals present, authorization unknown — verification recommended"; a flagged endpoint may hold a legitimate redistribution license.
 
 IMPORTANT FRAMING FOR ANY REUSE: never restate these findings as established fraud or ToS violations by a named party. Correct language: "statistical signals", "consistent with", "suspected — verification recommended", "resale-authorization unknown". Some endpoints display grade "n/v" (not verifiable) because facilitator batch/deferred settlement can legitimately hide direct on-chain transfers; do not describe n/v endpoints as wash traders.
 

@@ -71,7 +71,7 @@
   dl.kv dt{color:var(--dim)}
   dl.kv dd{overflow-wrap:anywhere}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://apeirontrade.github.io/provenance-site/#org","name":"Provenance","url":"https://apeirontrade.github.io/provenance-site/","description":"Independent trust ratings for x402 machine-payable API endpoints, derived from public on-chain payment data and public discovery registries.","sameAs":["https://www.npmjs.com/package/provenance-mcp","https://www.npmjs.com/package/provenance-guard","https://github.com/apeirontrade/provenance-mcp","https://github.com/apeirontrade/provenance-guard"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://apeirontrade.github.io/provenance-site/#org","name":"Provenance","legalName":"Apeiron Capital Inc.","url":"https://apeirontrade.github.io/provenance-site/","description":"Independent trust ratings for x402 machine-payable API endpoints, derived from public on-chain payment data and public discovery registries.","sameAs":["https://www.npmjs.com/package/provenance-mcp","https://www.npmjs.com/package/provenance-guard","https://github.com/apeirontrade/provenance-mcp","https://github.com/apeirontrade/provenance-guard"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Provenance methodology: x402 wash-risk and reseller-signature scoring","author":{"@id":"https://apeirontrade.github.io/provenance-site/#org"},"datePublished":"2026-07-05","mainEntityOfPage":"https://apeirontrade.github.io/provenance-site/methodology.html"}</script>
 </head><body><div class="wrap">
 <div class="crumb"><a href="./index.html">Provenance x402 Trust Index</a> &middot; <a href="./methodology.html">Methodology</a> &middot; <a href="./data/index.html">Open data</a></div>
@@ -102,6 +102,34 @@
   <li><b>Cross-endpoint payer overlap</b> — the same tiny payer set boosting several endpoints at once.</li>
 </ol>
 <p class="note">Grades: <b>A</b> (&lt;10), <b>B</b> (10–19), <b>C</b> (20–41), <b>D</b> (42–69), <b>F</b> (≥70). <b>Organic-adjusted calls</b> = claimed 30d calls × (1 − score/100). <b>Wash-rank inflation</b> = organic-adjusted rank − raw-volume rank: how many leaderboard positions the raw number buys beyond what organic-adjusted volume supports.</p>
+
+<h2>Exact scoring (what the code does)</h2>
+<p class="note" style="color:var(--fg)">The letter grades in the Wash Report come from an <b>additive wash-risk score</b>, capped at 100. Each indicator has a severity from 0 to 1 that is multiplied by a fixed weight; weights deliberately sum past 100 so several strong tells saturate the score. Source: <code>packages/scoring/src/wash-risk.ts</code> in <a href="https://github.com/apeirontrade/agentkit">agentkit</a>, methodology version 0.1.0.</p>
+<div class="tblwrap"><table><thead><tr><th>Indicator</th><th>Weight</th><th>Severity rule</th></tr></thead><tbody>
+<tr><td>Few distinct payers</td><td>45</td><td>1 payer = 1.0; 2 = 0.9; 3–4 = 0.65; 5–9 = 0.35; 10+ = 0</td></tr>
+<tr><td>Self-dealing payout loops</td><td>25</td><td>share of revenue whose payer is reachable from the merchant's own payouts</td></tr>
+<tr><td>Revenue concentration</td><td>20</td><td>(HHI across payer clusters − 0.1) / 0.9, floored at 0</td></tr>
+<tr><td>Shared controlling key (Algorand rekey)</td><td>20</td><td>share of payers sharing an auth address; not applicable on Base</td></tr>
+<tr><td>Fresh payer wallets</td><td>15</td><td>median wallet age at first payment: &lt;1d = 1.0; &lt;3d = 0.7; &lt;7d = 0.4; &lt;30d = 0.15</td></tr>
+<tr><td>Metronomic timing</td><td>15</td><td>needs ≥5 payments; max of (1 − CV/0.3 when CV &lt; 0.3) and the share of identical-interval gaps when above 50%</td></tr>
+<tr><td>Single-funder ring</td><td>15</td><td>share of payers funded by one wallet, counted only above 30%</td></tr>
+</tbody></table></div>
+<p class="note">Levels: <b>low</b> &lt;20, <b>medium</b> 20–44, <b>high</b> 45–69, <b>critical</b> ≥70. Where the claimed-vs-observed gap is the main driver (no on-chain receipts despite claimed calls) the row is shown as n/v rather than graded.</p>
+<p class="note" style="color:var(--fg)">Separately, endpoints with enough data (at least 50 payments from at least 10 payer clusters) get an <b>organic-revenue-quality (ORQ)</b> score: a weighted geometric mean of eight sub-scores — funding graph 0.20, self-dealing 0.20, retention 0.15, temporal regularity 0.15, wallet fingerprint 0.10, amount distribution (including a Benford first-digit test) 0.08, concentration 0.07, cross-endpoint overlap 0.05 — with each sub-score floored at 0.02 so one zero caps rather than annihilates the result. ORQ grades: A ≥85, B ≥70, C ≥50, D ≥30, else F. A 90% confidence interval is computed by bootstrap, resampling whole payers (not individual payments) so each payer's timing structure is preserved; the interval is widened if needed to contain the observed score. Most endpoints today are below the data floor and receive only the wash-risk score above.</p>
+
+<h2>What has not been validated</h2>
+<ul style="font-size:.9rem;line-height:1.8;margin-left:1.2rem">
+  <li>The weights above were set by judgment, not fitted to data. There is no labelled ground-truth set yet, so we cannot publish a false-positive rate, precision/recall, or an ROC curve.</li>
+  <li>The model has not been benchmarked against published wash-trading detectors, peer-reviewed, or independently replicated. The code and data are open so that anyone can try.</li>
+  <li>A letter grade is a compact summary of a statistical estimate. It is not a finding about any operator's intent.</li>
+</ul>
+
+<h2>Which chain each product covers</h2>
+<ul style="font-size:.9rem;line-height:1.8;margin-left:1.2rem">
+  <li><b>This site's Wash Report:</b> Base mainnet USDC transfers, top Coinbase Bazaar merchants.</li>
+  <li><b>Live API, provenance-mcp, provenance-guard:</b> Algorand USDC (ASA 31566704). Addresses on other chains return “unknown”.</li>
+  <li><b>Wrapper Watch:</b> listing text from public registries on any chain; no payment data is used.</li>
+</ul>
 
 <h2>The settlement-visibility caveat (“n/v”)</h2>
 <p class="note" style="color:var(--fg)">x402 payments frequently settle through a <b>facilitator</b>, which may batch or defer transfers. In that architecture, few or no direct on-chain USDC transfers to the merchant's <code>payTo</code> address is <b>normal and legitimate</b>. Where a high score is driven mainly by <em>missing</em> on-chain receipts or a near-zero visible payer set — rather than by positive wash signals like metronomic timing or self-dealing loops — we display <b>n/v (not verifiable): insufficient on-chain visibility (batch settlement possible)</b> instead of a letter grade. The raw score is preserved in the open-data JSON for transparency, flagged with the same caveat.</p>
@@ -144,6 +172,6 @@
     <a href="https://github.com/apeirontrade/provenance-site/issues">Disputes &amp; corrections</a>
   </nav>
   <div>All figures are statistical estimates derived from public on-chain payment data and public x402 discovery registries. Nothing here asserts fraud or contract breach by any named party — see the <a href="./methodology.html">methodology and disclaimer</a>. Data is CC-BY-4.0; cite Provenance.</div>
-  <div>Provenance · independent trust ratings for machine-payable (x402) API endpoints · generated 2026-07-06</div>
+  <div>Provenance · published by Apeiron Capital Inc. (Arizona, USA) · data snapshot: week of 2026-06-29 · page built 2026-09-18</div>
 </footer>
 </div></body></html>
