@@ -117,6 +117,16 @@
 <p class="note">Levels: <b>low</b> &lt;20, <b>medium</b> 20–44, <b>high</b> 45–69, <b>critical</b> ≥70. Where the claimed-vs-observed gap is the main driver (no on-chain receipts despite claimed calls) the row is shown as n/v rather than graded.</p>
 <p class="note" style="color:var(--fg)">Separately, endpoints with enough data (at least 50 payments from at least 10 payer clusters) get an <b>organic-revenue-quality (ORQ)</b> score: a weighted geometric mean of eight sub-scores — funding graph 0.20, self-dealing 0.20, retention 0.15, temporal regularity 0.15, wallet fingerprint 0.10, amount distribution (including a Benford first-digit test) 0.08, concentration 0.07, cross-endpoint overlap 0.05 — with each sub-score floored at 0.02 so one zero caps rather than annihilates the result. ORQ grades: A ≥85, B ≥70, C ≥50, D ≥30, else F. A 90% confidence interval is computed by bootstrap, resampling whole payers (not individual payments) so each payer's timing structure is preserved; the interval is widened if needed to contain the observed score. Most endpoints today are below the data floor and receive only the wash-risk score above.</p>
 
+<h2>Payer classes by funder trace (v0.2, September 2026)</h2>
+<p>The integrity report and the per-merchant audit use a second, simpler method alongside the ORQ score: every payer wallet of a merchant is traced to its funders, and its volume is placed in one of five classes.</p>
+<ul>
+<li><b>Merchant-funded:</b> the payer received ALGO or USDC directly from the merchant's payTo in the window.</li>
+<li><b>Linked:</b> a heavy single-merchant payer (20% or more of the merchant's traced volume) whose top funder was itself funded by the merchant, one hop further.</li>
+<li><b>Merchant-self:</b> the merchant's own payTo paying itself or another merchant.</li>
+<li><b>Independent multi-merchant:</b> a wallet that paid three or more unrelated known merchants in the window (an autonomous sweeper or a real customer).</li>
+<li><b>Light:</b> everything else; no funding link found.</li>
+</ul>
+<p>Shares are volume-weighted over the traced payers (up to 40 per merchant, 1,000 recent transfers per address). A merchant-funded payer is not proof of intent: a merchant may fund its own customers' agents for testing or promotion. The aggregate report names no merchant; the paid audit returns the per-payer evidence for one payTo. The same method was applied to Base using x402scan and Blockscout data. Free report: <a href="https://blocksigner.org/provenance/integrity">blocksigner.org/provenance/integrity</a>; audit: <code>/commission/washaudit?payTo=</code>.</p>
 <h2>What has not been validated</h2>
 <ul style="font-size:.9rem;line-height:1.8;margin-left:1.2rem">
   <li>The weights above were set by judgment, not fitted to data. There is no labelled ground-truth set yet, so we cannot publish a false-positive rate, precision/recall, or an ROC curve.</li>
